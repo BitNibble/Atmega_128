@@ -1,0 +1,16 @@
+﻿------ Clean started: Project: Atmega128, Configuration: Debug AVR ------
+Build started.
+Project "Atmega128.cproj" (Clean target(s)):
+Target "Clean" in file "C:\Program Files (x86)\Atmel\Studio\7.0\Vs\Compiler.targets" from project "C:\Users\sergi\Documents\GitHub 2022\AVR-Atmel\Proj_atmega128_2\Atmega128\Atmega128.cproj" (entry point):
+	Task "RunCompilerTask"
+		Shell Utils Path C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils
+		C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils\make.exe clean 
+		rm -rf  Library/74hc595.o Library/atcommands.o Library/atmega128analog.o Library/atmega128interrupt.o Library/atmega128mapping.o Library/atmega128spi.o Library/atmega128timer.o Library/atmega128twi.o Library/atmega128uart.o Library/atmegaeeprom.o Library/buffer.o Library/clock.o Library/explode.o Library/function.o Library/hx711.o Library/keypad.o Library/lcd.o Library/lfsm.o Library/mm74c923.o Library/pcf8563rtc.o Library/rotenc.o Library/watch.o Library/znpid.o main.o   
+		rm -rf  Library/74hc595.d Library/atcommands.d Library/atmega128analog.d Library/atmega128interrupt.d Library/atmega128mapping.d Library/atmega128spi.d Library/atmega128timer.d Library/atmega128twi.d Library/atmega128uart.d Library/atmegaeeprom.d Library/buffer.d Library/clock.d Library/explode.d Library/function.d Library/hx711.d Library/keypad.d Library/lcd.d Library/lfsm.d Library/mm74c923.d Library/pcf8563rtc.d Library/rotenc.d Library/watch.d Library/znpid.d main.d   
+		rm -rf "Atmega128.elf" "Atmega128.a" "Atmega128.hex" "Atmega128.lss" "Atmega128.eep" "Atmega128.map" "Atmega128.srec" "Atmega128.usersignatures"
+	Done executing task "RunCompilerTask".
+Done building target "Clean" in project "Atmega128.cproj".
+Done building project "Atmega128.cproj".
+
+Build succeeded.
+========== Clean: 1 succeeded, 0 failed, 0 skipped ==========
