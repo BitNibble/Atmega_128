@@ -98,8 +98,8 @@ LCD0 LCD0enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t *
 void LCD0_inic(void)
 {
 	// LCD INIC
-	*lcd0_DDR = (1 << RS) | (1 << RW) | (1 << EN) | (0 << NC);
-	*lcd0_PORT = (1 << NC);
+	*lcd0_DDR |= (1 << RS) | (1 << RW) | (1 << EN) | (0 << NC);
+	*lcd0_PORT |= (1 << NC);
 	// INICIALIZACAO LCD datasheet/
 	_delay_ms(40); // using clock at 16Mhz
 	LCD0_write(0x38, INST); // function set
@@ -325,8 +325,8 @@ LCD1 LCD1enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t *
 void LCD1_inic(void)
 {
 	// LCD INIC
-	*lcd1_DDR = (1 << RS) | (1 << RW) | (1 << EN) | (0 << NC);
-	*lcd1_PORT = (1 << NC);
+	*lcd1_DDR |= (1 << RS) | (1 << RW) | (1 << EN) | (0 << NC);
+	*lcd1_PORT |= (1 << NC);
 	// INICIALIZACAO LCD datasheet
 	_delay_ms(40); // using clock at 16Mhz
 	LCD1_write(0x38, INST); // function set

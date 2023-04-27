@@ -11,17 +11,14 @@ Comment:
 #ifndef _HX711_H_
 	#define _HX711_H_
 
-/*** Compiler ***/
-
-/*** Working Frequency ***/
-#ifndef F_CPU
-	#define F_CPU 16000000UL
-#endif
-
 /*** Global Library ***/
 #include <inttypes.h>
 
 /*** Global Constant & Macro ***/
+#ifndef F_CPU
+	#define F_CPU 16000000UL
+#endif
+
 #ifndef STATUS_REGISTER
 	#define STATUS_REGISTER SREG
 #endif

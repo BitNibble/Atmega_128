@@ -11,12 +11,10 @@ Comment:
 #ifndef _ATMEGA128UART_H_
 	#define _ATMEGA128UART_H_
 
-/*** Compiler ***/
-#if (__GNUC__ * 100 + __GNUC_MINOR__) < 304
-	#error "This library requires AVR-GCC 3.4 or later, update to newer AVR-GCC compiler !"
-#endif
+/*** Global Library ***/
+#include <inttypes.h>
 
-/*** Working Frequency ***/
+/*** Global Constant & Macro ***/
 #ifndef F_CPU
 	#define F_CPU 16000000UL
 #endif
@@ -24,10 +22,6 @@ Comment:
 	#define TWI_SCL_CLOCK 100000UL
 #endif
 
-/*** Global Library ***/
-#include <inttypes.h>
-
-/*** Global Constant & Macro ***/
 #ifndef GLOBAL_INTERRUPT_ENABLE
 	#define GLOBAL_INTERRUPT_ENABLE 7
 #endif

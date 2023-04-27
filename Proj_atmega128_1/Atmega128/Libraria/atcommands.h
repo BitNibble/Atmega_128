@@ -11,10 +11,6 @@ Comment:
 #ifndef _ATCOMMANDS_H_
 	#define _ATCOMMANDS_H_
 
-/*** Compiler ***/
-
-/*** Working Frequency ***/
-
 /*** Global Library ***/
 #include <inttypes.h>
 

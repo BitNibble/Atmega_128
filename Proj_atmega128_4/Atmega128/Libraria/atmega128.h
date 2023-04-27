@@ -4,8 +4,8 @@ Author: Sergio Manuel Santos
 	<sergio.salazar.santos@gmail.com>
 License: GNU General Public License
 Hardware: Atmega128 by ETT ET-BASE
-Date: 03/12/2022
-Comment: 
+Date: 24/04/2023
+Comment:
 	Virtual Image Atmega 128.
 ************************************************************************/
 #ifndef _ATMEGA128_H_
@@ -86,15 +86,15 @@ typedef struct {
 typedef struct {
 	uint8_t mcucsr; // 0x54
 	uint8_t mcucr; // 0x55
-	uint8_t fill1[5]; // (5b - 55) - 1
+	uint8_t fill1[5]; // (5B - 55) - 1
 	uint8_t rampz; // 0x5B
 	uint8_t xdiv; // 0x5C
 	HighLowByte sp; // 0x5D 0x5E
 	uint8_t sreg; // 0x5F
-	uint8_t fill2[12]; // (6c - 5f) - 1
+	uint8_t fill2[12]; // (6C - 5F) - 1
 	uint8_t xmcrb; // 0x6C
 	uint8_t xmcra; // 0x6D
-	uint8_t fill3[1]; // (6f - 6d) - 1
+	uint8_t fill3[1]; // (6F - 6D) - 1
 	uint8_t osccal; // 0x6F
 } Atmega128CPURegister_TypeDef;
 
@@ -110,7 +110,7 @@ typedef struct {
 	uint8_t eifr; // 0x58
 	uint8_t eimsk; // 0x59
 	uint8_t eicrb; // 0x5A
-	uint8_t fill[15]; // (6a - 5a) - 1
+	uint8_t fill[15]; // (6A - 5A) - 1
 	uint8_t eicra; // 0x6A
 } Atmega128ExternalInterrupts_TypeDef;
 
@@ -193,13 +193,13 @@ typedef struct {
 	HighLowByte tcnt1; // 0x4C 0x4D
 	uint8_t tccr1b; // 0x4E
 	uint8_t tccr1a; // 0x4F
-	uint8_t fill2[6]; // (56 - 4f) - 1
+	uint8_t fill2[6]; // (56 - 4F) - 1
 	uint8_t tifr; // 0x56
 	uint8_t timsk; // 0x57
 	uint8_t fill3[32]; // (78 - 57) - 1
 	HighLowByte ocr1c; // 0x78 0x79
 	uint8_t tccr1c; // 0x7A
-	uint8_t fill4; // (7c - 7a) - 1
+	uint8_t fill4; // (7C - 7A) - 1
 	uint8_t etifr; // 0x7C
 	uint8_t etimsk; // 0x7D
 } Atmega128TimerCounter1_TypeDef;
@@ -207,10 +207,10 @@ typedef struct {
 // Timer/Counter, 16-bit (TC3)
 typedef struct {
 	uint8_t sfior; // 0x40
-	uint8_t fill1[59]; // (7c - 40) - 1
+	uint8_t fill1[59]; // (7C - 40) - 1
 	uint8_t etifr; // 0x7C
 	uint8_t etimsk; // 0x7D
-	uint8_t fill2[2]; // (80 - 7d) - 1
+	uint8_t fill2[2]; // (80 - 7D) - 1
 	HighLowByte icr3; // 0x80 0x81
 	HighLowByte ocr3c; // 0x82 0x83
 	HighLowByte ocr3b; // 0x84 0x85
@@ -226,7 +226,7 @@ typedef struct {
 	uint8_t ocr2; // 0x43
 	uint8_t tcnt2; // 0x44
 	uint8_t tccr2; // 0x45
-	uint8_t fill[16]; // (56-45) - 1
+	uint8_t fill[16]; // (56 - 45) - 1
 	uint8_t tifr; // 0x56
 	uint8_t timsk; // 0x57
 } Atmega128TimerCounter2_TypeDef;
@@ -239,7 +239,7 @@ typedef struct {
 	uint8_t ocr0; // 0x51
 	uint8_t tcnt0; // 0x52
 	uint8_t tccr0; // 0x53
-	uint8_t fill2[2]; // (56-53) - 1
+	uint8_t fill2[2]; // (56 - 53) - 1
 	uint8_t tifr; // 0x56
 	uint8_t timsk; // 0x57
 } Atmega128TimerCounter0_TypeDef;
@@ -259,7 +259,7 @@ typedef struct {
 	uint8_t ucsr0b; // 0x2A
 	uint8_t ucsr0a; // 0x2B
 	uint8_t udr0; // 0x2C
-	uint8_t fill1[99]; // (90 - 2c) - 1
+	uint8_t fill1[99]; // (90 - 2C) - 1
 	uint8_t ubrr0h; // 0x90
 	uint8_t fill2[4]; // (95 - 90) - 1
 	uint8_t ucsr0c; // 0x95

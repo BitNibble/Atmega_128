@@ -11,19 +11,6 @@ Comment:
 #ifndef _ATMEGA128MAPPING_H_
 	#define _ATMEGA128MAPPING_H_
 
-/*** Compiler ***/
-#if (__GNUC__ * 100 + __GNUC_MINOR__) < 304
-	#error "This library requires AVR-GCC 3.4 or later, update to newer AVR-GCC compiler !"
-#endif
-
-/*** Working Frequency ***/
-#ifndef F_CPU
-	#define F_CPU 16000000UL
-#endif
-#ifndef TWI_SCL_CLOCK
-	#define	TWI_SCL_CLOCK 100000UL
-#endif
-
 /*** Global Library ***/
 #include <avr/io.h>
 #include <avr/pgmspace.h>

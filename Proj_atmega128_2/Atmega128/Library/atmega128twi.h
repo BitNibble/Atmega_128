@@ -11,9 +11,10 @@ Comment:
 #ifndef _ATMEGA128TWI_H_
 	#define _ATMEGA128TWI_H_
 
-/*** Compiler ***/
+/*** Global Library ***/
+#include <inttypes.h>
 
-/*** Working Frequency ***/
+/*** Global Constant & Macro ***/
 #ifndef F_CPU
 	#define F_CPU 16000000UL
 #endif
@@ -21,10 +22,6 @@ Comment:
 	#define	TWI_SCL_CLOCK 100000UL
 #endif
 
-/*** Global Library ***/
-#include <inttypes.h>
-
-/*** Global Constant & Macro ***/
 #ifndef GLOBAL_INTERRUPT_ENABLE
 	#define GLOBAL_INTERRUPT_ENABLE 7
 #endif

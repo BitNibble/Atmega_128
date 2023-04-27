@@ -15,9 +15,9 @@ Comment:
 	LFSM
 	This program can be used to create a lfsm program (eeprom file).
 **********************************************************/
-/***FCPU***/
+/*** FCPU ***/
 #define F_CPU 16000000UL
-/***library***/
+/*** library ***/
 #include <avr/io.h>
 #include <avr/pgmspace.h>
 #include <avr/interrupt.h>
@@ -28,17 +28,17 @@ Comment:
 #include "keypad.h"
 #include "lfsm.h"
 #include "74hc595.h"
-/***Constant & Macro***/
+/*** Constant & Macro ***/
 #define True 1
-/***Global File Variable***/
+/*** Global File Variable ***/
 char* string=NULL;
-/***Header***/
+/*** Header ***/
 void PORTINIT(void);
-/***MAIN***MAIN***/
+/*** MAIN***MAIN ***/
 int main(void)
 {
 	PORTINIT();
-	uint8_t option=0; //Menu Jumper
+	uint8_t option=0; // Menu Jumper
 	uint8_t input_tmp=0;
 	keypadata keypadinput;
 	uint16_t output=0;
@@ -53,13 +53,13 @@ int main(void)
 	//HC595 shift = HC595enable(&DDRG,&PORTG,2,0,1);
 	/*****************************************************/
 	lfsm.setoutput(&lfsm,0);
-	/*********Replace with your application code**********/
+	/********* Replace with your application code **********/
 	while (True)
 	{
-		/***Preamble***/
+		/*** Preamble ***/
 		lcd.reboot();
 		keypad.read();
-		/******Readings******/
+		/****** Readings ******/
 		keypadinput = keypad.data();
 		n=PINB; lcd.gotoxy(0,14); string=func.ui16toa(n);
 		lcd.string_size(string,5);
@@ -302,7 +302,7 @@ int main(void)
 		PORTC=~lfsm.getoutput(&lfsm);
 	}
 }
-/***Procedure & Function***/
+/*** Procedure & Function ***/
 void PORTINIT(void)
 {
 	DDRB=0X00; // Buttons
@@ -310,10 +310,12 @@ void PORTINIT(void)
 	DDRC=0XFF; // Led
 	PORTC=0X00; // Led OFF
 }
-/***Interrupt***/
+/*** Interrupt ***/
 /***Comment
 1º Sequence
 2º Scope
+3º Pointer and Variable
+4º Casting
 note: not defining interrupt function, or initializing an object will block the program.
 ***/
 /***EOF***/
