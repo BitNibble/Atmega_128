@@ -19,6 +19,33 @@ Comment:
 /*** Global Library ***/
 #include <inttypes.h>
 
+/*** Global Constant & Macro ***/
+#define Atmega128GPWR_Address 0x0000
+#define Atmega128AnalogComparator_Address 0x0028
+#define Atmega128AnalogToDigitalConverter_Address 0x0024
+#define Atmega128BootLoader_Address 0x0068
+#define Atmega128CPURegister_Address 0x0054
+#define Atmega128Eeprom_Address 0x003C
+#define Atmega128ExternalInterrupts_Address 0x0058
+#define Atmega128PORTA_Address 0x0039
+#define Atmega128PORTB_Address 0x0036
+#define Atmega128PORTC_Address 0x0033
+#define Atmega128PORTD_Address 0x0030
+#define Atmega128PORTE_Address 0x0021
+#define Atmega128PORTF_Address 0x0020
+#define Atmega128PORTG_Address 0x0063
+#define Atmega128JtagInterface_Address 0x0042
+#define Atmega128OtherRegisters_Address 0x0040
+#define Atmega128SerialPeripherialInterface_Address 0x002D
+#define Atmega128TimerCounter1_Address 0x0040
+#define Atmega128TimerCounter3_Address 0x0040
+#define Atmega128TimerCounter2_Address 0x0043
+#define Atmega128TimerCounter0_Address 0X0040
+#define Atmega128TwoWireSerialInterface_Address 0x0070
+#define Atmega128Usart0_Address 0x0029
+#define Atmega128Usart1_Address 0x0098
+#define Atmega128WatchdogTimer_Address 0x0041
+
 /*** Global Variable ***/
 // Low Byte High Byte
 typedef struct {
@@ -61,14 +88,14 @@ typedef struct {
 	uint8_t yh; // 0x1D
 	uint8_t zl; // 0x1E
 	uint8_t zh; // 0x1F
-}Atmega128GPWR_TypeDef;
+} Atmega128GPWR_TypeDef;
 
 // Analog Comparator (AC)
 typedef struct {
 	uint8_t acsr; // 0x28
 	uint8_t fill[23]; // (0x40 - 0x28) - 1
 	uint8_t sfior; // 0x40
-}Atmega128AnalogComparator_TypeDef;
+} Atmega128AnalogComparator_TypeDef;
 
 // Analog to Digital Converter (ADC)
 typedef struct {
@@ -119,35 +146,35 @@ typedef struct {
 	uint8_t pin; // 0x39
 	uint8_t ddr; // 0x3A
 	uint8_t port; // 0x3B
-}Atmega128PORTA_TypeDef;
+} Atmega128PORTA_TypeDef;
 
 // I/O Port (PORTB)
 typedef struct {
 	uint8_t pin; // 0x36
 	uint8_t ddr; // 0x37
 	uint8_t port; // 0x38
-}Atmega128PORTB_TypeDef;
+} Atmega128PORTB_TypeDef;
 
 // I/O Port (PORTC)
 typedef struct {
 	uint8_t pin; // 0x33
 	uint8_t ddr; // 0x34
 	uint8_t port; // 0x35
-}Atmega128PORTC_TypeDef;
+} Atmega128PORTC_TypeDef;
 
 // I/O Port (PORTD)
 typedef struct {
 	uint8_t pin; // 0x30
 	uint8_t ddr; // 0x31
 	uint8_t port; // 0x32
-}Atmega128PORTD_TypeDef;
+} Atmega128PORTD_TypeDef;
 
 // I/O Port (PORTE)
 typedef struct {
 	uint8_t pin; // 0x21
 	uint8_t ddr; // 0x22
 	uint8_t port; // 0x23
-}Atmega128PORTE_TypeDef;
+} Atmega128PORTE_TypeDef;
 
 // I/O Port (PORTF)
 typedef struct {
@@ -155,7 +182,7 @@ typedef struct {
 	uint8_t fill[64]; // (0x61 - 0x20) - 1
 	uint8_t ddr; // 0x61
 	uint8_t port; // 0x62
-}Atmega128PORTF_TypeDef;
+} Atmega128PORTF_TypeDef;
 
 // I/O Port (PORTG)
 typedef struct {
@@ -317,7 +344,7 @@ typedef struct { // IVSEL = 0
 	HighLowByte USART1_TXC_vect; // 0x0040
 	HighLowByte TWI_vect; // 0x0042
 	HighLowByte SPM_RDY_vect; // 0x0044
-}Atmega128InterruptVectors_TypeDef;
+} Atmega128InterruptVectors_TypeDef;
 
 #endif
 /***EOF***/

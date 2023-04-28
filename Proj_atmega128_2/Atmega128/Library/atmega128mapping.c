@@ -12,33 +12,8 @@ Comment:
 #include "atmega128mapping.h"
 
 /*** File Define & Macro ***/
-#define GPWRaddr 0x0000
-#define AnalogComparator 0x0028
-#define AnalogToDigitalConverter 0x0024
-#define BootLoader 0x0068;
-#define CPURegister 0x0054
-#define Eeprom 0x003C
-#define ExternalInterrupts 0x0058
-#define PORTAaddr 0x39
-#define PORTBaddr 0x36
-#define PORTCaddr 0x33
-#define PORTDaddr 0x30
-#define PORTEaddr 0x21
-#define PORTFaddr 0x20
-#define PORTGaddr 0x63
-#define JtagInterface 0x0042
-#define OtherRegisters 0x0040
-#define SerialPeripherialInterface 0x002D
-#define TimerCounter1 0x0040
-#define TimerCounter3 0x0040
-#define TimerCounter2 0x0043
-#define TimerCounter0 0X0040
-#define TwoWireSerialInterface 0x0070
-#define Usart0 0x0029
-#define Usart1 0x0098
-#define WatchdogTimer 0x0041
 // FLASH
-#define InterruptVectors 0x0000 // ISVEL = 0
+#define Atmega128InterruptVectors_Address 0x0100 // ISVEL = 0
 
 /*** File Header ***/
 uint16_t ReadHLByte(HighLowByte reg);
@@ -51,77 +26,77 @@ uint16_t SwapByte(uint16_t num);
 ATMEGA128 ATMEGA128enable(void){ 
 	ATMEGA128 ret;
 	// Assign
-	ret.gpwr.reg = (Atmega128GPWR_TypeDef*) GPWRaddr;
-	ret.ac.reg = (Atmega128AnalogComparator_TypeDef*) AnalogComparator;
+	ret.gpwr.reg = (Atmega128GPWR_TypeDef*) Atmega128GPWR_Address;
+	ret.ac.reg = (Atmega128AnalogComparator_TypeDef*) Atmega128AnalogComparator_Address;
 	// ADC
-	ret.adc.reg = (Atmega128AnalogToDigitalConverter_TypeDef*) AnalogToDigitalConverter;
+	ret.adc.reg = (Atmega128AnalogToDigitalConverter_TypeDef*) Atmega128AnalogToDigitalConverter_Address;
 	#if defined(_ATMEGA128ANALOG_H_)
 		ret.adc.enable = ANALOGenable;
 	#endif
-	ret.boot_load.reg = (Atmega128BootLoader_TypeDef*) BootLoader;
-	ret.cpu.reg = (Atmega128CPURegister_TypeDef*) CPURegister;
+	ret.boot_load.reg = (Atmega128BootLoader_TypeDef*) Atmega128BootLoader_Address;
+	ret.cpu.reg = (Atmega128CPURegister_TypeDef*) Atmega128CPURegister_Address;
 	// EEPROM
-	ret.eeprom.reg = (Atmega128Eeprom_TypeDef*) Eeprom;
+	ret.eeprom.reg = (Atmega128Eeprom_TypeDef*) Atmega128Eeprom_Address;
 	#if defined(_EEPROM_H_)
 		ret.eeprom.enable = EEPROMenable;
 	#endif
 	// EXINT
-	ret.exint.reg = (Atmega128ExternalInterrupts_TypeDef*) ExternalInterrupts;
+	ret.exint.reg = (Atmega128ExternalInterrupts_TypeDef*) Atmega128ExternalInterrupts_Address;
 	#if defined(_ATMEGA128INTERRUPT_H_)
 		ret.exint.enable = INTERRUPTenable;
 	#endif
-	ret.porta.reg = (Atmega128PORTA_TypeDef*) PORTAaddr;
-	ret.portb.reg = (Atmega128PORTB_TypeDef*) PORTBaddr;
-	ret.portc.reg = (Atmega128PORTC_TypeDef*) PORTCaddr;
-	ret.portd.reg = (Atmega128PORTD_TypeDef*) PORTDaddr;
-	ret.porte.reg = (Atmega128PORTE_TypeDef*) PORTEaddr;
-	ret.portf.reg = (Atmega128PORTF_TypeDef*) PORTFaddr;
-	ret.portg.reg = (Atmega128PORTG_TypeDef*) PORTGaddr;
-	ret.jtag.reg = (Atmega128JtagInterface_TypeDef*) JtagInterface;
-	ret.misc.reg = (Atmega128OtherRegisters_TypeDef*) OtherRegisters;
+	ret.porta.reg = (Atmega128PORTA_TypeDef*) Atmega128PORTA_Address;
+	ret.portb.reg = (Atmega128PORTB_TypeDef*) Atmega128PORTB_Address;
+	ret.portc.reg = (Atmega128PORTC_TypeDef*) Atmega128PORTC_Address;
+	ret.portd.reg = (Atmega128PORTD_TypeDef*) Atmega128PORTD_Address;
+	ret.porte.reg = (Atmega128PORTE_TypeDef*) Atmega128PORTE_Address;
+	ret.portf.reg = (Atmega128PORTF_TypeDef*) Atmega128PORTF_Address;
+	ret.portg.reg = (Atmega128PORTG_TypeDef*) Atmega128PORTG_Address;
+	ret.jtag.reg = (Atmega128JtagInterface_TypeDef*) Atmega128JtagInterface_Address;
+	ret.misc.reg = (Atmega128OtherRegisters_TypeDef*) Atmega128OtherRegisters_Address;
 	// SPI
-	ret.spi.reg = (Atmega128SerialPeripherialInterface_TypeDef*) SerialPeripherialInterface;
+	ret.spi.reg = (Atmega128SerialPeripherialInterface_TypeDef*) Atmega128SerialPeripherialInterface_Address;
 	#if defined(_ATMEGA128SPI_H_)
 		ret.spi.enable = SPIenable;
 	#endif
 	// TC1
-	ret.tc1.reg = (Atmega128TimerCounter1_TypeDef*) TimerCounter1;
+	ret.tc1.reg = (Atmega128TimerCounter1_TypeDef*) Atmega128TimerCounter1_Address;
 	#if defined(_ATMEGA128TIMER_H_)
 		ret.tc1.enable = TIMER_COUNTER1enable;
 	#endif
 	// TC3
-	ret.tc3.reg = (Atmega128TimerCounter3_TypeDef*) TimerCounter3;
+	ret.tc3.reg = (Atmega128TimerCounter3_TypeDef*) Atmega128TimerCounter3_Address;
 	#if defined(_ATMEGA128TIMER_H_)
 		ret.tc3.enable = TIMER_COUNTER3enable;
 	#endif
 	// TC2
-	ret.tc2.reg = (Atmega128TimerCounter2_TypeDef*) TimerCounter2;
+	ret.tc2.reg = (Atmega128TimerCounter2_TypeDef*) Atmega128TimerCounter2_Address;
 	#if defined(_ATMEGA128TIMER_H_)
 		ret.tc2.enable = TIMER_COUNTER2enable;
 	#endif
 	// TC0
-	ret.tc0.reg = (Atmega128TimerCounter0_TypeDef*) TimerCounter0;
+	ret.tc0.reg = (Atmega128TimerCounter0_TypeDef*) Atmega128TimerCounter0_Address;
 	#if defined(_ATMEGA128TIMER_H_)
 		ret.tc0.enable = TIMER_COUNTER0enable;
 	#endif
 	// TWI
-	ret.twi.reg = (Atmega128TwoWireSerialInterface_TypeDef*) TwoWireSerialInterface;
+	ret.twi.reg = (Atmega128TwoWireSerialInterface_TypeDef*) Atmega128TwoWireSerialInterface_Address;
 	#if defined(_ATMEGA128TWI_H_)
 		ret.twi.enable = TWIenable;
 	#endif
 	// USART0
-	ret.usart0.reg = (Atmega128Usart0_TypeDef*) Usart0;
+	ret.usart0.reg = (Atmega128Usart0_TypeDef*) Atmega128Usart0_Address;
 	#if defined(_ATMEGA128UART_H_)
 		ret.usart0.enable = UART0enable;
 	#endif
 	// USART1
-	ret.usart1.reg = (Atmega128Usart1_TypeDef*) Usart1;
+	ret.usart1.reg = (Atmega128Usart1_TypeDef*) Atmega128Usart1_Address;
 	#if defined(_ATMEGA128UART_H_)
 		ret.usart1.enable = UART1enable;
 	#endif
-	ret.wdt.reg = (Atmega128WatchdogTimer_TypeDef*) WatchdogTimer;
+	ret.wdt.reg = (Atmega128WatchdogTimer_TypeDef*) Atmega128WatchdogTimer_Address;
 	// FLASH
-	// ret.isr.reg = (Atmega128InterruptVectors_TypeDef*) InterruptVectors;
+	// ret.isr.reg = (Atmega128InterruptVectors_TypeDef*) Atmega128InterruptVectors_Address;
 	// func
 	ret.readhlbyte = ReadHLByte;
 	ret.readlhbyte = ReadLHByte;
