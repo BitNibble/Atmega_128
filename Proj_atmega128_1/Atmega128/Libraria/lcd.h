@@ -11,14 +11,17 @@ Comment:
 #ifndef _LCD_H_
 	#define _LCD_H_
 
-/***Global Library***/
-#include <inttypes.h>
+/***Compiler***/
 
-/***Global Constant & Macro***/
+/***Working Frequency***/
 #ifndef F_CPU
 	#define F_CPU 16000000UL
 #endif
 
+/***Global Library***/
+#include <inttypes.h>
+
+/***Global Constant & Macro***/
 // ASIGN PORT PINS TO LCD (can be setup in any way)
 #define RS 0
 #define RW 1

@@ -13,6 +13,7 @@ Comment:
 
 /*** Global Library ***/
 #include <avr/eeprom.h>
+#include <inttypes.h>
 
 /*** Global Constant & Macro ***/
 
