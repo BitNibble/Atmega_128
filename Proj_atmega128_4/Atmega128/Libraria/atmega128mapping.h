@@ -222,6 +222,7 @@ typedef struct {
 	Atmega128WatchdogTimer wdt;
 	Atmega128InterruptVectors isr;
 	
+	HighLowByte HLbyte;
 	uint16_t (*readhlbyte)(HighLowByte reg);
 	uint16_t (*readlhbyte)(HighLowByte reg);
 	HighLowByte (*writehlbyte)(uint16_t val);
