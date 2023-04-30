@@ -61,7 +61,7 @@ typedef struct {
 // EEPROM (EEPROM)
 typedef struct {
 	Atmega128Eeprom_TypeDef* reg;
-	#if defined(_EEPROM_H_)
+	#if defined(_ATMEGAEEPROM_H_)
 		EEPROM (*enable)(void);
 	#endif
 } Atmega128Eeprom;
