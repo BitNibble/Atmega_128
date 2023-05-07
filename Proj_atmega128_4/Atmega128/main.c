@@ -87,15 +87,15 @@ int main(void)
 	timer1.compoutmodeB(2);
 	timer1.compareA(20000);
 	timer1.start(8);
-	pid_1.set_kc(&pid_1, 1);
-	pid_1.set_kd(&pid_1, 0.2); //
-	pid_1.set_ki(&pid_1, 0.5); // will provoke overshoot, to much acceleration limit max value and minimum value.
-	pid_1.set_SP(&pid_1, 650);
+	pid_1.set_kc(&pid_1.par, 1);
+	pid_1.set_kd(&pid_1.par, 0.2); //
+	pid_1.set_ki(&pid_1.par, 0.5); // will provoke overshoot, to much acceleration limit max value and minimum value.
+	pid_1.set_SP(&pid_1.par, 650);
 	/***Another one woopy ti dooo***/
-	pid_2.set_kc(&pid_2, 0.5);
-	pid_2.set_kd(&pid_2, 1);
-	pid_2.set_ki(&pid_2, 0.01);
-	pid_2.set_SP(&pid_2, 125);
+	pid_2.set_kc(&pid_2.par, 0.5);
+	pid_2.set_kd(&pid_2.par, 1);
+	pid_2.set_ki(&pid_2.par, 0.01);
+	pid_2.set_SP(&pid_2.par, 125);
 	/**********/
 	//TODO:: Please write your application code
 	while(TRUE){
@@ -136,7 +136,7 @@ int main(void)
 					//lcd0.string_size(str,6);
 					//if(pid_1.derivative>0){
 						lcd0.gotoxy(3,0);
-						strcpy(str,function.i32toa(pid_1.derivative));
+						strcpy(str,function.i32toa(pid_1.par.derivative));
 						lcd0.string_size(str,6);
 					//}
 					
@@ -222,8 +222,8 @@ ISR(TIMER0_COMP_vect) // 1Hz and usart Tx
 	Sreg = SREG;
 	SREG &= ~(1<<7);
 	if(count>repeat){ //59 -> 1Hz
-		pid_out_1=pid_1.output(&pid_1,adcvalue,0.5);
-		pid_out_2=pid_2.output(&pid_2,adcvalue,0.5);
+		pid_out_1=pid_1.output(&pid_1.par,adcvalue,0.5);
+		pid_out_2=pid_2.output(&pid_2.par,adcvalue,0.5);
 		increment++;
 		if((increment & 0x0F) < 8){
 			shift.bit(&shift.par, 0);
