@@ -144,7 +144,7 @@ int main(void)
 	while(TRUE){
 		/******PREAMBLE******/
 		lcd0.reboot(); //Reboot LCD
-		F.update(&F, PINF); //PORTF INPUT READING
+		F.update(&F.sig, PINF); //PORTF INPUT READING
 		/************INPUT***********/
 		// Jump Menu signal
 		if(signal == ONE){ //INPUT FROM INTERRUPT SINALS
@@ -166,7 +166,7 @@ int main(void)
 				//lcd0.gotoxy(1,0); // for troubleshooting
 				//lcd0.string_size(function.ftoa(hx.read_raw(&hx), result, ZERO), 13);
 				/*********************************************/
-				if((F.HL & IMASK) & ONE){ // calibrate offset by pressing button 1
+				if((F.sig.HL & IMASK) & ONE){ // calibrate offset by pressing button 1
 					HX711_data.offset_32 = tmp;
 					HX711_data.offset_64 = tmp;
 					HX711_data.offset_128 = tmp;
@@ -212,12 +212,12 @@ int main(void)
 						break;
 					case 11: // case 128
 						lcd0.gotoxy(2,9);
-						if(F.HL == (ONE << 3)){
+						if(F.sig.HL == (ONE << 3)){
 							divfactor++;
 							if(divfactor > maxDIV)
 								divfactor = maxDIV;
 						}
-						if(F.HL == (ONE << 4)){
+						if(F.sig.HL == (ONE << 4)){
 							divfactor--;
 							if(divfactor < minDIV)
 								divfactor = minDIV;
@@ -231,12 +231,12 @@ int main(void)
 						break;
 					case 21: // case 32
 						lcd0.gotoxy(2,9);
-						if(F.HL == (ONE << 3)){
+						if(F.sig.HL == (ONE << 3)){
 							divfactor++;
 							if(divfactor > maxDIV)
 								divfactor = maxDIV;
 						}
-						if(F.HL == (ONE << 4)){
+						if(F.sig.HL == (ONE << 4)){
 							divfactor--;
 							if(divfactor < minDIV)
 								divfactor=minDIV;
@@ -250,12 +250,12 @@ int main(void)
 						break;
 					case 31: // case 64
 						lcd0.gotoxy(2,9);
-						if(F.HL == (ONE << 3)){
+						if(F.sig.HL == (ONE << 3)){
 							divfactor++;
 							if(divfactor > maxDIV)
 								divfactor = maxDIV;
 						}
-						if(F.HL == (ONE << 4)){
+						if(F.sig.HL == (ONE << 4)){
 							divfactor--;
 							if(divfactor < minDIV)
 								divfactor = minDIV;
@@ -268,7 +268,7 @@ int main(void)
 						break;
 				};
 				// Exit and store value
-				if((F.LL & IMASK) == (ONE << 5)){ // Button 6
+				if((F.sig.LL & IMASK) == (ONE << 5)){ // Button 6
 					HX711_data.status = ONE;
 					eprom.update_block(HX711_ptr, (void*) ZERO, sizeblock);
 					hx.get_cal(&hx)->divfactor_32=divfactor;
@@ -317,7 +317,7 @@ ISR(TIMER0_COMP_vect) // 15.4 us intervals
 ISR(TIMER1_COMPA_vect) // 1 second intervals
 {
 	/***CLEAR EEPROM OFFSET SEQUENCE START***/
-	if((F.LL & IMASK) == (ONE << 3)) //button 4
+	if((F.sig.LL & IMASK) == (ONE << 3)) //button 4
 		counter_1++;
 	else if(counter_1 < _5sec+ONE)
 		counter_1=ZERO;
@@ -343,7 +343,7 @@ ISR(TIMER1_COMPA_vect) // 1 second intervals
 	}
 	/***CLEAR EEPROM OFFSET SEQUENCE END***/
 	/***CAL DIVFACTOR DEFINE START***/
-	if((F.LL & IMASK) == (ONE << 4)) //button 5
+	if((F.sig.LL & IMASK) == (ONE << 4)) //button 5
 		counter_2++;
 	else if(counter_2 < _5sec+ONE)
 		counter_2=ZERO; //RESET TIMER

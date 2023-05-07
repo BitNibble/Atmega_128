@@ -219,24 +219,24 @@ void PORTINIT(void)
 ISR(TIMER0_COMP_vect) // 1Hz and usart Tx
 {
 	uint8_t Sreg;
-	Sreg=SREG;
-	SREG&=~(1<<7);
+	Sreg = SREG;
+	SREG &= ~(1<<7);
 	if(count>repeat){ //59 -> 1Hz
 		pid_out_1=pid_1.output(&pid_1,adcvalue,0.5);
 		pid_out_2=pid_2.output(&pid_2,adcvalue,0.5);
 		increment++;
 		if((increment & 0x0F) < 8){
-			shift.bit(0);
-			shift.out();
+			shift.bit(&shift.par, 0);
+			shift.out(&shift.par);
 		}else{
-			shift.bit(1);
-			shift.out();
+			shift.bit(&shift.par, 1);
+			shift.out(&shift.par);
 		}
 		
 		count=0;
 	}else
 		count++;
-	SREG=Sreg;
+	SREG = Sreg;
 }
 /***EOF***/
 /**** Comment:
