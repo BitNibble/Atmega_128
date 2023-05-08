@@ -182,11 +182,11 @@ UARTvar uart0_getch(void)
 }
 UARTvar* uart0_gets(void)
 {
-	return rx0buff.raw(&rx0buff.pos);
+	return rx0buff.raw(&rx0buff.par);
 }
 void uart0_rxflush(void)
 {
-	rx0buff.flush(&rx0buff.pos);
+	rx0buff.flush(&rx0buff.par);
 }
 void uart0_write(UARTvar data)
 {
@@ -324,11 +324,11 @@ UARTvar uart1_getch(void)
 }
 UARTvar* uart1_gets(void)
 {
-	return rx1buff.raw(&rx1buff.pos);
+	return rx1buff.raw(&rx1buff.par);
 }
 void uart1_rxflush(void)
 {
-	rx1buff.flush(&rx1buff.pos);
+	rx1buff.flush(&rx1buff.par);
 }
 void uart1_write(UARTvar data)
 {
@@ -362,7 +362,7 @@ ISR(UART0_RECEIVE_INTERRUPT)
 	UART0_LastRxError = (usr & (_BV(FE0) | _BV(DOR0)));
 	
 	UART0_Rx = uartmega128.usart0.reg->udr0;
-	rx0buff.push(&rx0buff.pos, UART0_Rx);
+	rx0buff.push(&rx0buff.par, UART0_Rx);
 }
 ISR(UART0_TRANSMIT_INTERRUPT)
 {
@@ -381,7 +381,7 @@ SIGNAL(UART1_RECEIVE_INTERRUPT)
 	UART1_LastRxError = (usr & (_BV(FE1) | _BV(DOR1)));
 	
 	UART1_Rx = uartmega128.usart1.reg->udr1;
-	rx1buff.push(&rx1buff.pos, UART1_Rx);
+	rx1buff.push(&rx1buff.par, UART1_Rx);
 }
 SIGNAL(UART1_TRANSMIT_INTERRUPT)
 {
