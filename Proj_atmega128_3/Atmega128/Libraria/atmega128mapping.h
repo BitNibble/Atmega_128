@@ -29,7 +29,12 @@ Comment:
 #include "atmega128uart.h"
 
 /*** Global Variable ***/
-// SECOND LAYER
+//		PARAMETER
+typedef struct {
+	HighLowByte HLbyte;
+}Atmega128Parameter;
+
+//		SECOND LAYER
 // GPWR
 typedef struct {
 	Atmega128GPWR_TypeDef* reg;
@@ -188,13 +193,16 @@ typedef struct {
 	Atmega128WatchdogTimer_TypeDef* reg;
 } Atmega128WatchdogTimer;
 
-// FLASH
+//		FLASH
 typedef struct {
 	Atmega128InterruptVectors_TypeDef* reg;
 }Atmega128InterruptVectors;
 
-// ATMEGA 128 IMAGE
+//		ATMEGA 128 IMAGE
 typedef struct {
+	//		PARAMETER
+	Atmega128Parameter par;
+	//		SECOND LAYER
 	Atmega128GPWR gpwr;
 	Atmega128AnalogComparator ac;
 	Atmega128AnalogToDigitalConverter adc;
@@ -221,8 +229,7 @@ typedef struct {
 	Atmega128Usart1 usart1;
 	Atmega128WatchdogTimer wdt;
 	Atmega128InterruptVectors isr;
-	
-	HighLowByte HLbyte;
+	//		Pointer Function
 	uint16_t (*readhlbyte)(HighLowByte reg);
 	uint16_t (*readlhbyte)(HighLowByte reg);
 	HighLowByte (*writehlbyte)(uint16_t val);

@@ -45,14 +45,23 @@ ATMEGA128 ATMEGA128enable(void){
 	#if defined(_ATMEGA128INTERRUPT_H_)
 		ret.exint.enable = INTERRUPTenable;
 	#endif
+	// PORTA
 	ret.porta.reg = (Atmega128PORTA_TypeDef*) Atmega128PORTA_Address;
+	// PORTB
 	ret.portb.reg = (Atmega128PORTB_TypeDef*) Atmega128PORTB_Address;
+	// PORTC
 	ret.portc.reg = (Atmega128PORTC_TypeDef*) Atmega128PORTC_Address;
+	// PORTD
 	ret.portd.reg = (Atmega128PORTD_TypeDef*) Atmega128PORTD_Address;
+	// PORTE
 	ret.porte.reg = (Atmega128PORTE_TypeDef*) Atmega128PORTE_Address;
+	// PORTF
 	ret.portf.reg = (Atmega128PORTF_TypeDef*) Atmega128PORTF_Address;
+	// PORTG
 	ret.portg.reg = (Atmega128PORTG_TypeDef*) Atmega128PORTG_Address;
+	// JTAG
 	ret.jtag.reg = (Atmega128JtagInterface_TypeDef*) Atmega128JtagInterface_Address;
+	// MISC
 	ret.misc.reg = (Atmega128OtherRegisters_TypeDef*) Atmega128OtherRegisters_Address;
 	// SPI
 	ret.spi.reg = (Atmega128SerialPeripherialInterface_TypeDef*) Atmega128SerialPeripherialInterface_Address;
@@ -98,6 +107,7 @@ ATMEGA128 ATMEGA128enable(void){
 	// FLASH
 	// ret.isr.reg = (Atmega128InterruptVectors_TypeDef*) Atmega128InterruptVectors_Address;
 	// func
+
 	ret.readhlbyte = ReadHLByte;
 	ret.readlhbyte = ReadLHByte;
 	ret.writehlbyte = WriteHLByte;

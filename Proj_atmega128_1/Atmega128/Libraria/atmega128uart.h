@@ -1,6 +1,6 @@
 /************************************************************************
 	ATMEGA128UART
-Author: Sergio Santos 
+Author: Sergio Santos
 	<sergio.salazar.santos@gmail.com>
 License: GNU General Public License
 Hardware: ATmega128
@@ -38,29 +38,16 @@ Comment:
 #define ODD 3
 
 /*** Global Variable ***/
-struct rt0{
+typedef struct {
 	// Parameters
 	uint8_t ubrr;
 	uint8_t FDbits;
 	uint8_t Stopbits;
 	uint8_t Parity;
-	// prototype pointers
-	UARTvar (*read)(void);
-	UARTvar (*getch)(void);
-	UARTvar* (*gets)(void);
-	void (*rxflush)(void);
-	void (*write)(UARTvar data);
-	void (*putch)(UARTvar c);
-	void (*puts)(UARTvar* s);
-};
-typedef struct rt0 UART0;
+}uart0parameter;
 
-struct rt1{
-	// Parameters
-	uint8_t ubrr;
-	uint8_t FDbits;
-	uint8_t Stopbits;
-	uint8_t Parity;
+struct uart0{
+	uart0parameter par;
 	// prototype pointers
 	UARTvar (*read)(void);
 	UARTvar (*getch)(void);
@@ -70,7 +57,28 @@ struct rt1{
 	void (*putch)(UARTvar c);
 	void (*puts)(UARTvar* s);
 };
-typedef struct rt1 UART1;
+typedef struct uart0 UART0;
+
+typedef struct {
+	// Parameters
+	uint8_t ubrr;
+	uint8_t FDbits;
+	uint8_t Stopbits;
+	uint8_t Parity;
+}uart1parameter;
+
+struct uart1{
+	uart0parameter par;
+	// prototype pointers
+	UARTvar (*read)(void);
+	UARTvar (*getch)(void);
+	UARTvar* (*gets)(void);
+	void (*rxflush)(void);
+	void (*write)(UARTvar data);
+	void (*putch)(UARTvar c);
+	void (*puts)(UARTvar* s);
+};
+typedef struct uart1 UART1;
 
 /*** Global Header ***/
 UART0 UART0enable(unsigned int baudrate, unsigned int FDbits, unsigned int Stopbits, unsigned int Parity );

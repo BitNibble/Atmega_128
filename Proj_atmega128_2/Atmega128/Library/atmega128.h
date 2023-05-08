@@ -347,5 +347,6 @@ typedef struct { // IVSEL = 0
 } Atmega128InterruptVectors_TypeDef;
 
 #endif
+
 /***EOF***/
 
