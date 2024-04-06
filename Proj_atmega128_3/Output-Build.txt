@@ -1,0 +1,16 @@
+﻿------ Clean started: Project: Atmega128, Configuration: Debug AVR ------
+Build started.
+Project "Atmega128.cproj" (Clean target(s)):
+Target "Clean" in file "C:\Program Files (x86)\Atmel\Studio\7.0\Vs\Compiler.targets" from project "D:\Documents\GitHub_2024\Atmega_128\Proj_atmega128_3\Atmega128\Atmega128.cproj" (entry point):
+	Task "RunCompilerTask"
+		Shell Utils Path C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils
+		C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils\make.exe clean 
+		rm -rf  Libraria/Src/74hc595.o Libraria/Src/atmega128analog.o Libraria/Src/atmega128interrupt.o Libraria/Src/atmega128mapping.o Libraria/Src/atmega128spi.o Libraria/Src/atmega128timer0.o Libraria/Src/atmega128timer1.o Libraria/Src/atmega128timer2.o Libraria/Src/atmega128timer3.o Libraria/Src/atmega128twi.o Libraria/Src/atmega128usart0.o Libraria/Src/atmega128usart1.o Libraria/Src/atmegaeeprom.o Libraria/Src/bt05atcommands.o Libraria/Src/buffer.o Libraria/Src/clock.o Libraria/Src/esp01atcommands.o Libraria/Src/explode.o Libraria/Src/function.o Libraria/Src/hc05atcommands.o Libraria/Src/hc42atcommands.o Libraria/Src/hx711.o Libraria/Src/keypad.o Libraria/Src/lcd.o Libraria/Src/lcd2p.o Libraria/Src/lfsm.o Libraria/Src/mm74c923.o Libraria/Src/pcf8563rtc.o Libraria/Src/query.o Libraria/Src/rotenc.o Libraria/Src/watch.o Libraria/Src/znpid.o main.o   
+		rm -rf  Libraria/Src/74hc595.d Libraria/Src/atmega128analog.d Libraria/Src/atmega128interrupt.d Libraria/Src/atmega128mapping.d Libraria/Src/atmega128spi.d Libraria/Src/atmega128timer0.d Libraria/Src/atmega128timer1.d Libraria/Src/atmega128timer2.d Libraria/Src/atmega128timer3.d Libraria/Src/atmega128twi.d Libraria/Src/atmega128usart0.d Libraria/Src/atmega128usart1.d Libraria/Src/atmegaeeprom.d Libraria/Src/bt05atcommands.d Libraria/Src/buffer.d Libraria/Src/clock.d Libraria/Src/esp01atcommands.d Libraria/Src/explode.d Libraria/Src/function.d Libraria/Src/hc05atcommands.d Libraria/Src/hc42atcommands.d Libraria/Src/hx711.d Libraria/Src/keypad.d Libraria/Src/lcd.d Libraria/Src/lcd2p.d Libraria/Src/lfsm.d Libraria/Src/mm74c923.d Libraria/Src/pcf8563rtc.d Libraria/Src/query.d Libraria/Src/rotenc.d Libraria/Src/watch.d Libraria/Src/znpid.d main.d   
+		rm -rf "Atmega128.elf" "Atmega128.a" "Atmega128.hex" "Atmega128.lss" "Atmega128.eep" "Atmega128.map" "Atmega128.srec" "Atmega128.usersignatures"
+	Done executing task "RunCompilerTask".
+Done building target "Clean" in project "Atmega128.cproj".
+Done building project "Atmega128.cproj".
+
+Build succeeded.
+========== Clean: 1 succeeded, 0 failed, 0 skipped ==========

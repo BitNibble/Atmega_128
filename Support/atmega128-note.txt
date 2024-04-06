@@ -1,0 +1,84 @@
+// Preamble [INPUT]
+lcd0.reboot();
+keypad.read();
+if(uartoneshot){ uartoneshot = 0; uart.rxflush();} // the matrix
+uartreceive=uart.gets(); //UART1
+if(uart.getch() == '\n'){ strcpy(uartmsg,uartreceive); uartoneshot = 1;}
+// RTC
+tm=rtc.GetTime();
+dt=rtc.GetDate();
+// Reading analog
+adcvalue=analog.read(0);
+strcpy(str,function.i16toa(adcvalue));
+// Reading input
+lcd0.gotoxy(1,0);
+lcd0.putch(':');
+lcd0.string_size(keypad.data().print, 6);
+// ENTRY END
+
+/*** Compiler ***/
+#if (__GNUC__ * 100 + __GNUC_MINOR__) < 304
+	#error "This library requires AVR-GCC 3.4 or later, update to newer AVR-GCC compiler !"
+#endif
+
+command to "recreate"/track a local HEAD branch/pointer:
+git remote set-head origin -a
+now master is HEAD therfore:
+git pull origin HEAD
+
+git branch with no arguments displays the current branch marked with an asterisk in front of it
+
+//static Atmega128GPWR gpwr_ptr;
+//static Atmega128AnalogComparator ac_ptr;
+//static Atmega128AnalogToDigitalConverter adc_ptr;
+//static Atmega128BootLoader boot_load_ptr;
+//static Atmega128CPURegister cpu_ptr;
+//static Atmega128Eeprom eeprom_ptr;
+//static Atmega128ExternalInterrupts exint_ptr;
+//static Atmega128PORTA porta_ptr;
+//static Atmega128PORTB portb_ptr;
+//static Atmega128PORTC portc_ptr;
+//static Atmega128PORTD portd_ptr;
+//static Atmega128PORTE porte_ptr;
+//static Atmega128PORTF portf_ptr;
+//static Atmega128PORTG portg_ptr;
+//static Atmega128JtagInterface jtag_ptr;
+//static Atmega128OtherRegisters misc_ptr;
+//static Atmega128SerialPeripherialInterface spi_ptr;
+//static Atmega128TimerCounter1 tc1_ptr;
+//static Atmega128TimerCounter3 tc3_ptr;
+//static Atmega128TimerCounter2 tc2_ptr;
+//static Atmega128TimerCounter0 tc0_ptr;
+//static Atmega128TwoWireSerialInterface twi_ptr;
+//static Atmega128Usart0 usart0_ptr;
+//static Atmega128Usart0 usart1_ptr;
+//static Atmega128WatchdogTimer wdt_ptr;
+
+// Assign
+	//atmega.gpwr = (Atmega128GPWR*) &gpwr_ptr;
+	//atmega.ac = (Atmega128AnalogComparator*) &ac_ptr;
+	//atmega.adc = (Atmega128AnalogToDigitalConverter*) &adc_ptr;
+	//atmega.boot_load = (Atmega128BootLoader*) &boot_load_ptr;
+	//atmega.cpu = (Atmega128CPURegister*) &cpu_ptr;
+	//atmega.eeprom = (Atmega128Eeprom*) &eeprom_ptr;
+	//atmega.exint = (Atmega128ExternalInterrupts*) &exint_ptr;
+	//atmega.porta = (Atmega128PORTA*) &porta_ptr;
+	//atmega.portb = (Atmega128PORTB*) &portb_ptr;
+	//atmega.portc = (Atmega128PORTC*) &portc_ptr;
+	//atmega.portd = (Atmega128PORTD*) &portd_ptr;
+	//atmega.porte = (Atmega128PORTE*) &porte_ptr;
+	//atmega.portf = (Atmega128PORTF*) &portf_ptr;
+	//atmega.portg = (Atmega128PORTG*) &portg_ptr;
+	//atmega.jtag = (Atmega128JtagInterface*) &jtag_ptr;
+	//atmega.misc = (Atmega128OtherRegisters*) &misc_ptr;
+	//atmega.spi = (Atmega128SerialPeripherialInterface*) &spi_ptr;
+	//atmega.tc1 = (Atmega128TimerCounter1*) &tc1_ptr;
+	//atmega.tc3 = (Atmega128TimerCounter3*) &tc3_ptr;
+	//atmega.tc2 = (Atmega128TimerCounter2*) &tc2_ptr;
+	//atmega.tc0 = (Atmega128TimerCounter0*) &tc0_ptr;
+	//atmega.twi = (Atmega128TwoWireSerialInterface*) &twi_ptr;
+	//atmega.usart0 = (Atmega128Usart0*) &usart0_ptr;
+	//atmega.usart1 = (Atmega128Usart1*) &usart1_ptr;
+	//atmega.wdt = (Atmega128WatchdogTimer*) &wdt_ptr;
+
+
