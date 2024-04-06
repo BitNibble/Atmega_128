@@ -16,9 +16,6 @@ Comment:
 #include "query.h"
 
 /*** Global Constant & Macro ***/
-#ifndef ATMEGA_128_USART
-	#define ATMEGA_128_USART
-
 #ifndef GLOBAL_INTERRUPT_ENABLE
 	#define GLOBAL_INTERRUPT_ENABLE 7
 #endif
@@ -53,8 +50,6 @@ Comment:
 	#define UART1_TRANSMIT_INTERRUPT  USART1_UDRE_vect
 #else
 	#error "Not Atmega 128"
-#endif
-
 #endif
 
 /*** Global Variable ***/
