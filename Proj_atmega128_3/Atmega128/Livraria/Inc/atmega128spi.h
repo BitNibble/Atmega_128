@@ -11,7 +11,8 @@ Comment:
 	#define _ATMEGA128SPI_H_
 
 /*** Global Library ***/
-#include <inttypes.h>
+#include "atmega128handler.h"
+#include "query.h"
 
 /*** Global Constant & Macro ***/
 #if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)
@@ -30,6 +31,8 @@ Comment:
 
 /*** Global Variable ***/
 typedef struct{
+	Atmega128SerialPeripherialInterface_TypeDef* handle;
+	// prototype pointers
 	void (*transfer_sync) (uint8_t * dataout, uint8_t * datain, uint8_t len);
 	void (*transmit_sync) (uint8_t * dataout, uint8_t len);
 	uint8_t (*fast_shift) (uint8_t data);

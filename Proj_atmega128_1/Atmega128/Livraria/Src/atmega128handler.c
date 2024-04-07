@@ -164,5 +164,73 @@ Atmega128WatchdogTimer_TypeDef* wdt_handle(void)
     return (Atmega128WatchdogTimer_TypeDef*) Atmega128WatchdogTimer_Address;
 }
 
+/*** Atmega 128 Procedure and Function ***/
+uint16_t readhlbyte(HighLowByte reg)
+{
+	return (reg.par.H << 8) | reg.par.L;
+}
+uint16_t readlhbyte(HighLowByte reg)
+{
+	return (reg.par.L << 8) | reg.par.H;
+}
+HighLowByte writehlbyte(uint16_t val)
+{
+	HighLowByte reg; reg.par.H = (val >> 8); reg.par.L = val;
+	return reg;
+}
+HighLowByte writelhbyte(uint16_t val)
+{
+	HighLowByte reg; reg.par.L = (val >> 8); reg.par.H = val;
+	return reg;
+}
+uint16_t SwapByte(uint16_t num)
+{
+	uint16_t tp;
+	tp = (num << 8);
+	return (num >> 8) | tp;
+}
+uint16_t BAUDRATEnormal(uint32_t BAUD)
+{
+	uint32_t baudrate = F_CPU/16;
+	baudrate /= BAUD; baudrate -= 1;
+	return (uint16_t) baudrate;
+}
+uint16_t BAUDRATEdouble(uint32_t BAUD)
+{
+	uint32_t baudrate = F_CPU/8;
+	baudrate /= BAUD; baudrate -= 1;
+	return (uint16_t) baudrate;
+}
+uint16_t BAUDRATEsynchronous(uint32_t BAUD)
+{
+	uint32_t baudrate = F_CPU/2;
+	baudrate /= BAUD; baudrate -= 1;
+	return (uint16_t) baudrate;
+}
+void ClockPrescalerSelect(volatile uint8_t prescaler)
+{
+	volatile uint8_t sreg;
+	volatile uint8_t* clkpr = &XDIV;
+	prescaler &= 0x7F;
+	sreg = cpu_handle()->sreg.reg;
+	cpu_handle()->sreg.reg &= ~(1 << 7);
+	
+	*clkpr = prescaler;
+	*clkpr = (1 << XDIVEN) | prescaler;
+	
+	cpu_handle()->sreg.reg = sreg;
+}
+void MoveInterruptsToBoot(void)
+{
+	volatile uint8_t sreg;
+	sreg = cpu_handle()->sreg.reg;
+	cpu_handle()->sreg.reg &= ~(1 << 7);
+	
+	MCUCR = (1<<IVCE);
+	MCUCR = (1<<IVSEL);
+	
+	cpu_handle()->sreg.reg = sreg;
+}
+
 /*** EOF ***/
 

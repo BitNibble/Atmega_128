@@ -54,48 +54,6 @@ void setbit(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t da
 	*(reg + n ) &= ~(mask << bit_n);
 	*(reg + n ) |= (data << bit_n);
 }
-uint16_t readhlbyte(HighLowByte reg)
-{
-	return (reg.par.H << 8) | reg.par.L;
-}
-uint16_t readlhbyte(HighLowByte reg)
-{
-	return (reg.par.L << 8) | reg.par.H;
-}
-HighLowByte writehlbyte(uint16_t val)
-{
-	HighLowByte reg; reg.par.H = (val >> 8); reg.par.L = val;
-	return reg;
-}
-HighLowByte writelhbyte(uint16_t val)
-{
-	HighLowByte reg; reg.par.L = (val >> 8); reg.par.H = val;
-	return reg;
-}
-uint16_t SwapByte(uint16_t num)
-{
-	uint16_t tp;
-	tp = (num << 8);
-	return (num >> 8) | tp;
-}
-uint16_t BAUDRATEnormal(uint32_t BAUD)
-{
-	uint32_t baudrate = F_CPU/16;
-	baudrate /= BAUD; baudrate -= 1;
-	return (uint16_t) baudrate;
-}
-uint16_t BAUDRATEdouble(uint32_t BAUD)
-{
-	uint32_t baudrate = F_CPU/8;
-	baudrate /= BAUD; baudrate -= 1;
-	return (uint16_t) baudrate;
-}
-uint16_t BAUDRATEsynchronous(uint32_t BAUD)
-{
-	uint32_t baudrate = F_CPU/2;
-	baudrate /= BAUD; baudrate -= 1;
-	return (uint16_t) baudrate;
-}
 
 /*** EOF ***/
 

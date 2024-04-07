@@ -13,7 +13,8 @@ Comment:
 	#define _ATMEGA128TIMER3_H_
 
 /*** Global Library ***/
-#include <inttypes.h>
+#include "atmega128handler.h"
+#include "query.h"
 
 /*** Constant & Macro ***/
 #ifndef ATMEGA_128_TIMER_COUNTER
@@ -32,6 +33,7 @@ Comment:
 
 /*** Global Variable ***/
 typedef struct{
+	Atmega128TimerCounter3_TypeDef* handle;
 	// prototype pointers
 	void (*compoutmodeA)(unsigned char compoutmode);
 	void (*compoutmodeB)(unsigned char compoutmode);

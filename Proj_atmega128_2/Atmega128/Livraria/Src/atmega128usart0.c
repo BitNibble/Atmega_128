@@ -11,12 +11,10 @@ Comment:
 /*** File Library ***/
 #include "atmega128usart0.h"
 #include "buffer.h"
-#include <string.h>
-#include <util/delay.h>
-#include <math.h>
 
 /*** File Variable ***/
 static USART0 atmega128_usart0;
+
 BUFF rx0buff;
 UARTvar UART0_Rx;
 UARTvar UART0_RxBuf[UART0_RX_BUFFER_SIZE + 1];
@@ -207,10 +205,10 @@ char* usart0_messageprint(USART0* uart, char* oneshot, char* msg, const char* en
 	ptr = uart->gets();
 	length = strlen(ptr);
 	if(length >= endlength){
-		if( !strcmp( &ptr[length-endlength], endl ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart0flag = 0xFF; }
+		if( !strcmp( ptr+(length-endlength), endl ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart0flag = 0xFF; }
 		// default
-		else if( !strcmp( &ptr[length-endlength], "\r" ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart0flag = 0xFF; }
-		else if( !strcmp( &ptr[length-endlength], "\n" ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart0flag = 0xFF; }
+		//else if( !strcmp( ptr+(length-endlength), "\r" ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart0flag = 0xFF; }
+		//else if( !strcmp( ptr+(length-endlength), "\n" ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart0flag = 0xFF; }
 	}
 	return ptr;
 }

@@ -12,8 +12,8 @@ Comment:
 	#define _ATMEGAEEPROM_H_
 
 /*** Global Library ***/
-#include <avr/eeprom.h>
-#include <inttypes.h>
+#include "atmega128handler.h"
+#include "query.h"
 
 /*** Global Constant & Macro ***/
 

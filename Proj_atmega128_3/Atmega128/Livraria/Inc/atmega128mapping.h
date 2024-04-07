@@ -12,7 +12,8 @@ Comment:
 **********************************************************/
 #ifndef _ATMEGA128MAPPING_H_
 	#define _ATMEGA128MAPPING_H_
-	
+
+#include "atmega128handler.h"	
 #include "query.h"
 
 /*********************************************************/
@@ -208,49 +209,4 @@ ATMEGA128 atmega128_enable( void );
 #endif
 
 /***EOF***/
-
-/*** Interrupt List ***/
-// ISR(RESET_vect){}
-// ISR(EXT_INT0_vect){}
-// ISR(EXT_INT1_vect){}
-// ISR(EXT_INT2_vect){}
-// ISR(EXT_INT3_vect){}
-// ISR(EXT_INT4_vect){}
-// ISR(EXT_INT5_vect){}
-// ISR(EXT_INT6_vect){}
-// ISR(EXT_INT7_vect){}
-// ISR(SPI_STC_vect){}
-// ISR(USART0_RXC_vect){}
-// ISR(USART0_DRE_vect){}
-// ISR(USART0_TXC_vect){}
-// ISR(ADC_vect){}
-// ISR(EE_RDY_vect){}
-// ISR(ANA_COMP_vect){}
-// ISR(USART1_RXC_vect){}
-// ISR(USART1_DRE_vect){}
-// ISR(USART1_TXC_vect){}
-// ISR(TWI_vect){}
-// ISR(SPM_RDY_vect){}
-// ISR(INT0_vect){ }
-// ISR(INT1_vect){ }
-// ISR(INT2_vect){ }
-// ISR(INT3_vect){ }
-// ISR(INT4_vect){ }
-// ISR(INT5_vect){ }
-// ISR(INT6_vect){ }
-// ISR(INT7_vect){ }
-// ISR(TIMER0_COMP_vect){};
-// ISR(TIMER0_OVF_vect){};
-// ISR(TIMER1_CAPT_vect){};
-// ISR(TIMER1_COMPA_vect){};
-// ISR(TIMER1_COMPB_vect){};
-// ISR(TIMER1_COMPC_vect){};
-// ISR(TIMER1_OVF_vect){};
-// ISR(TIMER2_COMP_vect){};
-// ISR(TIMER2_OVF_vect){};
-// ISR(TIMER3_CAPT_vect){};
-// ISR(TIMER3_COMPA_vect){};
-// ISR(TIMER3_COMPB_vect){};
-// ISR(TIMER3_COMPC_vect){};
-// ISR(TIMER3_OVF_vect){};
 

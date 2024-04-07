@@ -4,13 +4,25 @@ Author: Sergio Manuel Santos
 	<sergio.salazar.santos@gmail.com>
 License: GNU General Public License
 Hardware: Atmega 128
-Update:	14/01/2024
+Update:	07/04/2024
 Comment: 
 	Simple tools
 **********************************************************/
 #ifndef _ATMEGA128HANDLER_H_
 	#define _ATMEGA128HANDLER_H_
-
+	
+/*** Working Frequency ***/
+// User May change to conform to use
+#ifndef F_CPU
+	#define F_CPU 16000000UL
+#endif
+	
+#include <avr/io.h>
+#include <avr/fuse.h>
+#include <avr/eeprom.h>
+#include <avr/pgmspace.h>
+#include <avr/interrupt.h>
+#include <util/delay.h>
 #include "atmega128.h"
 
 /***************************/
@@ -77,7 +89,64 @@ Atmega128Usart1_TypeDef* usart1_handle(void);
 // Watchdog Timer (WDT)
 Atmega128WatchdogTimer_TypeDef* wdt_handle(void);
 
+/*** Atmega 128 Procedure and Function ***/
+uint16_t readhlbyte(HighLowByte reg);
+uint16_t readlhbyte(HighLowByte reg);
+HighLowByte writehlbyte(uint16_t val);
+HighLowByte writelhbyte(uint16_t val);
+uint16_t swapbyte(uint16_t num);
+uint16_t BAUDRATEnormal(uint32_t BAUD);
+uint16_t BAUDRATEdouble(uint32_t BAUD);
+uint16_t BAUDRATEsynchronous(uint32_t BAUD);
+void ClockPrescalerSelect(volatile uint8_t prescaler);
+void MoveInterruptsToBoot(void);
+
 #endif
+
+/*** Interrupt List ***/
+// ISR(RESET_vect){}
+// ISR(EXT_INT0_vect){}
+// ISR(EXT_INT1_vect){}
+// ISR(EXT_INT2_vect){}
+// ISR(EXT_INT3_vect){}
+// ISR(EXT_INT4_vect){}
+// ISR(EXT_INT5_vect){}
+// ISR(EXT_INT6_vect){}
+// ISR(EXT_INT7_vect){}
+// ISR(SPI_STC_vect){}
+// ISR(USART0_RXC_vect){}
+// ISR(USART0_DRE_vect){}
+// ISR(USART0_TXC_vect){}
+// ISR(ADC_vect){}
+// ISR(EE_RDY_vect){}
+// ISR(ANA_COMP_vect){}
+// ISR(USART1_RXC_vect){}
+// ISR(USART1_DRE_vect){}
+// ISR(USART1_TXC_vect){}
+// ISR(TWI_vect){}
+// ISR(SPM_RDY_vect){}
+// ISR(INT0_vect){ }
+// ISR(INT1_vect){ }
+// ISR(INT2_vect){ }
+// ISR(INT3_vect){ }
+// ISR(INT4_vect){ }
+// ISR(INT5_vect){ }
+// ISR(INT6_vect){ }
+// ISR(INT7_vect){ }
+// ISR(TIMER0_COMP_vect){};
+// ISR(TIMER0_OVF_vect){};
+// ISR(TIMER1_CAPT_vect){};
+// ISR(TIMER1_COMPA_vect){};
+// ISR(TIMER1_COMPB_vect){};
+// ISR(TIMER1_COMPC_vect){};
+// ISR(TIMER1_OVF_vect){};
+// ISR(TIMER2_COMP_vect){};
+// ISR(TIMER2_OVF_vect){};
+// ISR(TIMER3_CAPT_vect){};
+// ISR(TIMER3_COMPA_vect){};
+// ISR(TIMER3_COMPB_vect){};
+// ISR(TIMER3_COMPC_vect){};
+// ISR(TIMER3_OVF_vect){};
 
 /*** EOF ***/
 

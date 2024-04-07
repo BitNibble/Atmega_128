@@ -13,10 +13,6 @@ Comment:
 
 /*** File Variables ***/
 static ATMEGA128 atmega;
-/**********************/
-/*** File Header ***/
-void ClockPrescalerSelect(volatile uint8_t prescaler);
-void MoveInterruptsToBoot(void);
 
 /*** Procedure & Function ***/
 ATMEGA128 atmega128_enable(void){ 
@@ -127,32 +123,6 @@ ATMEGA128 atmega128_enable(void){
 }
 
 ATMEGA128* atmega128(void){ return &atmega; }
-
-/****** System ******/
-void ClockPrescalerSelect(volatile uint8_t prescaler)
-{
-	volatile uint8_t sreg;
-	volatile uint8_t* clkpr = &XDIV;
-	prescaler &= 0x7F;
-	sreg = atmega.cpu_handle->sreg.reg;
-	atmega.cpu_handle->sreg.reg &= ~(1 << 7);
-	
-	*clkpr = prescaler;
-	*clkpr = (1 << XDIVEN) | prescaler;
-	
-	atmega.cpu_handle->sreg.reg = sreg;
-}
-void MoveInterruptsToBoot(void)
-{
-	volatile uint8_t sreg;
-	sreg = atmega.cpu_handle->sreg.reg;
-	atmega.cpu_handle->sreg.reg &= ~(1 << 7);
-	
-	MCUCR = (1<<IVCE);
-	MCUCR = (1<<IVSEL);
-	
-	atmega.cpu_handle->sreg.reg = sreg;
-}
 
 /***EOF***/
 

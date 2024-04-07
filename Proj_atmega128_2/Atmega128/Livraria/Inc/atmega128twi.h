@@ -12,7 +12,8 @@ Comment:
 	#define _ATMEGA128TWI_H_
 
 /*** Global Library ***/
-#include <inttypes.h>
+#include "atmega128handler.h"
+#include "query.h"
 
 /*** Global Constant & Macro ***/
 #ifndef _TWI_MODULE_
@@ -81,6 +82,8 @@ Comment:
 
 /*** Global Variable ***/
 typedef struct{
+	Atmega128TwoWireSerialInterface_TypeDef* handle;
+	// prototype pointers
 	void (*start)(void);
 	void (*connect)(uint8_t address, uint8_t rw);
 	void (*master_write)(uint8_t var_twiData_u8);

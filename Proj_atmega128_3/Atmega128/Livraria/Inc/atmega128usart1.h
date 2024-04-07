@@ -12,7 +12,7 @@ Comment:
 	#define _ATMEGA128USART1_H_
 
 /*** Global Library ***/
-#include <inttypes.h>
+#include "atmega128handler.h"
 #include "query.h"
 
 /*** Global Constant & Macro ***/

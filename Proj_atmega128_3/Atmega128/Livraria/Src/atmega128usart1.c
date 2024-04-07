@@ -11,9 +11,6 @@ Comment:
 /*** File Library ***/
 #include "atmega128usart1.h"
 #include "buffer.h"
-#include <string.h>
-#include <util/delay.h>
-#include <math.h>
 
 /*** File Variable ***/
 static USART1 atmega128_usart1;
@@ -208,10 +205,10 @@ char* usart1_messageprint(USART1* uart, char* oneshot, char* msg, const char* en
 	ptr = uart->gets();
 	length = strlen(ptr);
 	if(length >= endlength){
-		if( !strcmp( &ptr[length-endlength], endl ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart1flag = 0xFF; }
+		if( !strcmp( ptr+(length-endlength), endl ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart1flag = 0xFF; }
 		// default
-		else if( !strcmp( &ptr[length-endlength], "\r" ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart1flag = 0xFF; }
-		else if( !strcmp( &ptr[length-endlength], "\n" ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart1flag = 0xFF; }
+		//else if( !strcmp( ptr+(length-endlength), "\r" ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart1flag = 0xFF; }
+		//else if( !strcmp( ptr+(length-endlength), "\n" ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart1flag = 0xFF; }
 	}
 	return ptr;
 }

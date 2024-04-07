@@ -9,7 +9,6 @@ Comment:
    Stable
 *************************************************************************/
 /*** File Library ***/
-#include "atmega128mapping.h"
 #include "atmega128spi.h"
 
 /*** File Variable ***/
@@ -26,89 +25,90 @@ SPI0 spi_enable(uint8_t master_slave_select, uint8_t data_order,  uint8_t data_m
 {
 	// ATMEGA128enable();
 	
+	atmega128_spi.handle = spi_handle();
 	atmega128_spi.transfer_sync = spi_transfer_sync;
 	atmega128_spi.transmit_sync = spi_transmit_sync;
 	atmega128_spi.fast_shift = spi_fast_shift;
 	
-	atmega128()->portb_handle->ddr.reg &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
+	portb_handle()->ddr.reg &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
 	switch(master_slave_select){
 		case SPI_MASTER_MODE:
-			atmega128()->spi_handle->spcr.reg |= (1 << MSTR);
-			atmega128()->portb_handle->ddr.reg |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
-			atmega128()->portb_handle->port.reg |= (1 << DD_SS);
+			spi_handle()->spcr.reg |= (1 << MSTR);
+			portb_handle()->ddr.reg |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
+			portb_handle()->port.reg |= (1 << DD_SS);
 		break;
 		case SPI_SLAVE_MODE:
-			atmega128()->spi_handle->spcr.reg |= (1 << MSTR);
-			atmega128()->portb_handle->ddr.reg |= (1 << DD_MISO);
+			spi_handle()->spcr.reg |= (1 << MSTR);
+			portb_handle()->ddr.reg |= (1 << DD_MISO);
 		break;
 		default:
-			atmega128()->spi_handle->spcr.reg |= (1 << MSTR);
-			atmega128()->portb_handle->ddr.reg |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
+			spi_handle()->spcr.reg |= (1 << MSTR);
+			portb_handle()->ddr.reg |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
 		break;
 	}
 	switch(data_order){
 		case SPI_LSB_DATA_ORDER:
-			atmega128()->spi_handle->spcr.reg |= (1 << DORD);
+			spi_handle()->spcr.reg |= (1 << DORD);
 		break;
 		case SPI_MSB_DATA_ORDER:
-			atmega128()->spi_handle->spcr.reg &= ~(1 << DORD);
+			spi_handle()->spcr.reg &= ~(1 << DORD);
 		break;
 		default:
-			atmega128()->spi_handle->spcr.reg &= ~(1 << DORD);
+			spi_handle()->spcr.reg &= ~(1 << DORD);
 		break;
 	}
 	switch(data_modes){
 		case 0:
-			atmega128()->spi_handle->spcr.reg &= ~((1 << CPOL) | (1 << CPHA));
+			spi_handle()->spcr.reg &= ~((1 << CPOL) | (1 << CPHA));
 		break;
 		case 1:
-			atmega128()->spi_handle->spcr.reg |= (1 << CPHA);
+			spi_handle()->spcr.reg |= (1 << CPHA);
 		break;
 		case 2:
-			atmega128()->spi_handle->spcr.reg |= (1 << CPOL);
+			spi_handle()->spcr.reg |= (1 << CPOL);
 		break;
 		case 3:
-			atmega128()->spi_handle->spcr.reg |= (1 << CPOL) | (1 << CPHA);
+			spi_handle()->spcr.reg |= (1 << CPOL) | (1 << CPHA);
 		break;
 		default:
-			atmega128()->spi_handle->spcr.reg &= ~((1 << CPOL) | (1 << CPHA));
+			spi_handle()->spcr.reg &= ~((1 << CPOL) | (1 << CPHA));
 		break;
 	}
 	switch(prescaler){
 		case 2:
-			atmega128()->spi_handle->spsr.reg |= (1 << SPI2X);
-			atmega128()->spi_handle->spcr.reg &= ~((1 << SPR1) | (1 << SPR0));
+			spi_handle()->spsr.reg |= (1 << SPI2X);
+			spi_handle()->spcr.reg &= ~((1 << SPR1) | (1 << SPR0));
 		break;
 		case 4:
-			atmega128()->spi_handle->spsr.reg &= ~(1 << SPI2X);
-			atmega128()->spi_handle->spcr.reg &= ~((1 << SPR1) | (1 << SPR0));
+			spi_handle()->spsr.reg &= ~(1 << SPI2X);
+			spi_handle()->spcr.reg &= ~((1 << SPR1) | (1 << SPR0));
 		break;
 		case 8:
-			atmega128()->spi_handle->spsr.reg |= (1 << SPI2X);
-			atmega128()->spi_handle->spcr.reg |= (1 << SPR0);
+			spi_handle()->spsr.reg |= (1 << SPI2X);
+			spi_handle()->spcr.reg |= (1 << SPR0);
 		break;
 		case 16:
-			atmega128()->spi_handle->spsr.reg &= ~(1 << SPI2X);
-			atmega128()->spi_handle->spcr.reg |= (1 << SPR0);
+			spi_handle()->spsr.reg &= ~(1 << SPI2X);
+			spi_handle()->spcr.reg |= (1 << SPR0);
 		break;
 		case 32:
-			atmega128()->spi_handle->spsr.reg |= (1 << SPI2X);
-			atmega128()->spi_handle->spcr.reg |= (1 << SPR1);
+			spi_handle()->spsr.reg |= (1 << SPI2X);
+			spi_handle()->spcr.reg |= (1 << SPR1);
 		break;
 		case 64:
-			atmega128()->spi_handle->spsr.reg &= ~(1 << SPI2X);
-			atmega128()->spi_handle->spcr.reg |= (1 << SPR1);
+			spi_handle()->spsr.reg &= ~(1 << SPI2X);
+			spi_handle()->spcr.reg |= (1 << SPR1);
 		break;
 		case 128:
-			atmega128()->spi_handle->spsr.reg &= (1 << SPI2X);
-			atmega128()->spi_handle->spcr.reg |= (1 << SPR1) | (1 << SPR0);
+			spi_handle()->spsr.reg &= (1 << SPI2X);
+			spi_handle()->spcr.reg |= (1 << SPR1) | (1 << SPR0);
 		break;
 		default:
-			atmega128()->spi_handle->spsr.reg |= (1 << SPI2X);
-			atmega128()->spi_handle->spcr.reg |= (1 << SPR0);
+			spi_handle()->spsr.reg |= (1 << SPI2X);
+			spi_handle()->spcr.reg |= (1 << SPR0);
 		break;
 	}
-	atmega128()->spi_handle->spcr.reg |= (1 << SPE);
+	spi_handle()->spcr.reg |= (1 << SPE);
 	
 	return atmega128_spi;
 }
@@ -118,26 +118,26 @@ SPI0* spi(void){ return &atmega128_spi; }
 void spi_default()
 // Initialize pins for spi communication
 {
-	atmega128()->portb_handle->ddr.reg &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
+	portb_handle()->ddr.reg &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
 	// Define the following pins as output
-	atmega128()->portb_handle->ddr.reg |= ((1 << DD_MOSI) | (1 << DD_SS) | (1 << DD_SCK)); 
-	atmega128()->spi_handle->spcr.reg	=	((1 << SPE) |				// SPI Enable
+	portb_handle()->ddr.reg |= ((1 << DD_MOSI) | (1 << DD_SS) | (1 << DD_SCK)); 
+	spi_handle()->spcr.reg	=	((1 << SPE) |				// SPI Enable
 						(0 << SPIE) |				// SPI Interrupt Enable
 						(0 << DORD) |				// Data Order (0:MSB first / 1:LSB first)
 						(1 << MSTR) |				// Master/Slave select   
 						(0 << SPR1) | (1 << SPR0) |	// SPI Clock Rate
 						(0 << CPOL) |				// Clock Polarity (0:SCK low / 1:SCK hi when idle)
 						(0 << CPHA));				// Clock Phase (0:leading / 1:trailing edge sampling)
-    atmega128()->spi_handle->spsr.reg	=	(1 << SPI2X);				// Double Clock Rate  
+    spi_handle()->spsr.reg	=	(1 << SPI2X);				// Double Clock Rate  
 }
 void spi_transfer_sync (uint8_t * dataout, uint8_t * datain, uint8_t len)
 // Shift full array through target device
 {
 	uint8_t i;      
 	for (i = 0; i < len; i++) {
-		atmega128()->spi_handle->spdr.reg = dataout[i];
-		while((atmega128()->spi_handle->spsr.reg & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
-		datain[i] = atmega128()->spi_handle->spdr.reg;
+		spi_handle()->spdr.reg = dataout[i];
+		while((spi_handle()->spsr.reg & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
+		datain[i] = spi_handle()->spdr.reg;
 	}
 }
 void spi_transmit_sync (uint8_t * dataout, uint8_t len)
@@ -145,16 +145,16 @@ void spi_transmit_sync (uint8_t * dataout, uint8_t len)
 {
 	uint8_t i;
 	for (i = 0; i < len; i++) {
-		atmega128()->spi_handle->spdr.reg = dataout[i];
-		while((atmega128()->spi_handle->spsr.reg & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
+		spi_handle()->spdr.reg = dataout[i];
+		while((spi_handle()->spsr.reg & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
 	}
 }
 uint8_t spi_fast_shift (uint8_t data)
 // Clocks only one byte to target device and returns the received one
 {
-	atmega128()->spi_handle->spdr.reg = data;
-	while((atmega128()->spi_handle->spsr.reg & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
-	return atmega128()->spi_handle->spdr.reg;
+	spi_handle()->spdr.reg = data;
+	while((spi_handle()->spsr.reg & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
+	return spi_handle()->spdr.reg;
 }
 
 /***EOF***/

@@ -97,7 +97,7 @@ long mapping = 0;
 signal = 0;
 counter1 = 0;
 char* ATmsg = NULL;
-char uartmsg[UART1_RX_BUFFER_SIZE]; // Oneshot
+char uartmsg[UART1_RX_BUFFER_SIZE]; // One shot
 char uartmsgprint[UART1_RX_BUFFER_SIZE]; // triggered
 uint32_t number1 = 0;
 uint8_t tnum = 170;
@@ -122,7 +122,7 @@ while(TRUE){
 	lcd0()->reboot();
 	keypad()->read();
 		
-	uartreceive = usart1_messageprint( atmega128()->usart1, uartmsg, uartmsgprint, "\n");
+	uartreceive = usart1_messageprint( atmega128()->usart1, uartmsg, uartmsgprint, "\r\n");
 	// RTC
 	tm=rtc.GetTime();
 	dt=rtc.GetDate();
@@ -568,7 +568,7 @@ void PORTINIT(void)
 	atmega128()->portf_handle->ddr.reg = 0x00;
 	atmega128()->portf_handle->port.reg = 0x0F;
 	// OUTPUT
-	atmega128()->portb_handle->ddr.reg |= (1<<5) | (1<<6) | (1<<7);
+	portb_handle()->ddr.reg |= (1<<5) | (1<<6) | (1<<7);
 	// OUTPUT PULLUP
 	atmega128()->portc_handle->ddr.reg = 0xFF;
 	atmega128()->portc_handle->port.reg = 0x00;
@@ -578,8 +578,8 @@ void PORTINIT(void)
 ISR(TIMER0_COMP_vect) // 1Hz and usart Tx
 {
 	uint8_t Sreg;
-	Sreg = atmega128()->cpu_handle->sreg.reg;
-	atmega128()->cpu_handle->sreg.par.I = 1;
+	Sreg = cpu_handle()->sreg.reg;
+	cpu_handle()->sreg.par.I = 1;
 	if(count>59){ //59 -> 1Hz
 		increment++;
 		if((increment & 0x0F) < 8){
@@ -592,14 +592,14 @@ ISR(TIMER0_COMP_vect) // 1Hz and usart Tx
 		count=0;
 	}else
 		count++;
-	atmega128()->cpu_handle->sreg.reg = Sreg;
+	cpu_handle()->sreg.reg = Sreg;
 }
 
 ISR(TIMER2_COMP_vect)
 {
 	uint8_t Sreg;
-	Sreg = atmega128()->cpu_handle->sreg.reg;
-	atmega128()->cpu_handle->sreg.par.I = 1;
+	Sreg = cpu_handle()->sreg.reg;
+	cpu_handle()->sreg.par.I = 1;
 	
 	if(counter1 > 1000){
 		// signal = 1;
@@ -607,7 +607,7 @@ ISR(TIMER2_COMP_vect)
 	}
 	counter1++;
 	
-	atmega128()->cpu_handle->sreg.reg = Sreg;
+	cpu_handle()->sreg.reg = Sreg;
 }
 
 /***EOF***/

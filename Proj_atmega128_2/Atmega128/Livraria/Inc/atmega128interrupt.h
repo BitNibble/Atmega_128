@@ -12,7 +12,8 @@ Comment:
 	#define _ATMEGA128INTERRUPT_H_
 
 /*** Global Library ***/
-#include <inttypes.h>
+#include "atmega128handler.h"
+#include "query.h"
 
 /*** Global Constant & Macro ***/
 #if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)
@@ -25,6 +26,8 @@ Comment:
 
 /*** Global Variable ***/
 typedef struct{
+	Atmega128ExternalInterrupts_TypeDef* handle;
+	// prototype pointers
 	void (*set)(uint8_t channel, uint8_t sense);
 	void (*off)(uint8_t channel);
 	void (*on)(uint8_t channel);

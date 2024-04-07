@@ -13,7 +13,8 @@ Comment:
 	#define _ATMEGA128TIMER1_H_
 
 /*** Global Library ***/
-#include <inttypes.h>
+#include "atmega128handler.h"
+#include "query.h"
 
 /*** Constant & Macro ***/
 #ifndef ATMEGA_128_TIMER_COUNTER

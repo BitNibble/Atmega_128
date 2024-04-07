@@ -1399,7 +1399,5 @@ typedef struct { // IVSEL = 0
 
 /***
 MASK FLAG CONTROL STATUS
-***
-Pointer only work if pointing at something that exists.
 ***/
 

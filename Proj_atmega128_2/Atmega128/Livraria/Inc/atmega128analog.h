@@ -12,7 +12,7 @@ Comment:
 	#define _ATMEGA128ANALOG_H_
 
 /*** Global Library ***/
-#include <inttypes.h>
+#include "atmega128handler.h"
 #include "query.h"
 
 /*** Global Constant & Macro ***/
@@ -38,6 +38,7 @@ typedef struct{
 typedef struct{
 	analogparameter par;
 	Atmega128AnalogToDigitalConverter_TypeDef* handle;
+	// prototype pointers
 	int (*read)(int selection);
 }ADC0;
 

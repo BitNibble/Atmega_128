@@ -10,11 +10,9 @@ Comment:
 *************************************************************************/
 /*** File Library ***/
 #include "atmega128analog.h"
-#include <stdarg.h>
 
 /*** File Variable ***/
 static ADC0 atmega128_adc;
-static Atmega128AnalogToDigitalConverter_TypeDef* atmega128_adc_handle;
 
 static volatile int ADC_VALUE[MAX_CHANNEL];
 static volatile int ADC_CHANNEL_GAIN[MAX_CHANNEL];
@@ -32,7 +30,6 @@ ADC0 adc_enable( uint8_t Vreff, uint8_t Divfactor, int n_channel, ... )
 // Interrupt running mode setup, and list of channels to be probed
 {
 	// ATMEGA128enable();
-	atmega128_adc_handle = (Atmega128AnalogToDigitalConverter_TypeDef*) Atmega128AnalogToDigitalConverter_Address;
 
 	// LOCAL VARIABLES
 	va_list list;
@@ -42,20 +39,20 @@ ADC0 adc_enable( uint8_t Vreff, uint8_t Divfactor, int n_channel, ... )
 	ADC_SELECTOR = 0;
 	adc_n_sample = 0;
 	
-	//atmega128_adc_handle->admux.reg &= ~(3 << REFS0);
-	atmega128_adc_handle->admux.par.refs = 0;
+	//adc_handle()->admux.reg &= ~(3 << REFS0);
+	adc_handle()->admux.par.refs = 0;
 	switch( Vreff ){
 		case 0:
 			atmega128_adc.par.VREFF = 0;
 		break;
 		case 1:
-			//atmega128_adc_handle->admux.reg |= (1 << REFS0);
-			atmega128_adc_handle->admux.par.refs = 1;
+			//adc_handle()->admux.reg |= (1 << REFS0);
+			adc_handle()->admux.par.refs = 1;
 			atmega128_adc.par.VREFF = 1;
 		break;
 		case 3:
-			//atmega128_adc_handle->admux.reg |= (3 << REFS0);
-			atmega128_adc_handle->admux.par.refs = 3;
+			//adc_handle()->admux.reg |= (3 << REFS0);
+			adc_handle()->admux.par.refs = 3;
 			atmega128_adc.par.VREFF = 3;
 		break;
 		default:
@@ -63,8 +60,8 @@ ADC0 adc_enable( uint8_t Vreff, uint8_t Divfactor, int n_channel, ... )
 		break;
 	}
 		
-	//atmega128_adc_handle->admux.reg &= ~(1 << ADLAR);
-	atmega128_adc_handle->admux.par.adlar = 0;
+	//adc_handle()->admux.reg &= ~(1 << ADLAR);
+	adc_handle()->admux.par.adlar = 0;
 	// atmega128.adc->admux |= (1 << ADLAR);
 	
 	va_start(list, n_channel);
@@ -73,67 +70,67 @@ ADC0 adc_enable( uint8_t Vreff, uint8_t Divfactor, int n_channel, ... )
 	}
 	va_end(list);
 	
-	//atmega128_adc_handle->admux.reg &= ~MUX_MASK;
-	atmega128_adc_handle->admux.par.mux = 0;
-	//atmega128_adc_handle->admux.reg |= (MUX_MASK & ADC_CHANNEL_GAIN[ADC_SELECTOR]);
-	atmega128_adc_handle->admux.par.mux = ADC_CHANNEL_GAIN[ADC_SELECTOR] & MUX_MASK;
+	//adc_handle()->admux.reg &= ~MUX_MASK;
+	adc_handle()->admux.par.mux = 0;
+	//adc_handle()->admux.reg |= (MUX_MASK & ADC_CHANNEL_GAIN[ADC_SELECTOR]);
+	adc_handle()->admux.par.mux = ADC_CHANNEL_GAIN[ADC_SELECTOR] & MUX_MASK;
 	
-	//atmega128_adc_handle->adcsra.reg |= (1 << ADSC);
-	atmega128_adc_handle->adcsra.par.adsc = 1;
-	//atmega128_adc_handle->adcsra.reg &= ~(1 << ADFR);
-	atmega128_adc_handle->adcsra.par.adfr = 0;
-	//atmega128_adc_handle->adcsra.reg |= (1 << ADIE);
-	atmega128_adc_handle->adcsra.par.adie = 1;
-	//atmega128_adc_handle->adcsra.reg &= ~(7 << ADPS0);
-	atmega128_adc_handle->adcsra.par.adps = 0;
+	//adc_handle()->adcsra.reg |= (1 << ADSC);
+	adc_handle()->adcsra.par.adsc = 1;
+	//adc_handle()->adcsra.reg &= ~(1 << ADFR);
+	adc_handle()->adcsra.par.adfr = 0;
+	//adc_handle()->adcsra.reg |= (1 << ADIE);
+	adc_handle()->adcsra.par.adie = 1;
+	//adc_handle()->adcsra.reg &= ~(7 << ADPS0);
+	adc_handle()->adcsra.par.adps = 0;
 	
 	switch( Divfactor ){
 		case 2: // 1
-			//atmega128_adc_handle->adcsra.reg |= (1 << ADPS0);
-			atmega128_adc_handle->adcsra.par.adps = 1;
+			//adc_handle()->adcsra.reg |= (1 << ADPS0);
+			adc_handle()->adcsra.par.adps = 1;
 			atmega128_adc.par.DIVISION_FACTOR = 2;
 		break;
 		case 4: // 2
-			//atmega128_adc_handle->adcsra.reg |= (1 << ADPS1);
-			atmega128_adc_handle->adcsra.par.adps = 2;
+			//adc_handle()->adcsra.reg |= (1 << ADPS1);
+			adc_handle()->adcsra.par.adps = 2;
 			atmega128_adc.par.DIVISION_FACTOR = 4;
 		break;
 		case 8: // 3
-			//atmega128_adc_handle->adcsra.reg |= (3 << ADPS0);
-			atmega128_adc_handle->adcsra.par.adps = 3;
+			//adc_handle()->adcsra.reg |= (3 << ADPS0);
+			adc_handle()->adcsra.par.adps = 3;
 			atmega128_adc.par.DIVISION_FACTOR = 8;
 		break;
 		case 16: // 4
-			//atmega128_adc_handle->adcsra.reg |= (1 << ADPS2);
-			atmega128_adc_handle->adcsra.par.adps = 4;
+			//adc_handle()->adcsra.reg |= (1 << ADPS2);
+			adc_handle()->adcsra.par.adps = 4;
 			atmega128_adc.par.DIVISION_FACTOR = 16;
 		break;
 		case 32: // 5
-			//atmega128_adc_handle->adcsra.reg |= (5 << ADPS0);
-			atmega128_adc_handle->adcsra.par.adps = 5;
+			//adc_handle()->adcsra.reg |= (5 << ADPS0);
+			adc_handle()->adcsra.par.adps = 5;
 			atmega128_adc.par.DIVISION_FACTOR = 32;
 		break;
 		case 64: // 6
-			//atmega128_adc_handle->adcsra.reg |= (6 << ADPS0);
-			atmega128_adc_handle->adcsra.par.adps = 6;
+			//adc_handle()->adcsra.reg |= (6 << ADPS0);
+			adc_handle()->adcsra.par.adps = 6;
 			atmega128_adc.par.DIVISION_FACTOR = 64;
 		break;
 		case 128: // 7
-			//atmega128_adc_handle->adcsra.reg |= (7 << ADPS0);
-			atmega128_adc_handle->adcsra.par.adps = 7;
+			//adc_handle()->adcsra.reg |= (7 << ADPS0);
+			adc_handle()->adcsra.par.adps = 7;
 			atmega128_adc.par.DIVISION_FACTOR = 128;
 		break;
 		default:
-			//atmega128_adc_handle->adcsra.reg |= (7 << ADPS0);
-			atmega128_adc_handle->adcsra.par.adps = 7;
+			//adc_handle()->adcsra.reg |= (7 << ADPS0);
+			adc_handle()->adcsra.par.adps = 7;
 			atmega128_adc.par.DIVISION_FACTOR = 128;
 		break;
 	}
 	
-	//atmega128_adc_handle->adcsra.reg |= (1 << ADEN);
-	atmega128_adc_handle->adcsra.par.aden = 1;
+	//adc_handle()->adcsra.reg |= (1 << ADEN);
+	adc_handle()->adcsra.par.aden = 1;
 	
-	atmega128_adc.handle = (Atmega128AnalogToDigitalConverter_TypeDef*) Atmega128AnalogToDigitalConverter_Address;
+	atmega128_adc.handle = adc_handle();
 	atmega128_adc.read = ANALOG_read;
 	cpu_handle()->sreg.reg |= (1 << GLOBAL_INTERRUPT_ENABLE);
 	
@@ -147,11 +144,11 @@ int ANALOG_read(int selection)
 {
 	//uint8_t ADSC_FLAG;
 	//ADSC_FLAG = (1 << ADSC);
-	//if( !(atmega128_adc_handle->adcsra.reg & ADSC_FLAG) ){
-	if( !atmega128_adc_handle->adcsra.par.adsc ){
+	//if( !(adc_handle()->adcsra.reg & ADSC_FLAG) ){
+	if( !adc_handle()->adcsra.par.adsc ){
 		// ADC_SELECT
-		//atmega128_adc_handle->adcsra.reg |= (1 << ADSC);
-		atmega128_adc_handle->adcsra.par.adsc = 1;
+		//adc_handle()->adcsra.reg |= (1 << ADSC);
+		adc_handle()->adcsra.par.adsc = 1;
 	}	
 	return ADC_VALUE[selection];
 }
@@ -164,7 +161,7 @@ ISR(ADC_vect)
 	// adc_tmp = atmega128.adc->adc.L; // ADCL
 	// adc_tmp |= (atmega128.adc->adc.H << 8); // (ADCH << 8);
 	// adc_tmp = *((uint16_t*)&m.adc->adc); // more then one way to skin a rabbit.
-	adc_tmp = readhlbyte(atmega128_adc_handle->adc);
+	adc_tmp = readhlbyte(adc_handle()->adc);
 	if(adc_n_sample < (1 << ADC_NUMBER_SAMPLE)){
 		adc_n_sample++;
 		adc_sample += adc_tmp;
@@ -176,10 +173,10 @@ ISR(ADC_vect)
 			ADC_SELECTOR++;
 		else
 			ADC_SELECTOR = 0;
-		//atmega128_adc_handle->admux.reg &= ~MUX_MASK;
-		atmega128_adc_handle->admux.par.mux = 0;
-		//atmega128_adc_handle->admux.reg |= (ADC_CHANNEL_GAIN[ADC_SELECTOR] & MUX_MASK);
-		atmega128_adc_handle->admux.par.mux = ADC_CHANNEL_GAIN[ADC_SELECTOR] & MUX_MASK;
+		//adc_handle()->admux.reg &= ~MUX_MASK;
+		adc_handle()->admux.par.mux = 0;
+		//adc_handle()->admux.reg |= (ADC_CHANNEL_GAIN[ADC_SELECTOR] & MUX_MASK);
+		adc_handle()->admux.par.mux = ADC_CHANNEL_GAIN[ADC_SELECTOR] & MUX_MASK;
 	}
 }
 
