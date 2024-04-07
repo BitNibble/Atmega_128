@@ -10,26 +10,6 @@ Comment:
 **********************************************************/
 #include "query.h"
 
-/*** Procedure & Function Handler***/
-Atmega128GPWR_TypeDef* gpwr_handle(void)
-{
-	return (Atmega128GPWR_TypeDef*) Atmega128GPWR_Address;
-}
-Atmega128CPURegister_TypeDef* cpu_handle(void)
-{
-	return (Atmega128CPURegister_TypeDef*) Atmega128CPURegister_Address;
-}
-Atmega128Usart0_TypeDef* usart0_handle(void)
-{
-	return (Atmega128Usart0_TypeDef*) Atmega128Usart0_Address;
-}
-Atmega128Usart1_TypeDef* usart1_handle(void)
-{
-	return (Atmega128Usart1_TypeDef*) Atmega128Usart1_Address;
-}
-Atmega128AnalogToDigitalConverter_TypeDef* adc_handle(){
-	return (Atmega128AnalogToDigitalConverter_TypeDef*) Atmega128AnalogToDigitalConverter_Address;
-}
 /*** Procedure & Function ToolSet ***/
 uint8_t getreg(uint8_t reg, uint8_t size_block, uint8_t bit_n)
 {
@@ -118,4 +98,5 @@ uint16_t BAUDRATEsynchronous(uint32_t BAUD)
 }
 
 /*** EOF ***/
+
 

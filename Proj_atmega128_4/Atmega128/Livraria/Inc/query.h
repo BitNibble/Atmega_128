@@ -25,7 +25,7 @@ Comment:
 #include <string.h>
 #include <math.h>
 
-#include "atmega128.h"
+#include "atmega128handler.h"
 
 #ifndef DATA_SIZE
 	#define DATA_SIZE 8
@@ -34,12 +34,6 @@ Comment:
 	#define DATA_BITS 7
 #endif
 
-/*** Procedure and Function Handler ***/
-Atmega128GPWR_TypeDef* gpwr_handle(void);
-Atmega128CPURegister_TypeDef* cpu_handle(void);
-Atmega128Usart0_TypeDef* usart0_handle(void);
-Atmega128Usart1_TypeDef* usart1_handle(void);
-Atmega128AnalogToDigitalConverter_TypeDef* adc_handle(void);
 /*** Procedure and Function ToolSet ***/
 uint8_t getreg(uint8_t reg, uint8_t size_block, uint8_t bit_n);
 void setreg(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);

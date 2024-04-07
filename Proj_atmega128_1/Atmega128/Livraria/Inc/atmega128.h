@@ -68,36 +68,36 @@ typedef union {
 /*** MAIN HARDWARE LAYER ***/
 /***************************/
 // GPWR
-typedef struct {
-	volatile uint8_t r0; // 0x00
-	volatile uint8_t r1; // 0x01
-	volatile uint8_t r2; // 0x02
-	volatile uint8_t r3; // 0x03
-	volatile uint8_t r4; // 0x04
-	volatile uint8_t r5; // 0x05
-	volatile uint8_t r6; // 0x06
-	volatile uint8_t r7; // 0x07
-	volatile uint8_t r8; // 0x08
-	volatile uint8_t r9; // 0x09
-	volatile uint8_t r10; // 0x0A
-	volatile uint8_t r11; // 0x0B
-	volatile uint8_t r12; // 0x0C
-	volatile uint8_t r13; // 0x0D
-	volatile uint8_t r14; // 0x0E
-	volatile uint8_t r15; // 0x0F
-	volatile uint8_t r16; // 0x10
-	volatile uint8_t r17; // 0x11
-	volatile uint8_t r18; // 0x12
-	volatile uint8_t r19; // 0x13
-	volatile uint8_t r20; // 0x14
-	volatile uint8_t r21; // 0x15
-	volatile uint8_t r22; // 0x16
-	volatile uint8_t r23; // 0x17
-	volatile uint8_t r24; // 0x18
-	volatile uint8_t r25; // 0x19
-	volatile HighLowByte X; // 0x1A 0x1B
-	volatile HighLowByte Y; // 0x1C 0x1D
-	volatile HighLowByte Z; // 0x1E 0x1F
+typedef volatile struct {
+	uint8_t r0; // 0x00
+	uint8_t r1; // 0x01
+	uint8_t r2; // 0x02
+	uint8_t r3; // 0x03
+	uint8_t r4; // 0x04
+	uint8_t r5; // 0x05
+	uint8_t r6; // 0x06
+	uint8_t r7; // 0x07
+	uint8_t r8; // 0x08
+	uint8_t r9; // 0x09
+	uint8_t r10; // 0x0A
+	uint8_t r11; // 0x0B
+	uint8_t r12; // 0x0C
+	uint8_t r13; // 0x0D
+	uint8_t r14; // 0x0E
+	uint8_t r15; // 0x0F
+	uint8_t r16; // 0x10
+	uint8_t r17; // 0x11
+	uint8_t r18; // 0x12
+	uint8_t r19; // 0x13
+	uint8_t r20; // 0x14
+	uint8_t r21; // 0x15
+	uint8_t r22; // 0x16
+	uint8_t r23; // 0x17
+	uint8_t r24; // 0x18
+	uint8_t r25; // 0x19
+	HighLowByte X; // 0x1A 0x1B
+	HighLowByte Y; // 0x1C 0x1D
+	HighLowByte Z; // 0x1E 0x1F
 } Atmega128GPWR_TypeDef;
 
 // Analog Comparator (AC)
