@@ -1395,9 +1395,11 @@ typedef struct { // IVSEL = 0
 
 #endif
 
-/***EOF***/
-
 /***
 MASK FLAG CONTROL STATUS
 ***/
+
+/*** EOF ***/
+
+
 
