@@ -143,21 +143,21 @@ typedef struct {
 	#endif
 	#ifdef _TIMER1_MODULE_
 		Atmega128TimerCounter1_TypeDef* tc1_handle;
-		Atmega128OtherRegisters_TypeDef* tc1_misc;
+		Atmega128OtherRegisters_TypeDef* tc1_misc_handle;
 		TC1 (*tc1_enable)( unsigned char wavegenmode, unsigned char interrupt );
 		TC1* tc1;
 	#else
 		Atmega128TimerCounter1_TypeDef* tc1_handle;
-		Atmega128OtherRegisters_TypeDef* tc1_misc;
+		Atmega128OtherRegisters_TypeDef* tc1_misc_handle;
 	#endif
 	#ifdef _TIMER3_MODULE_
 		Atmega128TimerCounter3_TypeDef* tc3_handle;
-		Atmega128OtherRegisters_TypeDef* tc3_misc;
+		Atmega128OtherRegisters_TypeDef* tc3_misc_handle;
 		TC3 (*tc3_enable)( unsigned char wavegenmode, unsigned char interrupt );
 		TC3* tc3;
 	#else
 		Atmega128TimerCounter3_TypeDef* tc3_handle;
-		Atmega128OtherRegisters_TypeDef* tc3_misc;
+		Atmega128OtherRegisters_TypeDef* tc3_misc_handle;
 	#endif
 	#ifdef _TIMER2_MODULE_
 		Atmega128TimerCounter2_TypeDef* tc2_handle;
@@ -168,12 +168,12 @@ typedef struct {
 	#endif
 	#ifdef _TIMER0_MODULE_
 		Atmega128TimerCounter0_TypeDef* tc0_handle;
-		Atmega128OtherRegisters_TypeDef* tc0_misc;
+		Atmega128OtherRegisters_TypeDef* tc0_misc_handle;
 		TC0 (*tc0_enable)( unsigned char wavegenmode, unsigned char interrupt );
 		TC0* tc0;
 	#else
 		Atmega128TimerCounter0_TypeDef* tc0_handle;
-		Atmega128OtherRegisters_TypeDef* tc0_misc;
+		Atmega128OtherRegisters_TypeDef* tc0_misc_handle;
 	#endif
 	#ifdef _TWI_MODULE_
 		Atmega128TwoWireSerialInterface_TypeDef* twi_handle;

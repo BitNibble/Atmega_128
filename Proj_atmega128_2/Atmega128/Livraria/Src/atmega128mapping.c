@@ -12,117 +12,117 @@ Comment:
 #include "atmega128mapping.h"
 
 /*** File Variables ***/
-static ATMEGA128 atmega;
+static ATMEGA128 setup_atmega128;
 
 /*** Procedure & Function ***/
 ATMEGA128 atmega128_enable(void){ 
 	
-	atmega.gpwr_handle = gpwr_handle();
-	atmega.ac_handle = ac_handle();
-	atmega.ac_misc = misc_handle();
+	setup_atmega128.gpwr_handle = gpwr_handle();
+	setup_atmega128.ac_handle = ac_handle();
+	setup_atmega128.ac_misc = misc_handle();
 	#ifdef _ANALOG_MODULE_
-		atmega.adc_handle = adc_handle();
-		atmega.adc_enable = adc_enable;
-		atmega.adc = adc();
+		setup_atmega128.adc_handle = adc_handle();
+		setup_atmega128.adc_enable = adc_enable;
+		setup_atmega128.adc = adc();
 	#else
-		atmega.adc_handle = adc_handle;
+		setup_atmega128.adc_handle = adc_handle;
 	#endif
-	atmega.boot_load_handle = bootload_handle();
-	atmega.cpu_handle = cpu_handle();
+	setup_atmega128.boot_load_handle = bootload_handle();
+	setup_atmega128.cpu_handle = cpu_handle();
 	#ifdef _EEPROM_MODULE_
-		atmega.eeprom_handle = eeprom_handle();
-		atmega.eeprom_enable = eeprom_enable;
-		atmega.eeprom = eeprom();
+		setup_atmega128.eeprom_handle = eeprom_handle();
+		setup_atmega128.eeprom_enable = eeprom_enable;
+		setup_atmega128.eeprom = eeprom();
 	#else
-		atmega.eeprom_handle = eeprom_handle;
+		setup_atmega128.eeprom_handle = eeprom_handle;
 	#endif
 	#ifdef _INTERRUPT_MODULE_
-		atmega.exint_handle = exint_handle();
-		atmega.exint_enable = exint_enable;
-		atmega.exint = exint();
+		setup_atmega128.exint_handle = exint_handle();
+		setup_atmega128.exint_enable = exint_enable;
+		setup_atmega128.exint = exint();
 	#else
-		atmega.exint_handle = exint_handle();
+		setup_atmega128.exint_handle = exint_handle();
 	#endif
-	atmega.porta_handle = porta_handle();
-	atmega.portb_handle = portb_handle();
-	atmega.portc_handle = portc_handle();
-	atmega.portd_handle = portd_handle();
-	atmega.porte_handle = porte_handle();
-	atmega.portf_handle = portf_handle();
-	atmega.portg_handle = portg_handle();
-	atmega.jtag_handle = jtag_handle();
-	atmega.misc_handle = misc_handle();
+	setup_atmega128.porta_handle = porta_handle();
+	setup_atmega128.portb_handle = portb_handle();
+	setup_atmega128.portc_handle = portc_handle();
+	setup_atmega128.portd_handle = portd_handle();
+	setup_atmega128.porte_handle = porte_handle();
+	setup_atmega128.portf_handle = portf_handle();
+	setup_atmega128.portg_handle = portg_handle();
+	setup_atmega128.jtag_handle = jtag_handle();
+	setup_atmega128.misc_handle = misc_handle();
 	#ifdef _SPI_MODULE_
-		atmega.spi_handle = spi_handle();
-		atmega.spi_enable = spi_enable;
-		atmega.spi = spi();
+		setup_atmega128.spi_handle = spi_handle();
+		setup_atmega128.spi_enable = spi_enable;
+		setup_atmega128.spi = spi();
 	#else
-		atmega.spi_handle = spi_handle();
+		setup_atmega128.spi_handle = spi_handle();
 	#endif
 	#ifdef _TIMER1_MODULE_
-		atmega.tc1_handle = tc1_handle();
-		atmega.tc1_misc = misc_handle();
-		atmega.tc1_enable = tc1_enable;
-		atmega.tc1 = tc1();
+		setup_atmega128.tc1_handle = tc1_handle();
+		setup_atmega128.tc1_misc_handle = misc_handle();
+		setup_atmega128.tc1_enable = tc1_enable;
+		setup_atmega128.tc1 = tc1();
 	#else
-		atmega.tc1_handle = tc1_handle();
-		atmega.tc1_misc = misc_handle();
+		setup_atmega128.tc1_handle = tc1_handle();
+		setup_atmega128.tc1_misc_handle = misc_handle();
 	#endif
 	#ifdef _TIMER3_MODULE_
-		atmega.tc3_handle = tc3_handle();
-		atmega.tc3_misc = misc_handle();
-		atmega.tc3_enable = tc3_enable;
-		atmega.tc3 = tc3();
+		setup_atmega128.tc3_handle = tc3_handle();
+		setup_atmega128.tc3_misc_handle = misc_handle();
+		setup_atmega128.tc3_enable = tc3_enable;
+		setup_atmega128.tc3 = tc3();
 	#else
-		atmega.tc3_handle = tc3_handle();
-		atmega.tc3_misc = misc_handle();
+		setup_atmega128.tc3_handle = tc3_handle();
+		setup_atmega128.tc3_misc_handle = misc_handle();
 	#endif
 	#ifdef _TIMER2_MODULE_
-		atmega.tc2_handle = tc2_handle();
-		atmega.tc2_enable = tc2_enable;
-		atmega.tc2 = tc2();
+		setup_atmega128.tc2_handle = tc2_handle();
+		setup_atmega128.tc2_enable = tc2_enable;
+		setup_atmega128.tc2 = tc2();
 	#else
-		atmega.tc2_handle = tc2_handle();
+		setup_atmega128.tc2_handle = tc2_handle();
 	#endif
 	#ifdef _TIMER0_MODULE_
-		atmega.tc0_handle = tc0_handle();
-		atmega.tc0_misc = misc_handle();
-		atmega.tc0_enable = tc0_enable;
-		atmega.tc0 = tc0();
+		setup_atmega128.tc0_handle = tc0_handle();
+		setup_atmega128.tc0_misc_handle = misc_handle();
+		setup_atmega128.tc0_enable = tc0_enable;
+		setup_atmega128.tc0 = tc0();
 	#else
-		atmega.tc0_handle = tc0_handle();
-		atmega.tc0_misc = misc_handle();
+		setup_atmega128.tc0_handle = tc0_handle();
+		setup_atmega128.tc0_misc_handle = misc_handle();
 	#endif
 	#ifdef _TWI_MODULE_
-		atmega.twi_handle = twi_handle();
-		atmega.twi_enable = twi_enable;
-		atmega.twi = twi();
+		setup_atmega128.twi_handle = twi_handle();
+		setup_atmega128.twi_enable = twi_enable;
+		setup_atmega128.twi = twi();
 	#else
-		atmega.twi_handle = twi_handle();
+		setup_atmega128.twi_handle = twi_handle();
 	#endif
 	#ifdef _USART0_MODULE_
-		atmega.usart0_handle = usart0_handle();
-		atmega.usart0_enable = usart0_enable;
-		atmega.usart0 = usart0();
+		setup_atmega128.usart0_handle = usart0_handle();
+		setup_atmega128.usart0_enable = usart0_enable;
+		setup_atmega128.usart0 = usart0();
 	#else
-		atmega.usart0_handle = usart0_handle();
+		setup_atmega128.usart0_handle = usart0_handle();
 	#endif
 	#ifdef _USART1_MODULE_
-		atmega.usart1_handle = usart1_handle();
-		atmega.usart1_enable = usart1_enable;
-		atmega.usart1 = usart1();
+		setup_atmega128.usart1_handle = usart1_handle();
+		setup_atmega128.usart1_enable = usart1_enable;
+		setup_atmega128.usart1 = usart1();
 	#else
-		atmega.usart1_handle = usart1_handle();
+		setup_atmega128.usart1_handle = usart1_handle();
 	#endif
-	atmega.wdt_handle = wdt_handle();
+	setup_atmega128.wdt_handle = wdt_handle();
 	/******/
-	atmega.Clock_Prescaler_Select = ClockPrescalerSelect;
-	atmega.Move_Interrupts_To_Boot = MoveInterruptsToBoot;
+	setup_atmega128.Clock_Prescaler_Select = ClockPrescalerSelect;
+	setup_atmega128.Move_Interrupts_To_Boot = MoveInterruptsToBoot;
 	
-	return atmega;
+	return setup_atmega128;
 }
 
-ATMEGA128* atmega128(void){ return &atmega; }
+ATMEGA128* atmega128(void){ return &setup_atmega128; }
 
 /***EOF***/
 
