@@ -19,7 +19,7 @@ ATMEGA128 atmega128_enable(void){
 	
 	setup_atmega128.gpwr_handle = gpwr_handle();
 	setup_atmega128.ac_handle = ac_handle();
-	setup_atmega128.ac_misc = misc_handle();
+	setup_atmega128.ac_misc_handle = misc_handle();
 	#ifdef _ANALOG_MODULE_
 		setup_atmega128.adc_handle = adc_handle();
 		setup_atmega128.adc_enable = adc_enable;

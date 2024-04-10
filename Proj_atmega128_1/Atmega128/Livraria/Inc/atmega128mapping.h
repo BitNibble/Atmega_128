@@ -101,7 +101,7 @@ typedef struct {
 	
 	Atmega128GPWR_TypeDef* gpwr_handle;
 	Atmega128AnalogComparator_TypeDef* ac_handle;
-	Atmega128OtherRegisters_TypeDef* ac_misc;
+	Atmega128OtherRegisters_TypeDef* ac_misc_handle;
 	#ifdef _ANALOG_MODULE_
 		Atmega128AnalogToDigitalConverter_TypeDef* adc_handle;
 		ADC0 (*adc_enable)( uint8_t Vreff, uint8_t Divfactor, int n_channel, ... );
