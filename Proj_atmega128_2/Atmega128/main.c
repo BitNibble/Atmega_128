@@ -119,8 +119,6 @@ tc2()->start(0);
 // rtc setup pin
 rtc.SetClkOut(1, 2); // oscillate pin at 1 sec
 
-pcf8575.writehbits(&pcf8575.par,65535,1);
-
 // TODO:: Please write your application code
 while(TRUE){
 	// Preamble [INPUT]
