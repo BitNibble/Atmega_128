@@ -30,6 +30,7 @@ Comment:
 #include "function.h"
 #include "lcd.h"
 #include "pcf8563rtc.h"
+#include "pcf8575.h"
 #include "keypad.h"
 #include "74hc595.h"
 #include "hc05atcommands.h"
@@ -49,6 +50,7 @@ struct date dt; // date struct RTC
 
 HC595 shift;
 PCF8563RTC rtc;
+PCF8575 pcf8575;
 
 uint8_t count=0; // 1Hz
 uint8_t increment=0; // 1Hz
@@ -77,8 +79,9 @@ usart1_enable(38400,8,1,NONE); // UART 103 para 9600 (ESP01), 68 para 14400, 25 
 func_enable(); // Function Library
 lcd0_enable(&DDRA,&PINA,&PORTA); // LCD Display 4X20
 keypad_enable(&DDRE,&PINE,&PORTE); // Keyboard
-rtc = pcf8563rtc_enable(16); // RTC with I2C
+rtc = pcf8563rtc_enable( 16 ); // RTC with I2C
 shift = hc595_enable(&DDRG,&PORTG,2,0,1);
+pcf8575 = pcf8575_enable( 33, 16 );
 
 // local var
 char Menu = '1'; // Main menu selector
@@ -115,6 +118,8 @@ tc2()->start(0);
 
 // rtc setup pin
 rtc.SetClkOut(1, 2); // oscillate pin at 1 sec
+
+pcf8575.writehbits(&pcf8575.par,65535,1);
 
 // TODO:: Please write your application code
 while(TRUE){
@@ -208,6 +213,9 @@ while(TRUE){
 		break;
 		// MENU 3
 		case '3': //Set Date
+			pcf8575.writehbits(&pcf8575.par,65535,0);
+
+
 			if(!strcmp(keypad()->data->string,"A")){Menu='2';keypad()->flush();lcd0()->clear();break;}
 			if(!strcmp(keypad()->data->string,"B")){Menu='4';keypad()->flush();lcd0()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd0()->clear();usart1()->puts("Date exit\r\n");break;}
@@ -290,6 +298,9 @@ while(TRUE){
 		break;
 		// MENU 4
 		case '4': //Set Time
+			pcf8575.writehbits(&pcf8575.par,65535,1);
+
+		
 			if(!strcmp(keypad()->data->string,"A")){Menu='3';keypad()->flush();lcd0()->clear();break;}
 			if(!strcmp(keypad()->data->string,"B")){Menu='5';keypad()->flush();lcd0()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd0()->clear();usart1()->puts("Time exit\r\n");break;}
@@ -610,8 +621,6 @@ ISR(TIMER2_COMP_vect)
 	cpu_handle()->sreg.reg = Sreg;
 }
 
-/***EOF***/
-
 /**************************** Comment: ******************************
 1º Sequence
 2º Scope
@@ -624,4 +633,6 @@ ISR(TIMER2_COMP_vect)
 A/(b*c*d*e*f) = A/b/c/d/e/f
 functions should never return to one of its own parameters, it leads to zero.
 ********************************************************************/
+
+/***EOF***/
 
