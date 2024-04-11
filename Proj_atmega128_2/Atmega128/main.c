@@ -81,7 +81,7 @@ lcd0_enable(&DDRA,&PINA,&PORTA); // LCD Display 4X20
 keypad_enable(&DDRE,&PINE,&PORTE); // Keyboard
 rtc = pcf8563rtc_enable( 16 ); // RTC with I2C
 shift = hc595_enable(&DDRG,&PORTG,2,0,1);
-pcf8575 = pcf8575_enable( 33, 16 );
+pcf8575 = pcf8575_enable( PCF8575_BASE_ADDRESS, 16 );
 
 // local var
 char Menu = '1'; // Main menu selector
@@ -211,9 +211,6 @@ while(TRUE){
 		break;
 		// MENU 3
 		case '3': //Set Date
-			pcf8575.writehbits(&pcf8575.par,65535,0);
-
-
 			if(!strcmp(keypad()->data->string,"A")){Menu='2';keypad()->flush();lcd0()->clear();break;}
 			if(!strcmp(keypad()->data->string,"B")){Menu='4';keypad()->flush();lcd0()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd0()->clear();usart1()->puts("Date exit\r\n");break;}
@@ -296,9 +293,6 @@ while(TRUE){
 		break;
 		// MENU 4
 		case '4': //Set Time
-			pcf8575.writehbits(&pcf8575.par,65535,1);
-
-		
 			if(!strcmp(keypad()->data->string,"A")){Menu='3';keypad()->flush();lcd0()->clear();break;}
 			if(!strcmp(keypad()->data->string,"B")){Menu='5';keypad()->flush();lcd0()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd0()->clear();usart1()->puts("Time exit\r\n");break;}
