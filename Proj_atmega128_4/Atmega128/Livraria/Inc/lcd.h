@@ -37,6 +37,9 @@ Comment:
 #define DATA 1
 // ticks depends on CPU frequency 16Mhz -> 0 8Mhz -> 0
 #define LCD_N_TICKS 0
+#define LCD_W_N_TICKS 0
+#define LCD_R_N_TICKS 0
+#define LCD_EXIT_N_TICKS 0
 #define BIT_N_TICKS 0
 
 /***Global Variable***/

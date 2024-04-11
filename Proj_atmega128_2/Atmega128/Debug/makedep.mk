@@ -62,6 +62,8 @@ Livraria\Src\pcf8563rtc.c
 
 Livraria\Src\pcf8575.c
 
+Livraria\Src\pcf8575lcd.c
+
 Livraria\Src\query.c
 
 Livraria\Src\rotenc.c

@@ -31,6 +31,7 @@ Comment:
 #include "lcd.h"
 #include "pcf8563rtc.h"
 #include "pcf8575.h"
+#include "pcf8575lcd.h"
 #include "keypad.h"
 #include "74hc595.h"
 #include "hc05atcommands.h"
@@ -50,7 +51,7 @@ struct date dt; // date struct RTC
 
 HC595 shift;
 PCF8563RTC rtc;
-PCF8575 pcf8575;
+PCF8575_LCD0 pcflcd;
 
 uint8_t count=0; // 1Hz
 uint8_t increment=0; // 1Hz
@@ -81,7 +82,7 @@ lcd0_enable(&DDRA,&PINA,&PORTA); // LCD Display 4X20
 keypad_enable(&DDRE,&PINE,&PORTE); // Keyboard
 rtc = pcf8563rtc_enable( 16 ); // RTC with I2C
 shift = hc595_enable(&DDRG,&PORTG,2,0,1);
-pcf8575 = pcf8575_enable( PCF8575_BASE_ADDRESS, 16 );
+pcflcd = pcf8575_lcd0_enable( PCF8575_BASE_ADDRESS, 16 );
 
 // local var
 char Menu = '1'; // Main menu selector
@@ -122,6 +123,7 @@ rtc.SetClkOut(1, 2); // oscillate pin at 1 sec
 // TODO:: Please write your application code
 while(TRUE){
 	// Preamble [INPUT]
+	pcflcd.reboot();
 	lcd0()->reboot();
 	keypad()->read();
 		
@@ -133,9 +135,19 @@ while(TRUE){
 	adcvalue = adc()->read(0);
 	strcpy(str,func()->i16toa(adcvalue));
 	
+	//str[0] = pcflcd.read(PCF_DATA); str[1] = pcflcd.read(PCF_DATA); str[2] = '\0';
+	//pcflcd.write('B',PCF_DATA);
+	//pcf8575_lcd0_com.writehbits(&pcf8575_lcd0_com.par, (1 << PCF_EN), 1);
+	pcflcd.gotoxy(0,0);
+	pcflcd.string("ola sergio!");
+	pcflcd.gotoxy(1,0);
+	pcflcd.string_size(func()->ui16toa(rtc.bcd2dec(tm.VL_seconds)),2);
+	
 	// catch message
 	if(!strcmp(uartreceive,"Connect\r\n")){Menu='6';lcd0()->clear();}
 	if(!strcmp(uartreceive,"Connected\r\n")){Menu='6';lcd0()->clear();}
+	
+	
 	
 	// MENU SELECTOR	
 	switch(Menu){
@@ -160,6 +172,7 @@ while(TRUE){
 			lcd0()->gotoxy(0,0);
 			lcd0()->string_size("S:",3);
 			lcd0()->string_size(str,5);
+			
 			lcd0()->gotoxy(0,8);
 			lcd0()->string_size(func()->ui16toa(rtc.bcd2dec(dt.days)),2);
 			lcd0()->putch(':');

@@ -29,7 +29,6 @@ PCF8575 pcf8575_enable(uint8_t pcf8575_id, uint8_t twi_prescaler)
 	setup_pcf8575.readhbits = PCF8575_readhbits;
 	
 	setup_pcf8575.writehbits(&setup_pcf8575.par,65535,1);
-	setup_pcf8575.readhbits(&setup_pcf8575.par,65535);
 	
 	return setup_pcf8575;
 }

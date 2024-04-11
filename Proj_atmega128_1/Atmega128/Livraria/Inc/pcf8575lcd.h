@@ -1,15 +1,15 @@
 /************************************************************************
-	LCD
+	PCF8575LCD
 Author: Sergio Santos 
 	<sergio.salazar.santos@gmail.com>
 License: GNU General Public License
 Hardware: all
-Date: 12112022
+Date: 11042024
 Comment:
-	tested Atemga128 16Mhz and Atmega328 8Mhz
+	Tested Atemga128 16Mhz and Atmega328 8Mhz
 ************************************************************************/
-#ifndef _LCD_H_
-	#define _LCD_H_
+#ifndef _PCF8575LCD_H_
+	#define _PCF8575LCD_H_
 
 /***Compiler***/
 
@@ -19,28 +19,30 @@ Comment:
 #endif
 
 /***Global Library***/
+#include "pcf8575.h"
 #include <inttypes.h>
 
 /***Global Constant & Macro***/
 // ASIGN PORT PINS TO LCD (can be setup in any way)
-#define RS 0
-#define RW 1
-#define EN 2
-#define NC 3
-#define DB4 4
-#define DB5 5
-#define DB6 6
-#define DB7 7
+#define PCF_RS 8
+#define PCF_RW 9
+#define PCF_EN 10
+#define PCF_NC 11
+#define PCF_DB0 0
+#define PCF_DB1 1
+#define PCF_DB2 2
+#define PCF_DB3 3
+#define PCF_DB4 4
+#define PCF_DB5 5
+#define PCF_DB6 6
+#define PCF_DB7 7
 /***************/
 // CMD RS
-#define INST 0
-#define DATA 1
+#define PCF_INST 0
+#define PCF_DATA 1
 // ticks depends on CPU frequency 16Mhz -> 0 8Mhz -> 0
-#define LCD_N_TICKS 0
-#define LCD_W_N_TICKS 0
-#define LCD_R_N_TICKS 0
-#define LCD_EXIT_N_TICKS 0
-#define BIT_N_TICKS 0
+#define PCF_LCD_W_N_TICKS 0
+#define PCF_LCD_R_N_TICKS 0
 
 /***Global Variable***/
 typedef struct{
@@ -55,13 +57,11 @@ typedef struct{
 	void (*clear)(void);
 	void (*gotoxy)(unsigned int y, unsigned int x);
 	void (*reboot)(void);
-}LCD0, LCD1;
+}PCF8575_LCD0;
 
 /***Global Header***/
-LCD0* lcd0(void);
-LCD1* lcd1(void);
-LCD0 lcd0_enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t *port);
-LCD1 lcd1_enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t *port);
+PCF8575_LCD0* pcf8575_lcd0(void);
+PCF8575_LCD0 pcf8575_lcd0_enable( uint8_t pcf8575_id, uint8_t twi_prescaler );
 
 #endif
 

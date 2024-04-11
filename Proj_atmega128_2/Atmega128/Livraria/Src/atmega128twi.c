@@ -176,7 +176,7 @@ void TWI_stop( void )
 	uint8_t cmd = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO);
 	twi_handle()->twcr.reg = cmd; 
 	
-	_delay_us(100); // wait for a short time
+	_delay_us(300); // wait for a short time
 }
 
 // auxiliary
