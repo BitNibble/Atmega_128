@@ -24,10 +24,6 @@ Comment:
 
 /***Global Constant & Macro***/
 // ASIGN PORT PINS TO LCD (can be setup in any way)
-#define PCF_RS 8
-#define PCF_RW 9
-#define PCF_EN 10
-#define PCF_NC 11
 #define PCF_DB0 0
 #define PCF_DB1 1
 #define PCF_DB2 2
@@ -36,6 +32,10 @@ Comment:
 #define PCF_DB5 5
 #define PCF_DB6 6
 #define PCF_DB7 7
+#define PCF_RS 8
+#define PCF_RW 9
+#define PCF_EN 10
+#define PCF_NC 11
 /***************/
 // CMD RS
 #define PCF_INST 0

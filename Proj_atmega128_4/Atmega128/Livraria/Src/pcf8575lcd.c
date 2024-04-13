@@ -20,7 +20,7 @@ Comment:
 /***File Variable***/
 static PCF8575_LCD0 pcf8575_setup_lcd0;
 static PCF8575 pcf8575_lcd0_com;
-uint16_t pcf8575_lcd0_detect;
+static uint16_t pcf8575_lcd0_detect;
 
 /***File Header***/
 void PCF8575_LCD0_inic(void);

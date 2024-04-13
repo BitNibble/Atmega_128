@@ -188,6 +188,8 @@ while(TRUE){
 			if(!strcmp(keypad()->data->string,"A")){Menu='1';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"B")){Menu='3';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';keypad()->flush();lcd1()->clear();usart1()->puts("Manual exit\r\n");break;}
+			pcflcd.gotoxy(0,0);
+			pcflcd.string_size("Manual position",20);
 			// Reading input
 			lcd1()->gotoxy(1,0);
 			lcd1()->putch(':');
@@ -222,6 +224,8 @@ while(TRUE){
 			if(!strcmp(keypad()->data->string,"A")){Menu='2';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"B")){Menu='4';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Date exit\r\n");break;}
+			pcflcd.gotoxy(0,0);
+			pcflcd.string_size("Set the Date",20);
 			// Reading input
 			lcd1()->gotoxy(1,0);
 			lcd1()->putch(':');
@@ -304,6 +308,8 @@ while(TRUE){
 			if(!strcmp(keypad()->data->string,"A")){Menu='3';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"B")){Menu='5';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Time exit\r\n");break;}
+			pcflcd.gotoxy(0,0);
+			pcflcd.string_size("Set the Time",20);
 			// Reading input
 			lcd1()->gotoxy(1,0);
 			lcd1()->putch(':');
@@ -385,6 +391,8 @@ while(TRUE){
 			if(!strcmp(keypad()->data->string,"A")){Menu='4';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"B")){Menu='6';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Output exit\r\n");break;}
+			pcflcd.gotoxy(0,0);
+			pcflcd.string_size("Manual Output",20);
 			// Reading input
 			lcd1()->gotoxy(1,0);
 			lcd1()->putch(':');
@@ -418,6 +426,8 @@ while(TRUE){
 			if(!strcmp(keypad()->data->string,"B")){Menu='7';keypad()->flush();lcd1()->clear();break;}
 			// if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Communication exit\r\n");break;}
+			pcflcd.gotoxy(0,0);
+			pcflcd.string_size("Remote by Bluetooth",20);
 			// Reading input
 			lcd1()->gotoxy(1,0);
 			lcd1()->putch(':');
@@ -493,6 +503,8 @@ while(TRUE){
 			if(!strcmp(keypad()->data->string,"B")){Menu='8';keypad()->flush();lcd1()->clear();break;}
 			// if(!strcmp(keypad()->data().string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("AT exit\r\n");break;}
+			pcflcd.gotoxy(0,0);
+			pcflcd.string_size("Read Bluetooth",20);
 			// Reading input
 			lcd1()->gotoxy(1,0);
 			lcd1()->putch(':');
@@ -522,6 +534,8 @@ while(TRUE){
 		if(!strcmp(keypad()->data->string,"A")){Menu='7';keypad()->flush();lcd1()->clear();break;}
 		if(!strcmp(keypad()->data->string,"B")){Menu='1';keypad()->flush();lcd1()->clear();break;}
 		if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Testing exit\r\n");break;}
+		pcflcd.gotoxy(0,0);
+		pcflcd.string_size("Testing environment",20);
 		// Title
 		lcd1()->gotoxy(0,0);
 		lcd1()->string_size("T:",2);
