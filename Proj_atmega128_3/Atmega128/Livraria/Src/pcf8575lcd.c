@@ -34,7 +34,6 @@ void PCF8575_LCD0_string_size(const char* s, uint8_t size); // RAW
 void PCF8575_LCD0_hspace(uint8_t n);
 void PCF8575_LCD0_clear(void);
 void PCF8575_LCD0_gotoxy(unsigned int y, unsigned int x);
-void PCF8575_LCD0_strobe(uint16_t num);
 void PCF8575_LCD0_reboot(void);
 void PCF8575_LCD_ticks(uint16_t num);
 

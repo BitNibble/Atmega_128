@@ -6,7 +6,7 @@ Livraria\Src\74hc595.c
 
 Livraria\Src\atmega128analog.c
 
-Livraria\Src\atmega128handler.c
+Livraria\Src\atmega128instance.c
 
 Livraria\Src\atmega128interrupt.c
 

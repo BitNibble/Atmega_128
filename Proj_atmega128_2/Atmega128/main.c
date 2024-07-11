@@ -123,7 +123,7 @@ rtc.SetClkOut(1, 2); // oscillate pin at 1 sec
 // TODO:: Please write your application code
 while(TRUE){
 	// Preamble [INPUT]
-	pcflcd.reboot();
+	//pcflcd.reboot();
 	lcd1()->reboot();
 	keypad()->read();
 		
@@ -188,8 +188,8 @@ while(TRUE){
 			if(!strcmp(keypad()->data->string,"A")){Menu='1';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"B")){Menu='3';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';keypad()->flush();lcd1()->clear();usart1()->puts("Manual exit\r\n");break;}
-			pcflcd.gotoxy(0,0);
-			pcflcd.string_size("Manual position",20);
+			//pcflcd.gotoxy(0,0);
+			//pcflcd.string_size("Manual position",20);
 			// Reading input
 			lcd1()->gotoxy(1,0);
 			lcd1()->putch(':');
@@ -224,8 +224,8 @@ while(TRUE){
 			if(!strcmp(keypad()->data->string,"A")){Menu='2';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"B")){Menu='4';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Date exit\r\n");break;}
-			pcflcd.gotoxy(0,0);
-			pcflcd.string_size("Set the Date",20);
+			//pcflcd.gotoxy(0,0);
+			//pcflcd.string_size("Set the Date",20);
 			// Reading input
 			lcd1()->gotoxy(1,0);
 			lcd1()->putch(':');
@@ -308,8 +308,8 @@ while(TRUE){
 			if(!strcmp(keypad()->data->string,"A")){Menu='3';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"B")){Menu='5';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Time exit\r\n");break;}
-			pcflcd.gotoxy(0,0);
-			pcflcd.string_size("Set the Time",20);
+			//pcflcd.gotoxy(0,0);
+			//pcflcd.string_size("Set the Time",20);
 			// Reading input
 			lcd1()->gotoxy(1,0);
 			lcd1()->putch(':');
@@ -391,8 +391,8 @@ while(TRUE){
 			if(!strcmp(keypad()->data->string,"A")){Menu='4';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"B")){Menu='6';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Output exit\r\n");break;}
-			pcflcd.gotoxy(0,0);
-			pcflcd.string_size("Manual Output",20);
+			//pcflcd.gotoxy(0,0);
+			//pcflcd.string_size("Manual Output",20);
 			// Reading input
 			lcd1()->gotoxy(1,0);
 			lcd1()->putch(':');
@@ -408,7 +408,7 @@ while(TRUE){
 				mvalue=func()->strToInt(mstr);
 				if(mvalue >=0 && mvalue <16){
 					// PORTC = mvalue;
-					atmega128()->portc_handle->port.reg = mvalue;
+					atmega128()->portc_instance->port.reg = mvalue;
 					lcd1()->gotoxy(0,12);
 					lcd1()->hspace(4);
 				}else{
@@ -426,8 +426,8 @@ while(TRUE){
 			if(!strcmp(keypad()->data->string,"B")){Menu='7';keypad()->flush();lcd1()->clear();break;}
 			// if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Communication exit\r\n");break;}
-			pcflcd.gotoxy(0,0);
-			pcflcd.string_size("Remote by Bluetooth",20);
+			//pcflcd.gotoxy(0,0);
+			//pcflcd.string_size("Remote by Bluetooth",20);
 			// Reading input
 			lcd1()->gotoxy(1,0);
 			lcd1()->putch(':');
@@ -455,37 +455,37 @@ while(TRUE){
 				usart1()->rxflush();
 			}
 			if(!strcmp(uartmsg,"s00.\r\n")){
-				if(atmega128()->portc_handle->port.reg & 1)
-					atmega128()->portc_handle->port.reg &= ~1;
+				if(atmega128()->portc_instance->port.reg & 1)
+					atmega128()->portc_instance->port.reg &= ~1;
 				else
-					atmega128()->portc_handle->port.reg |= 1;
+					atmega128()->portc_instance->port.reg |= 1;
 			}
 			if(!strcmp(uartmsg,"s00 off.\r\n")){
-				atmega128()->portc_handle->port.reg &= ~1;
+				atmega128()->portc_instance->port.reg &= ~1;
 			}
 			if(!strcmp(uartmsg,"s01.\r\n")){
-				if(atmega128()->portc_handle->port.reg & 2)
-					atmega128()->portc_handle->port.reg &= ~2;
+				if(atmega128()->portc_instance->port.reg & 2)
+					atmega128()->portc_instance->port.reg &= ~2;
 				else
-					atmega128()->portc_handle->port.reg |= 2;
+					atmega128()->portc_instance->port.reg |= 2;
 			}
 			if(!strcmp(uartmsg,"s02.\r\n")){
-				if(atmega128()->portc_handle->port.reg & 4)
-					atmega128()->portc_handle->port.reg &= ~4;
+				if(atmega128()->portc_instance->port.reg & 4)
+					atmega128()->portc_instance->port.reg &= ~4;
 				else
-					atmega128()->portc_handle->port.reg |= 4;
+					atmega128()->portc_instance->port.reg |= 4;
 			}
 			if(!strcmp(uartmsg,"s03.\r\n")){
-				if(atmega128()->portc_handle->port.reg & 8)
-					atmega128()->portc_handle->port.reg &= ~8;
+				if(atmega128()->portc_instance->port.reg & 8)
+					atmega128()->portc_instance->port.reg &= ~8;
 				else
-					atmega128()->portc_handle->port.reg |= 8;
+					atmega128()->portc_instance->port.reg |= 8;
 			}
 			if(!strcmp(uartmsg,"all on.\r\n")){
-				atmega128()->portc_handle->port.reg |= 15;
+				atmega128()->portc_instance->port.reg |= 15;
 			}
 			if(!strcmp(uartmsg,"all off.\r\n")){
-				atmega128()->portc_handle->port.reg &= ~15;
+				atmega128()->portc_instance->port.reg &= ~15;
 			}
 			if(!strcmp(uartmsg,"Disconnect\r\n")){
 				Menu = '1';
@@ -503,8 +503,8 @@ while(TRUE){
 			if(!strcmp(keypad()->data->string,"B")){Menu='8';keypad()->flush();lcd1()->clear();break;}
 			// if(!strcmp(keypad()->data().string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();break;}
 			if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("AT exit\r\n");break;}
-			pcflcd.gotoxy(0,0);
-			pcflcd.string_size("Read Bluetooth",20);
+			//pcflcd.gotoxy(0,0);
+			//pcflcd.string_size("Read Bluetooth",20);
 			// Reading input
 			lcd1()->gotoxy(1,0);
 			lcd1()->putch(':');
@@ -534,8 +534,8 @@ while(TRUE){
 		if(!strcmp(keypad()->data->string,"A")){Menu='7';keypad()->flush();lcd1()->clear();break;}
 		if(!strcmp(keypad()->data->string,"B")){Menu='1';keypad()->flush();lcd1()->clear();break;}
 		if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Testing exit\r\n");break;}
-		pcflcd.gotoxy(0,0);
-		pcflcd.string_size("Testing environment",20);
+		//pcflcd.gotoxy(0,0);
+		//pcflcd.string_size("Testing environment",20);
 		// Title
 		lcd1()->gotoxy(0,0);
 		lcd1()->string_size("T:",2);
@@ -590,21 +590,21 @@ while(TRUE){
 void PORTINIT(void)
 {
 	// INPUT
-	atmega128()->portf_handle->ddr.reg = 0x00;
-	atmega128()->portf_handle->port.reg = 0x0F;
+	atmega128()->portf_instance->ddr.reg = 0x00;
+	atmega128()->portf_instance->port.reg = 0x0F;
 	// OUTPUT
-	portb_handle()->ddr.reg |= (1<<5) | (1<<6) | (1<<7);
+	portb_instance()->ddr.reg |= (1<<5) | (1<<6) | (1<<7);
 	// OUTPUT PULLUP
-	atmega128()->portc_handle->ddr.reg = 0xFF;
-	atmega128()->portc_handle->port.reg = 0x00;
+	atmega128()->portc_instance->ddr.reg = 0xFF;
+	atmega128()->portc_instance->port.reg = 0x00;
 }
 
 /*** File Interrupt ***/
 ISR(TIMER0_COMP_vect) // 1Hz and usart Tx
 {
 	uint8_t Sreg;
-	Sreg = cpu_handle()->sreg.reg;
-	cpu_handle()->sreg.par.I = 1;
+	Sreg = cpu_instance()->sreg.reg;
+	cpu_instance()->sreg.par.I = 1;
 	if(count>59){ //59 -> 1Hz
 		increment++;
 		if((increment & 0x0F) < 8){
@@ -617,14 +617,14 @@ ISR(TIMER0_COMP_vect) // 1Hz and usart Tx
 		count=0;
 	}else
 		count++;
-	cpu_handle()->sreg.reg = Sreg;
+	cpu_instance()->sreg.reg = Sreg;
 }
 
 ISR(TIMER2_COMP_vect)
 {
 	uint8_t Sreg;
-	Sreg = cpu_handle()->sreg.reg;
-	cpu_handle()->sreg.par.I = 1;
+	Sreg = cpu_instance()->sreg.reg;
+	cpu_instance()->sreg.par.I = 1;
 	
 	if(counter1 > 1000){
 		// signal = 1;
@@ -632,7 +632,7 @@ ISR(TIMER2_COMP_vect)
 	}
 	counter1++;
 	
-	cpu_handle()->sreg.reg = Sreg;
+	cpu_instance()->sreg.reg = Sreg;
 }
 
 /**************************** Comment: ******************************

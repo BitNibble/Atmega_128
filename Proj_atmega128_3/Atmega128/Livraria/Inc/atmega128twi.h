@@ -12,7 +12,7 @@ Comment:
 	#define _ATMEGA128TWI_H_
 
 /*** Global Library ***/
-#include "atmega128handler.h"
+#include "atmega128instance.h"
 #include "query.h"
 
 /*** Global Constant & Macro ***/
@@ -70,7 +70,7 @@ Comment:
 #define TWI_IO_MASK 0x03
 #define TWI_STATUS_MASK 0xF8
 #define TWI_PRESCALER_MASK 0x03
-#define TWI_ADDRESS_handleISTER_MASK 0xFE
+#define TWI_ADDRESS_instanceISTER_MASK 0xFE
 #define Nticks 1023 // anti polling freeze.
 
 // devices
@@ -82,7 +82,7 @@ Comment:
 
 /*** Global Variable ***/
 typedef struct{
-	Atmega128TwoWireSerialInterface_TypeDef* handle;
+	Atmega128TwoWireSerialInterface_TypeDef* instance;
 	// prototype pointers
 	void (*start)(void);
 	void (*connect)(uint8_t address, uint8_t rw);

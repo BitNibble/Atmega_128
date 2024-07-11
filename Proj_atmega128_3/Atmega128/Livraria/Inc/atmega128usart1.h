@@ -12,7 +12,7 @@ Comment:
 	#define _ATMEGA128USART1_H_
 
 /*** Global Library ***/
-#include "atmega128handler.h"
+#include "atmega128instance.h"
 #include "query.h"
 
 /*** Global Constant & Macro ***/
@@ -54,7 +54,7 @@ Comment:
 
 /*** Global Variable ***/
 typedef struct{
-	Atmega128Usart1_TypeDef* handle;
+	Atmega128Usart1_TypeDef* instance;
 	// prototype pointers
 	UARTvar (*read)(void);
 	UARTvar (*getch)(void);

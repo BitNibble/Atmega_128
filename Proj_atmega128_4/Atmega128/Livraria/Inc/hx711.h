@@ -15,8 +15,8 @@ Comment:
 #include <inttypes.h>
 
 /*** Global Constant & Macro ***/
-#ifndef STATUS_handleISTER
-	#define STATUS_handleISTER SREG
+#ifndef STATUS_instanceISTER
+	#define STATUS_instanceISTER SREG
 #endif
 #ifndef GLOBAL_INTERRUPT_ENABLE
 	#define GLOBAL_INTERRUPT_ENABLE 7

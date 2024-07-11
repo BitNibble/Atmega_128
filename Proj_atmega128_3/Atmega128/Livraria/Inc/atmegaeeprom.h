@@ -12,7 +12,7 @@ Comment:
 	#define _ATMEGAEEPROM_H_
 
 /*** Global Library ***/
-#include "atmega128handler.h"
+#include "atmega128instance.h"
 #include "query.h"
 
 /*** Global Constant & Macro ***/
