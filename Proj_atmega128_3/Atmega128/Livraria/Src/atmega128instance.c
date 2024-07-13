@@ -1,5 +1,5 @@
 /*********************************************************
-	ATMEGA 128 Handler
+	ATMEGA 128 Instance
 Author: Sergio Manuel Santos
 	<sergio.salazar.santos@gmail.com>
 License: GNU General Public License

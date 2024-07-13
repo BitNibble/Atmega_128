@@ -1,5 +1,5 @@
 /*********************************************************
-	ATMEGA 128 Handler
+	ATMEGA 128 Instance
 Author: Sergio Manuel Santos
 	<sergio.salazar.santos@gmail.com>
 License: GNU General Public License
@@ -8,8 +8,8 @@ Update:	07/04/2024
 Comment: 
 	Simple tools
 **********************************************************/
-#ifndef _ATMEGA128HANDLER_H_
-	#define _ATMEGA128HANDLER_H_
+#ifndef _ATMEGA128INSTANCE_H_
+	#define _ATMEGA128INSTANCE_H_
 	
 /*** Working Frequency ***/
 // User May change to conform to use
