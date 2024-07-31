@@ -5,7 +5,8 @@ Author: Sergio Santos
 License: GNU General Public License
 Hardware: all
 Date: 20042023
-Comment:
+************************************************************************/
+/****** Comment:
 	tested Atemga128 16Mhz and Atmega328 8Mhz
 ************************************************************************/
 #ifndef _LCD2P_H_
@@ -16,7 +17,7 @@ Comment:
 
 /*** Global Constant & Macro ***/
 #ifndef F_CPU
-	#define F_CPU 8000000UL
+	#define F_CPU 16000000UL
 #endif
 // ASIGN PORT PINS TO LCD (can be setup in any way)
 // CMD
@@ -47,8 +48,9 @@ typedef struct{
 
 /*** Global Header ***/
 LCD02P lcd02p_enable(volatile uint8_t *cmdddr, volatile uint8_t *cmdpin, volatile uint8_t *cmdport, volatile uint8_t *dataddr, volatile uint8_t *datapin, volatile uint8_t *dataport);
+LCD02P* lcd02p(void);
 
 #endif
 
-/***EOF***/
+/*** EOF ***/
 

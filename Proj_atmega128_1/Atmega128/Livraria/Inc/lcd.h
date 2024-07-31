@@ -35,9 +35,6 @@ Comment:
 // CMD RS
 #define INST 0
 #define DATA 1
-// ticks depends on CPU frequency 16Mhz -> 0 8Mhz -> 0
-#define LCD_W_N_TICKS 0
-#define LCD_R_N_TICKS 0
 
 /***Global Variable***/
 typedef struct{
