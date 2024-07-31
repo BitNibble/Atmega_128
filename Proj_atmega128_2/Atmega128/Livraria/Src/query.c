@@ -54,6 +54,12 @@ void setbit(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t da
 	*(reg + n ) &= ~(mask << bit_n);
 	*(reg + n ) |= (data << bit_n);
 }
+void set_reg(volatile uint8_t* reg, uint8_t hbits){
+	*reg |= hbits;
+}
+void reset_reg(volatile uint8_t* reg, uint8_t hbits){
+	*reg &= ~hbits;
+}
 
 /*** EOF ***/
 

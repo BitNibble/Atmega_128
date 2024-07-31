@@ -29,6 +29,8 @@ void setreg(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t da
 void writereg(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
 uint8_t getbit(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n);
 void setbit(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
+void set_reg(volatile uint8_t* reg, uint8_t hbits);
+void reset_reg(volatile uint8_t* reg, uint8_t hbits);
 
 #endif
 
