@@ -496,7 +496,7 @@ while(TRUE){
 
 			lcd1()->gotoxy(1,12);
 			lcd1()->string_size("C-Ex",4);
-		break;			
+		break;
 		// MENU 7
 		case '7': // HC-05 AT
 			if(!strcmp(keypad()->data->string,"A")){Menu='6';keypad()->flush();lcd1()->clear();break;}
