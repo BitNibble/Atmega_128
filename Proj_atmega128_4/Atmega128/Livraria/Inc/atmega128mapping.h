@@ -110,7 +110,7 @@ typedef struct {
 		ADC0* adc;
 	#endif
 	/***BOOTLOAD***/
-	Atmega128BootLoader_TypeDef* boot_load_instance;
+	Atmega128BootLoader_TypeDef* bootload_instance;
 	/***CPU***/
 	Atmega128CPURegister_TypeDef* cpu_instance;
 	/***EEPROM***/

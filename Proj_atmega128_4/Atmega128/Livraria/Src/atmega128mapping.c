@@ -1,4 +1,4 @@
-/*********************************************************
+/**********************************************************
 	ATMEGA 128 MAPPING
 Author: Sergio Manuel Santos
 	<sergio.salazar.santos@gmail.com>
@@ -28,7 +28,7 @@ ATMEGA128 atmega128_enable(void){
 		setup_atmega128.adc = adc();
 	#endif
 	/***BOOTLOAD***/
-	setup_atmega128.boot_load_instance = bootload_instance();
+	setup_atmega128.bootload_instance = bootload_instance();
 	/***CPU***/
 	setup_atmega128.cpu_instance = cpu_instance();
 	/***EEPROM***/

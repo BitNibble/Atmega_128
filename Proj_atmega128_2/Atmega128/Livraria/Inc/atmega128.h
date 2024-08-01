@@ -879,7 +879,6 @@ typedef volatile struct {
 			uint8_t reserved:1;
 			uint8_t ices3:1;
 			uint8_t icnc3:1;
-			
 		}par;
 		uint8_t reg;
 	}tccr3b; // 0x8A
@@ -1400,6 +1399,4 @@ MASK FLAG CONTROL STATUS
 ***/
 
 /*** EOF ***/
-
-
 
