@@ -24,13 +24,13 @@ Comment:
 #endif
 
 /*** Procedure and Function ToolSet ***/
-uint8_t getreg(uint8_t reg, uint8_t size_block, uint8_t bit_n);
-void setreg(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
-void writereg(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
-uint8_t getbit(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n);
-void setbit(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
 void set_reg(volatile uint8_t* reg, uint8_t hbits);
 void reset_reg(volatile uint8_t* reg, uint8_t hbits);
+uint8_t get_reg_block(uint8_t reg, uint8_t size_block, uint8_t bit_n);
+void set_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
+void write_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
+uint8_t get_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n);
+void set_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
 
 #endif
 

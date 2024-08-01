@@ -240,15 +240,15 @@ uint8_t USART1ParityError(void)
 }
 uint8_t USART1ReadErrors(void)
 {
-	return getreg(UCSR1A,3,2);
+	return get_reg_block(UCSR1A,3,2);
 }
 void USART1ClearErrors(void)
 {
-	setreg(&UCSR1A,3,2,0);
+	set_reg_block(&UCSR1A,3,2,0);
 }
 void USART1DoubleTransmissionSpeed(void)
 {
-	setreg(&UCSR1A,4,1,1);
+	set_reg_block(&UCSR1A,4,1,1);
 }
 
 /***EOF***/

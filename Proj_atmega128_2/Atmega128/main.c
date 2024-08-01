@@ -545,7 +545,7 @@ while(TRUE){
 		number1 = F_CPU/16;
 		//atmega128()->writereg(&tnum,2,4,0);
 		//tnum1 = atmega128()->readreg(tnum,3,3); // read
-		writereg(&tnum,3,3,6); // read
+		write_reg_block(&tnum,3,3,6); // read
 		//lcd1()->string_size( func()->ftoa((float)88/35,5) ,14); // binary
 		lcd1()->string_size( func()->ftoa((float)8965/856, 5) ,14); // binary
 		//lcd1()->string_size(func()->print_binary(8,tnum),14); // binary
