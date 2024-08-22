@@ -18,6 +18,7 @@ Comment:
 #endif
 	
 #include <avr/io.h>
+#include <avr/boot.h>
 #include <avr/fuse.h>
 #include <avr/eeprom.h>
 #include <avr/pgmspace.h>

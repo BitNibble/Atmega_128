@@ -14,7 +14,7 @@ Comment:
 void set_reg(volatile uint8_t* reg, uint8_t hbits){
 	*reg |= hbits;
 }
-void reset_reg(volatile uint8_t* reg, uint8_t hbits){
+void clear_reg(volatile uint8_t* reg, uint8_t hbits){
 	*reg &= ~hbits;
 }
 uint8_t get_reg_block(uint8_t reg, uint8_t size_block, uint8_t bit_n)
