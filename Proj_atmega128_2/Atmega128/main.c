@@ -141,7 +141,7 @@ while(TRUE){
 	//pcflcd.string_size(func()->ui16toa(rtc.bcd2dec(tm.VL_seconds)),2);
 	
 	// catch message
-	if(!strcmp(uartreceive,"Connect\r\n")){Menu='6';usart1()->rxflush;lcd1()->clear();}
+	//if(!strcmp(uartreceive,"Connect\r\n")){Menu='6';usart1()->rxflush;lcd1()->clear();}
 	if(!strcmp(uartreceive,"Connected\r\n")){Menu='6';usart1()->rxflush;lcd1()->clear();}
 	
 	// MENU SELECTOR	

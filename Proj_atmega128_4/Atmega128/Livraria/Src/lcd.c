@@ -97,46 +97,23 @@ void LCD0_inic(void)
 	// LCD INIC
 	*lcd0_DDR = ((1 << RS) | (1 << RW) | (1 << EN) | (0 << NC));
 	*lcd0_PORT = (1 << NC);
-	// INICIALIZACAO LCD datasheet/
+
+	// INICIALIZACAO LCD datasheet
 	_delay_ms(40); // using clock at 16Mhz
-	LCD0_write(0x38, INST); // function set
-	_delay_us(39);
-	LCD0_write(0x38, INST); // function set
-	_delay_us(39);
-	LCD0_write(0x38, INST); // function set
-	_delay_us(39);
-	LCD0_write(0x28, INST); // function set 2B
+	LCD0_write(0x30, INST); // 0x30 function set
 	_delay_us(37);
-	LCD0_write(0x28, INST); // function set 2B
+	LCD0_write(0x28, INST); // 0x28 function set
 	_delay_us(37);
-	/**************************************/
-	// for(repeat = 2 ; repeat ; repeat--){
-	// repeat twice in 4 bit length
-	LCD0_write(0x28, INST); // function set 2B
-	LCD0_BF();
-	LCD0_write(0x28, INST); // function set 2B
-	LCD0_BF();
-
-	LCD0_write(0x0C, INST);// display on/off control
-	LCD0_BF();
-	LCD0_write(0x0C, INST);// display on/off control
+	LCD0_write(0x28, INST); // 0x28 function set
+	_delay_us(37);
+	LCD0_write(0x0C, INST); // 0x0C Display ON/OFF control
+	_delay_us(37);
+	LCD0_write(0x01, INST); // 0x01 Display clear
+	_delay_ms(2);
+	LCD0_write(0x04, INST); // 0x05 Entry mode set
 	LCD0_BF();
 
-	LCD0_write(0x01, INST);// clear display
-	LCD0_BF();
-	LCD0_write(0x01, INST);// clear display
-	LCD0_BF();
-
-	LCD0_write(0x06, INST);// entry mode set (crazy settings)
-	LCD0_BF();
-	LCD0_write(0x06, INST);// entry mode set (crazy settings)
-	LCD0_BF();
-	//}
-	// INICIALIZATION END
-	// LCD0_write(0x1F, INST);// cursor or display shift
-	// _delay_us(39);
-	// LCD0_write(0x03, INST);// return home
-	// _delay_ms(1.53);
+	LCD0_clear();
 	LCD0_gotoxy(0,0);
 }
 void LCD0_write(char c, unsigned short D_I)
@@ -324,45 +301,23 @@ void LCD1_inic(void)
 	// LCD INIC
 	*lcd1_DDR = (1 << RS) | (1 << RW) | (1 << EN) | (0 << NC);
 	*lcd1_PORT = (1 << NC);
+
 	// INICIALIZACAO LCD datasheet
 	_delay_ms(40); // using clock at 16Mhz
-	LCD1_write(0x38, INST); // function set
-	_delay_us(39);
-	LCD1_write(0x38, INST); // function set
-	_delay_us(39);
-	LCD1_write(0x38, INST); // function set
-	_delay_us(39);
-	LCD1_write(0x28, INST); // function set 2B
+	LCD1_write(0x30, INST); // 0x30 function set
 	_delay_us(37);
-	LCD1_write(0x28, INST); // function set 2B
+	LCD1_write(0x28, INST); // 0x28 function set
 	_delay_us(37);
-	// for(repeat = 2 ; repeat ; repeat--){
-	// repeat twice in 4 bit length
-	LCD1_write(0x28, INST); // function set 2B
-	LCD1_BF();
-	LCD1_write(0x28, INST); // function set 2B
-	LCD1_BF();
-
-	LCD1_write(0x0C, INST); // display on/off control
-	LCD1_BF();
-	LCD1_write(0x0C, INST); // display on/off control
+	LCD1_write(0x28, INST); // 0x28 function set
+	_delay_us(37);
+	LCD1_write(0x0C, INST); // 0x0C Display ON/OFF control
+	_delay_us(37);
+	LCD1_write(0x01, INST); // 0x01 Display clear
+	_delay_ms(2);
+	LCD1_write(0x04, INST); // 0x05 Entry mode set
 	LCD1_BF();
 
-	LCD1_write(0x01, INST); // clear display
-	LCD1_BF();
-	LCD1_write(0x01, INST); // clear display
-	LCD1_BF();
-
-	LCD1_write(0x06, INST); // entry mode set (crazy settings)
-	LCD1_BF();
-	LCD1_write(0x06, INST); // entry mode set (crazy settings)
-	LCD1_BF();
-	//}
-	// INICIALIZATION END
-	// LCD1_write(0x1F, INST); // cursor or display shift
-	// _delay_us(39);
-	// LCD1_write(0x03, INST); // return home
-	// _delay_ms(1.53);
+	LCD1_clear();
 	LCD1_gotoxy(0,0);
 }
 void LCD1_write(char c, unsigned short D_I)

@@ -85,46 +85,23 @@ void LCD02P_inic(void)
 	*lcd02pdata_DDR &= ~DDR_DATA_MASK;
 	*lcd02pdata_PORT |= DDR_DATA_MASK;
 	lcd02p_detect = *lcd02pcmd_PIN & (1 << LCD02P_NC);
-	// INICIALIZACAO LCD datasheet/
-	_delay_ms(40); // using clock at 16Mhz 
-	LCD02P_write(0x38, LCD02P_INST); // function set
-	_delay_us(39);
-	LCD02P_write(0x38, LCD02P_INST); // function set
-	_delay_us(39);
-	LCD02P_write(0x38, LCD02P_INST); // function set
-	_delay_us(39);
-	LCD02P_write(0x28, LCD02P_INST); // function set 2B
+
+	// INICIALIZACAO LCD datasheet
+	_delay_ms(40); // using clock at 16Mhz
+	LCD02P_write(0x30, LCD02P_INST); // 0x30 function set
 	_delay_us(37);
-	LCD02P_write(0x28, LCD02P_INST); // function set 2B
+	LCD02P_write(0x28, LCD02P_INST); // 0x28 function set
 	_delay_us(37);
-	/**************************************/
-	// for(repeat = 2 ; repeat ; repeat--){
-	// repeat twice in 4 bit length
-	LCD02P_write(0x28, LCD02P_INST); // function set 2B
-	LCD02P_BF();
-	LCD02P_write(0x28, LCD02P_INST); // function set 2B
-	LCD02P_BF();
-
-	LCD02P_write(0x0C, LCD02P_INST); // display on/off control
-	LCD02P_BF();
-	LCD02P_write(0x0C, LCD02P_INST); // display on/off control
+	LCD02P_write(0x28, LCD02P_INST); // 0x28 function set
+	_delay_us(37);
+	LCD02P_write(0x0C, LCD02P_INST); // 0x0C Display ON/OFF control
+	_delay_us(37);
+	LCD02P_write(0x01, LCD02P_INST); // 0x01 Display clear
+	_delay_ms(2);
+	LCD02P_write(0x04, LCD02P_INST); // 0x05 Entry mode set
 	LCD02P_BF();
 
-	LCD02P_write(0x01, LCD02P_INST); // clear display
-	LCD02P_BF();
-	LCD02P_write(0x01, LCD02P_INST); // clear display
-	LCD02P_BF();
-
-	LCD02P_write(0x06, LCD02P_INST); // entry mode set (crazy settings)
-	LCD02P_BF();
-	LCD02P_write(0x06, LCD02P_INST); // entry mode set (crazy settings)
-	LCD02P_BF();
-	//}
-	// INICIALIZATION END
-	// LCD02P_write(0x1F, LCD02P_INST); // cursor or display shift
-	// _delay_us(39);
-	// LCD02P_write(0x03, LCD02P_INST); // return home
-	// _delay_ms(1.53);
+	LCD02P_clear();
 	LCD02P_gotoxy(0,0);
 }
 void LCD02P_write(char c, unsigned short D_I)
