@@ -40,7 +40,7 @@ typedef struct
 {
 	hc595_parameter par;
 	/******/
-	void (*bit)(hc595_parameter* par, uint8_t bool);
+	void (*bit)(hc595_parameter* par, uint8_t state);
 	void (*ibyte)(hc595_parameter* par, uint8_t byte);
 	void (*byte)(hc595_parameter* par, uint8_t byte);
 	void (*out)(hc595_parameter* par);

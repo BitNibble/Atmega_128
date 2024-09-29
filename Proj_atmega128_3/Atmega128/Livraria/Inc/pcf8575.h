@@ -41,7 +41,7 @@ typedef struct{
 
 typedef struct{
 	pcf8575_parameter par;
-	void (*writehbits)( pcf8575_parameter *par, uint16_t hbits, uint8_t bool );
+	void (*writehbits)( pcf8575_parameter *par, uint16_t hbits, uint8_t state );
 	uint16_t (*readhbits)( pcf8575_parameter *par, uint16_t hbits );
 }PCF8575;
 

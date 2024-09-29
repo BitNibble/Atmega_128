@@ -11,9 +11,12 @@ Comment:
 #ifndef _QUERY_H_
 	#define _QUERY_H_
 
+#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
 #include <stdarg.h>
-#include <inttypes.h>
 #include <string.h>
+#include <inttypes.h>
 #include <math.h>
 
 // Macros for common operations

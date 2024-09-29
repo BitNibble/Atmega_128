@@ -107,13 +107,13 @@ void HX711_reset_readflag(HX711* self)
 }
 uint8_t HX711_read_bit(void)
 {	
-	uint16_t ibool;
+	uint16_t istate;
 	*hx711_PORT|=(ONE<<hx711_clkpin);
 	// 0.1us minimum
-	for(ibool=ZERO; ibool<HX711_ticks; ibool++); // inline delay
-	ibool=*hx711_PIN & (ONE<<hx711_datapin);
+	for(istate=ZERO; istate<HX711_ticks; istate++); // inline delay
+	istate=*hx711_PIN & (ONE<<hx711_datapin);
 	*hx711_PORT &= ~(ONE<<hx711_clkpin);
-	return ibool;
+	return istate;
 }
 // Gain selector
 // AVDD connected to 5V, channel B gain=32

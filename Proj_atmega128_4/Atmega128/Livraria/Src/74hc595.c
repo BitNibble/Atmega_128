@@ -13,7 +13,7 @@ Comment:
 #include "74hc595.h"
 
 /*** File Header ***/
-void HC595_shift_bit(hc595_parameter* par, uint8_t bool);
+void HC595_shift_bit(hc595_parameter* par, uint8_t state);
 void HC595_shift_ibyte(hc595_parameter* par, uint8_t byte);
 void HC595_shift_byte(hc595_parameter* par, uint8_t byte);
 void HC595_shift_out(hc595_parameter* par);
@@ -56,9 +56,9 @@ HC595 hc595_enable(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin,
 	return setup_hc595;
 }
 
-void HC595_shift_bit(hc595_parameter* par, uint8_t bool)
+void HC595_shift_bit(hc595_parameter* par, uint8_t state)
 {
-	if (bool)
+	if (state)
 		*par->hc595_PORT |= (1 << par->HC595_datapin); // Data bit HIGH
 	else
 		*par->hc595_PORT &= ~(1 << par->HC595_datapin); // Data bit LOW

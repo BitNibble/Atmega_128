@@ -12,7 +12,7 @@ Comment:
 #include "pcf8575.h"
 
 /*** File Header ***/
-void PCF8575_writehbits( pcf8575_parameter *par, uint16_t hbits, uint8_t bool );
+void PCF8575_writehbits( pcf8575_parameter *par, uint16_t hbits, uint8_t state );
 uint16_t PCF8575_readhbits( pcf8575_parameter *par, uint16_t hbits );
 
 /*** Procedure & Function ***/
@@ -33,9 +33,9 @@ PCF8575 pcf8575_enable(uint8_t pcf8575_id, uint8_t twi_prescaler)
 	return setup_pcf8575;
 }
 
-void PCF8575_writehbits(pcf8575_parameter *par, uint16_t hbits, uint8_t bool)
+void PCF8575_writehbits(pcf8575_parameter *par, uint16_t hbits, uint8_t state)
 {
-	if(bool) par->state |= hbits; else par->state &= ~hbits;
+	if(state) par->state |= hbits; else par->state &= ~hbits;
 	par->twi.start();
 	par->twi.connect(par->pcf8575_id,TWI_WRITE);
 	par->twi.master_write(writehlbyte(par->state).par.L);
