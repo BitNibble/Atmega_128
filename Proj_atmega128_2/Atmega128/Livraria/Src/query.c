@@ -3,7 +3,7 @@
 Author: Sergio Manuel Santos
 	<sergio.salazar.santos@gmail.com>
 License: GNU General Public License
-Hardware: Atmega
+Hardware: Atmega 128
 Update:	14/01/2024
 Comment: 
 	Simple tools
@@ -95,6 +95,40 @@ void set_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uin
 	data &= mask;
 	*(reg + n ) &= ~(mask << bit_n);
 	*(reg + n ) |= (data << bit_n);
+}
+void STM32446SetRegBits( uint8_t* reg, uint8_t n_bits, ... )
+{
+	uint8_t i;
+	if(n_bits > L_BIT && n_bits < N_LIMBITS){ // Filter input
+		va_list list;
+		va_start(list, n_bits);
+		for(i = 0; i < n_bits; i++){
+			*reg |= (uint8_t)(1 << va_arg(list, uint32_t));
+		}
+		va_end(list);
+	}
+}
+void STM32446ResetRegBits( uint8_t* reg, uint8_t n_bits, ... )
+{
+	uint8_t i;
+	if(n_bits > L_BIT && n_bits < N_LIMBITS){ // Filter input
+		va_list list;
+		va_start(list, n_bits);
+		for(i = 0; i < n_bits; i++){
+			*reg &= (uint8_t)~((1 << va_arg(list, uint8_t)) << WORD_BITS);
+		}
+		va_end(list);
+	}
+}
+void STM32446VecSetup( volatile uint8_t vec[], unsigned int size_block, unsigned int block_n, unsigned int data )
+{
+	const unsigned int n_bits = sizeof(data) * BYTE_BITS;
+	if(size_block > n_bits){ size_block = n_bits; }
+	const unsigned int mask = (uint8_t) ((1 << size_block) - 1);
+	unsigned int index = (block_n * size_block) / n_bits;
+	data &= mask;
+	vec[index] &= ~( mask << ((block_n * size_block) - (index * n_bits)) );
+	vec[index] |= ( data << ((block_n * size_block) - (index * n_bits)) );
 }
 
 /******
