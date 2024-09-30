@@ -264,9 +264,6 @@
     <Compile Include="Livraria\Inc\pcf8563rtc.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Livraria\Inc\query.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Livraria\Inc\rotenc.h">
       <SubType>compile</SubType>
     </Compile>
@@ -361,9 +358,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Livraria\Src\pcf8563rtc.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Livraria\Src\query.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Livraria\Src\rotenc.c">

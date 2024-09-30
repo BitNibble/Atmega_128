@@ -10,6 +10,8 @@ Comment:
 *************************************************************************/
 /*** File Library ***/
 #include "atmega128analog.h"
+#include <avr/interrupt.h>
+#include <stdio.h>
 
 /*** File Variable ***/
 static ADC0 atmega128_adc;

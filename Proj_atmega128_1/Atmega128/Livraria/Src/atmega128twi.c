@@ -10,6 +10,7 @@ Comment:
 ***************************************************************************************************/
 /*** File Library ***/
 #include "atmega128twi.h"
+#include <util/delay.h>
 
 /*** File Variable ***/
 static TWI0 atmega128_twi;

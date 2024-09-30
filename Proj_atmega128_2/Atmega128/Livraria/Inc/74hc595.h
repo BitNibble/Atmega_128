@@ -13,7 +13,8 @@ Comment:
 	#define _74HC595_H_
 	
 /*** Global Constant & Macro ***/
-#if defined (STM32F446xx)
+//#define STM32F4
+#if defined (STM32F4)
 	#ifndef IO_var
 		#define IO_var uint32_t
 	#endif

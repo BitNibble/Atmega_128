@@ -13,7 +13,6 @@ Comment:
 
 /*** Global Library ***/
 #include "atmega128instance.h"
-#include "query.h"
 
 /*** Global Constant & Macro ***/
 #if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)

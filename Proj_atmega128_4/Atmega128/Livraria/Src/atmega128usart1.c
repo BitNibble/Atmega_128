@@ -11,6 +11,8 @@ Comment:
 /*** File Library ***/
 #include "atmega128usart1.h"
 #include "buffer.h"
+#include <avr/interrupt.h>
+#include <string.h>
 
 /*** File Variable ***/
 static USART1 atmega128_usart1;

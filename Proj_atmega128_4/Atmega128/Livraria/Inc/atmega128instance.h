@@ -10,12 +10,18 @@ Comment:
 **********************************************************/
 #ifndef _ATMEGA128INSTANCE_H_
 	#define _ATMEGA128INSTANCE_H_
-	
+
 /*** Working Frequency ***/
 // User May change to conform to use
 #ifndef F_CPU
 	#define F_CPU 16000000UL
 #endif
+
+// Macros for common operations
+#define SET_REG(REG, HBITS)		(REG |= HBITS)
+#define CLEAR_REG(REG, HBITS)	(REG &= ~HBITS)
+#define READ_BIT(REG, BIT)		((REG >> BIT) & 1)
+#define TOGGLE_REG(REG, HBITS)	(REG ^= HBITS)
 	
 #include <avr/io.h>
 #include <avr/boot.h>
@@ -24,6 +30,7 @@ Comment:
 #include <avr/pgmspace.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
+
 #include "atmega128.h"
 
 /***************************/
@@ -101,6 +108,17 @@ uint16_t BAUDRATEdouble(uint32_t BAUD);
 uint16_t BAUDRATEsynchronous(uint32_t BAUD);
 void ClockPrescalerSelect(volatile uint8_t prescaler);
 void MoveInterruptsToBoot(void);
+/*** Procedure and Function ToolSet ***/
+void set_reg(volatile uint8_t* reg, uint8_t hbits);
+void clear_reg(volatile uint8_t* reg, uint8_t hbits);
+uint8_t get_reg_block(uint8_t reg, uint8_t size_block, uint8_t bit_n);
+uint8_t get_reg_Msk(uint8_t reg, uint8_t Msk, uint8_t Pos);
+void write_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
+void write_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t Pos, uint8_t data);
+void set_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
+void set_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t Pos, uint8_t data);
+uint8_t get_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n);
+void set_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
 
 #endif
 

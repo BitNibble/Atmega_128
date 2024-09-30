@@ -35,7 +35,8 @@ Comment:
 #include "keypad.h"
 #include "74hc595.h"
 #include "hc05atcommands.h"
-#include <util/delay.h>
+#include <string.h>
+
 
 /*** File Constant & Macro ***/
 #define TRUE 1
@@ -142,7 +143,7 @@ while(TRUE){
 	
 	// catch message
 	//if(!strcmp(uartreceive,"Connect\r\n")){Menu='6';usart1()->rxflush;lcd1()->clear();}
-	if(!strcmp(uartreceive,"Connected\r\n")){Menu='6';usart1()->rxflush;lcd1()->clear();}
+	if(!strcmp(uartreceive,"Connected\r\n")){Menu='6';lcd1()->clear();}
 	
 	// MENU SELECTOR	
 	switch(Menu){

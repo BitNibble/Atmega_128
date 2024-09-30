@@ -13,7 +13,6 @@ Comment:
 
 /*** Global Library ***/
 #include "atmega128instance.h"
-#include "query.h"
 
 /*** Global Constant & Macro ***/
 

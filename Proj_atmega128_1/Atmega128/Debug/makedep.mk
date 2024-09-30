@@ -60,8 +60,6 @@ Livraria\Src\mm74c923.c
 
 Livraria\Src\pcf8563rtc.c
 
-Livraria\Src\query.c
-
 Livraria\Src\rotenc.c
 
 Livraria\Src\watch.c

@@ -13,8 +13,7 @@ Comment:
 #ifndef _ATMEGA128MAPPING_H_
 	#define _ATMEGA128MAPPING_H_
 
-#include "atmega128instance.h"	
-#include "query.h"
+#include "atmega128instance.h"
 
 /*********************************************************/
 /****************** Include Switches  ********************/

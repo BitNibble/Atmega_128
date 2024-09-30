@@ -14,7 +14,6 @@ Comment:
 
 /*** Global Library ***/
 #include "atmega128instance.h"
-#include "query.h"
 
 /*** Constant & Macro ***/
 #ifndef ATMEGA_128_TIMER_COUNTER
