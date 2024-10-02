@@ -14,14 +14,20 @@ Comment:
 /*** Global Library ***/
 #include <inttypes.h>
 
-/*** Global Constant & Macro ***/
+/****** Atmega128 Peripheral Addresses ******/
+// General Purpose Register
 #define Atmega128GPWR_Address 0x0000
+// Analog peripherals
 #define Atmega128AnalogComparator_Address 0x0028
 #define Atmega128AnalogToDigitalConverter_Address 0x0024
+// Bootloader
 #define Atmega128BootLoader_Address 0x0068
+// CPU Registers
 #define Atmega128CPURegister_Address 0x0054
 #define Atmega128Eeprom_Address 0x003C
+// External Interrupts
 #define Atmega128ExternalInterrupts_Address 0x0058
+// GPIO Ports
 #define Atmega128PORTA_Address 0x0039
 #define Atmega128PORTB_Address 0x0036
 #define Atmega128PORTC_Address 0x0033
@@ -29,18 +35,26 @@ Comment:
 #define Atmega128PORTE_Address 0x0021
 #define Atmega128PORTF_Address 0x0020
 #define Atmega128PORTG_Address 0x0063
+// JTAG Interface
 #define Atmega128JtagInterface_Address 0x0042
+// Other Registers
 #define Atmega128OtherRegisters_Address 0x0040
-#define Atmega128SerialPeripherialInterface_Address 0x002D
-#define Atmega128TimerCounter1_Address 0x0046
-#define Atmega128TimerCounter3_Address 0x007C
-#define Atmega128TimerCounter2_Address 0x0043
-#define Atmega128TimerCounter0_Address 0X0050
-#define Atmega128TwoWireSerialInterface_Address 0x0070
+// Serial Communication
+#define Atmega128SerialPeripheralInterface_Address 0x002D
 #define Atmega128Usart0_Address 0x0029
 #define Atmega128Usart1_Address 0x0098
+// Timers
+#define Atmega128TimerCounter0_Address 0x0050
+#define Atmega128TimerCounter1_Address 0x0046
+#define Atmega128TimerCounter2_Address 0x0043
+#define Atmega128TimerCounter3_Address 0x007C
+// Two-Wire Serial Interface
+#define Atmega128TwoWireSerialInterface_Address 0x0070
+// Watchdog Timer
 #define Atmega128WatchdogTimer_Address 0x0041
+// JTAG Interface Control and Status
 #define Atmega128JtagInterfaceControlStatus_Address 0x0054
+// Timer Interrupt Flags and Masks
 #define Atmega128TimerInterruptFlag_Address 0x0056
 #define Atmega128TimerInterruptMask_Address 0x0057
 #define Atmega128TimerExternalInterruptFlag_Address 0x007C
@@ -738,7 +752,7 @@ typedef volatile struct {
 		}par;
 		uint8_t reg;
 	}spdr; // 0x2F
-} Atmega128SerialPeripherialInterface_TypeDef;
+} Atmega128SerialPeripheralInterface_TypeDef;
 
 // Timer/Counter, 16-bit (TC1)
 typedef volatile struct {

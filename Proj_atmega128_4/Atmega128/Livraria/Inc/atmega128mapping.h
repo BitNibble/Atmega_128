@@ -143,7 +143,7 @@ typedef struct {
 	/***MISC***/
 	Atmega128OtherRegisters_TypeDef* misc_instance;
 	/***SPI***/
-	Atmega128SerialPeripherialInterface_TypeDef* spi_instance;
+	Atmega128SerialPeripheralInterface_TypeDef* spi_instance;
 	#ifdef _SPI_MODULE_
 		SPI0 (*spi_enable)( uint8_t master_slave_select, uint8_t data_order,  uint8_t data_modes, uint8_t prescaler );
 		SPI0* spi;

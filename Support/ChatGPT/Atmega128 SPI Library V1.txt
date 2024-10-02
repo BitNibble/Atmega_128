@@ -1,0 +1,127 @@
+#include "atmega128spi.h"
+#include <util/delay.h>
+
+/*** File Variable ***/
+static SPI0 atmega128_spi;
+
+/*** File Header ***/
+void SPI_init(uint8_t mode, uint8_t prescaler);
+void SPI_start(void);
+void SPI_master_write(uint8_t data);
+uint8_t SPI_master_read(void);
+void SPI_stop(void);
+// auxiliary
+uint8_t SPI_status(void);
+void SPI_wait_spi(uint16_t nticks);
+
+/*** Procedure & Function ***/ 
+// SPI0 spi_enable(uint8_t mode, uint8_t prescaler)
+SPI0 spi_enable(uint8_t mode, uint8_t prescaler)
+{
+	// Vtable
+	atmega128_spi.instance = spi_instance();
+	atmega128_spi.start = SPI_start;
+	atmega128_spi.master_write = SPI_master_write;
+	atmega128_spi.master_read = SPI_master_read;
+	atmega128_spi.stop = SPI_stop;
+	atmega128_spi.status = SPI_status;
+
+	SPI_init(mode, prescaler);
+
+	return atmega128_spi;
+}
+
+SPI0* spi(void) { return &atmega128_spi; }
+
+// void SPI_Init(uint8_t mode, uint8_t prescaler)
+void SPI_init(uint8_t mode, uint8_t prescaler)
+{
+	// Set SPI to master mode
+	spi_instance()->spcr.par.spe = 0; // Disable SPI
+	spi_instance()->spcr.par.mstr = 1; // Set to master mode
+
+	// Set the desired SPI mode (CPOL and CPHA)
+	spi_instance()->spcr.par.cpol = (mode & 0x02) >> 1;
+	spi_instance()->spcr.par.cpha = mode & 0x01;
+
+	// Set the prescaler
+	switch (prescaler) {
+		case 2:
+			spi_instance()->spcr.par.spr = 0; // f_osc/2
+			break;
+		case 4:
+			spi_instance()->spcr.par.spr = 1; // f_osc/4
+			break;
+		case 8:
+			spi_instance()->spcr.par.spr = 2; // f_osc/8
+			break;
+		case 16:
+			spi_instance()->spcr.par.spr = 3; // f_osc/16
+			break;
+		case 32:
+			spi_instance()->spcr.par.spr = 4; // f_osc/32
+			break;
+		case 64:
+			spi_instance()->spcr.par.spr = 5; // f_osc/64
+			break;
+		case 128:
+			spi_instance()->spcr.par.spr = 6; // f_osc/128
+			break;
+		default:
+			prescaler = 4; // Default to f_osc/4
+			spi_instance()->spcr.par.spr = 1;
+			break;
+	}
+
+	spi_instance()->spcr.par.spe = 1; // Enable SPI
+
+	// Set SPI pins as output
+	portb_instance()->ddr.reg |= (1 << PB4) | (1 << PB5) | (1 << PB7); // MOSI, SCK, SS
+	portb_instance()->port.reg |= (1 << PB4); // Set MOSI high
+}
+
+// void SPI_Start(void)
+void SPI_start(void)
+{
+	// No specific start command for SPI; just ensure SS is low
+	portb_instance()->port.reg &= ~(1 << PB4); // Set SS low to select the slave
+}
+
+// void SPI_Write(uint8_t data)
+void SPI_master_write(uint8_t data)
+{
+	spi_instance()->spdr.reg = data; // Load data into the buffer
+
+	// Wait until transmission complete
+	SPI_wait_spi(1000); // Arbitrary timeout value
+}
+
+// uint8_t SPI_Read(void)
+uint8_t SPI_master_read(void)
+{
+	spi_instance()->spdr.reg = 0xFF; // Send dummy byte to initiate clock and read data
+	SPI_wait_spi(1000); // Wait until transmission complete
+
+	return spi_instance()->spdr.reg; // Read received data
+}
+
+// void SPI_Stop(void)
+void SPI_stop(void)
+{
+	portb_instance()->port.reg |= (1 << PB4); // Set SS high to deselect the slave
+}
+
+// auxiliary
+uint8_t SPI_status(void)
+{
+	return (spi_instance()->spsr.reg & (1 << SPIF)); // Return status of transmission
+}
+
+void SPI_wait_spi(uint16_t nticks) // hardware triggered
+{
+	unsigned int i;
+	for (i = 0; !(spi_instance()->spsr.reg & (1 << SPIF)); i++) { // wait for transmission complete
+		if (i > nticks) // timeout
+			break;
+	}
+}

@@ -71,7 +71,7 @@ Atmega128JtagInterfaceControlStatus_TypeDef* jtag_cs_instance(void);
 // Other Registers (MISC)
 Atmega128OtherRegisters_TypeDef* misc_instance(void);
 // Serial Peripheral Interface (SPI)
-Atmega128SerialPeripherialInterface_TypeDef* spi_instance(void);
+Atmega128SerialPeripheralInterface_TypeDef* spi_instance(void);
 // Timer/Counter, 16-bit (TC1)
 Atmega128TimerCounter1_TypeDef* tc1_instance(void);
 // Timer/Counter, 16-bit (TC3)
