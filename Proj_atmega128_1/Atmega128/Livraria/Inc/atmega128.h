@@ -12,6 +12,7 @@ Comment:
 	#define _ATMEGA128_H_
 
 /*** Global Library ***/
+#include <stdint.h>
 #include <inttypes.h>
 
 /****** Atmega128 Peripheral Addresses ******/
@@ -20,7 +21,7 @@ Comment:
 // Analog peripherals
 #define Atmega128AnalogComparator_Address 0x0028
 #define Atmega128AnalogToDigitalConverter_Address 0x0024
-// Bootloader
+// Boot loader
 #define Atmega128BootLoader_Address 0x0068
 // CPU Registers
 #define Atmega128CPURegister_Address 0x0054
