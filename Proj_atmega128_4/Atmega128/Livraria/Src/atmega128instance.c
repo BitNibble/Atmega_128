@@ -19,6 +19,9 @@ Comment:
 #define WORD_BITS 16
 #define DWORD_BITS 32
 #define QWORD_BITS 64
+#define FTDELAY_SIZE 255
+unsigned int ft_Delay_Lock[FTDELAY_SIZE] = {0};
+unsigned int ftCounter[FTDELAY_SIZE] = {0};
 /***************************/
 /***  HARDWARE HANDLER   ***/
 /***************************/
@@ -212,6 +215,21 @@ void STM32446VecSetup( volatile uint8_t vec[], unsigned int size_block, unsigned
 	data &= mask;
 	vec[index] &= ~( mask << ((block_n * size_block) - (index * n_bits)) );
 	vec[index] |= ( data << ((block_n * size_block) - (index * n_bits)) );
+}
+/*** Fall Threw Delay ***/
+int ftdelayCycles( uint8_t lock_ID, unsigned int n_cycle ) {
+	int ret = 0;
+	if( ft_Delay_Lock[lock_ID] != lock_ID) {
+		ft_Delay_Lock[lock_ID] = lock_ID;
+		ftCounter[lock_ID] = n_cycle;
+		}else{
+		if( ftCounter[lock_ID]-- );else{ ft_Delay_Lock[lock_ID] = 0; ret = 1; }
+	}
+	return ret;
+}
+void ftdelayReset(uint8_t ID) {
+	ft_Delay_Lock[ID] = 0;
+	ftCounter[ID] = 0;
 }
 
 /******
