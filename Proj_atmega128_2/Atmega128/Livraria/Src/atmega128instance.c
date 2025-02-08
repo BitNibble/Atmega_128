@@ -113,7 +113,8 @@ inline void clear_reg(volatile uint8_t* reg, uint8_t hbits){
 inline uint8_t get_reg_Msk(uint8_t reg, uint8_t Msk, uint8_t Pos)
 {
 	uint8_t filter = 1 << Pos;
-	if(Msk & filter){
+	uint8_t Msk2 = Msk << 1;
+	if((Msk & filter) && !(Msk2 & filter)){
 		reg = (reg & Msk) >> Pos;
 	}
 	return reg;
@@ -122,14 +123,16 @@ inline void write_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t Pos, uint8
 {
 	uint8_t value = *reg;
 	uint8_t filter = 1 << Pos;
-	if(Msk & filter){
+	uint8_t Msk2 = Msk << 1;
+	if((Msk & filter) && !(Msk2 & filter)){
 		data = (data << Pos) & Msk; value &= ~(Msk); value |= data; *reg = value;
 	}
 }
 inline void set_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t Pos, uint8_t data)
 {
 	uint8_t filter = 1 << Pos;
-	if(Msk & filter){
+	uint8_t Msk2 = Msk << 1;
+	if((Msk & filter) && !(Msk2 & filter)){
 		data = (data << Pos) & Msk; *reg &= ~(Msk); *reg |= data;
 	}
 }
