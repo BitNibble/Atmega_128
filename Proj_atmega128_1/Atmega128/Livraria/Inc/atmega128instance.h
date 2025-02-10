@@ -16,7 +16,12 @@ Comment:
 #ifndef F_CPU
 	#define F_CPU 16000000UL
 #endif
-
+#define TWO 2
+#define NIBBLE_BITS 4
+#define BYTE_BITS 8
+#define WORD_BITS 16
+#define DWORD_BITS 32
+#define QWORD_BITS 64
 // Macros for common operations
 #define SET_REG(REG, HBITS)		(REG |= HBITS)
 #define CLEAR_REG(REG, HBITS)	(REG &= ~HBITS)
@@ -112,11 +117,11 @@ void MoveInterruptsToBoot(void);
 void set_reg(volatile uint8_t* reg, uint8_t hbits);
 void clear_reg(volatile uint8_t* reg, uint8_t hbits);
 uint8_t get_reg_block(uint8_t reg, uint8_t size_block, uint8_t bit_n);
-uint8_t get_reg_Msk(uint8_t reg, uint8_t Msk, uint8_t Pos);
+uint8_t get_reg_Msk(uint8_t reg, uint8_t Msk);
 void write_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
-void write_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t Pos, uint8_t data);
+void write_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t data);
 void set_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
-void set_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t Pos, uint8_t data);
+void set_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t data);
 uint8_t get_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n);
 void set_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
 /*** Fall Threw Delay ***/
