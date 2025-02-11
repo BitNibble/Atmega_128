@@ -98,18 +98,18 @@ void MoveInterruptsToBoot(void){volatile uint8_t sreg; sreg = cpu_instance()->sr
 }
 
 /*** Procedure and Function ToolSet ***/
-inline void set_reg(volatile uint8_t* reg, uint8_t hbits){
-	*reg |= hbits;
-}
-inline void clear_reg(volatile uint8_t* reg, uint8_t hbits){
-	*reg &= ~hbits;
-}
 inline uint8_t Msk_Pos(uint8_t Msk){
 	uint8_t Pos = 0;
 	if( Msk ){
 		for( ; !(Msk & 1); Msk >>= 1, Pos++ );
 	}
 	return Pos;
+}
+inline void set_reg(volatile uint8_t* reg, uint8_t hbits){
+	*reg |= hbits;
+}
+inline void clear_reg(volatile uint8_t* reg, uint8_t hbits){
+	*reg &= ~hbits;
 }
 inline uint8_t get_reg_Msk(uint8_t reg, uint8_t Msk)
 {
@@ -209,6 +209,14 @@ void STM32446VecSetup( volatile uint8_t vec[], unsigned int size_block, unsigned
 	data &= mask;
 	vec[index] &= ~( mask << ((block_n * size_block) - (index * n_bits)) );
 	vec[index] |= ( data << ((block_n * size_block) - (index * n_bits)) );
+}
+/*** NULL Check ***/
+int isPtrNull(void* ptr) {
+	return ptr ? 0 : 1; // Returns 1 if NULL, 0 otherwise
+}
+int isCharPtrFlush(void* ptr) {
+	// Cast the void pointer to a char pointer to dereference it
+	return *((unsigned char*)ptr) ? 0 : 1; // Returns 1 if '\0', 0 otherwise
 }
 /*** Fall Threw Delay ***/
 int ftdelayCycles( uint8_t lock_ID, unsigned int n_cycle ) {

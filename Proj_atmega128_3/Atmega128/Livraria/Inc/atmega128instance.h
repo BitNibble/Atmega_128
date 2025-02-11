@@ -124,6 +124,9 @@ void set_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uin
 void set_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t data);
 uint8_t get_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n);
 void set_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
+/*** NULL Check ***/
+int isPtrNull(void* ptr);
+int isCharPtrFlush(void* ptr);
 /*** Fall Threw Delay ***/
 int ftdelayCycles(uint8_t lock_ID, unsigned int n_cycle);
 void ftdelayReset(uint8_t ID);
