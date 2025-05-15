@@ -61,7 +61,7 @@ void lcd_clear_reg(volatile uint8_t* reg, uint8_t hbits);
 LCD0 lcd0_enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t *port)
 {
 	// LOCAL VARIABLES
-	// ALLOCAÇÂO MEMORIA PARA Estrutura
+	// ALLOCACAO MEMORIA PARA Estrutura
 	//LCD0 setup_lcd0;
 	
 	// import parameters
@@ -265,7 +265,7 @@ void LCD0_reboot(void)
 LCD1 lcd1_enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t *port)
 {
 	// LOCAL VARIABLES
-	// ALLOCAÇÂO MEMORIA PARA Estrutura
+	// ALLOCACAO MEMORIA PARA Estrutura
 	//LCD1 setup_lcd1;
 	
 	// import parameters
