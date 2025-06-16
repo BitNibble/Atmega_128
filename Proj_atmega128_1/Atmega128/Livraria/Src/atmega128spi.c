@@ -1,10 +1,9 @@
 /*************************************************************************
 	ATMEGA128SPI
-Author: Sergio Santos 
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: ATmega128
-Update: 07/01/2024
+Update:   07/01/2024
 Comment:
    Stable
 *************************************************************************/

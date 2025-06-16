@@ -1,10 +1,9 @@
 /*************************************************************************
 	HX711
-Author: Sergio Santos
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License     
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License     
 Hardware: Atmega 128
-Date: 08032021_start
+Date:     08032021_start
 Comment:
 	Nice
 ************************************************************************/

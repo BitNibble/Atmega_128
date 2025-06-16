@@ -1,18 +1,17 @@
 /************************************************************************
 Title: SUNTRACK.c
-Author: Sergio Manuel Santos 
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:    <sergio.salazar.santos@gmail.com>
+License:   GNU General Public License
 File: $Id: MAIN,v 1.8.2.1 21/10/2020 Exp $
-Software: Atmel Studio 7 (ver 7.0.129)
-Hardware: atmega128 by ETT ET-BASE
+Software:  Atmel Studio 7 (ver 7.0.129)
+Hardware:  atmega128 by ETT ET-BASE
 	-PORTA LCD 16X2
 	-PORTE Keyboard 4X4
 	-PF0 Sensor LDR
 	-PB6 Servo Motor
 	-PORTD RTC and UART1->FTDI chip->PC Putty or HC-05 115200kb 8 1 n.
 	-PORTG HC595
-Update: 01/01/2024
+Update:    01/01/2024
 Comment:
 	-AT+ROLE0\r\n
 	-AT+TYPE1\r\n

@@ -1,8 +1,7 @@
 /*********************************************************
 File: LFSM
-Author: Sergio Santos
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: Atmega 128
 	-PORTA : LCD Display 4X20
 	-PORTB : Buttons
@@ -10,7 +9,7 @@ Hardware: Atmega 128
 	-PORTE : Keypad 4X4
 	-PORTG : HC595 PIN 0, 1, 2.
 Date:
-	25/10/2020
+	      25/10/2020
 Comment:
 	LFSM
 	This program can be used to create a lfsm program (eeprom file).

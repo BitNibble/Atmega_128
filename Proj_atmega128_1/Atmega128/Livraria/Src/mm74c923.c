@@ -1,8 +1,7 @@
 /*************************************************************************
 	MM74C923
-Author: Sergio Manuel Santos
-	<sergio.salazar.santos@gmail.com> 
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com> 
+License:  GNU General Public License
 Hardware: 74C923
 Date:
 Comment:

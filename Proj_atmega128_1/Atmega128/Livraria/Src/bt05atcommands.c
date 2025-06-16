@@ -1,10 +1,9 @@
 /*************************************************************************
 	BT05ATCOMMANDS
-Author: Sergio Santos 
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: ALL
-Date: 24042023
+Date:     24042023
 Comment:
 	Stable
 *************************************************************************/

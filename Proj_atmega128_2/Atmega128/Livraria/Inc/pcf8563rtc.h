@@ -1,10 +1,9 @@
 /***************************************************************************************************
 	PCF8563RTC
-Author: Sergio Santos
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: PCF8563
-Date: 29112022
+Date:     29112022
 Comment:
 	Stable
  **************************************************************************************************/

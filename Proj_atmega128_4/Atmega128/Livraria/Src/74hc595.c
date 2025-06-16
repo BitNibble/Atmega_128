@@ -1,11 +1,10 @@
 /*************************************************************************
 	74HC595
-Author: Sergio Santos
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License     
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License     
 Hardware: 74HC595
-Date: 25/10/2020
-Update: 05/01/2024
+Date:     25/10/2020
+Update:   05/01/2024
 Comment:
 	Tested Atemga88 8Mhz and Atmega328 8Mhz and STM32F446RE
 ************************************************************************/

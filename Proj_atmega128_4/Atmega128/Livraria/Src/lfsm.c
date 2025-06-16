@@ -1,10 +1,9 @@
 /*************************************************************************
 	LFSM
-Author: Sergio Santos
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: Atmega 128
-Date: 25102020
+Date:     25102020
 Comment:
 	page=1 is dedicated for global logic, if page>1 is for local logic.
 	purpose is for machine programming, and encoders. General purpose algorithm.

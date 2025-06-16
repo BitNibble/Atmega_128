@@ -1,10 +1,9 @@
 /**********************************************************
 	ATMEGA 128 MAPPING
-Author: Sergio Manuel Santos
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: Atmega128 by ETT ET-BASE
-Update: 07/01/2024
+Update:   07/01/2024
 Comment:
 	Virtual Image Atmega 128 mapping.
 **********************************************************/

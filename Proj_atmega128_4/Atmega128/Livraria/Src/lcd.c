@@ -1,10 +1,9 @@
 /*************************************************************************
 	LCD
-Author: Sergio Santos 
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: all
-Date: 12112022
+Date:     12112022
 Comment:
 	Tested Atemga128 16Mhz and Atmega328 8Mhz                    
 ************************************************************************/

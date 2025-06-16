@@ -1,10 +1,9 @@
 /************************************************************************
 	ZNPID
-Author: Sergio Santos
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: Atmega 128
-Date: 17022021_start
+Date:     17022021_start
 Comment:
 
 ************************************************************************/

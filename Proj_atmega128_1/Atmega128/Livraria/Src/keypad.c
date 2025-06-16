@@ -1,11 +1,10 @@
 /*************************************************************************
 	KEYPAD
-Author: Sergio Santos
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: all
-Date: 27/11/2022
-Update 09/01/2024
+Date:     27/11/2022
+Update    09/01/2024
 Comment:
 	Stable
 *************************************************************************/

@@ -1,10 +1,9 @@
 /******************************************************************************
 	BUFFER
-Author: Sergio Santos
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: all
-Date: 17112022
+Date:     17112022
 Comment:
 	Buffer
 ******************************************************************************/

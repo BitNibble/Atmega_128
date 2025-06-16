@@ -1,10 +1,9 @@
 /*************************************************************************
 	HC05ATCOMMANDS
-Author: Sergio Santos 
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: ALL
-Update: 29/12/2023
+Update:   29/12/2023
 Comment:
 	Stable
 *************************************************************************/

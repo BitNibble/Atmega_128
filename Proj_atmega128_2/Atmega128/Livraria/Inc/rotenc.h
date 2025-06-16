@@ -1,10 +1,9 @@
 /************************************************************************
 	ROTENC
-Author: Sergio Santos
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: Rotary encoder Potentiometer
-Date: 25102020
+Date:     25102020
 Comment:
 	Stable
 ************************************************************************/

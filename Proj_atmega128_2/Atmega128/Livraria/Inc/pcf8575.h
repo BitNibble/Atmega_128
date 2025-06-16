@@ -1,10 +1,9 @@
 /***************************************************************************************************
 	PCF8575
-Author: Sergio Santos
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: PCF8575
-Date: 24012024
+Date:     24012024
 ***************************************************************************************************/
 /****** Comment:
 	

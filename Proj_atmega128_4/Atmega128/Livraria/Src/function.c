@@ -1,11 +1,10 @@
 /*************************************************************************
 	FUNCTION
-Author: Sergio Santos
-	<sergio.salazar.santos@gmail.com> 
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com> 
+License:  GNU General Public License
 Hardware: all
-Date: 31122023
-Update : 07012024
+Date:     31122023
+Update :  07012024
 Comment:
 	Tested Atemga128 16Mhz and Atmega328 8Mhz and STM32F446RE
 *************************************************************************/

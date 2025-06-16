@@ -1,10 +1,9 @@
 /************************************************************************
 	PCF8575LCD
-Author: Sergio Santos 
-	<sergio.salazar.santos@gmail.com>
-License: GNU General Public License
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
 Hardware: all
-Date: 11042024
+Date:     11042024
 Comment:
 	Tested Atemga128 16Mhz and Atmega328 8Mhz
 ************************************************************************/

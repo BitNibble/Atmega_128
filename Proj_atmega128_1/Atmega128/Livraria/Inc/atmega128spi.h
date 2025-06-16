@@ -1,9 +1,8 @@
 /************************************************************************
 	ATMEGA128SPI
-Author: Sergio Santos 
-	<sergio.salazar.santos@gmail.com>
+Author:   <sergio.salazar.santos@gmail.com>
 Hardware: ATmega128
-Update: 07/01/2024
+Update:   07/01/2024
 Comment:
 	Stable
 ************************************************************************/
