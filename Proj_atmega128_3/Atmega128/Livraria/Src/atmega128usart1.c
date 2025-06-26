@@ -16,10 +16,11 @@ Comment:
 /*** File Variable ***/
 static USART1 atmega128_usart1;
 
-BUFF rx1buff;
-UARTvar UART1_Rx;
-UARTvar UART1_RxBuf[UART1_RX_BUFFER_SIZE + 1];
-uint8_t UART1_LastRxError;
+static BUFF rx1buff;
+static UARTvar UART1_Rx;
+static UARTvar UART1_RxBuf[UART1_RX_BUFFER_SIZE];
+static uint16_t uart1_rx_buffer_size = UART1_RX_BUFFER_SIZE - 1;
+static uint8_t UART1_LastRxError;
 static uint8_t uart1flag;
 
 /*** File Header ***/
@@ -47,7 +48,7 @@ USART1 usart1_enable( uint32_t baud, unsigned int FDbits, unsigned int Stopbits,
 	// ATMEGA128enable();
 	uart1flag = 1;
 	uint16_t ubrr = 0;
-	rx1buff = buff_enable( UART1_RX_BUFFER_SIZE, UART1_RxBuf );
+	rx1buff = buff_enable( uart1_rx_buffer_size, UART1_RxBuf );
 	ubrr = BAUDRATEnormal(baud);
 	atmega128_usart1.instance = usart1_instance();
 	// FUNCTION POINTER

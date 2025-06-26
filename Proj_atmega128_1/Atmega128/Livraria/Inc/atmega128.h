@@ -13,6 +13,7 @@ Comment:
 /*** Global Library ***/
 #include <stdint.h>
 #include <inttypes.h>
+#include <stddef.h>
 
 /****** Atmega128 Peripheral Addresses ******/
 // General Purpose Register

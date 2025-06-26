@@ -20,9 +20,6 @@ Comment:
 #ifndef UART0_RX_BUFFER_SIZE
 	#define UART0_RX_BUFFER_SIZE 32
 #endif
-#ifndef UART1_RX_BUFFER_SIZE
-	#define UART1_RX_BUFFER_SIZE 32
-#endif
 
 #define UARTvar char
 

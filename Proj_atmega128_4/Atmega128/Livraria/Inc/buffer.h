@@ -11,6 +11,7 @@ Comment:
 	#define _BUFFER_H_
 
 /*** Global Library ***/
+#include <stdint.h>
 #include <inttypes.h>
 
 /*** Global Constant & Macro ***/
@@ -31,7 +32,7 @@ typedef struct{
 }BUFF;
 
 /*** Global Header ***/
-BUFF buff_enable(uint8_t size_buff, BUFFvar* buff);
+BUFF buff_enable(uint16_t size_buff, BUFFvar* buff);
 
 #endif
 

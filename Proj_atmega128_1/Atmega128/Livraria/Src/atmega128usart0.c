@@ -3,7 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: ATmega128
-Update:   07/01/2024
+Update:   26/06/2025
 Comment:
 	Stable
 *************************************************************************/
@@ -16,10 +16,11 @@ Comment:
 /*** File Variable ***/
 static USART0 atmega128_usart0;
 
-BUFF rx0buff;
-UARTvar UART0_Rx;
-UARTvar UART0_RxBuf[UART0_RX_BUFFER_SIZE + 1];
-uint8_t UART0_LastRxError;
+static BUFF rx0buff;
+static UARTvar UART0_Rx;
+static UARTvar UART0_RxBuf[UART0_RX_BUFFER_SIZE];
+static const uint16_t uart0_rx_buffer_size = UART0_RX_BUFFER_SIZE - 1;
+static uint8_t UART0_LastRxError;
 static uint8_t uart0flag;
 
 /*** File Header ***/
@@ -47,7 +48,7 @@ USART0 usart0_enable(uint32_t baud, unsigned int FDbits, unsigned int Stopbits, 
 	// ATMEGA128enable();
 	uart0flag = 1;
 	uint16_t ubrr = 0;
-	rx0buff = buff_enable( UART0_RX_BUFFER_SIZE, UART0_RxBuf );
+	rx0buff = buff_enable( uart0_rx_buffer_size, UART0_RxBuf );
 	ubrr = BAUDRATEnormal(baud);
 	atmega128_usart0.instance = usart0_instance();
 	// Vtable

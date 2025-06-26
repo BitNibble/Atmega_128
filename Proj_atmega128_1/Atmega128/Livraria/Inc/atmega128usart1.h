@@ -17,9 +17,6 @@ Comment:
 #ifndef GLOBAL_INTERRUPT_ENABLE
 	#define GLOBAL_INTERRUPT_ENABLE 7
 #endif
-#ifndef UART0_RX_BUFFER_SIZE
-	#define UART0_RX_BUFFER_SIZE 32
-#endif
 #ifndef UART1_RX_BUFFER_SIZE
 	#define UART1_RX_BUFFER_SIZE 32
 #endif
