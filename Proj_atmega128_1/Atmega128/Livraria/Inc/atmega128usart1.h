@@ -28,7 +28,7 @@ Comment:
 #define EVEN 2
 #define ODD 3
 
-#if ( ( UART_RX_BUFFER_SIZE ) >= ( RAMEND - 0x60 ) )
+#if ( ( UART1_RX_BUFFER_SIZE ) >= ( RAMEND - 0x60 ) )
 	#error "size of UART_RX_BUFFER_SIZE + UART_TX_BUFFER_SIZE larger than size of SRAM"
 #endif
 
