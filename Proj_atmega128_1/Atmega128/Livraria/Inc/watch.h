@@ -14,27 +14,27 @@ Comment:
 /*** Global library ***/
 #include <inttypes.h>
 
-/*** Constant & Macro ***/
-#define N_DELAY_MASK 0X0F
-#define N_DELAY 16
+/*** Global Constant & Macro ***/
 
 /*** Global Variable ***/
-struct WATCHTIME{
+typedef struct {
 	uint8_t hour;
 	uint8_t minute;
 	uint8_t second;
-	uint16_t seconds;
-};
-typedef struct{
-	struct WATCHTIME* time;
-	uint8_t (*start_delay)(uint8_t n_delay, uint16_t seconds);
+	volatile uint32_t seconds;
+} WATCH_TIME;
+
+typedef struct {
+	void (*preset)(uint8_t hour, uint8_t minute, uint8_t second);
+	uint8_t (*start_delay)(uint8_t n_delay, uint32_t seconds);
 	void (*increment)(void);
-	void (*decrement)(void);
 	char* (*show)(void);
-}WATCH;
+} WATCH;
 
 /*** Global Header ***/
-WATCH watch_enable(void);
+WATCH WATCH_enable(void);
+extern void WATCH_increment(void);
+extern void WATCH_decrement(void);
 
 #endif
 

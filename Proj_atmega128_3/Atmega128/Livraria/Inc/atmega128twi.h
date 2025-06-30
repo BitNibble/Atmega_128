@@ -11,6 +11,7 @@ Comment:
 	#define _ATMEGA128TWI_H_
 
 /*** Global Library ***/
+#include <util/twi.h>
 #include "atmega128instance.h"
 
 /*** Global Constant & Macro ***/
@@ -68,7 +69,7 @@ Comment:
 #define TWI_IO_MASK 0x03
 #define TWI_STATUS_MASK 0xF8
 #define TWI_PRESCALER_MASK 0x03
-#define TWI_ADDRESS_instanceISTER_MASK 0xFE
+#define TWI_ADDRESS_REGISTER_MASK 0xFE
 #define Nticks 1023 // anti polling freeze.
 
 // devices

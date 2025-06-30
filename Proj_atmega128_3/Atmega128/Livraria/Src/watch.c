@@ -11,131 +11,118 @@ Comment:
 /*** File Library ***/
 #include "watch.h"
 
+/*** File Constant & Macro***/
+#define N_DELAY 16
+#define N_DELAY_MASK 0X0F
+#define W12HOUR_CYCLE 12
+#define W24HOUR_CYCLE 24
+#define W12_HOUR_SECONDS 43199
+#define W24_HOUR_SECONDS 84399
 /*** File Variable ***/
-struct WATCHTIME time;
-char WATCH_vector[9];
-uint16_t WATCH_trigger[N_DELAY];
-uint8_t WATCH_delay_flag[N_DELAY];
+static WATCH_TIME time;
+static char WATCH_vector[9];
+static uint32_t WATCH_trigger[N_DELAY] = {0};
+static uint8_t WATCH_delay_flag[N_DELAY] = {0};
 
 /*** File Header ***/
-uint8_t WATCH_start_delay(uint8_t n_delay, uint16_t seconds);
-uint8_t WATCH_hour(void);
-uint8_t WATCH_minute(void);
-uint8_t WATCH_second(void);
-uint16_t WATCH_seconds(void);
+void WATCH_set_hour(uint8_t hour);
+void WATCH_set_minute(uint8_t min);
 void WATCH_preset(uint8_t hour, uint8_t minute, uint8_t second);
-void WATCH_setminute(void);
-void WATCH_sethour(void);
-void WATCH_increment(void);
-void WATCH_decrement(void);
+uint8_t WATCH_start_delay(uint8_t n_delay, uint32_t seconds);
 void WATCH_result(void);
 char* WATCH_show(void);
 
 /*** Procedure & Function ***/
-WATCH watch_enable(void)
+WATCH WATCH_enable(void)
 {
-	uint8_t i;
 	time.hour = 0;
 	time.minute = 0;
 	time.second = 0;
 	time.seconds = 0;
-	for(i = 0; i > N_DELAY_MASK; i++)
-		WATCH_delay_flag[i] = 0;
-	WATCH setup_watch;
 	
-	setup_watch.time = &time;
-	setup_watch.start_delay = WATCH_start_delay;
-	setup_watch.increment = WATCH_increment;
-	setup_watch.decrement = WATCH_decrement;
-	setup_watch.show = WATCH_show;
-	
-	return setup_watch;
+	WATCH watch;
+	watch.preset = WATCH_preset;
+	watch.start_delay = WATCH_start_delay;
+	watch.increment = WATCH_increment;
+	watch.show = WATCH_show;
+	return watch;
 }
-uint8_t WATCH_start_delay(uint8_t n_delay, uint16_t seconds){ // One shot
-	uint16_t segundos;
-	uint8_t ret;
-	ret = 0;
-	n_delay &= N_DELAY_MASK;
-	segundos = time.seconds;
-	if(WATCH_delay_flag[n_delay]){
-		if(segundos == WATCH_trigger[n_delay]){ // trigger condition
+
+uint8_t WATCH_start_delay(uint8_t delay_n, uint32_t seconds){
+	uint32_t segundos = 0;
+	uint8_t ret = 0; // one shot repeat
+	delay_n &= N_DELAY_MASK;
+	if(WATCH_delay_flag[delay_n]) {
+		segundos = time.seconds;
+		if( segundos >= WATCH_trigger[delay_n] ) {
+			WATCH_delay_flag[delay_n] = 0;
 			ret = 1;
 		}
-	}else{
-		segundos += seconds;
-		if(segundos > 43199)
-			WATCH_trigger[n_delay] = segundos - 43200;
+	}else {
+		segundos = time.seconds + seconds;
+		if(segundos > W24_HOUR_SECONDS)
+			WATCH_trigger[delay_n] = segundos - (W24_HOUR_SECONDS + 1);
 		else
-			WATCH_trigger[n_delay] = segundos;
-		WATCH_delay_flag[n_delay] = 1;
+			WATCH_trigger[delay_n] = segundos;
+		WATCH_delay_flag[delay_n] = 1;
 	}
 	return ret;
 }
+
 void WATCH_preset(uint8_t hour, uint8_t minute, uint8_t second)
 {
-	if( hour < 13 ){
-		if(hour > 0 && hour < 12)
-			time.hour = hour;
-		else
-			time.hour = 12;
-	}else
+	if(hour < W24HOUR_CYCLE)
+		time.hour = hour;
+	else
 		time.hour = 0;
+		
 	if( minute < 60 )
 		time.minute = minute;
 	else
 		time.minute = 0;
-	if( second < 60 );
+		
+	if( second < 60 )
+		;
 	else
 		time.second = 0;
-	time.seconds = hour * 3600 + minute * 60 + second;
+	time.seconds = (uint32_t) (hour * 3600. + minute * 60. + second);
 }
-void WATCH_setminute(void){
-	uint16_t segundos;
-	segundos=time.seconds;
-	segundos += 60;
-	if(segundos > 43199)
-		time.seconds = segundos - 43200;
-	else
-		time.seconds = segundos;
+
+void WATCH_set_minute(uint8_t min){
+	if( min < 60 )
+		time.seconds = time.hour * 3600. + min * 60. + time.second;
 }
-void WATCH_sethour(void){
-	uint16_t segundos;
-	segundos = time.seconds;
-	segundos += 3600;
-	if(segundos > 43199)
-		time.seconds = segundos - 43200;
-	else
-		time.seconds = segundos;
+
+void WATCH_set_hour(uint8_t hour){
+	if( hour < W24HOUR_CYCLE )
+		time.seconds = hour * 3600. + time.minute * 60. + time.second;
 }
+
 void WATCH_increment(void)
 {
-	// time.seconds = time.hour * 3600 + time.minute * 60 + time.second;
-	if(time.seconds > 43199)
-		time.seconds = 0;
-	else
+	if(time.seconds < W24_HOUR_SECONDS) {
 		time.seconds++;
+	}else {
+		time.seconds = 0;
+	}
 }
+
 void WATCH_decrement(void)
 {
 	if(time.seconds)
 		time.seconds--;
 	else
-		time.seconds = 43200 - 1;
+		time.seconds = W24_HOUR_SECONDS;
 }
+
 void WATCH_result(void)
 {
-	uint16_t segundos;
-	uint8_t hour;
-	segundos = time.seconds;
-	hour = segundos / 3600;
-	if(hour)
-		time.hour = hour;
-	else
-		time.hour = 12;
-	segundos %= 3600;
-	time.minute = segundos / 60;
-	time.second = segundos % 60;
+	uint16_t remainder = time.seconds % 3600;
+	time.hour = time.seconds / 3600;
+	time.minute = remainder / 60;
+	time.second = remainder % 60;
 }
+
 char* WATCH_show(void)
 {
 	uint8_t tmp;
@@ -154,8 +141,6 @@ char* WATCH_show(void)
 	WATCH_vector[0] = tmp % 10 + '0';
 	return WATCH_vector;
 }
-
-/***File Interrupt***/
 
 /***EOF***/
 
