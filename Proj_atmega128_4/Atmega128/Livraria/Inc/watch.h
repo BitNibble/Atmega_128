@@ -1,12 +1,8 @@
 /************************************************************************
 Title:    watch.h
-Author:   Sergio Manuel Santos <sergio.salazar.santos@gmail.com>
-File:     $Id: watch.h,v 0.2 2017/07/01 17:00:00 Sergio Exp $
-Software: AVR-GCC 4.1, AVR Libc 1.4
-Hardware:
+Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
-Comment:
-	
+Date:     03072025
 ************************************************************************/
 #ifndef _WATCH_H_
 	#define _WATCH_H_
@@ -32,7 +28,7 @@ typedef struct {
 } WATCH;
 
 /*** Global Header ***/
-WATCH WATCH_enable(void);
+WATCH watch_enable(void);
 extern void WATCH_increment(void);
 extern void WATCH_decrement(void);
 
