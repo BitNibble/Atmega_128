@@ -194,6 +194,9 @@
     <Compile Include="Livraria\Inc\atmega128usart1.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Livraria\Inc\atmega128_registers.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Livraria\Inc\atmegaeeprom.h">
       <SubType>compile</SubType>
     </Compile>
