@@ -60,9 +60,9 @@ int main(void)
 {
 	atmega128_enable();
 	PORTINIT(); // Inic Ports
-	/***INICIALIZE OBJECTS***/
+	/*** Handler ***/
 	function= func_enable(); // Function Library
-	LCD0 lcd0 = lcd0_enable(&DDRA,&PINA,&PORTA); // LCD Display 4X20
+	lcd0_enable(&DDRA,&PINA,&PORTA); // LCD Display 4X20
 	KEYPAD keypad = keypad_enable(&DDRE,&PINE,&PORTE); // Keyboard
 	ADC0 analog = adc_enable(1, 128, 1, 0); // Channel 0 for Position
 	TC0 timer0 = tc0_enable(2,2); // 1Hz to HC595
@@ -96,92 +96,92 @@ int main(void)
 	//TODO:: Please write your application code
 	while(TRUE){
 		/***PREAMBLE***/
-		lcd0.reboot();
+		lcd0()->reboot();
 		keypad.read();
 		//uartreceive=uart.read();
 		/***Reading input***/
-		lcd0.gotoxy(3,13);
-		lcd0.putch(':');
-		lcd0.string_size(keypad.data->print,6);
+		lcd0()->gotoxy(3,13);
+		lcd0()->putch(':');
+		lcd0()->string_size(keypad.data->print,6);
 		/***ENTRY END***/
 		switch(Menu){
 			/***MENU 1***/
 			case '1': // Main Program Menu
-				if(!strcmp(keypad.data->string,"A")){Menu='2';keypad.flush();lcd0.clear();break;}
-				if(!strcmp(keypad.data->string,"B")){Menu='3';keypad.flush();lcd0.clear();break;}
+				if(!strcmp(keypad.data->string,"A")){Menu='2';keypad.flush();lcd0()->clear();break;}
+				if(!strcmp(keypad.data->string,"B")){Menu='3';keypad.flush();lcd0()->clear();break;}
 					/***Reading analog***/
 					adcvalue=analog.read(0);
-					lcd0.gotoxy(0,0);
-					lcd0.string_size("Output: ",7);
+					lcd0()->gotoxy(0,0);
+					lcd0()->string_size("Output: ",7);
 					strcpy(str,function.i16toa(adcvalue));
-					lcd0.string_size(str,4);
+					lcd0()->string_size(str,4);
 					
 					if(pid_out_1 >-1024 && pid_out_1 <1024){
 						tmp=function.trimmer(pid_out_1,-1023,1023,Min,Max);
 						timer1.compareB(tmp);
-						lcd0.gotoxy(1,0);
+						lcd0()->gotoxy(1,0);
 						strcpy(str,function.i16toa(tmp));
-						lcd0.string_size(str,4);
+						lcd0()->string_size(str,4);
 					}
 					
 					function.ftoa(35.00567, 6);
-					lcd0.gotoxy(2,0);
-					lcd0.string_size(str,12);
-					//lcd0.gotoxy(2,0);
+					lcd0()->gotoxy(2,0);
+					lcd0()->string_size(str,12);
+					//lcd0()->gotoxy(2,0);
 					//strcpy(str,function.i32toa(pid_1.PV));
-					//lcd0.string_size(str,6);
+					//lcd0()->string_size(str,6);
 					//if(pid_1.derivative>0){
-						lcd0.gotoxy(3,0);
+						lcd0()->gotoxy(3,0);
 						strcpy(str,function.i32toa(pid_1.par.derivative));
-						lcd0.string_size(str,6);
+						lcd0()->string_size(str,6);
 					//}
 					
 					
 					// PID_1 output
-					lcd0.gotoxy(0,13);
+					lcd0()->gotoxy(0,13);
 					strcpy(str,function.i32toa(pid_out_1));
-					lcd0.string_size(str,6);
+					lcd0()->string_size(str,6);
 					
 					// PID_2 output
-					lcd0.gotoxy(1,13);
+					lcd0()->gotoxy(1,13);
 					strcpy(str,function.i32toa(pid_out_2));
-					lcd0.string_size(str,6);
+					lcd0()->string_size(str,6);
 					
 				break;
 			/***MENU 2***/
 			case '2': // Manual position override 
-				if(!strcmp(keypad.data->string,"A")){Menu='3';keypad.flush();lcd0.clear();break;}
-				if(!strcmp(keypad.data->string,"B")){Menu='1';keypad.flush();lcd0.clear();break;}
-				if(!strcmp(keypad.data->string,"C")){Menu='1';keypad.flush();lcd0.clear();break;}
-					lcd0.gotoxy(0,0);
-					lcd0.string_size("Manual: ",8);
-					lcd0.string_size(mstr,3);
-					lcd0.gotoxy(1,0);
-					lcd0.string_size("Enter Angle",11);
+				if(!strcmp(keypad.data->string,"A")){Menu='3';keypad.flush();lcd0()->clear();break;}
+				if(!strcmp(keypad.data->string,"B")){Menu='1';keypad.flush();lcd0()->clear();break;}
+				if(!strcmp(keypad.data->string,"C")){Menu='1';keypad.flush();lcd0()->clear();break;}
+					lcd0()->gotoxy(0,0);
+					lcd0()->string_size("Manual: ",8);
+					lcd0()->string_size(mstr,3);
+					lcd0()->gotoxy(1,0);
+					lcd0()->string_size("Enter Angle",11);
 					if(keypad.data->character==KEYPADENTERKEY){
 						strncpy(mstr,keypad.data->string,6);
 						mvalue=function.strToInt(mstr);
 						if(mvalue >=0 && mvalue <181){
 							m_value=mvalue;
 							timer1.compareB(function.trimmer(m_value,0,180,Min,Max));
-							lcd0.hspace(5);
+							lcd0()->hspace(5);
 						}else{
-							lcd0.string_size("  err",5);
+							lcd0()->string_size("  err",5);
 						}
 						keypad.flush();
 					}
 					//else
 					//	timer1.compareB(function.trimmer(m_value,0,180,Min,Max));
-					lcd0.gotoxy(3,0);
-					lcd0.string_size("C - exit",8);
+					lcd0()->gotoxy(3,0);
+					lcd0()->string_size("C - exit",8);
 				break;
 			/***MENU 3***/
 			case '3': //Set Time and Date
-				if(!strcmp(keypad.data->string,"A")){Menu='1';keypad.flush();lcd0.clear();break;}
-				if(!strcmp(keypad.data->string,"B")){Menu='2';keypad.flush();lcd0.clear();break;}
-				if(!strcmp(keypad.data->string,"C")){Menu='1';keypad.flush();lcd0.clear();break;}
-					lcd0.gotoxy(0,0);
-					lcd0.string_size("Not being used",19);
+				if(!strcmp(keypad.data->string,"A")){Menu='1';keypad.flush();lcd0()->clear();break;}
+				if(!strcmp(keypad.data->string,"B")){Menu='2';keypad.flush();lcd0()->clear();break;}
+				if(!strcmp(keypad.data->string,"C")){Menu='1';keypad.flush();lcd0()->clear();break;}
+					lcd0()->gotoxy(0,0);
+					lcd0()->string_size("Not being used",19);
 					
 					/***Play around***/
 				

@@ -71,6 +71,7 @@ int main(void)
 atmega128_enable();
 PORTINIT();
 
+// Handler
 adc_enable(1, 128, 1, 0); // Channel 0 for Position
 tc0_enable(2,2); // 1Hz to HC595
 tc1_enable(9,0); // PWM Positioning
