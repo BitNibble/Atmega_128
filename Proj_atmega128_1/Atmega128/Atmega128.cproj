@@ -149,9 +149,6 @@
     <Compile Include="Livraria\Inc\atmega128analog.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Livraria\Inc\atmega128instance.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Livraria\Inc\atmega128interrupt.h">
       <SubType>compile</SubType>
     </Compile>
@@ -242,10 +239,10 @@
     <Compile Include="Livraria\Src\74hc595.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Livraria\Src\atmega128analog.c">
+    <Compile Include="Livraria\Src\atmega128.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Livraria\Src\atmega128instance.c">
+    <Compile Include="Livraria\Src\atmega128analog.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Livraria\Src\atmega128interrupt.c">

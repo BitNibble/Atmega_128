@@ -1,13 +1,11 @@
 /**********************************************************
-	ATMEGA 128 Instance
+	ATMEGA 128
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega 128
 Update:	  07/04/2024
-Comment: 
-
 **********************************************************/
-#include "atmega128instance.h"
+#include "atmega128.h"
 #include <stdarg.h>
 /***************************/
 /***       MACROS        ***/
@@ -80,10 +78,30 @@ Atmega128Usart1_TypeDef* usart1_instance(void){return (Atmega128Usart1_TypeDef*)
 Atmega128WatchdogTimer_TypeDef* wdt_instance(void){return (Atmega128WatchdogTimer_TypeDef*) 0x0041;}
 
 /*** Atmega 128 Procedure and Function ***/
-uint16_t readhlbyte(HighLowByte reg){return (reg.par.H << 8) | reg.par.L;}
-uint16_t readlhbyte(HighLowByte reg){return (reg.par.L << 8) | reg.par.H;}
-HighLowByte writehlbyte(uint16_t val){HighLowByte reg; reg.par.H = (val >> 8); reg.par.L = val; return reg;}
-HighLowByte writelhbyte(uint16_t val){HighLowByte reg; reg.par.L = (val >> 8); reg.par.H = val; return reg;}
+uint16_t readhlbyte(HighLowByte reg){
+	return (reg.par.H << 8) | reg.par.L;
+}
+uint16_t readHLbyte(U_word reg){
+	return (reg.par.h.var << 8) | reg.par.l.var;
+}
+uint16_t readlhbyte(HighLowByte reg){
+	return (reg.par.L << 8) | reg.par.H;
+}
+uint16_t readLHbyte(U_word reg){
+	return (reg.par.l.var << 8) | reg.par.h.var;
+}
+HighLowByte writehlbyte(uint16_t val){
+	HighLowByte reg; reg.par.H = (val >> 8) & 0xFF; reg.par.L = val & 0xFF; return reg;
+}
+U_word writeHLbyte(uint16_t val){
+	U_word reg; reg.par.h.var = (val >> 8) & 0xFF; reg.par.l.var = val & 0xFF; return reg;
+}
+HighLowByte writelhbyte(uint16_t val){
+	HighLowByte reg; reg.par.L = (val >> 8) & 0xFF; reg.par.H = val & 0xFF; return reg;
+}
+U_word writeLHbyte(uint16_t val){
+	U_word reg; reg.par.l.var = (val >> 8) & 0xFF; reg.par.h.var = val & 0xFF; return reg;
+}
 uint16_t SwapByte(uint16_t num){uint16_t tp; tp = (num << 8); return (num >> 8) | tp;}
 uint16_t BAUDRATEnormal(uint32_t BAUD){uint32_t baudrate = F_CPU/16; baudrate /= BAUD; baudrate -= 1; return (uint16_t) baudrate;}
 uint16_t BAUDRATEdouble(uint32_t BAUD){uint32_t baudrate = F_CPU/8; baudrate /= BAUD; baudrate -= 1; return (uint16_t) baudrate;}

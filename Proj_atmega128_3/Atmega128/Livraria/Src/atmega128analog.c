@@ -162,7 +162,7 @@ ISR(ADC_vect)
 	// adc_tmp = atmega128.adc->adc.L; // ADCL
 	// adc_tmp |= (atmega128.adc->adc.H << 8); // (ADCH << 8);
 	// adc_tmp = *((uint16_t*)&m.adc->adc); // more then one way to skin a rabbit.
-	adc_tmp = readhlbyte(adc_instance()->adc);
+	adc_tmp = readHLbyte(adc_instance()->adc);
 	if(adc_n_sample < (1 << ADC_NUMBER_SAMPLE)){
 		adc_n_sample++;
 		adc_sample += adc_tmp;

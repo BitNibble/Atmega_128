@@ -11,7 +11,7 @@ Comment:
 	#define _ATMEGA128USART1_H_
 
 /*** Global Library ***/
-#include "atmega128instance.h"
+#include "atmega128.h"
 
 /*** Global Constant & Macro ***/
 #ifndef GLOBAL_INTERRUPT_ENABLE

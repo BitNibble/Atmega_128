@@ -154,9 +154,9 @@ TC3 tc3_enable(unsigned char wavegenmode, unsigned char interrupt)
 		default:
 		break;
 	}
-	tc3_instance()->ocr3a = writehlbyte(~0);
-	tc3_instance()->ocr3b = writehlbyte(~0);
-	tc3_instance()->ocr3c = writehlbyte(~0);
+	tc3_instance()->ocr3a = writeHLbyte(~0);
+	tc3_instance()->ocr3b = writeHLbyte(~0);
+	tc3_instance()->ocr3c = writeHLbyte(~0);
 	
 	atmega128_tc3.instance = tc3_instance();
 	atmega128_tc3.compoutmodeA = TIMER_COUNTER3_compoutmodeA;
@@ -291,15 +291,15 @@ void TIMER_COUNTER3_compoutmodeC(unsigned char compoutmode)
 }
 void TIMER_COUNTER3_compareA(uint16_t compare)
 {
-	tc3_instance()->ocr3a = writehlbyte(compare);
+	tc3_instance()->ocr3a = writeHLbyte(compare);
 }
 void TIMER_COUNTER3_compareB(uint16_t compare)
 {
-	tc3_instance()->ocr3b = writehlbyte(compare);
+	tc3_instance()->ocr3b = writeHLbyte(compare);
 }
 void TIMER_COUNTER3_compareC(uint16_t compare)
 {
-	tc3_instance()->ocr3c = writehlbyte(compare);
+	tc3_instance()->ocr3c = writeHLbyte(compare);
 }
 uint8_t TIMER_COUNTER3_stop(void)
 // stops timer by setting prescaler to zero

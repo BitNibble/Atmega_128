@@ -11,7 +11,7 @@ Comment:
 	#define _ATMEGAEEPROM_H_
 
 /*** Global Library ***/
-#include "atmega128instance.h"
+#include "atmega128.h"
 
 /*** Global Constant & Macro ***/
 

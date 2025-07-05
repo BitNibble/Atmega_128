@@ -12,7 +12,7 @@ Comment:
 
 /*** Global Library ***/
 #include <util/twi.h>
-#include "atmega128instance.h"
+#include "atmega128.h"
 
 /*** Global Constant & Macro ***/
 #ifndef _TWI_MODULE_

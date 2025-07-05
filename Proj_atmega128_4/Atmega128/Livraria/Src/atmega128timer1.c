@@ -159,9 +159,9 @@ TC1 tc1_enable(unsigned char wavegenmode, unsigned char interrupt)
 		default:
 		break;
 	}
-	tc1_instance()->ocr1a = writehlbyte(~0);
-	tc1_instance()->ocr1b = writehlbyte(~0);
-	tc1_instance()->ocr1c = writehlbyte(~0);
+	tc1_instance()->ocr1a = writeHLbyte(~0);
+	tc1_instance()->ocr1b = writeHLbyte(~0);
+	tc1_instance()->ocr1c = writeHLbyte(~0);
 	
 	atmega128_tc1.instance = tc1_instance();
 	atmega128_tc1.compoutmodeA = TIMER_COUNTER1_compoutmodeA;
@@ -297,15 +297,15 @@ void TIMER_COUNTER1_compoutmodeC(unsigned char compoutmode)
 }
 void TIMER_COUNTER1_compareA(uint16_t compare)
 {
-	tc1_instance()->ocr1a = writehlbyte(compare);
+	tc1_instance()->ocr1a = writeHLbyte(compare);
 }
 void TIMER_COUNTER1_compareB(uint16_t compare)
 {
-	tc1_instance()->ocr1b = writehlbyte(compare);
+	tc1_instance()->ocr1b = writeHLbyte(compare);
 }
 void TIMER_COUNTER1_compareC(uint16_t compare)
 {
-	tc1_instance()->ocr1c = writehlbyte(compare);
+	tc1_instance()->ocr1c = writeHLbyte(compare);
 }
 uint8_t TIMER_COUNTER1_stop(void)
 // stops timer by setting prescaler to zero

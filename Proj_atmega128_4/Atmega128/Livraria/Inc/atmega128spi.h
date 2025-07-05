@@ -10,7 +10,7 @@ Comment:
 	#define _ATMEGA128SPI_H_
 
 /*** Global Library ***/
-#include "atmega128instance.h"
+#include "atmega128.h"
 
 /*** Global Constant & Macro ***/
 #if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)

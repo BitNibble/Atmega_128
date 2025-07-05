@@ -41,8 +41,8 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../Livraria/Src/74hc595.c \
+../Livraria/Src/atmega128.c \
 ../Livraria/Src/atmega128analog.c \
-../Livraria/Src/atmega128instance.c \
 ../Livraria/Src/atmega128interrupt.c \
 ../Livraria/Src/atmega128mapping.c \
 ../Livraria/Src/atmega128spi.c \
@@ -85,8 +85,8 @@ ASM_SRCS +=
 
 OBJS +=  \
 Livraria/Src/74hc595.o \
+Livraria/Src/atmega128.o \
 Livraria/Src/atmega128analog.o \
-Livraria/Src/atmega128instance.o \
 Livraria/Src/atmega128interrupt.o \
 Livraria/Src/atmega128mapping.o \
 Livraria/Src/atmega128spi.o \
@@ -122,8 +122,8 @@ main.o
 
 OBJS_AS_ARGS +=  \
 Livraria/Src/74hc595.o \
+Livraria/Src/atmega128.o \
 Livraria/Src/atmega128analog.o \
-Livraria/Src/atmega128instance.o \
 Livraria/Src/atmega128interrupt.o \
 Livraria/Src/atmega128mapping.o \
 Livraria/Src/atmega128spi.o \
@@ -159,8 +159,8 @@ main.o
 
 C_DEPS +=  \
 Livraria/Src/74hc595.d \
+Livraria/Src/atmega128.d \
 Livraria/Src/atmega128analog.d \
-Livraria/Src/atmega128instance.d \
 Livraria/Src/atmega128interrupt.d \
 Livraria/Src/atmega128mapping.d \
 Livraria/Src/atmega128spi.d \
@@ -196,8 +196,8 @@ main.d
 
 C_DEPS_AS_ARGS +=  \
 Livraria/Src/74hc595.d \
+Livraria/Src/atmega128.d \
 Livraria/Src/atmega128analog.d \
-Livraria/Src/atmega128instance.d \
 Livraria/Src/atmega128interrupt.d \
 Livraria/Src/atmega128mapping.d \
 Livraria/Src/atmega128spi.d \
@@ -252,14 +252,14 @@ Livraria/Src/74hc595.o: ../Livraria/Src/74hc595.c
 	@echo Finished building: $<
 	
 
-Livraria/Src/atmega128analog.o: ../Livraria/Src/atmega128analog.c
+Livraria/Src/atmega128.o: ../Livraria/Src/atmega128.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
 	@echo Finished building: $<
 	
 
-Livraria/Src/atmega128instance.o: ../Livraria/Src/atmega128instance.c
+Livraria/Src/atmega128analog.o: ../Livraria/Src/atmega128analog.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
