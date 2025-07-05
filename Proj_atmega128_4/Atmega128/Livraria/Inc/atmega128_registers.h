@@ -16,6 +16,7 @@ Date:     05072025
 /*** Gloabl Library ***/
 #include <stdint.h>
 #include <inttypes.h>
+#include <stddef.h>
 
 /*** Base Typedef ***/
 typedef union {

@@ -13,9 +13,9 @@ Update:	  05072025
 #define FTDELAY_SIZE 256
 unsigned int ft_Delay_Lock[FTDELAY_SIZE] = {0};
 unsigned int ftCounter[FTDELAY_SIZE] = {0};
-/***************************/
-/***  HARDWARE HANDLER   ***/
-/***************************/
+/*****************************/
+/**** MAIN HARDWARE LAYER ****/
+/*****************************/
 // GPWR
 Atmega128GPWR_TypeDef* gpwr_reg(void){return (Atmega128GPWR_TypeDef*) 0x0000;}
 // Analog Comparator (AC)

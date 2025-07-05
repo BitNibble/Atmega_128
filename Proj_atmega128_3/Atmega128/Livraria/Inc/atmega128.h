@@ -44,9 +44,9 @@ Date:	  05072025
 #define READ_BIT(REG, BIT)		((REG >> BIT) & 1)
 #define TOGGLE_REG(REG, HBITS)	(REG ^= HBITS)
 
-/***************************/
-/*** HARDWARE HANDLER ***/
-/***************************/
+/*****************************/
+/**** MAIN HARDWARE LAYER ****/
+/*****************************/
 // GPWR
 typedef volatile struct {
 	uint8_t r0; // 0x00

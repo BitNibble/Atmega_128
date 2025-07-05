@@ -250,7 +250,7 @@ switch(Menu){
 			case '1': // YEAR
 				lcd1()->gotoxy(1,12);
 				lcd1()->string_size("C-Ex",4);
-				// YEAR
+				// YEAR 
 				if(keypad()->data->character == KEYPADENTERKEY){
 					strcpy(tstr,keypad()->data->string);
 					set = func()->strToInt(tstr);

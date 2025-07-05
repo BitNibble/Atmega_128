@@ -29,12 +29,3 @@ M: 39.6%
 Program Memory Usage 	:	34628 bytes   26,4 % Full
 Data Memory Usage 		:	1677 bytes   40,9 % Full
 
-
-
-
-
-
-
-
-
-
