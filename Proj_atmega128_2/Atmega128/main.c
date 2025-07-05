@@ -408,7 +408,7 @@ switch(Menu){
 			mvalue=func()->strToInt(mstr);
 			if(mvalue >=0 && mvalue <16){
 				// PORTC = mvalue;
-				atmega128()->portc_instance->port.var = mvalue;
+				atmega128()->portc_reg->port.var = mvalue;
 				lcd1()->gotoxy(0,12);
 				lcd1()->hspace(4);
 			}else{
@@ -455,37 +455,37 @@ switch(Menu){
 			usart1()->rxflush();
 		}
 		if(!strcmp(uartmsg,"s00.\r\n")){
-			if(atmega128()->portc_instance->port.var & 1)
-				atmega128()->portc_instance->port.var &= ~1;
+			if(atmega128()->portc_reg->port.var & 1)
+				atmega128()->portc_reg->port.var &= ~1;
 			else
-				atmega128()->portc_instance->port.var |= 1;
+				atmega128()->portc_reg->port.var |= 1;
 		}
 		if(!strcmp(uartmsg,"s00 off.\r\n")){
-			atmega128()->portc_instance->port.var &= ~1;
+			atmega128()->portc_reg->port.var &= ~1;
 		}
 		if(!strcmp(uartmsg,"s01.\r\n")){
-			if(atmega128()->portc_instance->port.var & 2)
-				atmega128()->portc_instance->port.var &= ~2;
+			if(atmega128()->portc_reg->port.var & 2)
+				atmega128()->portc_reg->port.var &= ~2;
 			else
-				atmega128()->portc_instance->port.var |= 2;
+				atmega128()->portc_reg->port.var |= 2;
 		}
 		if(!strcmp(uartmsg,"s02.\r\n")){
-			if(atmega128()->portc_instance->port.var & 4)
-				atmega128()->portc_instance->port.var &= ~4;
+			if(atmega128()->portc_reg->port.var & 4)
+				atmega128()->portc_reg->port.var &= ~4;
 			else
-				atmega128()->portc_instance->port.var |= 4;
+				atmega128()->portc_reg->port.var |= 4;
 		}
 		if(!strcmp(uartmsg,"s03.\r\n")){
-			if(atmega128()->portc_instance->port.var & 8)
-				atmega128()->portc_instance->port.var &= ~8;
+			if(atmega128()->portc_reg->port.var & 8)
+				atmega128()->portc_reg->port.var &= ~8;
 			else
-				atmega128()->portc_instance->port.var |= 8;
+				atmega128()->portc_reg->port.var |= 8;
 		}
 		if(!strcmp(uartmsg,"all on.\r\n")){
-			atmega128()->portc_instance->port.var |= 15;
+			atmega128()->portc_reg->port.var |= 15;
 		}
 		if(!strcmp(uartmsg,"all off.\r\n")){
-			atmega128()->portc_instance->port.var &= ~15;
+			atmega128()->portc_reg->port.var &= ~15;
 		}
 		if(!strcmp(uartmsg,"Disconnect\r\n")){
 			Menu = '1';
@@ -589,21 +589,21 @@ switch(signal)
 void PORTINIT(void)
 {
 	// INPUT
-	atmega128()->portf_instance->ddr.var = 0x00;
-	atmega128()->portf_instance->port.var = 0x0F;
+	atmega128()->portf_reg->ddr.var = 0x00;
+	atmega128()->portf_reg->port.var = 0x0F;
 	// OUTPUT
-	portb_instance()->ddr.var |= (1<<5) | (1<<6) | (1<<7);
+	portb_reg()->ddr.var |= (1<<5) | (1<<6) | (1<<7);
 	// OUTPUT PULLUP
-	atmega128()->portc_instance->ddr.var = 0xFF;
-	atmega128()->portc_instance->port.var = 0x00;
+	atmega128()->portc_reg->ddr.var = 0xFF;
+	atmega128()->portc_reg->port.var = 0x00;
 }
 
 /*** File Interrupt ***/
 ISR(TIMER0_COMP_vect) // 1Hz and usart Tx
 {
 	uint8_t Sreg;
-	Sreg = cpu_instance()->sreg.var;
-	cpu_instance()->sreg.par.i = 1;
+	Sreg = cpu_reg()->sreg.var;
+	cpu_reg()->sreg.par.i = 1;
 	if(count>59){ //59 -> 1Hz
 		increment++;
 		if((increment & 0x0F) < 8){
@@ -616,14 +616,14 @@ ISR(TIMER0_COMP_vect) // 1Hz and usart Tx
 		count=0;
 	}else
 		count++;
-	cpu_instance()->sreg.var = Sreg;
+	cpu_reg()->sreg.var = Sreg;
 }
 
 ISR(TIMER2_COMP_vect)
 {
 	uint8_t Sreg;
-	Sreg = cpu_instance()->sreg.var;
-	cpu_instance()->sreg.par.i = 1;
+	Sreg = cpu_reg()->sreg.var;
+	cpu_reg()->sreg.par.i = 1;
 	
 	if(counter1 > 1000){
 		// signal = 1;
@@ -631,7 +631,7 @@ ISR(TIMER2_COMP_vect)
 	}
 	counter1++;
 	
-	cpu_instance()->sreg.var = Sreg;
+	cpu_reg()->sreg.var = Sreg;
 }
 
 /**************************** Comment: ******************************

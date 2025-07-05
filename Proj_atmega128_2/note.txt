@@ -25,8 +25,9 @@ Model project
 /*10042024*/
 P: 25%
 M: 39.6%
-
-
+/*05072025*/
+Program Memory Usage 	:	34628 bytes   26,4 % Full
+Data Memory Usage 		:	1677 bytes   40,9 % Full
 
 
 
