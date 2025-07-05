@@ -29,85 +29,85 @@ SPI0 spi_enable(uint8_t master_slave_select, uint8_t data_order,  uint8_t data_m
 	atmega128_spi.transmit_sync = spi_transmit_sync;
 	atmega128_spi.fast_shift = spi_fast_shift;
 	
-	portb_instance()->ddr.reg &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
+	portb_instance()->ddr.var &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
 	switch(master_slave_select){
 		case SPI_MASTER_MODE:
-			spi_instance()->spcr.reg |= (1 << MSTR);
-			portb_instance()->ddr.reg |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
-			portb_instance()->port.reg |= (1 << DD_SS);
+			spi_instance()->spcr.var |= (1 << MSTR);
+			portb_instance()->ddr.var |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
+			portb_instance()->port.var |= (1 << DD_SS);
 		break;
 		case SPI_SLAVE_MODE:
-			spi_instance()->spcr.reg |= (1 << MSTR);
-			portb_instance()->ddr.reg |= (1 << DD_MISO);
+			spi_instance()->spcr.var |= (1 << MSTR);
+			portb_instance()->ddr.var |= (1 << DD_MISO);
 		break;
 		default:
-			spi_instance()->spcr.reg |= (1 << MSTR);
-			portb_instance()->ddr.reg |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
+			spi_instance()->spcr.var |= (1 << MSTR);
+			portb_instance()->ddr.var |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
 		break;
 	}
 	switch(data_order){
 		case SPI_LSB_DATA_ORDER:
-			spi_instance()->spcr.reg |= (1 << DORD);
+			spi_instance()->spcr.var |= (1 << DORD);
 		break;
 		case SPI_MSB_DATA_ORDER:
-			spi_instance()->spcr.reg &= ~(1 << DORD);
+			spi_instance()->spcr.var &= ~(1 << DORD);
 		break;
 		default:
-			spi_instance()->spcr.reg &= ~(1 << DORD);
+			spi_instance()->spcr.var &= ~(1 << DORD);
 		break;
 	}
 	switch(data_modes){
 		case 0:
-			spi_instance()->spcr.reg &= ~((1 << CPOL) | (1 << CPHA));
+			spi_instance()->spcr.var &= ~((1 << CPOL) | (1 << CPHA));
 		break;
 		case 1:
-			spi_instance()->spcr.reg |= (1 << CPHA);
+			spi_instance()->spcr.var |= (1 << CPHA);
 		break;
 		case 2:
-			spi_instance()->spcr.reg |= (1 << CPOL);
+			spi_instance()->spcr.var |= (1 << CPOL);
 		break;
 		case 3:
-			spi_instance()->spcr.reg |= (1 << CPOL) | (1 << CPHA);
+			spi_instance()->spcr.var |= (1 << CPOL) | (1 << CPHA);
 		break;
 		default:
-			spi_instance()->spcr.reg &= ~((1 << CPOL) | (1 << CPHA));
+			spi_instance()->spcr.var &= ~((1 << CPOL) | (1 << CPHA));
 		break;
 	}
 	switch(prescaler){
 		case 2:
-			spi_instance()->spsr.reg |= (1 << SPI2X);
-			spi_instance()->spcr.reg &= ~((1 << SPR1) | (1 << SPR0));
+			spi_instance()->spsr.var |= (1 << SPI2X);
+			spi_instance()->spcr.var &= ~((1 << SPR1) | (1 << SPR0));
 		break;
 		case 4:
-			spi_instance()->spsr.reg &= ~(1 << SPI2X);
-			spi_instance()->spcr.reg &= ~((1 << SPR1) | (1 << SPR0));
+			spi_instance()->spsr.var &= ~(1 << SPI2X);
+			spi_instance()->spcr.var &= ~((1 << SPR1) | (1 << SPR0));
 		break;
 		case 8:
-			spi_instance()->spsr.reg |= (1 << SPI2X);
-			spi_instance()->spcr.reg |= (1 << SPR0);
+			spi_instance()->spsr.var |= (1 << SPI2X);
+			spi_instance()->spcr.var |= (1 << SPR0);
 		break;
 		case 16:
-			spi_instance()->spsr.reg &= ~(1 << SPI2X);
-			spi_instance()->spcr.reg |= (1 << SPR0);
+			spi_instance()->spsr.var &= ~(1 << SPI2X);
+			spi_instance()->spcr.var |= (1 << SPR0);
 		break;
 		case 32:
-			spi_instance()->spsr.reg |= (1 << SPI2X);
-			spi_instance()->spcr.reg |= (1 << SPR1);
+			spi_instance()->spsr.var |= (1 << SPI2X);
+			spi_instance()->spcr.var |= (1 << SPR1);
 		break;
 		case 64:
-			spi_instance()->spsr.reg &= ~(1 << SPI2X);
-			spi_instance()->spcr.reg |= (1 << SPR1);
+			spi_instance()->spsr.var &= ~(1 << SPI2X);
+			spi_instance()->spcr.var |= (1 << SPR1);
 		break;
 		case 128:
-			spi_instance()->spsr.reg &= (1 << SPI2X);
-			spi_instance()->spcr.reg |= (1 << SPR1) | (1 << SPR0);
+			spi_instance()->spsr.var &= (1 << SPI2X);
+			spi_instance()->spcr.var |= (1 << SPR1) | (1 << SPR0);
 		break;
 		default:
-			spi_instance()->spsr.reg |= (1 << SPI2X);
-			spi_instance()->spcr.reg |= (1 << SPR0);
+			spi_instance()->spsr.var |= (1 << SPI2X);
+			spi_instance()->spcr.var |= (1 << SPR0);
 		break;
 	}
-	spi_instance()->spcr.reg |= (1 << SPE);
+	spi_instance()->spcr.var |= (1 << SPE);
 	
 	return atmega128_spi;
 }
@@ -117,26 +117,26 @@ SPI0* spi(void){ return &atmega128_spi; }
 void spi_default()
 // Initialize pins for spi communication
 {
-	portb_instance()->ddr.reg &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
+	portb_instance()->ddr.var &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
 	// Define the following pins as output
-	portb_instance()->ddr.reg |= ((1 << DD_MOSI) | (1 << DD_SS) | (1 << DD_SCK)); 
-	spi_instance()->spcr.reg	=	((1 << SPE) |				// SPI Enable
+	portb_instance()->ddr.var |= ((1 << DD_MOSI) | (1 << DD_SS) | (1 << DD_SCK)); 
+	spi_instance()->spcr.var	=	((1 << SPE) |				// SPI Enable
 						(0 << SPIE) |				// SPI Interrupt Enable
 						(0 << DORD) |				// Data Order (0:MSB first / 1:LSB first)
 						(1 << MSTR) |				// Master/Slave select   
 						(0 << SPR1) | (1 << SPR0) |	// SPI Clock Rate
 						(0 << CPOL) |				// Clock Polarity (0:SCK low / 1:SCK hi when idle)
 						(0 << CPHA));				// Clock Phase (0:leading / 1:trailing edge sampling)
-    spi_instance()->spsr.reg	=	(1 << SPI2X);				// Double Clock Rate  
+    spi_instance()->spsr.var	=	(1 << SPI2X);				// Double Clock Rate  
 }
 void spi_transfer_sync (uint8_t * dataout, uint8_t * datain, uint8_t len)
 // Shift full array through target device
 {
 	uint8_t i;      
 	for (i = 0; i < len; i++) {
-		spi_instance()->spdr.reg = dataout[i];
-		while((spi_instance()->spsr.reg & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
-		datain[i] = spi_instance()->spdr.reg;
+		spi_instance()->spdr.var = dataout[i];
+		while((spi_instance()->spsr.var & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
+		datain[i] = spi_instance()->spdr.var;
 	}
 }
 void spi_transmit_sync (uint8_t * dataout, uint8_t len)
@@ -144,16 +144,16 @@ void spi_transmit_sync (uint8_t * dataout, uint8_t len)
 {
 	uint8_t i;
 	for (i = 0; i < len; i++) {
-		spi_instance()->spdr.reg = dataout[i];
-		while((spi_instance()->spsr.reg & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
+		spi_instance()->spdr.var = dataout[i];
+		while((spi_instance()->spsr.var & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
 	}
 }
 uint8_t spi_fast_shift (uint8_t data)
 // Clocks only one byte to target device and returns the received one
 {
-	spi_instance()->spdr.reg = data;
-	while((spi_instance()->spsr.reg & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
-	return spi_instance()->spdr.reg;
+	spi_instance()->spdr.var = data;
+	while((spi_instance()->spsr.var & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
+	return spi_instance()->spdr.var;
 }
 
 /***EOF***/

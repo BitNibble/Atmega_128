@@ -3,7 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega 128
-Update:	  07/04/2024
+Update:	  05072025
 **********************************************************/
 #include "atmega128.h"
 #include <stdarg.h>
@@ -78,26 +78,14 @@ Atmega128Usart1_TypeDef* usart1_instance(void){return (Atmega128Usart1_TypeDef*)
 Atmega128WatchdogTimer_TypeDef* wdt_instance(void){return (Atmega128WatchdogTimer_TypeDef*) 0x0041;}
 
 /*** Atmega 128 Procedure and Function ***/
-uint16_t readhlbyte(HighLowByte reg){
-	return (reg.par.H << 8) | reg.par.L;
-}
 uint16_t readHLbyte(U_word reg){
 	return (reg.par.h.var << 8) | reg.par.l.var;
-}
-uint16_t readlhbyte(HighLowByte reg){
-	return (reg.par.L << 8) | reg.par.H;
 }
 uint16_t readLHbyte(U_word reg){
 	return (reg.par.l.var << 8) | reg.par.h.var;
 }
-HighLowByte writehlbyte(uint16_t val){
-	HighLowByte reg; reg.par.H = (val >> 8) & 0xFF; reg.par.L = val & 0xFF; return reg;
-}
 U_word writeHLbyte(uint16_t val){
 	U_word reg; reg.par.h.var = (val >> 8) & 0xFF; reg.par.l.var = val & 0xFF; return reg;
-}
-HighLowByte writelhbyte(uint16_t val){
-	HighLowByte reg; reg.par.L = (val >> 8) & 0xFF; reg.par.H = val & 0xFF; return reg;
 }
 U_word writeLHbyte(uint16_t val){
 	U_word reg; reg.par.l.var = (val >> 8) & 0xFF; reg.par.h.var = val & 0xFF; return reg;
@@ -107,11 +95,11 @@ uint16_t BAUDRATEnormal(uint32_t BAUD){uint32_t baudrate = F_CPU/16; baudrate /=
 uint16_t BAUDRATEdouble(uint32_t BAUD){uint32_t baudrate = F_CPU/8; baudrate /= BAUD; baudrate -= 1; return (uint16_t) baudrate;}
 uint16_t BAUDRATEsynchronous(uint32_t BAUD){uint32_t baudrate = F_CPU/2; baudrate /= BAUD; baudrate -= 1; return (uint16_t) baudrate;}
 void ClockPrescalerSelect(volatile uint8_t prescaler){ volatile uint8_t sreg; volatile uint8_t* clkpr = &XDIV; 
-	prescaler &= 0x7F; sreg = cpu_instance()->sreg.reg; cpu_instance()->sreg.reg &= ~(1 << 7); *clkpr = prescaler;
-	*clkpr = (1 << XDIVEN) | prescaler; cpu_instance()->sreg.reg = sreg;
+	prescaler &= 0x7F; sreg = cpu_instance()->sreg.var; cpu_instance()->sreg.var &= ~(1 << 7); *clkpr = prescaler;
+	*clkpr = (1 << XDIVEN) | prescaler; cpu_instance()->sreg.var = sreg;
 }
-void MoveInterruptsToBoot(void){volatile uint8_t sreg; sreg = cpu_instance()->sreg.reg; cpu_instance()->sreg.reg &= ~(1 << 7);
-	MCUCR = (1<<IVCE); MCUCR = (1<<IVSEL); cpu_instance()->sreg.reg = sreg;
+void MoveInterruptsToBoot(void){volatile uint8_t sreg; sreg = cpu_instance()->sreg.var; cpu_instance()->sreg.var &= ~(1 << 7);
+	MCUCR = (1<<IVCE); MCUCR = (1<<IVSEL); cpu_instance()->sreg.var = sreg;
 }
 
 /*** Procedure and Function ToolSet ***/

@@ -37,20 +37,20 @@ void PCF8575_writehbits(pcf8575_parameter *par, uint16_t hbits, uint8_t state)
 	if(state) par->state |= hbits; else par->state &= ~hbits;
 	par->twi.start();
 	par->twi.connect(par->pcf8575_id,TWI_WRITE);
-	par->twi.master_write(writehlbyte(par->state).par.L);
-	par->twi.master_write(writehlbyte(par->state).par.H);
+	par->twi.master_write(writeHLbyte(par->state).par.l.var);
+	par->twi.master_write(writeHLbyte(par->state).par.h.var);
 	par->twi.stop();
 }
 
 uint16_t PCF8575_readhbits(pcf8575_parameter *par, uint16_t hbits)
 {
-	HighLowByte data;
+	U_word data;
 	par->twi.start();
 	par->twi.connect(par->pcf8575_id, TWI_READ);
-	data.par.L = par->twi.master_read(TWI_ACK);
-	data.par.H = par->twi.master_read(TWI_NACK);
+	data.par.l.var = par->twi.master_read(TWI_ACK);
+	data.par.h.var = par->twi.master_read(TWI_NACK);
 	par->twi.stop();
-	return (readhlbyte(data) & hbits);
+	return (readHLbyte(data) & hbits);
 }
 
 /***File Interrupt***/

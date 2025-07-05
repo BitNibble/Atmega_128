@@ -2,7 +2,6 @@
 Title: PID_TEST.c
 Author:    <sergio.salazar.santos@gmail.com>
 License:   GNU General Public License
-File: $Id: MAIN,v 1.8.2.1 21/02/2021 Exp $
 Software:  Atmel Studio 7 (ver 7.0.129)
 Hardware:  Atmega128 by ETT ET-BASE
 	-PORTA LCD
