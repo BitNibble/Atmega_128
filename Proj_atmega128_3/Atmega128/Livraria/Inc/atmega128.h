@@ -84,7 +84,7 @@ Atmega128GPWR_TypeDef* gpwr_reg(void);
 
 // Analog Comparator (AC)
 typedef volatile struct {
-	_ACSR_TypeDef acsr; // 0x28
+	ACSR_TypeDef* acsr; // 0x28
 } Atmega128AnalogComparator_TypeDef;
 
 Atmega128AnalogComparator_TypeDef* ac_reg(void);
@@ -92,31 +92,31 @@ Atmega128AnalogComparator_TypeDef* ac_reg(void);
 // Analog to Digital Converter (ADC)
 typedef volatile struct {
 	U_word adc; // 0x24 0x25
-	_ADCSRA_TypeDef adcsra; // 0x26
-	_ADMUX_TypeDef admux; // 0x27
+	ADCSRA_TypeDef adcsra; // 0x26
+	ADMUX_TypeDef admux; // 0x27
 } Atmega128AnalogToDigitalConverter_TypeDef;
 
 Atmega128AnalogToDigitalConverter_TypeDef* adc_reg(void);
 
 // Boot loader (BOOT_LOAD)
 typedef volatile struct {
-	_SPMCSR_TypeDef spmcsr; // 0x68
+	SPMCSR_TypeDef spmcsr; // 0x68
 } Atmega128BootLoader_TypeDef;
 
 Atmega128BootLoader_TypeDef* bootload_reg(void);
 
 // CPU Register (CPU)
 typedef volatile struct {
-	_MCUCSR_TypeDef mcucsr; // 0x54
-	_MCUCR_TypeDef mcucr; // 0x55
+	MCUCSR_TypeDef mcucsr; // 0x54
+	MCUCR_TypeDef mcucr; // 0x55
 	uint8_t fill1[5]; // (5B - 55) - 1
-	_RAMPZ_TypeDef rampz; // 0x5B
-	_XDIV_TypeDef xdiv; // 0x5C
+	RAMPZ_TypeDef rampz; // 0x5B
+	XDIV_TypeDef xdiv; // 0x5C
 	U_word sp; // 0x5D 0x5E
-	_SREG_TypeDef sreg; // 0x5F
+	SREG_TypeDef sreg; // 0x5F
 	uint8_t fill2[12]; // (6C - 5F) - 1
-	_XMCRB_TypeDef xmcrb; // 0x6C
-	_XMCRA_TypeDef xmcra; // 0x6D
+	XMCRB_TypeDef xmcrb; // 0x6C
+	XMCRA_TypeDef xmcra; // 0x6D
 	uint8_t fill3; // (6F - 6D) - 1
 	U_byte osccal; // 0x6F
 } Atmega128CPURegister_TypeDef;
@@ -125,7 +125,7 @@ Atmega128CPURegister_TypeDef* cpu_reg(void);
 
 // EEPROM (EEPROM)
 typedef volatile struct {
-	_EECR_TypeDef eecr; // 0x3C
+	EECR_TypeDef eecr; // 0x3C
 	U_byte eedr; // 0x3D
 	U_word eear; // 0x3E 0x3F
 } Atmega128Eeprom_TypeDef;
@@ -134,11 +134,11 @@ Atmega128Eeprom_TypeDef* eeprom_reg(void);
 
 // External Interrupts (EXINT)
 typedef volatile struct {
-	_EIFR_TypeDef eifr; // 0x58
-	_EIMSK_TypeDef eimsk; // 0x59
-	_EICRB_TypeDef eicrb; // 0x5A
+	EIFR_TypeDef eifr; // 0x58
+	EIMSK_TypeDef eimsk; // 0x59
+	EICRB_TypeDef eicrb; // 0x5A
 	uint8_t fill[15]; // (6A - 5A) - 1
-	_EICRA_TypeDef eicra; // 0x6A
+	EICRA_TypeDef eicra; // 0x6A
 } Atmega128ExternalInterrupts_TypeDef;
 
 Atmega128ExternalInterrupts_TypeDef* exint_reg(void);
@@ -211,29 +211,29 @@ Atmega128PORTG_TypeDef* portg_reg(void);
 typedef volatile struct {
 	U_byte ocdr; // 0x42
 	uint8_t fill[17]; // (54 - 42) - 1
-	_MCUCSR_TypeDef mcucsr; // 0x54
+	MCUCSR_TypeDef mcucsr; // 0x54
 } Atmega128JtagInterface_TypeDef;
 
 Atmega128JtagInterface_TypeDef* jtag_reg(void);
 
 // JTAG Interface (JTAG)
 typedef volatile struct {
-	_MCUCSR_TypeDef mcucsr; // 0x54
+	MCUCSR_TypeDef mcucsr; // 0x54
 } Atmega128JtagInterfaceControlStatus_TypeDef;
 
 Atmega128JtagInterfaceControlStatus_TypeDef* jtag_cs_reg(void);
 
 // Other Registers (MISC)
 typedef volatile struct {
-	_SFIOR_TypeDef sfior; // 0x40
+	SFIOR_TypeDef sfior; // 0x40
 } Atmega128OtherRegisters_TypeDef;
 
 Atmega128OtherRegisters_TypeDef* misc_reg(void);
 
 // Serial Peripheral Interface (SPI)
 typedef volatile struct {
-	_SPCR_TypeDef spcr; // 0x2D
-	_SPSR_TypeDef spsr; // 0x2E
+	SPCR_TypeDef spcr; // 0x2D
+	SPSR_TypeDef spsr; // 0x2E
 	U_byte spdr; // 0x2F
 } Atmega128SerialPeripheralInterface_TypeDef;
 
@@ -245,48 +245,48 @@ typedef volatile struct {
 	U_word ocr1b; // 0x48 0x49
 	U_word ocr1a; // 0x4A 0x4B
 	U_word tcnt1; // 0x4C 0x4D
-	_TCCR1B_TypeDef tccr1b; // 0x4E
-	_TCCR1A_TypeDef tccr1a; // 0x4F
+	TCCR1B_TypeDef tccr1b; // 0x4E
+	TCCR1A_TypeDef tccr1a; // 0x4F
 	uint8_t fill1[6]; // (56 - 4F) - 1
-	_TIFR_Typedef tifr; // 0x56
-	_TIMSK_TypeDef timsk; // 0x57
+	TIFR_Typedef tifr; // 0x56
+	TIMSK_TypeDef timsk; // 0x57
 	uint8_t fill2[32]; // (78 - 57) - 1
 	U_word ocr1c; // 0x78 0x79
-	_TCCR1C_TypeDef tccr1c; // 0x7A
+	TCCR1C_TypeDef tccr1c; // 0x7A
 	uint8_t fill3; // (7C - 7A) - 1
-	_ETIFR_TypeDef etifr; // 0x7C
-	_ETIMSK_TypeDef etimsk; // 0x7D
+	ETIFR_TypeDef etifr; // 0x7C
+	ETIMSK_TypeDef etimsk; // 0x7D
 } Atmega128TimerCounter1_TypeDef;
 
 Atmega128TimerCounter1_TypeDef* tc1_reg(void);
 
 // Timer/Counter, 16-bit (TC3)
 typedef volatile struct {
-	_ETIFR_TypeDef etifr; // 0x7C
-	_ETIMSK_TypeDef etimsk; // 0x7D
+	ETIFR_TypeDef etifr; // 0x7C
+	ETIMSK_TypeDef etimsk; // 0x7D
 	uint8_t fill[2]; // (80 - 7D) - 1
 	U_word icr3; // 0x80 0x81
 	U_word ocr3c; // 0x82 0x83
 	U_word ocr3b; // 0x84 0x85
 	U_word ocr3a; // 0x86 0x87
 	U_word tcnt3; // 0x88 0x89
-	_TCCR3B_TypeDef tccr3b; // 0x8A
-	_TCCR3A_TypeDef tccr3a; // 0x8B
-	_TCCR3C_TypeDef tccr3c; // 0x8C
+	TCCR3B_TypeDef tccr3b; // 0x8A
+	TCCR3A_TypeDef tccr3a; // 0x8B
+	TCCR3C_TypeDef tccr3c; // 0x8C
 } Atmega128TimerCounter3_TypeDef;
 
 Atmega128TimerCounter3_TypeDef* tc3_reg(void);
 
 // Timer/Counter 1 and 3
 typedef volatile struct {
-	_ETIFR_TypeDef etifr; // 0x7C
+	ETIFR_TypeDef etifr; // 0x7C
 } Atmega128TimerExternalInterruptFlag_TypeDef;
 
 Atmega128TimerExternalInterruptFlag_TypeDef* tc_exif_reg(void);
 
 // Timer/Counter 1 and 3
 typedef volatile struct {
-	_ETIMSK_TypeDef etimsk; // 0x7D
+	ETIMSK_TypeDef etimsk; // 0x7D
 } Atmega128TimerExternalInterruptMask_TypeDef;
 
 Atmega128TimerExternalInterruptMask_TypeDef* tc_exim_reg(void);
@@ -295,37 +295,37 @@ Atmega128TimerExternalInterruptMask_TypeDef* tc_exim_reg(void);
 typedef volatile struct {
 	U_byte ocr2; // 0x43
 	U_byte tcnt2; // 0x44
-	_TCCR2_TypeDef tccr2; // 0x45
+	TCCR2_TypeDef tccr2; // 0x45
 	uint8_t fill[16]; // (56 - 45) - 1
-	_TIFR_Typedef tifr; // 0x56
-	_TIMSK_TypeDef timsk; // 0x57
+	TIFR_Typedef tifr; // 0x56
+	TIMSK_TypeDef timsk; // 0x57
 } Atmega128TimerCounter2_TypeDef;
 
 Atmega128TimerCounter2_TypeDef* tc2_reg(void);
 
 // Timer/Counter, 8-bit A sync (TC0)
 typedef volatile struct {
-	_ASSR_TypeDef assr; // 0x50
+	ASSR_TypeDef assr; // 0x50
 	U_byte ocr0; // 0x51
 	U_byte tcnt0; // 0x52
-	_TCCR0_TypeDef tccr0; // 0x53
+	TCCR0_TypeDef tccr0; // 0x53
 	uint8_t fill[2]; // (56 - 53) - 1
-	_TIFR_Typedef tifr; // 0x56
-	_TIMSK_TypeDef timsk; // 0x57
+	TIFR_Typedef tifr; // 0x56
+	TIMSK_TypeDef timsk; // 0x57
 } Atmega128TimerCounter0_TypeDef;
 
 Atmega128TimerCounter0_TypeDef* tc0_reg(void);
 
 // Timer/Counter 0, 1 and 2
 typedef volatile struct {
-	_TIFR_Typedef tifr; // 0x56
+	TIFR_Typedef tifr; // 0x56
 } Atmega128TimerInterruptFlag_TypeDef;
 
 Atmega128TimerInterruptFlag_TypeDef* tc_if_reg(void);
 
 // Timer/Counter 0, 1 and 2
 typedef volatile struct {
-	_TIMSK_TypeDef timsk; // 0x57
+	TIMSK_TypeDef timsk; // 0x57
 } Atmega128TimerInterruptMask_TypeDef;
 
 Atmega128TimerInterruptMask_TypeDef* tc_im_reg(void);
@@ -333,10 +333,10 @@ Atmega128TimerInterruptMask_TypeDef* tc_im_reg(void);
 // Two Wire Serial Interface (TWI)
 typedef volatile struct {
 	U_byte twbr; // 0x70
-	_TWSR_TypeDef twsr; // 0x71
-	_TWAR_TypeDef twar; // 0x72
+	TWSR_TypeDef twsr; // 0x71
+	TWAR_TypeDef twar; // 0x72
 	U_byte twdr; // 0x73
-	_TWCR_TypeDef twcr; // 0x74
+	TWCR_TypeDef twcr; // 0x74
 } Atmega128TwoWireSerialInterface_TypeDef;
 
 Atmega128TwoWireSerialInterface_TypeDef* twi_reg(void);
@@ -344,32 +344,32 @@ Atmega128TwoWireSerialInterface_TypeDef* twi_reg(void);
 // USART (USART0)
 typedef volatile struct {
 	U_byte ubrr0l; // 0x29
-	_UCSR0B_TypeDef ucsr0b; // 0x2A
-	_UCSR0A_TypeDef ucsr0a; // 0x2B
+	UCSR0B_TypeDef ucsr0b; // 0x2A
+	UCSR0A_TypeDef ucsr0a; // 0x2B
 	U_byte udr0; // 0x2C
 	uint8_t fill1[99]; // (90 - 2C) - 1
-	_UBRR0H_TypeDef ubrr0h; // 0x90
+	UBRR0H_TypeDef ubrr0h; // 0x90
 	uint8_t fill2[4]; // (95 - 90) - 1
-	_UCSR0C_TypeDef ucsr0c; // 0x95
+	UCSR0C_TypeDef ucsr0c; // 0x95
 } Atmega128Usart0_TypeDef;
 
 Atmega128Usart0_TypeDef* usart0_reg(void);
 
 // USART (USART1)
 typedef volatile struct {
-	_UBRR1H_TypeDef ubrr1h; // 0x98
+	UBRR1H_TypeDef ubrr1h; // 0x98
 	U_byte ubrr1l; // 0x99
-	_UCSR1B_TypeDef ucsr1b; // 0x9A
-	_UCSR1A_TypeDef ucsr1a; // 0x9B
+	UCSR1B_TypeDef ucsr1b; // 0x9A
+	UCSR1A_TypeDef ucsr1a; // 0x9B
 	U_byte udr1; // 0x9C
-	_UCSR1C_TypeDef ucsr1c; // 0x9D
+	UCSR1C_TypeDef ucsr1c; // 0x9D
 } Atmega128Usart1_TypeDef;
 
 Atmega128Usart1_TypeDef* usart1_reg(void);
 
 // Watchdog Timer (WDT)
 typedef volatile struct {
-	_WDTCR_TypeDef wdtcr; // 0x41
+	WDTCR_TypeDef wdtcr; // 0x41
 } Atmega128WatchdogTimer_TypeDef;
 
 Atmega128WatchdogTimer_TypeDef* wdt_reg(void);
