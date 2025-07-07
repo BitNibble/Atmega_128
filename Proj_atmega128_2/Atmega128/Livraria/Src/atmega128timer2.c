@@ -10,15 +10,19 @@ Comment:
 /*** File Library ***/
 #include "atmega128timer2.h"
 
-/*** File Variable ***/
-static TC2 atmega128_tc2;
-uint8_t timer2_state;
-
 /*** File Header ***/
 void TIMER_COUNTER2_compoutmode(unsigned char compoutmode);
 void TIMER_COUNTER2_compare(unsigned char compare);
 uint8_t TIMER_COUNTER2_start(unsigned int prescaler);
 uint8_t TIMER_COUNTER2_stop(void);
+
+static TC2 atmega128_tc2 = {
+	.compoutmode = TIMER_COUNTER2_compoutmode,
+	.compare = TIMER_COUNTER2_compare,
+	.start = TIMER_COUNTER2_start,
+	.stop = TIMER_COUNTER2_stop
+};
+uint8_t timer2_state;
 
 /*** Procedure & Function ***/
 TC2 tc2_enable(unsigned char wavegenmode, unsigned char interrupt)
@@ -66,11 +70,6 @@ TC2 tc2_enable(unsigned char wavegenmode, unsigned char interrupt)
 		break;
 	}
 	tc2_reg()->ocr2.var = ~0;
-	
-	atmega128_tc2.compoutmode = TIMER_COUNTER2_compoutmode;
-	atmega128_tc2.compare = TIMER_COUNTER2_compare;
-	atmega128_tc2.start = TIMER_COUNTER2_start;
-	atmega128_tc2.stop = TIMER_COUNTER2_stop;
 	
 	return atmega128_tc2;
 }

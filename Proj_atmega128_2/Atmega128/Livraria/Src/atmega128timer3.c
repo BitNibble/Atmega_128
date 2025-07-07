@@ -10,10 +10,6 @@ Comment:
 /*** File Library ***/
 #include "atmega128timer3.h"
 
-/*** File Variable ***/
-static TC3 atmega128_tc3;
-uint8_t timer3_state;
-
 /*** File Header ***/
 void TIMER_COUNTER3_compoutmodeA(unsigned char compoutmode);
 void TIMER_COUNTER3_compoutmodeB(unsigned char compoutmode);
@@ -23,6 +19,18 @@ void TIMER_COUNTER3_compareB(uint16_t compare);
 void TIMER_COUNTER3_compareC(uint16_t compare);
 uint8_t TIMER_COUNTER3_start(unsigned int prescaler);
 uint8_t TIMER_COUNTER3_stop(void);
+
+static TC3 atmega128_tc3 = {
+	.compoutmodeA = TIMER_COUNTER3_compoutmodeA,
+	.compoutmodeB = TIMER_COUNTER3_compoutmodeB,
+	.compoutmodeC = TIMER_COUNTER3_compoutmodeC,
+	.compareA = TIMER_COUNTER3_compareA,
+	.compareB = TIMER_COUNTER3_compareB,
+	.compareC = TIMER_COUNTER3_compareC,
+	.start = TIMER_COUNTER3_start,
+	.stop = TIMER_COUNTER3_stop
+};
+uint8_t timer3_state;
 
 /*** Procedure & Function ***/
 TC3 tc3_enable(unsigned char wavegenmode, unsigned char interrupt)
@@ -157,15 +165,6 @@ TC3 tc3_enable(unsigned char wavegenmode, unsigned char interrupt)
 	tc3_reg()->ocr3a = writeHLbyte(~0);
 	tc3_reg()->ocr3b = writeHLbyte(~0);
 	tc3_reg()->ocr3c = writeHLbyte(~0);
-	
-	atmega128_tc3.compoutmodeA = TIMER_COUNTER3_compoutmodeA;
-	atmega128_tc3.compoutmodeB = TIMER_COUNTER3_compoutmodeB;
-	atmega128_tc3.compoutmodeC = TIMER_COUNTER3_compoutmodeC;
-	atmega128_tc3.compareA = TIMER_COUNTER3_compareA;
-	atmega128_tc3.compareB = TIMER_COUNTER3_compareB;
-	atmega128_tc3.compareC = TIMER_COUNTER3_compareC;
-	atmega128_tc3.start = TIMER_COUNTER3_start;
-	atmega128_tc3.stop = TIMER_COUNTER3_stop;
 	
 	return atmega128_tc3;
 }

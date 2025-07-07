@@ -10,15 +10,19 @@ Comment:
 /*** File Library ***/
 #include "atmega128timer0.h"
 
-/*** File Variable ***/
-static TC0 atmega128_tc0;
-uint8_t timer0_state;
-
 /*** File Header ***/
 void TIMER_COUNTER0_compoutmode(unsigned char compoutmode);
 void TIMER_COUNTER0_compare(unsigned char compare);
 uint8_t TIMER_COUNTER0_start(unsigned int prescaler);
 uint8_t TIMER_COUNTER0_stop(void);
+
+static TC0 atmega128_tc0 = {
+	.compoutmode = TIMER_COUNTER0_compoutmode,
+	.compare = TIMER_COUNTER0_compare,
+	.start = TIMER_COUNTER0_start,
+	.stop = TIMER_COUNTER0_stop
+};
+uint8_t timer0_state;
 
 /*** Procedure & Function ***/
 TC0 tc0_enable(unsigned char wavegenmode, unsigned char interrupt)
@@ -67,10 +71,6 @@ TC0 tc0_enable(unsigned char wavegenmode, unsigned char interrupt)
 	}
 	tc0_reg()->ocr0.var = ~0;
 	
-	atmega128_tc0.compoutmode = TIMER_COUNTER0_compoutmode;
-	atmega128_tc0.compare = TIMER_COUNTER0_compare;
-	atmega128_tc0.start = TIMER_COUNTER0_start;
-	atmega128_tc0.stop = TIMER_COUNTER0_stop;
 	return atmega128_tc0;
 }
 

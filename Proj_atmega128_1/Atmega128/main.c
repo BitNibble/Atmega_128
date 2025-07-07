@@ -43,8 +43,7 @@ uint8_t page=0;
 uint16_t n;
 KEYPAD keypad = keypad_enable(&DDRE,&PINE,&PORTE);
 lcd0_enable(&DDRA,&PINA,&PORTA);
-EEPROM0 eeprom = eeprom_enable();
-LFSM lfsm = lfsm_enable(&eeprom,363);
+LFSM lfsm = lfsm_enable(eeprom(),363);
 FUNC func = func_enable();
 //HC595 shift = HC595enable(&DDRG,&PORTG,2,0,1);
 /*****************************************************/

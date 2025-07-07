@@ -12,9 +12,6 @@ Comment:
 #include <avr/interrupt.h>
 #include <stdio.h>
 
-/*** File Variable ***/
-static ADC0 atmega128_adc;
-
 static volatile int ADC_VALUE[MAX_CHANNEL];
 static volatile int ADC_CHANNEL_GAIN[MAX_CHANNEL];
 int ADC_N_CHANNEL;
@@ -25,6 +22,10 @@ static volatile unsigned char adc_n_sample;
 
 /*** File Header ***/
 int ANALOG_read(int selection);
+
+static ADC0 atmega128_adc = {
+	.read = ANALOG_read	
+};
 
 /*** Procedure & Function ***/
 ADC0 adc_enable( uint8_t Vreff, uint8_t Divfactor, int n_channel, ... )
@@ -131,7 +132,6 @@ ADC0 adc_enable( uint8_t Vreff, uint8_t Divfactor, int n_channel, ... )
 	//adc_reg()->adcsra.var |= (1 << ADEN);
 	adc_reg()->adcsra.par.aden = 1;
 	
-	atmega128_adc.read = ANALOG_read;
 	cpu_reg()->sreg.var |= (1 << GLOBAL_INTERRUPT_ENABLE);
 	
 	return atmega128_adc;

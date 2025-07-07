@@ -85,7 +85,6 @@ lcd0_enable(&DDRA,&PINA,&PORTA);
 timer0 = tc0_enable(2,2); //2,2
 TC1 timer1 = tc1_enable(4,2); //4,2
 hx = hx711_enable(&DDRF, &PINF, &PORTF, 6, 7); //6,7
-eprom = eeprom_enable();
 //intx = INTERRUPTenable();
 /******/
 float value = 0;

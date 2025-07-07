@@ -11,9 +11,6 @@ Comment:
 #include "atmega128twi.h"
 #include <util/delay.h>
 
-/*** File Variable ***/
-static TWI0 atmega128_twi;
-
 /*** File Header ***/
 void TWI_init(uint8_t device_id, uint8_t prescaler);
 void TWI_start(void);
@@ -25,19 +22,19 @@ void TWI_stop(void);
 uint8_t TWI_status(void);
 void TWI_wait_twint( uint16_t nticks );
 
+static TWI0 atmega128_twi = {
+	.start = TWI_start,
+	.connect = TWI_connect,
+	.stop = TWI_stop,
+	.master_write = TWI_master_write,
+	.master_read = TWI_master_read,
+	.status = TWI_status
+};
+
 /*** Procedure & Function ***/
-// TWI TWIenable(uint8_t atmega_ID,  uint8_t prescaler)
 TWI0 twi_enable(uint8_t atmega_ID,  uint8_t prescaler)
 {
 	// ATMEGA128enable();
-	
-	// Vtable
-	atmega128_twi.start = TWI_start;
-	atmega128_twi.connect = TWI_connect;
-	atmega128_twi.stop = TWI_stop;
-	atmega128_twi.master_write = TWI_master_write;
-	atmega128_twi.master_read = TWI_master_read;
-	atmega128_twi.status = TWI_status;
 	
 	TWI_init(atmega_ID, prescaler);
 	

@@ -13,11 +13,9 @@ Comment:
 /*** Global Library ***/
 #include "atmega128.h"
 
-/*** Global Constant & Macro ***/
-
 /*** Global Variable ***/
 typedef struct{
-	// vtable
+	// V-table
 	uint8_t (*read_byte) ( const uint8_t * addr );
 	void (*write_byte) ( uint8_t *addr , uint8_t value );
 	void (*update_byte) ( uint8_t *addr , uint8_t value );
@@ -35,9 +33,7 @@ typedef struct{
 	void (*update_block) ( const void * pointer_ram , void * pointer_eeprom , size_t n);
 }EEPROM0;
 
-/*** Global ***/
 EEPROM0* eeprom(void);
-EEPROM0 eeprom_enable(void);
 
 #endif
 

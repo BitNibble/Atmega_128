@@ -13,9 +13,6 @@ Comment:
 #include <avr/interrupt.h>
 #include <string.h>
 
-/*** File Variable ***/
-static USART0 atmega128_usart0;
-
 static BUFF rx0buff;
 static UARTvar UART0_Rx;
 static UARTvar UART0_RxBuf[UART0_RX_BUFFER_SIZE];
@@ -42,6 +39,16 @@ uint8_t USART0ReadErrors(void);
 void USART0ClearErrors(void);
 void USART0DoubleTransmissionSpeed(void);
 
+static USART0 atmega128_usart0 = {
+	.read = uart0_read,
+	.getch = uart0_getch,
+	.gets = uart0_gets,
+	.rxflush = uart0_rxflush,
+	.write = uart0_write,
+	.putch = uart0_putch,
+	.puts = uart0_puts
+};
+
 /*** Procedure & Function ***/
 USART0 usart0_enable(uint32_t baud, unsigned int FDbits, unsigned int Stopbits, unsigned int Parity )
 {
@@ -50,14 +57,6 @@ USART0 usart0_enable(uint32_t baud, unsigned int FDbits, unsigned int Stopbits, 
 	uint16_t ubrr = 0;
 	rx0buff = buff_enable( uart0_rx_buffer_size, UART0_RxBuf );
 	ubrr = BAUDRATEnormal(baud);
-	// Vtable
-	atmega128_usart0.read = uart0_read;
-	atmega128_usart0.getch = uart0_getch;
-	atmega128_usart0.gets = uart0_gets;
-	atmega128_usart0.rxflush = uart0_rxflush;
-	atmega128_usart0.write = uart0_write;
-	atmega128_usart0.putch = uart0_putch;
-	atmega128_usart0.puts = uart0_puts;
 	// Set baud rate
 	if ( ubrr & 0x8000 ) // The transfer rate can be doubled by setting the U2X bit in UCSRA.
 	{

@@ -10,23 +10,22 @@ Comment:
 /*** File Library ***/
 #include "atmega128spi.h"
 
-/*** File Variable ***/
-static SPI0 atmega128_spi;
-
 /*** File Header ***/
 void spi_default(void);
 void spi_transfer_sync (uint8_t * dataout, uint8_t * datain, uint8_t len);
 void spi_transmit_sync (uint8_t * dataout, uint8_t len);
 uint8_t spi_fast_shift (uint8_t data);
 
+static SPI0 atmega128_spi = {
+	.transfer_sync = spi_transfer_sync,
+	.transmit_sync = spi_transmit_sync,
+	.fast_shift = spi_fast_shift
+};
+
 /*** Procedure & Function ***/
 SPI0 spi_enable(uint8_t master_slave_select, uint8_t data_order,  uint8_t data_modes, uint8_t prescaler)
 {
 	// ATMEGA128enable();
-	
-	atmega128_spi.transfer_sync = spi_transfer_sync;
-	atmega128_spi.transmit_sync = spi_transmit_sync;
-	atmega128_spi.fast_shift = spi_fast_shift;
 	
 	portb_reg()->ddr.var &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
 	switch(master_slave_select){

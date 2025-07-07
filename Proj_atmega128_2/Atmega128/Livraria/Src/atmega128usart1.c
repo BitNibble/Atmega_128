@@ -13,9 +13,6 @@ Comment:
 #include <avr/interrupt.h>
 #include <string.h>
 
-/*** File Variable ***/
-static USART1 atmega128_usart1;
-
 static BUFF rx1buff;
 static UARTvar UART1_Rx;
 static UARTvar UART1_RxBuf[UART1_RX_BUFFER_SIZE];
@@ -42,6 +39,16 @@ uint8_t USART1ReadErrors(void);
 void USART1ClearErrors(void);
 void USART1DoubleTransmissionSpeed(void);
 
+static USART1 atmega128_usart1 = {
+	.read = uart1_read,
+	.getch = uart1_getch,
+	.gets = uart1_gets,
+	.rxflush = uart1_rxflush,
+	.write = uart1_write,
+	.putch = uart1_putch,
+	.puts = uart1_puts
+};
+
 /*** Procedure & Function ***/
 USART1 usart1_enable( uint32_t baud, unsigned int FDbits, unsigned int Stopbits, unsigned int Parity )
 {
@@ -50,14 +57,6 @@ USART1 usart1_enable( uint32_t baud, unsigned int FDbits, unsigned int Stopbits,
 	uint16_t ubrr = 0;
 	rx1buff = buff_enable( uart1_rx_buffer_size, UART1_RxBuf );
 	ubrr = BAUDRATEnormal(baud);
-	// FUNCTION POINTER
-	atmega128_usart1.read = uart1_read;
-	atmega128_usart1.getch = uart1_getch;
-	atmega128_usart1.gets = uart1_gets;
-	atmega128_usart1.rxflush = uart1_rxflush;
-	atmega128_usart1.write = uart1_write;
-	atmega128_usart1.putch = uart1_putch;
-	atmega128_usart1.puts = uart1_puts;
 	// Set baud rate
 	if ( ubrr & 0x8000 ) {
 		USART1DoubleTransmissionSpeed(); // Enable 2x speed

@@ -33,7 +33,6 @@ ATMEGA128 atmega128_enable(void){
 	/***EEPROM***/
 	setup_atmega128.eeprom_reg = eeprom_reg();
 	#ifdef _EEPROM_MODULE_
-		setup_atmega128.eeprom_enable = eeprom_enable;
 		setup_atmega128.eeprom = eeprom();
 	#endif
 	/***EXINT***/

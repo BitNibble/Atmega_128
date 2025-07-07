@@ -10,14 +10,18 @@ Comment:
 /*** File Library ***/
 #include "atmega128interrupt.h"
 
-/*** File Variable ***/
-static EXINT0 atmega128_exint;
-
 /*** File Header ***/
 void INTERRUPT_set(uint8_t channel, uint8_t sense);
 void INTERRUPT_off(uint8_t channel);
 void INTERRUPT_on(uint8_t channel);
 uint8_t INTERRUPT_reset_status(void);
+
+static EXINT0 atmega128_exint = {
+	.set = INTERRUPT_set,
+	.off = INTERRUPT_off,
+	.on = INTERRUPT_on,
+	.reset_status = INTERRUPT_reset_status	
+};
 
 /*** Procedure & Function ***/
 EXINT0 exint_enable(void)
@@ -25,10 +29,7 @@ EXINT0 exint_enable(void)
 	// ATMEGA128enable();
 	
 	exint_reg()->eimsk.var = 0x00;
-	atmega128_exint.set = INTERRUPT_set;
-	atmega128_exint.off = INTERRUPT_off;
-	atmega128_exint.on = INTERRUPT_on;
-	atmega128_exint.reset_status = INTERRUPT_reset_status;
+
 	return atmega128_exint;
 }
 

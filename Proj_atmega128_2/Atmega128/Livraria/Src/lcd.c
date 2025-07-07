@@ -15,8 +15,6 @@ Date:     04072025
 #define DATA 1
 
 /***File Variable ***/
-static LCD0 lcd0_setup;
-static LCD1 lcd1_setup;
 volatile uint8_t *lcd0_DDR;
 volatile uint8_t *lcd0_PIN;
 volatile uint8_t *lcd0_PORT;
@@ -54,6 +52,35 @@ void LCD1_reboot(void);
 void lcd_set_reg(volatile uint8_t* reg, uint8_t hbits);
 void lcd_clear_reg(volatile uint8_t* reg, uint8_t hbits);
 
+static LCD0 lcd0_setup = {
+	// V-table
+	.write = LCD0_write,
+	.read = LCD0_read,
+	.BF = LCD0_BF,
+	.putch = LCD0_putch,
+	.getch = LCD0_getch,
+	.string = LCD0_string, // RAW
+	.string_size = LCD0_string_size, // RAW
+	.hspace = LCD0_hspace,
+	.clear = LCD0_clear,
+	.gotoxy = LCD0_gotoxy,
+	.reboot = LCD0_reboot
+};
+static LCD1 lcd1_setup = {
+	// V-table
+	.write = LCD1_write,
+	.read = LCD1_read,
+	.BF = LCD1_BF,
+	.putch = LCD1_putch,
+	.getch = LCD1_getch,
+	.string = LCD1_string, // RAW
+	.string_size = LCD1_string_size, // RAW
+	.hspace = LCD1_hspace,
+	.clear = LCD1_clear,
+	.gotoxy = LCD1_gotoxy,
+	.reboot = LCD1_reboot
+};
+
 /*** Handler ***/
 void lcd0_enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t *port)
 {
@@ -65,18 +92,6 @@ void lcd0_enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t 
 	*lcd0_DDR = 0x00;
 	*lcd0_PORT = 0xFF;
 	lcd0_detect = *lcd0_PIN & (1 << NC);
-	// V-table
-	lcd0_setup.write = LCD0_write;
-	lcd0_setup.read = LCD0_read;
-	lcd0_setup.BF = LCD0_BF;
-	lcd0_setup.putch = LCD0_putch;
-	lcd0_setup.getch = LCD0_getch;
-	lcd0_setup.string = LCD0_string; // RAW
-	lcd0_setup.string_size = LCD0_string_size; // RAW
-	lcd0_setup.hspace = LCD0_hspace;
-	lcd0_setup.clear = LCD0_clear;
-	lcd0_setup.gotoxy = LCD0_gotoxy;
-	lcd0_setup.reboot = LCD0_reboot;
 	// LCD INIC
 	LCD0_inic();
 }
@@ -263,18 +278,6 @@ void lcd1_enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t 
 	*lcd1_DDR = 0x00;
 	*lcd1_PORT = 0xFF;
 	lcd1_detect = *lcd1_PIN & (1 << NC);
-	// V-table
-	lcd1_setup.write = LCD1_write;
-	lcd1_setup.read = LCD1_read;
-	lcd1_setup.BF = LCD1_BF;
-	lcd1_setup.putch = LCD1_putch;
-	lcd1_setup.getch = LCD1_getch;
-	lcd1_setup.string = LCD1_string; // RAW
-	lcd1_setup.string_size = LCD1_string_size; // RAW
-	lcd1_setup.hspace = LCD1_hspace;
-	lcd1_setup.clear = LCD1_clear;
-	lcd1_setup.gotoxy = LCD1_gotoxy;
-	lcd1_setup.reboot = LCD1_reboot;
 	// LCD INIC
 	LCD1_inic();
 }

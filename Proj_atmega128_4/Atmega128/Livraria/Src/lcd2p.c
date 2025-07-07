@@ -18,7 +18,6 @@ Date:     20042023
 #define LCD02P_DATA 1
 
 /*** File Variable ***/
-static LCD02P setup_lcd02p;
 volatile uint8_t *lcd02pcmd_DDR;
 volatile uint8_t *lcd02pcmd_PIN;
 volatile uint8_t *lcd02pcmd_PORT;
@@ -44,10 +43,24 @@ void lcd02p_set_reg(volatile uint8_t* reg, uint8_t hbits);
 void lcd02p_clear_reg(volatile uint8_t* reg, uint8_t hbits);
 void LCD02P_reboot(void);
 
+static LCD02P setup_lcd02p = {
+	// V-table
+	.write = LCD02P_write,
+	.read = LCD02P_read,
+	.BF = LCD02P_BF,
+	.putch = LCD02P_putch,
+	.getch = LCD02P_getch,
+	.string = LCD02P_string, // RAW
+	.string_size = LCD02P_string_size, // RAW
+	.hspace = LCD02P_hspace,
+	.clear = LCD02P_clear,
+	.gotoxy = LCD02P_gotoxy,
+	.reboot = LCD02P_reboot	
+};
+
 /*** Procedure & Function ***/
 LCD02P lcd02p_enable(volatile uint8_t *cmdddr, volatile uint8_t *cmdpin, volatile uint8_t *cmdport, volatile uint8_t *dataddr, volatile uint8_t *datapin, volatile uint8_t *dataport)
 {
-	
 	// import parameters
 	lcd02pcmd_DDR = cmdddr;
 	lcd02pcmd_PIN = cmdpin;
@@ -56,18 +69,6 @@ LCD02P lcd02p_enable(volatile uint8_t *cmdddr, volatile uint8_t *cmdpin, volatil
 	lcd02pdata_PIN = datapin;
 	lcd02pdata_PORT = dataport;
 	DDR_DATA_MASK = (1 << LCD02P_DB4) | (1 << LCD02P_DB5) | (1 << LCD02P_DB6) | (1 << LCD02P_DB7);
-	// Direccionar apontadores para PROTOTIPOS
-	setup_lcd02p.write = LCD02P_write;
-	setup_lcd02p.read = LCD02P_read;
-	setup_lcd02p.BF = LCD02P_BF;
-	setup_lcd02p.putch = LCD02P_putch;
-	setup_lcd02p.getch = LCD02P_getch;
-	setup_lcd02p.string = LCD02P_string; // RAW
-	setup_lcd02p.string_size = LCD02P_string_size; // RAW
-	setup_lcd02p.hspace = LCD02P_hspace;
-	setup_lcd02p.clear = LCD02P_clear;
-	setup_lcd02p.gotoxy = LCD02P_gotoxy;
-	setup_lcd02p.reboot = LCD02P_reboot;
 	// LCD INIC
 	LCD02P_inic();
 	

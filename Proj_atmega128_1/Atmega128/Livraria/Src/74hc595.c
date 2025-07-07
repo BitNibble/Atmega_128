@@ -21,14 +21,13 @@ hc595_parameter hc595_par_inic(volatile IO_var *ddr, volatile IO_var *port, uint
 /*** 74HC595 Auxiliar ***/
 hc595_parameter hc595_par_inic(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin, uint8_t clkpin, uint8_t outpin)
 {
-	hc595_parameter setup_hc595_par;
-
-	setup_hc595_par.hc595_DDR = ddr;
-	setup_hc595_par.hc595_PORT = port;
-	setup_hc595_par.HC595_datapin = datapin;
-	setup_hc595_par.HC595_clkpin = clkpin;
-	setup_hc595_par.HC595_outpin = outpin;
-	
+	hc595_parameter setup_hc595_par = {
+		.hc595_DDR = ddr,
+		.hc595_PORT = port,
+		.HC595_datapin = datapin,
+		.HC595_clkpin = clkpin,
+		.HC595_outpin = outpin
+	};
 	#if defined (STM32F446xx)
 		*setup_hc595_par.hc595_DDR &= (IO_var) ~((3 << (datapin * 2)) | (3 << (clkpin * 2)) | (3 << (outpin * 2)));
 		*setup_hc595_par.hc595_DDR |= ((1 << (datapin * 2)) | (1 << (clkpin * 2)) | (1 << (outpin * 2)));
@@ -43,15 +42,14 @@ hc595_parameter hc595_par_inic(volatile IO_var *ddr, volatile IO_var *port, uint
 /*** 74HC595 Procedure & Function Definition ***/
 HC595 hc595_enable(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin, uint8_t clkpin, uint8_t outpin)
 {
-	HC595 setup_hc595;
-
-	setup_hc595.par = hc595_par_inic(ddr, port, datapin, clkpin, outpin);
-	// Direccionar apontadores para PROTOTIPOS
-	setup_hc595.bit = HC595_shift_bit;
-	setup_hc595.ibyte = HC595_shift_ibyte;
-	setup_hc595.byte = HC595_shift_byte;
-	setup_hc595.out = HC595_shift_out;
-	
+	HC595 setup_hc595 = {
+		.par = hc595_par_inic(ddr, port, datapin, clkpin, outpin),
+		// V-table
+		.bit = HC595_shift_bit,
+		.ibyte = HC595_shift_ibyte,
+		.byte = HC595_shift_byte,
+		.out = HC595_shift_out
+	};
 	return setup_hc595;
 }
 
@@ -87,5 +85,5 @@ void HC595_shift_out(hc595_parameter* par)
 	*par->hc595_PORT &= ~(1 << par->HC595_outpin); // Output disable
 }
 
-/***EOF***/
+/*** EOF ***/
 

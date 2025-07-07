@@ -10,10 +10,6 @@ Comment:
 /*** File Library ***/
 #include "atmega128timer1.h"
 
-/*** File Variable ***/
-static TC1 atmega128_tc1;
-uint8_t timer1_state;
-
 /*** File Header ***/
 void TIMER_COUNTER1_compoutmodeA(unsigned char compoutmode);
 void TIMER_COUNTER1_compoutmodeB(unsigned char compoutmode);
@@ -23,6 +19,18 @@ void TIMER_COUNTER1_compareB(uint16_t compare);
 void TIMER_COUNTER1_compareC(uint16_t compare);
 uint8_t TIMER_COUNTER1_start(unsigned int prescaler);
 uint8_t TIMER_COUNTER1_stop(void);
+
+static TC1 atmega128_tc1 = {
+	.compoutmodeA = TIMER_COUNTER1_compoutmodeA,
+	.compoutmodeB = TIMER_COUNTER1_compoutmodeB,
+	.compoutmodeC = TIMER_COUNTER1_compoutmodeC,
+	.compareA = TIMER_COUNTER1_compareA,
+	.compareB = TIMER_COUNTER1_compareB,
+	.compareC = TIMER_COUNTER1_compareC,
+	.start = TIMER_COUNTER1_start,
+	.stop = TIMER_COUNTER1_stop
+};
+uint8_t timer1_state;
 
 /*** Procedure & Function ***/
 TC1 tc1_enable(unsigned char wavegenmode, unsigned char interrupt)
@@ -162,16 +170,6 @@ TC1 tc1_enable(unsigned char wavegenmode, unsigned char interrupt)
 	tc1_reg()->ocr1a = writeHLbyte(~0);
 	tc1_reg()->ocr1b = writeHLbyte(~0);
 	tc1_reg()->ocr1c = writeHLbyte(~0);
-	
-	atmega128_tc1.compoutmodeA = TIMER_COUNTER1_compoutmodeA;
-	atmega128_tc1.compoutmodeB = TIMER_COUNTER1_compoutmodeB;
-	atmega128_tc1.compoutmodeC = TIMER_COUNTER1_compoutmodeC;
-	atmega128_tc1.compareA = TIMER_COUNTER1_compareA;
-	atmega128_tc1.compareB = TIMER_COUNTER1_compareB;
-	atmega128_tc1.compareC = TIMER_COUNTER1_compareC;
-	atmega128_tc1.start = TIMER_COUNTER1_start;
-	atmega128_tc1.stop = TIMER_COUNTER1_stop;
-	
 	
 	return atmega128_tc1;
 }
