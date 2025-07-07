@@ -3,9 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: ATmega128
-Update:   07/01/2024
-Comment:
-	Stable
+Date:   07/01/2024
 *************************************************************************/
 /*** File Library ***/
 #include "atmega128timer1.h"
@@ -41,8 +39,6 @@ TC1 tc1_enable(unsigned char wavegenmode, unsigned char interrupt)
 // interrupt: off; overflow; output compare; both; default - non.
 // for more information read data sheet.
 {
-	// ATMEGA128enable(); // Dependency
-
 	timer1_state = 0;
 	
 	tc1_reg()->tccr1a.var &= ~((1 << WGM11) | (1 << WGM10));

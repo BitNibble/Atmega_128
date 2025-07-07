@@ -3,9 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega128 by ETT ET-BASE
-Update:   07/01/2024
-Comment:
-	Virtual Image Atmega 128 mapping.
+Date:   07/01/2024
 **********************************************************/
 /*** File Library ***/
 #include "atmega128mapping.h"
@@ -38,7 +36,6 @@ ATMEGA128 atmega128_enable(void){
 	/***EXINT***/
 	setup_atmega128.exint_reg = exint_reg();
 	#ifdef _INTERRUPT_MODULE_
-		setup_atmega128.exint_enable = exint_enable;
 		setup_atmega128.exint = exint();
 	#endif
 	/***PORTA***/

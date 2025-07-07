@@ -3,9 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: ATmega128
-Update:   26/06/2025
-Comment:
-	Stable
+Date:   26/06/2025
 *************************************************************************/
 /*** File Library ***/
 #include "atmega128usart0.h"
@@ -52,7 +50,6 @@ static USART0 atmega128_usart0 = {
 /*** Procedure & Function ***/
 USART0 usart0_enable(uint32_t baud, unsigned int FDbits, unsigned int Stopbits, unsigned int Parity )
 {
-	// ATMEGA128enable();
 	uart0flag = 1;
 	uint16_t ubrr = 0;
 	rx0buff = buff_enable( uart0_rx_buffer_size, UART0_RxBuf );

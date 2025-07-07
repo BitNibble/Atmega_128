@@ -3,9 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: ATmega128
-Update:   07/01/2024
-Comment:
-	Stable
+Date:   07/01/2024
 ************************************************************************/
 /*** Preamble Inic ***/
 #ifndef _ATMEGA128TIMER2_H_

@@ -3,9 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: ATmega128
-Update:   07/01/2024
-Comment:
-	Stable
+Date:   07/01/2024
 *************************************************************************/
 /*** File Library ***/
 #include "atmega128usart1.h"
@@ -52,7 +50,6 @@ static USART1 atmega128_usart1 = {
 /*** Procedure & Function ***/
 USART1 usart1_enable( uint32_t baud, unsigned int FDbits, unsigned int Stopbits, unsigned int Parity )
 {
-	// ATMEGA128enable();
 	uart1flag = 1;
 	uint16_t ubrr = 0;
 	rx1buff = buff_enable( uart1_rx_buffer_size, UART1_RxBuf );

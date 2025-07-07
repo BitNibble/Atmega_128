@@ -2,9 +2,7 @@
 	ATMEGA128SPI
 Author:   <sergio.salazar.santos@gmail.com>
 Hardware: ATmega128
-Update:   07/01/2024
-Comment:
-	Stable
+Date:   07/01/2024
 ************************************************************************/
 #ifndef _ATMEGA128SPI_H_
 	#define _ATMEGA128SPI_H_

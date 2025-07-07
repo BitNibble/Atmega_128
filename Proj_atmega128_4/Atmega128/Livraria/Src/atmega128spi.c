@@ -3,9 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: ATmega128
-Update:   07/01/2024
-Comment:
-   Stable
+Date:   07/01/2024
 *************************************************************************/
 /*** File Library ***/
 #include "atmega128spi.h"
@@ -25,8 +23,6 @@ static SPI0 atmega128_spi = {
 /*** Procedure & Function ***/
 SPI0 spi_enable(uint8_t master_slave_select, uint8_t data_order,  uint8_t data_modes, uint8_t prescaler)
 {
-	// ATMEGA128enable();
-	
 	portb_reg()->ddr.var &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
 	switch(master_slave_select){
 		case SPI_MASTER_MODE:

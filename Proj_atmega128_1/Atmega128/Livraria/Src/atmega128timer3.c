@@ -3,9 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: ATmega128
-Update:   07/01/2024
-Comment:
-	Stable
+Date:   07/01/2024
 *************************************************************************/
 /*** File Library ***/
 #include "atmega128timer3.h"
@@ -41,9 +39,8 @@ TC3 tc3_enable(unsigned char wavegenmode, unsigned char interrupt)
 // interrupt: off; overflow; output compare; both; default - non.
 // for more information read data sheet.
 {
-	// ATMEGA128enable(); // Dependency
-	
 	timer3_state = 0;
+	
 	tc3_reg()->tccr3a.var &= ~((1 << WGM31) | (1 << WGM30));
 	tc3_reg()->tccr3b.var &= ~((1 << WGM33) | (1 << WGM32));
 	switch(wavegenmode){ // TOP -- Update of OCRnX -- TOV Flag Set on
@@ -307,5 +304,5 @@ uint8_t TIMER_COUNTER3_stop(void)
 	return timer3_state;
 }
 
-/***EOF***/
+/*** EOF ***/
 

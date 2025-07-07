@@ -3,9 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: ATmega128
-Update:   07/01/2024
-Comment:
-	Stable
+Date:   07/01/2024
 *************************************************************************/
 /*** File Library ***/
 #include "atmega128timer0.h"
@@ -30,9 +28,8 @@ TC0 tc0_enable(unsigned char wavegenmode, unsigned char interrupt)
 // wavegen mode: Normal; PWM phase correct; Fast PWM; default-Normasl;
 // interrupt: off; overflow; output compare; both; default - non.
 {
-	// ATMEGA128enable(); // Dependency
-	
 	timer0_state = 0;
+	
 	tc0_reg()->tccr0.var &= ~((1 << WGM00) | (1 << WGM01));
 	switch(wavegenmode){ // TOP -- Update of OCR0 at -- TOV0 Flag Set on
 		case 0: // Normal, 0xFF -- Immediate -- MAX

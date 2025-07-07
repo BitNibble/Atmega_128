@@ -3,9 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: ATmega128
-Update:   07/01/2024
-Comment:
-	Stable
+Date:   07/01/2024
 *************************************************************************/
 /*** File Library ***/
 #include "atmega128analog.h"
@@ -24,6 +22,7 @@ static volatile unsigned char adc_n_sample;
 int ANALOG_read(int selection);
 
 static ADC0 atmega128_adc = {
+	// V-table
 	.read = ANALOG_read	
 };
 
@@ -31,8 +30,6 @@ static ADC0 atmega128_adc = {
 ADC0 adc_enable( uint8_t Vreff, uint8_t Divfactor, int n_channel, ... )
 // Interrupt running mode setup, and list of channels to be probed
 {
-	// ATMEGA128enable();
-
 	// LOCAL VARIABLES
 	va_list list;
 	int i;

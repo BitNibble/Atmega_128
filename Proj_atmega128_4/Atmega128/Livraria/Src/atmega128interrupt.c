@@ -3,9 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: ATmega128
-Update:   07/01/2024
-Comment:
-   Stable
+Date:   07/01/2024
 *************************************************************************/
 /*** File Library ***/
 #include "atmega128interrupt.h"
@@ -17,21 +15,12 @@ void INTERRUPT_on(uint8_t channel);
 uint8_t INTERRUPT_reset_status(void);
 
 static EXINT0 atmega128_exint = {
+	// V-table
 	.set = INTERRUPT_set,
 	.off = INTERRUPT_off,
 	.on = INTERRUPT_on,
 	.reset_status = INTERRUPT_reset_status	
 };
-
-/*** Procedure & Function ***/
-EXINT0 exint_enable(void)
-{
-	// ATMEGA128enable();
-	
-	exint_reg()->eimsk.var = 0x00;
-
-	return atmega128_exint;
-}
 
 EXINT0* exint(void){ return &atmega128_exint; }
 
@@ -306,5 +295,5 @@ void INTERRUPT_on(uint8_t channel)
 	}
 }
 
-/***EOF***/
+/*** EOF ***/
 

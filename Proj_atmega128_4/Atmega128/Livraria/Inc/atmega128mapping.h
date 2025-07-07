@@ -3,11 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega128 by ETT ET-BASE
-Update:   07/01/2024
-Comment: 
-	Virtual Image Atmega 128 mapping.
-	NB:
-	- This Header file should be the first to be placed
+Date:   07/01/2024
 **********************************************************/
 #ifndef _ATMEGA128MAPPING_H_
 	#define _ATMEGA128MAPPING_H_

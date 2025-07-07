@@ -4,9 +4,6 @@ Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: 74HC595
 Date:     25/10/2020
-Update:   05/01/2024
-Comment:
-	tested Atemga128 16Mhz and Atmega328 8Mhz and STM32F446RET
 ************************************************************************/
 #ifndef _74HC595_H_
 	#define _74HC595_H_

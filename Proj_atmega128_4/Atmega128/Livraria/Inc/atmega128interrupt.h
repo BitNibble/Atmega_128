@@ -3,9 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: ATmega128
-Update:   07/01/2024
-Comment:
-	Stable
+Date:   07/01/2024
 ************************************************************************/
 #ifndef _ATMEGA128INTERRUPT_H_
 	#define _ATMEGA128INTERRUPT_H_
@@ -31,9 +29,7 @@ typedef struct{
 	uint8_t (*reset_status)(void);
 }EXINT0;
 
-/*** Global Header ***/
 EXINT0* exint(void);
-EXINT0 exint_enable(void);
 
 #endif
 /***EOF***/

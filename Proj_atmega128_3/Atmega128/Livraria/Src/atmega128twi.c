@@ -3,9 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: ATmega128
-Update:   07/01/2024
-Comment:
-	Stable
+Date:   07/01/2024
 ***************************************************************************************************/
 /*** File Library ***/
 #include "atmega128twi.h"
@@ -34,8 +32,6 @@ static TWI0 atmega128_twi = {
 /*** Procedure & Function ***/
 TWI0 twi_enable(uint8_t atmega_ID,  uint8_t prescaler)
 {
-	// ATMEGA128enable();
-	
 	TWI_init(atmega_ID, prescaler);
 	
 	return atmega128_twi;
