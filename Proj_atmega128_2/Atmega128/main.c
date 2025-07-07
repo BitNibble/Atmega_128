@@ -551,7 +551,7 @@ switch(Menu){
 	//lcd1()->string_size(func()->print_binary(8,tnum),14); // binary
 	//lcd1()->string_size(func()->print_binary(8,tnum1),14); // binary
 	//lcd1()->string_size(func()->ui16toa(tnum),14); // binary
-	//lcd1()->string_size(func()->ui32toa(atmega128.cpu.var->xdiv),14); // 32 bit max number
+	//lcd1()->string_size(func()->ui32toa(atmega128.cpu->var->xdiv),14); // 32 bit max number
 	//lcd1()->string_size(func()->ui32toa(4294967295),14); // 32 bit max number
 	//lcd1()->string_size(func()->ui32toa(number1),14); // baud
 	lcd1()->gotoxy(1,0);

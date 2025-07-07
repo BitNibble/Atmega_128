@@ -84,7 +84,7 @@ Atmega128GPWR_TypeDef* gpwr_reg(void);
 
 // Analog Comparator (AC)
 typedef volatile struct {
-	ACSR_TypeDef* acsr; // 0x28
+	ACSR_TypeDef acsr; // 0x28
 } Atmega128AnalogComparator_TypeDef;
 
 Atmega128AnalogComparator_TypeDef* ac_reg(void);

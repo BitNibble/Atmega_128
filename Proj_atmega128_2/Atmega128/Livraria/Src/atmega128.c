@@ -19,12 +19,7 @@ unsigned int ftCounter[FTDELAY_SIZE] = {0};
 // GPWR
 Atmega128GPWR_TypeDef* gpwr_reg(void){return (Atmega128GPWR_TypeDef*) 0x0000;}
 // Analog Comparator (AC)
-Atmega128AnalogComparator_TypeDef* ac_reg(void){
-	static const Atmega128AnalogComparator_TypeDef ac = {
-		.acsr = (ACSR_TypeDef*) 0x0028
-		};
-	return (Atmega128AnalogComparator_TypeDef*) &ac;
-}
+Atmega128AnalogComparator_TypeDef* ac_reg(void){return (Atmega128AnalogComparator_TypeDef*) 0x0028;}
 // Analog to Digital Converter (ADC)
 Atmega128AnalogToDigitalConverter_TypeDef* adc_reg(void){return (Atmega128AnalogToDigitalConverter_TypeDef*) 0x0024;}
 // Boot loader (BOOT_LOAD)
