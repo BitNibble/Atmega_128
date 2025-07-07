@@ -48,7 +48,6 @@ Comment:
 
 /*** Global Variable ***/
 typedef struct{
-	Atmega128Usart0_TypeDef* instance;
 	// prototype pointers
 	UARTvar (*read)(void);
 	UARTvar (*getch)(void);

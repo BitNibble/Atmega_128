@@ -29,7 +29,6 @@ Comment:
 
 /*** Global Variable ***/
 typedef struct{
-	Atmega128SerialPeripheralInterface_TypeDef* instance;
 	// prototype pointers
 	void (*transfer_sync) (uint8_t * dataout, uint8_t * datain, uint8_t len);
 	void (*transmit_sync) (uint8_t * dataout, uint8_t len);

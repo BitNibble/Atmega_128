@@ -158,7 +158,6 @@ TC3 tc3_enable(unsigned char wavegenmode, unsigned char interrupt)
 	tc3_reg()->ocr3b = writeHLbyte(~0);
 	tc3_reg()->ocr3c = writeHLbyte(~0);
 	
-	atmega128_tc3.instance = tc3_reg();
 	atmega128_tc3.compoutmodeA = TIMER_COUNTER3_compoutmodeA;
 	atmega128_tc3.compoutmodeB = TIMER_COUNTER3_compoutmodeB;
 	atmega128_tc3.compoutmodeC = TIMER_COUNTER3_compoutmodeC;

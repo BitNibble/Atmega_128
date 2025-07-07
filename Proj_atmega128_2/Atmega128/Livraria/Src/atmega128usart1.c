@@ -50,7 +50,6 @@ USART1 usart1_enable( uint32_t baud, unsigned int FDbits, unsigned int Stopbits,
 	uint16_t ubrr = 0;
 	rx1buff = buff_enable( uart1_rx_buffer_size, UART1_RxBuf );
 	ubrr = BAUDRATEnormal(baud);
-	atmega128_usart1.instance = usart1_reg();
 	// FUNCTION POINTER
 	atmega128_usart1.read = uart1_read;
 	atmega128_usart1.getch = uart1_getch;

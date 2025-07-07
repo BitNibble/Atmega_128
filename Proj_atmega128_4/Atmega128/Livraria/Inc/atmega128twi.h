@@ -81,7 +81,6 @@ Comment:
 
 /*** Global Variable ***/
 typedef struct{
-	Atmega128TwoWireSerialInterface_TypeDef* instance;
 	// prototype pointers
 	void (*start)(void);
 	void (*connect)(uint8_t address, uint8_t rw);

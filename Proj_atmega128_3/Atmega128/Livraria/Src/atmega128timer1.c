@@ -163,7 +163,6 @@ TC1 tc1_enable(unsigned char wavegenmode, unsigned char interrupt)
 	tc1_reg()->ocr1b = writeHLbyte(~0);
 	tc1_reg()->ocr1c = writeHLbyte(~0);
 	
-	atmega128_tc1.instance = tc1_reg();
 	atmega128_tc1.compoutmodeA = TIMER_COUNTER1_compoutmodeA;
 	atmega128_tc1.compoutmodeB = TIMER_COUNTER1_compoutmodeB;
 	atmega128_tc1.compoutmodeC = TIMER_COUNTER1_compoutmodeC;

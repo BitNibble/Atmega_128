@@ -24,7 +24,6 @@ Comment:
 
 /*** Global Variable ***/
 typedef struct{
-	Atmega128ExternalInterrupts_TypeDef* instance;
 	// prototype pointers
 	void (*set)(uint8_t channel, uint8_t sense);
 	void (*off)(uint8_t channel);

@@ -25,7 +25,6 @@ EXINT0 exint_enable(void)
 	// ATMEGA128enable();
 	
 	exint_reg()->eimsk.var = 0x00;
-	atmega128_exint.instance = exint_reg();
 	atmega128_exint.set = INTERRUPT_set;
 	atmega128_exint.off = INTERRUPT_off;
 	atmega128_exint.on = INTERRUPT_on;

@@ -67,7 +67,6 @@ TC0 tc0_enable(unsigned char wavegenmode, unsigned char interrupt)
 	}
 	tc0_reg()->ocr0.var = ~0;
 	
-	atmega128_tc0.instance = tc0_reg();
 	atmega128_tc0.compoutmode = TIMER_COUNTER0_compoutmode;
 	atmega128_tc0.compare = TIMER_COUNTER0_compare;
 	atmega128_tc0.start = TIMER_COUNTER0_start;

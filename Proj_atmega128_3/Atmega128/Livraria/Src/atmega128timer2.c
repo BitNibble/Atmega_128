@@ -67,7 +67,6 @@ TC2 tc2_enable(unsigned char wavegenmode, unsigned char interrupt)
 	}
 	tc2_reg()->ocr2.var = ~0;
 	
-	atmega128_tc2.instance = tc2_reg();
 	atmega128_tc2.compoutmode = TIMER_COUNTER2_compoutmode;
 	atmega128_tc2.compare = TIMER_COUNTER2_compare;
 	atmega128_tc2.start = TIMER_COUNTER2_start;

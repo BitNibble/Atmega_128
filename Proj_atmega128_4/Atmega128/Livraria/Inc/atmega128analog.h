@@ -35,7 +35,6 @@ typedef struct{
 
 typedef struct{
 	analogparameter par;
-	Atmega128AnalogToDigitalConverter_TypeDef* instance;
 	// prototype pointers
 	int (*read)(int selection);
 }ADC0;

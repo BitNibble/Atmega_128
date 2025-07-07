@@ -32,7 +32,6 @@ TWI0 twi_enable(uint8_t atmega_ID,  uint8_t prescaler)
 	// ATMEGA128enable();
 	
 	// Vtable
-	atmega128_twi.instance = twi_reg();
 	atmega128_twi.start = TWI_start;
 	atmega128_twi.connect = TWI_connect;
 	atmega128_twi.stop = TWI_stop;

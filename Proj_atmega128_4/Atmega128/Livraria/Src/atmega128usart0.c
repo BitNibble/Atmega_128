@@ -50,7 +50,6 @@ USART0 usart0_enable(uint32_t baud, unsigned int FDbits, unsigned int Stopbits, 
 	uint16_t ubrr = 0;
 	rx0buff = buff_enable( uart0_rx_buffer_size, UART0_RxBuf );
 	ubrr = BAUDRATEnormal(baud);
-	atmega128_usart0.instance = usart0_reg();
 	// Vtable
 	atmega128_usart0.read = uart0_read;
 	atmega128_usart0.getch = uart0_getch;
