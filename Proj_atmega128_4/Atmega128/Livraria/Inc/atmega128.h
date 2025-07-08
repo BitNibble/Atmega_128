@@ -18,7 +18,7 @@ Date:	  05072025
 	#define F_CPU 16000000UL
 #endif
 
-/*** Global Library ***/	
+/*** Global Library ***/
 #include <avr/io.h>
 #include <avr/boot.h>
 #include <avr/fuse.h>

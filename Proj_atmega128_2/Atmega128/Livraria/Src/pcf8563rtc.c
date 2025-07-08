@@ -10,9 +10,9 @@ Comment:
 /*** File Library ***/
 #include "pcf8563rtc.h"
 #if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)
-	#include "atmega128mapping.h"
+	#include "atmega128twi.h"
 #elif defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
-	#include "atmega328mapping.h"
+	#include "atmega328twi.h"
 #else
 	#error "MCU Lib not available"
 #endif

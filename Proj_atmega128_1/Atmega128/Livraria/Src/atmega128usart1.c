@@ -248,5 +248,5 @@ void USART1DoubleTransmissionSpeed(void)
 	set_reg_block(&UCSR1A,4,1,1);
 }
 
-/***EOF***/
+/*** EOF ***/
 

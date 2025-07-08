@@ -32,5 +32,5 @@ typedef struct{
 EXINT0* exint(void);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 

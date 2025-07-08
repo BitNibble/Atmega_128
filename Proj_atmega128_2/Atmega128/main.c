@@ -25,7 +25,12 @@ Comment:
 /*** Working Frequency ***/
 #define F_CPU 16000000UL
 /*** File library ***/
-#include "atmega128mapping.h"
+//#include "atmega128mapping.h"
+#include "atmega128analog.h"
+#include "atmega128timer0.h"
+#include "atmega128timer1.h"
+#include "atmega128timer2.h"
+#include "atmega128usart1.h"
 #include "function.h"
 #include "lcd.h"
 #include "pcf8563rtc.h"
@@ -67,7 +72,6 @@ ISR(TIMER2_COMP_vect);
 /**** Procedure & Function ****/
 int main(void)
 {
-atmega128_enable();
 PORTINIT();
 
 // Handler
@@ -127,7 +131,7 @@ while(TRUE){
 lcd1()->reboot();
 keypad()->read();
 		
-uartreceive = usart1_messageprint( atmega128()->usart1, uartmsg, uartmsgprint, "\r\n");
+uartreceive = usart1_messageprint( usart1(), uartmsg, uartmsgprint, "\r\n");
 // RTC
 tm=rtc.GetTime();
 dt=rtc.GetDate();
@@ -408,7 +412,7 @@ switch(Menu){
 			mvalue=func()->strToInt(mstr);
 			if(mvalue >=0 && mvalue <16){
 				// PORTC = mvalue;
-				atmega128()->portc_reg->port.var = mvalue;
+				portc_reg()->port.var = mvalue;
 				lcd1()->gotoxy(0,12);
 				lcd1()->hspace(4);
 			}else{
@@ -455,37 +459,37 @@ switch(Menu){
 			usart1()->rxflush();
 		}
 		if(!strcmp(uartmsg,"s00.\r\n")){
-			if(atmega128()->portc_reg->port.var & 1)
-				atmega128()->portc_reg->port.var &= ~1;
+			if(portc_reg()->port.var & 1)
+				portc_reg()->port.var &= ~1;
 			else
-				atmega128()->portc_reg->port.var |= 1;
+				portc_reg()->port.var |= 1;
 		}
 		if(!strcmp(uartmsg,"s00 off.\r\n")){
-			atmega128()->portc_reg->port.var &= ~1;
+			portc_reg()->port.var &= ~1;
 		}
 		if(!strcmp(uartmsg,"s01.\r\n")){
-			if(atmega128()->portc_reg->port.var & 2)
-				atmega128()->portc_reg->port.var &= ~2;
+			if(portc_reg()->port.var & 2)
+				portc_reg()->port.var &= ~2;
 			else
-				atmega128()->portc_reg->port.var |= 2;
+				portc_reg()->port.var |= 2;
 		}
 		if(!strcmp(uartmsg,"s02.\r\n")){
-			if(atmega128()->portc_reg->port.var & 4)
-				atmega128()->portc_reg->port.var &= ~4;
+			if(portc_reg()->port.var & 4)
+				portc_reg()->port.var &= ~4;
 			else
-				atmega128()->portc_reg->port.var |= 4;
+				portc_reg()->port.var |= 4;
 		}
 		if(!strcmp(uartmsg,"s03.\r\n")){
-			if(atmega128()->portc_reg->port.var & 8)
-				atmega128()->portc_reg->port.var &= ~8;
+			if(portc_reg()->port.var & 8)
+				portc_reg()->port.var &= ~8;
 			else
-				atmega128()->portc_reg->port.var |= 8;
+				portc_reg()->port.var |= 8;
 		}
 		if(!strcmp(uartmsg,"all on.\r\n")){
-			atmega128()->portc_reg->port.var |= 15;
+			portc_reg()->port.var |= 15;
 		}
 		if(!strcmp(uartmsg,"all off.\r\n")){
-			atmega128()->portc_reg->port.var &= ~15;
+			portc_reg()->port.var &= ~15;
 		}
 		if(!strcmp(uartmsg,"Disconnect\r\n")){
 			Menu = '1';
@@ -589,13 +593,13 @@ switch(signal)
 void PORTINIT(void)
 {
 	// INPUT
-	atmega128()->portf_reg->ddr.var = 0x00;
-	atmega128()->portf_reg->port.var = 0x0F;
+	portf_reg()->ddr.var = 0x00;
+	portf_reg()->port.var = 0x0F;
 	// OUTPUT
 	portb_reg()->ddr.var |= (1<<5) | (1<<6) | (1<<7);
 	// OUTPUT PULLUP
-	atmega128()->portc_reg->ddr.var = 0xFF;
-	atmega128()->portc_reg->port.var = 0x00;
+	portc_reg()->ddr.var = 0xFF;
+	portc_reg()->port.var = 0x00;
 }
 
 /*** File Interrupt ***/
@@ -647,5 +651,5 @@ A/(b*c*d*e*f) = A/b/c/d/e/f
 functions should never return to one of its own parameters, it leads to zero.
 ********************************************************************/
 
-/***EOF***/
+/*** EOF ***/
 

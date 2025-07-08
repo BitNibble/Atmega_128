@@ -93,5 +93,5 @@ TWI0* twi(void);
 TWI0 twi_enable(uint8_t atmega_ID, uint8_t prescaler);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 

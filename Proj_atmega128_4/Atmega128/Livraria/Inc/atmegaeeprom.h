@@ -35,5 +35,5 @@ EEPROM0* eeprom(void);
 
 #endif
 
-/***EOF***/
+/*** EOF ***/
 
