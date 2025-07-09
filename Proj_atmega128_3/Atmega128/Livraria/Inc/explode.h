@@ -16,13 +16,9 @@ Comment:
 /*** Global Constant & Macro ***/
 //#define STM32F4
 #if defined (STM32F4)
-	#ifndef IO_var
-		#define IO_var uint32_t
-	#endif
+	#define IO_var uint32_t
 #else
-	#ifndef IO_var
-		#define IO_var uint8_t
-	#endif
+	#define IO_var uint8_t
 #endif
 
 /*** Global TypeDef ***/
@@ -35,11 +31,10 @@ typedef struct {
 	IO_var HL;
 }explode_parameter;
 
-/*** EXPLODE ***/
+/*** Handler ***/
 typedef struct {
-	/***Variable***/
 	explode_parameter par;
-	// PROTOTYPES VTABLE
+	// V-table
 	void (*update)(explode_parameter* par, IO_var x);
 }EXPLODE;
 
@@ -47,7 +42,7 @@ EXPLODE explode_enable(void);
 
 #endif
 
-/***EOF***/
+/*** EOF ***/
 
 /******
 1º Sequence

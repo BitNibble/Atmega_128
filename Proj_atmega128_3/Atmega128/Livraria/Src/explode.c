@@ -11,38 +11,32 @@ Comment:
 /*** File Library ***/
 #include"explode.h"
 
-/*** File Header ***/
+/*** Procedure and Function declaration ***/
 void EXPLODEupdate(explode_parameter* par, IO_var x);
 IO_var EXPLODEhh(explode_parameter* par);
 IO_var EXPLODEll(explode_parameter* par);
 IO_var EXPLODElh(explode_parameter* par);
 IO_var EXPLODEhl(explode_parameter* par);
-explode_parameter explode_par_inic(void);
 
-/*** EXPLODE Auxilar ***/
-explode_parameter explode_par_inic(void)
-{
-	explode_parameter setup_explode_par;
-
-	setup_explode_par.XI = 0;
-	setup_explode_par.XF = 0;
-
-	return setup_explode_par;
-}
-/*** EXPLODE Procedure & Function Definition ***/
+/*** Handler ***/
 EXPLODE explode_enable( void )
 {
 	// struct object
-	EXPLODE setup_explode;
-
-	// inic VAR
-	setup_explode.par = explode_par_inic();
-	// function pointers
-	setup_explode.update = EXPLODEupdate;
+	EXPLODE setup_explode = {
+		.par = {
+			.HH = 0,
+			.HL = 0,
+			.LH = 0,
+			.LL = 0,
+			.XF = 0,
+			.XI = 0
+		},
+		.update = EXPLODEupdate
+	};
 
 	return setup_explode;
 }
-// boot
+/*** Procedure and Function definition ***/
 void EXPLODEupdate(explode_parameter* par, IO_var x)
 {
 	par->XI = par->XF;
@@ -52,17 +46,14 @@ void EXPLODEupdate(explode_parameter* par, IO_var x)
 	par->LH = EXPLODElh(par);
 	par->HL = EXPLODEhl(par);
 }
-// hh
 IO_var EXPLODEhh(explode_parameter* par)
 {
 	return (par->XI & par->XF);
 }
-// ll
 IO_var EXPLODEll(explode_parameter* par)
 {
 	return ~(par->XI | par->XF);
 }
-// lh
 IO_var EXPLODElh(explode_parameter* par)
 {
 	IO_var i;
@@ -70,7 +61,6 @@ IO_var EXPLODElh(explode_parameter* par)
 	i &= par->XF;
 	return i;
 }
-// hl
 IO_var EXPLODEhl(explode_parameter* par)
 {
 	IO_var i;
@@ -79,5 +69,5 @@ IO_var EXPLODEhl(explode_parameter* par)
 	return i;
 }
 
-/***EOF***/
+/*** EOF ***/
 
