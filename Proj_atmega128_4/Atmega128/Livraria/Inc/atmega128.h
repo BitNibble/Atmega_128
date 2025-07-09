@@ -85,6 +85,8 @@ Atmega128GPWR_TypeDef* gpwr_reg(void);
 // Analog Comparator (AC)
 typedef volatile struct {
 	ACSR_TypeDef acsr; // 0x28
+	uint8_t fill[23]; // (40 - 28) - 1
+	SFIOR_TypeDef sfior; // 0x40
 } Atmega128AnalogComparator_TypeDef;
 
 Atmega128AnalogComparator_TypeDef* ac_reg(void);
@@ -241,19 +243,21 @@ Atmega128SerialPeripheralInterface_TypeDef* spi_reg(void);
 
 // Timer/Counter, 16-bit (TC1)
 typedef volatile struct {
+	SFIOR_TypeDef sfior; // 0x40
+	uint8_t fill1[5]; // (46 - 40) - 1
 	U_word icr1; // 0x46 0x47
 	U_word ocr1b; // 0x48 0x49
 	U_word ocr1a; // 0x4A 0x4B
 	U_word tcnt1; // 0x4C 0x4D
 	TCCR1B_TypeDef tccr1b; // 0x4E
 	TCCR1A_TypeDef tccr1a; // 0x4F
-	uint8_t fill1[6]; // (56 - 4F) - 1
+	uint8_t fill2[6]; // (56 - 4F) - 1
 	TIFR_Typedef tifr; // 0x56
 	TIMSK_TypeDef timsk; // 0x57
-	uint8_t fill2[32]; // (78 - 57) - 1
+	uint8_t fill3[32]; // (78 - 57) - 1
 	U_word ocr1c; // 0x78 0x79
 	TCCR1C_TypeDef tccr1c; // 0x7A
-	uint8_t fill3; // (7C - 7A) - 1
+	uint8_t fill4; // (7C - 7A) - 1
 	ETIFR_TypeDef etifr; // 0x7C
 	ETIMSK_TypeDef etimsk; // 0x7D
 } Atmega128TimerCounter1_TypeDef;
@@ -262,9 +266,11 @@ Atmega128TimerCounter1_TypeDef* tc1_reg(void);
 
 // Timer/Counter, 16-bit (TC3)
 typedef volatile struct {
+	SFIOR_TypeDef sfior; // 0x40
+	uint8_t fill1[59]; // (7c - 40) - 1
 	ETIFR_TypeDef etifr; // 0x7C
 	ETIMSK_TypeDef etimsk; // 0x7D
-	uint8_t fill[2]; // (80 - 7D) - 1
+	uint8_t fill2[2]; // (80 - 7D) - 1
 	U_word icr3; // 0x80 0x81
 	U_word ocr3c; // 0x82 0x83
 	U_word ocr3b; // 0x84 0x85
@@ -305,11 +311,13 @@ Atmega128TimerCounter2_TypeDef* tc2_reg(void);
 
 // Timer/Counter, 8-bit A sync (TC0)
 typedef volatile struct {
+	SFIOR_TypeDef sfior; // 0x40
+	uint8_t fill1[15]; // (50 - 40) - 1
 	ASSR_TypeDef assr; // 0x50
 	U_byte ocr0; // 0x51
 	U_byte tcnt0; // 0x52
 	TCCR0_TypeDef tccr0; // 0x53
-	uint8_t fill[2]; // (56 - 53) - 1
+	uint8_t fill2[2]; // (56 - 53) - 1
 	TIFR_Typedef tifr; // 0x56
 	TIMSK_TypeDef timsk; // 0x57
 } Atmega128TimerCounter0_TypeDef;

@@ -22,6 +22,7 @@ Date:	  05072025
 #include <avr/io.h>
 #include <avr/boot.h>
 #include <avr/fuse.h>
+#include <avr/wdt.h>
 #include <avr/eeprom.h>
 #include <avr/pgmspace.h>
 #include <avr/interrupt.h>

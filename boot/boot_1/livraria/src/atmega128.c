@@ -94,10 +94,10 @@ uint16_t SwapByte(uint16_t num){uint16_t tp; tp = (num << 8); return (num >> 8) 
 uint16_t BAUDRATEnormal(uint32_t BAUD){uint32_t baudrate = F_CPU/16; baudrate /= BAUD; baudrate -= 1; return (uint16_t) baudrate;}
 uint16_t BAUDRATEdouble(uint32_t BAUD){uint32_t baudrate = F_CPU/8; baudrate /= BAUD; baudrate -= 1; return (uint16_t) baudrate;}
 uint16_t BAUDRATEsynchronous(uint32_t BAUD){uint32_t baudrate = F_CPU/2; baudrate /= BAUD; baudrate -= 1; return (uint16_t) baudrate;}
-//void ClockPrescalerSelect(volatile uint8_t prescaler){ volatile uint8_t sreg; volatile uint8_t* clkpr = &XDIV; 
-//	prescaler &= 0x7F; sreg = cpu_reg()->sreg.var; cpu_reg()->sreg.var &= ~(1 << 7); *clkpr = prescaler;
-//	*clkpr = (1 << XDIVEN) | prescaler; cpu_reg()->sreg.var = sreg;
-//}
+void ClockPrescalerSelect(volatile uint8_t prescaler){ volatile uint8_t sreg; volatile uint8_t* clkpr = &XDIV; 
+	prescaler &= 0x7F; sreg = cpu_reg()->sreg.var; cpu_reg()->sreg.var &= ~(1 << 7); *clkpr = prescaler;
+	*clkpr = (1 << XDIVEN) | prescaler; cpu_reg()->sreg.var = sreg;
+}
 void MoveInterruptsToBoot(void){volatile uint8_t sreg; sreg = cpu_reg()->sreg.var; cpu_reg()->sreg.var &= ~(1 << 7);
 	MCUCR = (1<<IVCE); MCUCR = (1<<IVSEL); cpu_reg()->sreg.var = sreg;
 }

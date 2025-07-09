@@ -11,13 +11,9 @@ Date:     25/10/2020
 /*** Global Constant & Macro ***/
 //#define STM32F4
 #if defined (STM32F4)
-	#ifndef IO_var
-		#define IO_var uint32_t
-	#endif
+	#define IO_var uint32_t
 #else
-	#ifndef IO_var
-		#define IO_var uint8_t
-	#endif
+	#define IO_var uint8_t
 #endif
 
 /*** File Library ***/
@@ -32,11 +28,11 @@ typedef struct{
 	volatile IO_var *hc595_PORT;
 }hc595_parameter;
 
-/*** 74HC595 TypeDef ***/
+/*** Handler ***/
 typedef struct
 {
 	hc595_parameter par;
-	/******/
+	// V-table
 	void (*bit)(hc595_parameter* par, uint8_t state);
 	void (*ibyte)(hc595_parameter* par, uint8_t byte);
 	void (*byte)(hc595_parameter* par, uint8_t byte);
