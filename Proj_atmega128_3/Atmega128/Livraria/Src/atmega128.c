@@ -53,9 +53,9 @@ Atmega128OtherRegisters_TypeDef* misc_reg(void){return (Atmega128OtherRegisters_
 // Serial Peripheral Interface (SPI)
 Atmega128SerialPeripheralInterface_TypeDef* spi_reg(void){return (Atmega128SerialPeripheralInterface_TypeDef*) 0x002D;}
 // Timer/Counter, 16-bit (TC1)
-Atmega128TimerCounter1_TypeDef* tc1_reg(void){return (Atmega128TimerCounter1_TypeDef*) 0x0046;}
+Atmega128TimerCounter1_TypeDef* tc1_reg(void){return (Atmega128TimerCounter1_TypeDef*) 0x0040;}
 // Timer/Counter, 16-bit (TC3)
-Atmega128TimerCounter3_TypeDef* tc3_reg(void){return (Atmega128TimerCounter3_TypeDef*) 0x007C;}
+Atmega128TimerCounter3_TypeDef* tc3_reg(void){return (Atmega128TimerCounter3_TypeDef*) 0x0040;}
 // Timer/Counter 1 and 3
 Atmega128TimerExternalInterruptFlag_TypeDef* tc_exif_reg(void){return (Atmega128TimerExternalInterruptFlag_TypeDef*) 0x007C;}
 // Timer/Counter 1 and 3
@@ -63,7 +63,7 @@ Atmega128TimerExternalInterruptMask_TypeDef* tc_exim_reg(void){return (Atmega128
 // Timer/Counter, 8-bit (TC2)
 Atmega128TimerCounter2_TypeDef* tc2_reg(void){return (Atmega128TimerCounter2_TypeDef*) 0x0043;}
 // Timer/Counter, 8-bit A sync (TC0)
-Atmega128TimerCounter0_TypeDef* tc0_reg(void){return (Atmega128TimerCounter0_TypeDef*) 0x0050;}
+Atmega128TimerCounter0_TypeDef* tc0_reg(void){return (Atmega128TimerCounter0_TypeDef*) 0x0040;}
 // Timer/Counter 0, 1 and 2
 Atmega128TimerInterruptFlag_TypeDef* tc_if_reg(void){return (Atmega128TimerInterruptFlag_TypeDef*) 0x0056;}
 // Timer/Counter 0, 1 and 2
