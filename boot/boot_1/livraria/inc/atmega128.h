@@ -22,7 +22,6 @@ Date:	  05072025
 #include <avr/io.h>
 #include <avr/boot.h>
 #include <avr/fuse.h>
-#include <avr/wdt.h>
 #include <avr/eeprom.h>
 #include <avr/pgmspace.h>
 #include <avr/interrupt.h>
@@ -386,7 +385,6 @@ uint16_t BAUDRATEdouble(uint32_t BAUD);
 uint16_t BAUDRATEsynchronous(uint32_t BAUD);
 void ClockPrescalerSelect(volatile uint8_t prescaler);
 void MoveInterruptsToBoot(void);
-uint8_t read_low_fuse(void);
 /*** Procedure and Function ToolSet ***/
 void set_reg(volatile uint8_t* reg, uint8_t hbits);
 void clear_reg(volatile uint8_t* reg, uint8_t hbits);

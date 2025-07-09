@@ -101,6 +101,20 @@ void ClockPrescalerSelect(volatile uint8_t prescaler){ volatile uint8_t sreg; vo
 void MoveInterruptsToBoot(void){volatile uint8_t sreg; sreg = cpu_reg()->sreg.var; cpu_reg()->sreg.var &= ~(1 << 7);
 	MCUCR = (1<<IVCE); MCUCR = (1<<IVSEL); cpu_reg()->sreg.var = sreg;
 }
+uint8_t read_low_fuse(void) {
+	uint8_t fuse;
+
+	__asm__ __volatile__ (
+	"ldi r30, 0x00\n\t"  // ZL = 0x00
+	"ldi r31, 0x00\n\t"  // ZH = 0x00
+	"lpm %0, Z\n\t"      // Load from fuse memory
+	: "=r" (fuse)
+	:
+	: "r30", "r31"
+	);
+
+	return fuse;
+}
 
 /*** Procedure and Function ToolSet ***/
 inline uint8_t Msk_Pos(uint8_t Msk){

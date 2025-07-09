@@ -3,25 +3,26 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: all
-Date:     11042024
-Comment:
-	Tested Atemga128 16Mhz and Atmega328 8Mhz                    
+Date:     11042024                
 ************************************************************************/
-/***File Library***/
+/*** File Library ***/
 #include "pcf8575lcd.h"
+#include "pcf8575.h"
 #include <util/delay.h>
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <string.h>
-//#include <stdarg.h>
-//#include <math.h>
 
-/***File Variable***/
+// CMD RS
+#define PCF_INST 0
+#define PCF_DATA 1
+// ticks depends on CPU frequency 16Mhz -> 0 8Mhz -> 0
+#define PCF_LCD_W_N_TICKS 0
+#define PCF_LCD_R_N_TICKS 0
+
+/*** File Variable ***/
 static PCF8575_LCD0 pcf8575_setup_lcd0;
 static PCF8575 pcf8575_lcd0_com;
 static uint16_t pcf8575_lcd0_detect;
 
-/***File Header***/
+/*** File Header ***/
 void PCF8575_LCD0_inic(void);
 void PCF8575_LCD0_write(char c, unsigned short D_I);
 char PCF8575_LCD0_read(unsigned short D_I);
@@ -36,7 +37,7 @@ void PCF8575_LCD0_gotoxy(unsigned int y, unsigned int x);
 void PCF8575_LCD0_reboot(void);
 void PCF8575_LCD_ticks(uint16_t num);
 
-/***Procedure & Function***/
+/*** Procedure & Function ***/
 PCF8575_LCD0 pcf8575_lcd0_enable( uint8_t pcf8575_id, uint8_t twi_prescaler )
 {
 	// LOCAL VARIABLES
@@ -46,7 +47,7 @@ PCF8575_LCD0 pcf8575_lcd0_enable( uint8_t pcf8575_id, uint8_t twi_prescaler )
 	
 	// initialize variables
 	pcf8575_lcd0_detect = pcf8575_lcd0_com.readhbits( &pcf8575_lcd0_com.par, ( 1 << PCF_NC) );
-	// Direccionar apontadores para PROTOTIPOS
+	// V-table
 	pcf8575_setup_lcd0.write = PCF8575_LCD0_write;
 	pcf8575_setup_lcd0.read = PCF8575_LCD0_read;
 	pcf8575_setup_lcd0.BF = PCF8575_LCD0_BF;
@@ -247,5 +248,5 @@ void PCF8575_LCD_ticks(uint16_t num)
 	for(count = 0; count < num; count++) ;
 }
 
-/***EOF***/
+/*** EOF ***/
 

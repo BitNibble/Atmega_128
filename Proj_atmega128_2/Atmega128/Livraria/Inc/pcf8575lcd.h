@@ -4,24 +4,21 @@ Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: all
 Date:     11042024
-Comment:
-	Tested Atemga128 16Mhz and Atmega328 8Mhz
 ************************************************************************/
 #ifndef _PCF8575LCD_H_
 	#define _PCF8575LCD_H_
 
-/***Compiler***/
+/*** Compiler ***/
 
-/***Working Frequency***/
+/*** Working Frequency ***/
 #ifndef F_CPU
 	#define F_CPU 16000000UL
 #endif
 
-/***Global Library***/
-#include "pcf8575.h"
+/*** Global Library ***/
 #include <inttypes.h>
 
-/***Global Constant & Macro***/
+/*** Global Constant & Macro ***/
 // ASIGN PORT PINS TO LCD (can be setup in any way)
 #define PCF_DB0 0
 #define PCF_DB1 1
@@ -36,14 +33,8 @@ Comment:
 #define PCF_EN 10
 #define PCF_NC 11
 /***************/
-// CMD RS
-#define PCF_INST 0
-#define PCF_DATA 1
-// ticks depends on CPU frequency 16Mhz -> 0 8Mhz -> 0
-#define PCF_LCD_W_N_TICKS 0
-#define PCF_LCD_R_N_TICKS 0
 
-/***Global Variable***/
+/*** Global Variable ***/
 typedef struct{
 	void (*write)(char c, unsigned short D_I);
 	char (*read)(unsigned short D_I);
@@ -58,11 +49,10 @@ typedef struct{
 	void (*reboot)(void);
 }PCF8575_LCD0;
 
-/***Global Header***/
-PCF8575_LCD0* pcf8575_lcd0(void);
 PCF8575_LCD0 pcf8575_lcd0_enable( uint8_t pcf8575_id, uint8_t twi_prescaler );
+PCF8575_LCD0* pcf8575_lcd0(void);
 
 #endif
 
-/***EOF***/
+/*** EOF ***/
 

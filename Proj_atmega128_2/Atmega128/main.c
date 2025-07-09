@@ -124,6 +124,7 @@ tc2()->start(0);
 // rtc setup pin
 rtc.SetClkOut(1, 2); // oscillate pin at 1 sec
 
+//wdt_enable(WDTO_1S);
 // TODO:: Please write your application code
 while(TRUE){
 // Preamble [INPUT]
@@ -148,6 +149,10 @@ strcpy(str,func()->i16toa(adcvalue));
 //if(!strcmp(uartreceive,"Connect\r\n")){Menu='6';usart1()->rxflush;lcd1()->clear();}
 if(!strcmp(uartreceive,"Connected\r\n")){Menu='6';lcd1()->clear();}
 	
+//lcd1()->gotoxy(2,0);
+//lcd1()->string_size(func()->ui16toa(cpu_reg()->mcucr.par.ivsel),2);
+//lcd1()->string_size(func()->ui16toa(read_low_fuse()),4);
+
 // MENU SELECTOR	
 switch(Menu){
 	// MENU 1

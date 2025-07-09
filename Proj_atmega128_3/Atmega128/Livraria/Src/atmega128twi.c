@@ -10,7 +10,6 @@ Date:   07/01/2024
 #include <util/delay.h>
 
 /*** File Header ***/
-void TWI_init(uint8_t device_id, uint8_t prescaler);
 void TWI_start(void);
 void TWI_connect(uint8_t address, uint8_t rw);
 void TWI_master_write(uint8_t var_twiData_u8);
@@ -30,42 +29,32 @@ static TWI0 atmega128_twi = {
 };
 
 /*** Procedure & Function ***/
-TWI0 twi_enable(uint8_t atmega_ID,  uint8_t prescaler)
+TWI0 twi_enable(uint8_t atmega_id,  uint8_t prescaler)
 {
-	TWI_init(atmega_ID, prescaler);
-	
-	return atmega128_twi;
-}
-
-TWI0* twi(void){ return &atmega128_twi; }
-
-// void TWI_Init(uint8_t device_id, uint8_t prescaler)
-void TWI_init(uint8_t device_id, uint8_t prescaler)
-{
-	if(device_id > 0 && device_id < 128){
-		twi_reg()->twar.par.twa = device_id;
+	if(atmega_id > 0 && atmega_id < 128){
+		twi_reg()->twar.par.twa = atmega_id;
 		twi_reg()->twar.par.twgce = 1;
-	}else{
+		}else{
 		twi_reg()->twar.par.twgce = 1;
 	}
 	portd_reg()->ddr.var |= TWI_IO_MASK;
 	portd_reg()->port.var |= TWI_IO_MASK;
 	switch(prescaler){
 		case 1:
-			twi_reg()->twsr.par.twps = 0;
+		twi_reg()->twsr.par.twps = 0;
 		break;
 		case 4:
-			twi_reg()->twsr.par.twps = 1;
+		twi_reg()->twsr.par.twps = 1;
 		break;
 		case 16:
-			twi_reg()->twsr.par.twps = 2;
+		twi_reg()->twsr.par.twps = 2;
 		break;
 		case 64:
-			twi_reg()->twsr.par.twps = 3;
+		twi_reg()->twsr.par.twps = 3;
 		break;
 		default:
-			prescaler = 1;
-			twi_reg()->twsr.par.twps = 0;
+		prescaler = 1;
+		twi_reg()->twsr.par.twps = 0;
 		break;
 	}
 	twi_reg()->twbr.var = ((F_CPU / TWI_SCL_CLOCK) - 16) / (2 * prescaler);
@@ -74,7 +63,12 @@ void TWI_init(uint8_t device_id, uint8_t prescaler)
 	// atmega128()->twi->twbr = 0x46; //SCL frequency is 50K for 16Mhz
 	// atmega128()->twi->twcr = 0x04; //enab1e TWI module
 	// Standard Config end
+	
+	return atmega128_twi;
 }
+
+TWI0* twi(void){ return &atmega128_twi; }
+
 // void TWI_Start(void)
 void TWI_start(void) // $08
 {	
