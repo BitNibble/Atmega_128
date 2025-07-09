@@ -120,19 +120,19 @@ typedef struct {
 		EXINT0* exint;
 	#endif
 	/***PORTA***/
-	Atmega128PORTA_TypeDef* porta_reg;
+	Atmega128PORTA_TypeDef* gpioa_reg;
 	/***PORTB***/
-	Atmega128PORTB_TypeDef* portb_reg;
+	Atmega128PORTB_TypeDef* gpiob_reg;
 	/***PORTC***/
-	Atmega128PORTC_TypeDef* portc_reg;
+	Atmega128PORTC_TypeDef* gpioc_reg;
 	/***PORTD***/
-	Atmega128PORTD_TypeDef* portd_reg;
+	Atmega128PORTD_TypeDef* gpiod_reg;
 	/***PORTE***/
-	Atmega128PORTE_TypeDef* porte_reg;
+	Atmega128PORTE_TypeDef* gpioe_reg;
 	/***PORTF***/
-	Atmega128PORTF_TypeDef* portf_reg;
+	Atmega128PORTF_TypeDef* gpiof_reg;
 	/***PORTG***/
-	Atmega128PORTG_TypeDef* portg_reg;
+	Atmega128PORTG_TypeDef* gpiog_reg;
 	/***JTAG***/
 	Atmega128JtagInterface_TypeDef* jtag_reg;
 	/***MISC***/

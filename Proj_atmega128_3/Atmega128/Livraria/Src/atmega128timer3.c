@@ -213,21 +213,21 @@ void TIMER_COUNTER3_compoutmodeA(unsigned char compoutmode)
 {
 	tc3_reg()->tccr3a.var &= ~(3 << COM3A0);
 	switch(compoutmode){ // OC3A  -->  PE3
-		case 0: // Normal port operation, OC3A disconnected.
+		case 0: // Normal gpio operation, OC3A disconnected.
 		break;
 		case 1: // Reserved
 			// Toggle OC3A on compare match
-			porte_reg()->ddr.var |= 0x08;
+			gpioe_reg()->ddr.var |= 0x08;
 			tc3_reg()->tccr3a.var |= (1 << COM3A0);
 		break;
 		case 2: // Clear OC3A on compare match when up-counting. Set OC0 on compare
 			// match when down counting.
-			porte_reg()->ddr.var |= 0x08;
+			gpioe_reg()->ddr.var |= 0x08;
 			tc3_reg()->tccr3a.var |= (1 << COM3A1);
 		break;
 		case 3: // Set OC3A on compare match when up-counting. Clear OC0 on compare
 			// match when down counting.
-			porte_reg()->ddr.var |= 0x08;
+			gpioe_reg()->ddr.var |= 0x08;
 			tc3_reg()->tccr3a.var |= (1 << COM3A0) | (1 << COM3A1);
 		break;
 		default:
@@ -238,21 +238,21 @@ void TIMER_COUNTER3_compoutmodeB(unsigned char compoutmode)
 {
 	tc3_reg()->tccr3a.var &= ~(3 << COM3B0);
 	switch(compoutmode){ // OC3B  -->  PE4
-		case 0: // Normal port operation, OC3B disconnected.
+		case 0: // Normal gpio operation, OC3B disconnected.
 		break;
 		case 1: // Reserved
 			// Toggle OC3A or OC3B on compare match
-			porte_reg()->ddr.var |= 0x10;
+			gpioe_reg()->ddr.var |= 0x10;
 			tc3_reg()->tccr3a.var |= (1 << COM3B0);
 		break;
 		case 2: // Clear OC3B on compare match when up-counting. Set OC3B on compare
 			// match when down counting.
-			porte_reg()->ddr.var |= 0x10;
+			gpioe_reg()->ddr.var |= 0x10;
 			tc3_reg()->tccr3a.var |= (1 << COM3B1);
 		break;
 		case 3: // Set OC3B on compare match when up-counting. Clear OC3B on compare
 			// match when down counting.
-			porte_reg()->ddr.var |= 0x10;
+			gpioe_reg()->ddr.var |= 0x10;
 			tc3_reg()->tccr3a.var |= (1 << COM3B0) | (1 << COM3B1);
 		break;
 		default:
@@ -263,21 +263,21 @@ void TIMER_COUNTER3_compoutmodeC(unsigned char compoutmode)
 {
 	tc3_reg()->tccr3a.var &= ~(3 << COM3C0);
 	switch(compoutmode){ // OC3C  -->  PE5
-		case 0: // Normal port operation, OC3C disconnected.
+		case 0: // Normal gpio operation, OC3C disconnected.
 		break;
 		case 1: // Reserved
 			// Toggle OC3A or OC3C on compare match
-			porte_reg()->ddr.var |= 0x20;
+			gpioe_reg()->ddr.var |= 0x20;
 			tc3_reg()->tccr3a.var |= (1 << COM3C0);
 		break;
 		case 2: // Clear OC3C on compare match when up-counting. Set OC3C on compare
 			// match when down counting.
-			porte_reg()->ddr.var |= 0x20;
+			gpioe_reg()->ddr.var |= 0x20;
 			tc3_reg()->tccr3a.var |= (1 << COM3C1);
 		break;
 		case 3: // Set OC3C on compare match when up-counting. Clear OC3C on compare
 			// match when down counting.
-			porte_reg()->ddr.var |= 0x20;
+			gpioe_reg()->ddr.var |= 0x20;
 			tc3_reg()->tccr3a.var |= (1 << COM3C0) | (1 << COM3C1);
 		break;
 		default:

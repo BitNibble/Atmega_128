@@ -115,28 +115,28 @@ uint8_t TIMER_COUNTER2_start(unsigned int prescaler)
 	return timer2_state;
 }
 void TIMER_COUNTER2_compoutmode(unsigned char compoutmode)
-// compoutmode: Normal port operation, OC0 disconnected; Toggle OC0 on compare match; 
+// compoutmode: Normal gpio operation, OC0 disconnected; Toggle OC0 on compare match; 
 // Clear OC0 on compare match when up-counting. Set OC0 on compare match when downcounting. Clear OC0 on compare match;
 // Set OC0 on compare match when up-counting. Clear OC0 on compare match when downcounting. Set OC0 on compare match ;
-// default-Normal port operation, OC0 disconnected.
+// default-Normal gpio operation, OC0 disconnected.
 {
 	tc2_reg()->tccr2.var &= ~((1 << COM20) | (1 << COM21));
 	switch(compoutmode){ // OC2  -->  PB7
-		case 0: // Normal port operation, OC2 disconnected.
+		case 0: // Normal gpio operation, OC2 disconnected.
 		break;
 		case 1: // Reserved
 			// Toggle OC2 on compare match
-			portb_reg()->ddr.var |= 0x80;
+			gpiob_reg()->ddr.var |= 0x80;
 			tc2_reg()->tccr2.var |= (1 << COM20);
 		break;
 		case 2: // Clear OC2 on compare match when up-counting. Set OC0 on compare
 			// match when down counting.
-			portb_reg()->ddr.var |= 0x80;
+			gpiob_reg()->ddr.var |= 0x80;
 			tc2_reg()->tccr2.var |= (1 << COM21);
 		break;
 		case 3: // Set OC2 on compare match when up-counting. Clear OC0 on compare
 			// match when down counting.
-			portb_reg()->ddr.var |= 0x80;
+			gpiob_reg()->ddr.var |= 0x80;
 			tc2_reg()->tccr2.var |= (1 << COM20) | (1 << COM21);
 		break;
 		default:

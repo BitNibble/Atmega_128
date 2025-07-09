@@ -23,20 +23,20 @@ static SPI0 atmega128_spi = {
 /*** Procedure & Function ***/
 SPI0 spi_enable(uint8_t master_slave_select, uint8_t data_order,  uint8_t data_modes, uint8_t prescaler)
 {
-	portb_reg()->ddr.var &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
+	gpiob_reg()->ddr.var &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
 	switch(master_slave_select){
 		case SPI_MASTER_MODE:
 			spi_reg()->spcr.var |= (1 << MSTR);
-			portb_reg()->ddr.var |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
-			portb_reg()->port.var |= (1 << DD_SS);
+			gpiob_reg()->ddr.var |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
+			gpiob_reg()->port.var |= (1 << DD_SS);
 		break;
 		case SPI_SLAVE_MODE:
 			spi_reg()->spcr.var |= (1 << MSTR);
-			portb_reg()->ddr.var |= (1 << DD_MISO);
+			gpiob_reg()->ddr.var |= (1 << DD_MISO);
 		break;
 		default:
 			spi_reg()->spcr.var |= (1 << MSTR);
-			portb_reg()->ddr.var |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
+			gpiob_reg()->ddr.var |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
 		break;
 	}
 	switch(data_order){
@@ -111,9 +111,9 @@ SPI0* spi(void){ return &atmega128_spi; }
 void spi_default()
 // Initialize pins for spi communication
 {
-	portb_reg()->ddr.var &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
+	gpiob_reg()->ddr.var &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
 	// Define the following pins as output
-	portb_reg()->ddr.var |= ((1 << DD_MOSI) | (1 << DD_SS) | (1 << DD_SCK)); 
+	gpiob_reg()->ddr.var |= ((1 << DD_MOSI) | (1 << DD_SS) | (1 << DD_SCK)); 
 	spi_reg()->spcr.var	=	((1 << SPE) |				// SPI Enable
 						(0 << SPIE) |				// SPI Interrupt Enable
 						(0 << DORD) |				// Data Order (0:MSB first / 1:LSB first)

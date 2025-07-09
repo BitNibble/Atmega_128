@@ -39,19 +39,19 @@ ATMEGA128 atmega128_enable(void){
 		setup_atmega128.exint = exint();
 	#endif
 	/***PORTA***/
-	setup_atmega128.porta_reg = porta_reg();
+	setup_atmega128.gpioa_reg = gpioa_reg();
 	/***PORTB***/
-	setup_atmega128.portb_reg = portb_reg();
+	setup_atmega128.gpiob_reg = gpiob_reg();
 	/***PORTC***/
-	setup_atmega128.portc_reg = portc_reg();
+	setup_atmega128.gpioc_reg = gpioc_reg();
 	/***PORTD***/
-	setup_atmega128.portd_reg = portd_reg();
+	setup_atmega128.gpiod_reg = gpiod_reg();
 	/***PORTE***/
-	setup_atmega128.porte_reg = porte_reg();
+	setup_atmega128.gpioe_reg = gpioe_reg();
 	/***PORTF***/
-	setup_atmega128.portf_reg = portf_reg();
+	setup_atmega128.gpiof_reg = gpiof_reg();
 	/***PORTG***/
-	setup_atmega128.portg_reg = portg_reg();
+	setup_atmega128.gpiog_reg = gpiog_reg();
 	/***JTAG***/
 	setup_atmega128.jtag_reg = jtag_reg();
 	/***MISC***/

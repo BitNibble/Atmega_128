@@ -217,21 +217,21 @@ void TIMER_COUNTER1_compoutmodeA(unsigned char compoutmode)
 {
 	tc1_reg()->tccr1a.var &= ~(3 << COM1A0);
 	switch(compoutmode){ // OC1A  -->  PB5
-		case 0: // Normal port operation, OC1A disconnected.
+		case 0: // Normal gpio operation, OC1A disconnected.
 		break;
 		case 1: // Reserved
 			// Toggle OC1A on compare match
-			portb_reg()->ddr.var |= 0x20;
+			gpiob_reg()->ddr.var |= 0x20;
 			tc1_reg()->tccr1a.var |= (1 << COM1A0);
 		break;
 		case 2: // Clear OC1A on compare match when up-counting. Set OC1A on compare
 			// match when down counting.
-			portb_reg()->ddr.var |= 0x20;
+			gpiob_reg()->ddr.var |= 0x20;
 			tc1_reg()->tccr1a.var |= (1 << COM1A1);
 		break;
 		case 3: // Set OC1A on compare match when up-counting. Clear OC1A on compare
 			// match when down counting.
-			portb_reg()->ddr.var |= 0x20;
+			gpiob_reg()->ddr.var |= 0x20;
 			tc1_reg()->tccr1a.var |= (1 << COM1A0) | (1 << COM1A1);
 		break;
 		default:
@@ -242,21 +242,21 @@ void TIMER_COUNTER1_compoutmodeB(unsigned char compoutmode)
 {
 	tc1_reg()->tccr1a.var &= ~(3 << COM1B0);
 	switch(compoutmode){ // OC1B  -->  PB6
-		case 0: // Normal port operation, OC1B disconnected.
+		case 0: // Normal gpio operation, OC1B disconnected.
 		break;
 		case 1: // Reserved
 			// Toggle OC1A or OC1B on compare match
-			portb_reg()->ddr.var |= 0x40;
+			gpiob_reg()->ddr.var |= 0x40;
 			tc1_reg()->tccr1a.var |= (1 << COM1B0);
 		break;
 		case 2: // Clear OC1B on compare match when up-counting. Set OC1B on compare
 			// match when down counting.
-			portb_reg()->ddr.var |= 0x40;
+			gpiob_reg()->ddr.var |= 0x40;
 			tc1_reg()->tccr1a.var |= (1 << COM1B1);
 		break;
 		case 3: // Set OC1B on compare match when up-counting. Clear OC1B on compare
 			// match when down counting.
-			portb_reg()->ddr.var |= 0x40;
+			gpiob_reg()->ddr.var |= 0x40;
 			tc1_reg()->tccr1a.var |= (1 << COM1B0) | (1 << COM1B1);
 		break;
 		default:
@@ -267,21 +267,21 @@ void TIMER_COUNTER1_compoutmodeC(unsigned char compoutmode)
 {
 	tc1_reg()->tccr1a.var &= ~(3 << COM1C0);
 	switch(compoutmode){ // OC1C  -->  PB7
-		case 0: // Normal port operation, OC1C disconnected.
+		case 0: // Normal gpio operation, OC1C disconnected.
 		break;
 		case 1: // Reserved
 			// Toggle OC1A or OC1C on compare match
-			portb_reg()->ddr.var |= 0x80;
+			gpiob_reg()->ddr.var |= 0x80;
 			tc1_reg()->tccr1a.var |= (1 << COM1C0);
 		break;
 		case 2: // Clear OC1C on compare match when up-counting. Set OC1C on compare
 			// match when down counting.
-			portb_reg()->ddr.var |= 0x80;
+			gpiob_reg()->ddr.var |= 0x80;
 			tc1_reg()->tccr1a.var |= (1 << COM1C1);
 		break;
 		case 3: // Set OC1C on compare match when up-counting. Clear OC1C on compare
 			// match when down counting.
-			portb_reg()->ddr.var |= 0x80;
+			gpiob_reg()->ddr.var |= 0x80;
 			tc1_reg()->tccr1a.var |= (1 << COM1C0) | (1 << COM1C1);
 		break;
 		default:

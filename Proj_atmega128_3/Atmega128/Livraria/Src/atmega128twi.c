@@ -37,8 +37,8 @@ TWI0 twi_enable(uint8_t atmega_id,  uint8_t prescaler)
 		}else{
 		twi_reg()->twar.par.twgce = 1;
 	}
-	portd_reg()->ddr.var |= TWI_IO_MASK;
-	portd_reg()->port.var |= TWI_IO_MASK;
+	gpiod_reg()->ddr.var |= TWI_IO_MASK;
+	gpiod_reg()->port.var |= TWI_IO_MASK;
 	switch(prescaler){
 		case 1:
 		twi_reg()->twsr.par.twps = 0;

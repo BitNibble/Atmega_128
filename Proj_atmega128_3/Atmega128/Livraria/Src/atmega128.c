@@ -31,19 +31,19 @@ Atmega128Eeprom_TypeDef* eeprom_reg(void){return (Atmega128Eeprom_TypeDef*) 0x00
 // External Interrupts (EXINT)
 Atmega128ExternalInterrupts_TypeDef* exint_reg(void){return (Atmega128ExternalInterrupts_TypeDef*) 0x0058;}
 // I/O Port (PORTA)
-Atmega128PORTA_TypeDef* porta_reg(void){return (Atmega128PORTA_TypeDef*) 0x0039;}
+Atmega128PORTA_TypeDef* gpioa_reg(void){return (Atmega128PORTA_TypeDef*) 0x0039;}
 // I/O Port (PORTB)
-Atmega128PORTB_TypeDef* portb_reg(void){return (Atmega128PORTB_TypeDef*) 0x0036;}
+Atmega128PORTB_TypeDef* gpiob_reg(void){return (Atmega128PORTB_TypeDef*) 0x0036;}
 // I/O Port (PORTC)
-Atmega128PORTC_TypeDef* portc_reg(void){return (Atmega128PORTC_TypeDef*) 0x0033;}
+Atmega128PORTC_TypeDef* gpioc_reg(void){return (Atmega128PORTC_TypeDef*) 0x0033;}
 // I/O Port (PORTD)
-Atmega128PORTD_TypeDef* portd_reg(void){return (Atmega128PORTD_TypeDef*) 0x0030;}
+Atmega128PORTD_TypeDef* gpiod_reg(void){return (Atmega128PORTD_TypeDef*) 0x0030;}
 // I/O Port (PORTE)
-Atmega128PORTE_TypeDef* porte_reg(void){return (Atmega128PORTE_TypeDef*) 0x0021;}
+Atmega128PORTE_TypeDef* gpioe_reg(void){return (Atmega128PORTE_TypeDef*) 0x0021;}
 // I/O Port (PORTF)
-Atmega128PORTF_TypeDef* portf_reg(void){return (Atmega128PORTF_TypeDef*) 0x0020;}
+Atmega128PORTF_TypeDef* gpiof_reg(void){return (Atmega128PORTF_TypeDef*) 0x0020;}
 // I/O Port (PORTG)
-Atmega128PORTG_TypeDef* portg_reg(void){return (Atmega128PORTG_TypeDef*) 0x0063;}
+Atmega128PORTG_TypeDef* gpiog_reg(void){return (Atmega128PORTG_TypeDef*) 0x0063;}
 // JTAG Interface (JTAG)
 Atmega128JtagInterface_TypeDef* jtag_reg(void){return (Atmega128JtagInterface_TypeDef*) 0x0042;}
 // JTAG Interface (JTAG)
@@ -100,20 +100,6 @@ void ClockPrescalerSelect(volatile uint8_t prescaler){ volatile uint8_t sreg; vo
 }
 void MoveInterruptsToBoot(void){volatile uint8_t sreg; sreg = cpu_reg()->sreg.var; cpu_reg()->sreg.var &= ~(1 << 7);
 	MCUCR = (1<<IVCE); MCUCR = (1<<IVSEL); cpu_reg()->sreg.var = sreg;
-}
-uint8_t read_low_fuse(void) {
-	uint8_t fuse;
-
-	__asm__ __volatile__ (
-	"ldi r30, 0x00\n\t"  // ZL = 0x00
-	"ldi r31, 0x00\n\t"  // ZH = 0x00
-	"lpm %0, Z\n\t"      // Load from fuse memory
-	: "=r" (fuse)
-	:
-	: "r30", "r31"
-	);
-
-	return fuse;
 }
 
 /*** Procedure and Function ToolSet ***/

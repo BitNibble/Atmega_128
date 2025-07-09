@@ -24,21 +24,16 @@ Comment:
 /*
 ** File library
 */
-#include "atmega128mapping.h"
+#include "atmega128timer0.h"
+#include "atmegaeeprom.h"
+#include "atmega128timer1.h"
+
 #include "explode.h"
 #include "function.h"
 #include "lcd.h"
 #include "hx711.h"
-#include <util/delay.h>
 #include <string.h>
 
-/*
-** File Constant and Macro
-*/
-#ifndef STATUS_REGISTER
-	#define STATUS_REGISTER SREG
-	#define GLOBAL_INTERRUPT_ENABLE 7
-#endif
 #define ZERO 0
 #define ONE 1
 #define TRUE 1
@@ -60,33 +55,33 @@ HX711_calibration* HX711_ptr;
 const uint8_t sizeblock = sizeof(HX711_calibration);
 HX711 hx;
 float tmp;
-EEPROM0 eprom;
 char result[32];
 char Menu = '1'; // Main menu selector
 uint8_t counter_1 = ZERO;
 uint8_t counter_2 = ZERO;
-uint8_t signal = ZERO;
+uint8_t SiGnal = ZERO;
 uint8_t count=blink;
 uint16_t divfactor;
-/*
-** File Header
-*/
+
+
 void PORTINIT();
 /****MAIN****/
 int main(void)
 {
-atmega128_enable();
+
+//atmega128_enable();
+
 PORTINIT();
 HX711_ptr = &HX711_data; // CALIBRATION DATA BUS
-/***INICIALIZE OBJECTS***/
+
 F = explode_enable();
 FUNC function = func_enable();
-lcd0_enable(&DDRA,&PINA,&PORTA);
 timer0 = tc0_enable(2,2); //2,2
 TC1 timer1 = tc1_enable(4,2); //4,2
 hx = hx711_enable(&DDRF, &PINF, &PORTF, 6, 7); //6,7
 //intx = INTERRUPTenable();
-/******/
+lcd0_enable(&DDRA,&PINA,&PORTA);
+
 float value = 0;
 float publish = 0;
 uint8_t choice;
@@ -98,9 +93,9 @@ HX711_data.divfactor_32 = hx.get_cal(&hx)->divfactor_32;
 HX711_data.divfactor_64 = hx.get_cal(&hx)->divfactor_64;
 HX711_data.divfactor_128 = hx.get_cal(&hx)->divfactor_128;
 HX711_data.status = hx.get_cal(&hx)->status;
-/***Parameters timers***/
+
 timer0.compoutmode(1); // troubleshooting blinking PORTB 5
-/***79 and 8  -> 80 us***/
+
 timer0.compare(60); // 8 -> 79 -> 80 us, fine tunned = 8 -> 60 -> 30.4us
 timer0.start(8); // 1 -> 32 us , 8 -> 256 us , 32 64 128 256 1024
 // to be used to jump menu for calibration in progress
@@ -118,7 +113,7 @@ if(choice == 2)
 if(choice == 3)
 	divfactor = (uint16_t) HX711_data.divfactor_64;
 //Get stored calibration values and put them to effect
-eprom.read_block(HX711_ptr, (const void*) ZERO, sizeblock);
+eeprom()->read_block(HX711_ptr, (const void*) ZERO, sizeblock);
 if(HX711_ptr->status == 1){
 	//Load stored value 
 	hx.get_cal(&hx)->offset_32 = HX711_ptr->offset_32;
@@ -130,42 +125,43 @@ if(HX711_ptr->status == 1){
 	hx.get_cal(&hx)->status=ZERO;
 	PORTC &= ~(ONE << 5); // troubleshooting
 }
-/*********************************************************/
+
 //lcd0.gotoxy(1,0); // for troubleshooting
 //lcd0.string_size(function.ftoa(HX711_data.status, result, ZERO), 13);
 //lcd0.string_size(function.ftoa(hx.get_cal(&hx)->offset_64, result, ZERO), 13);
-/*********************************************************/
-while(TRUE){
-/******PREAMBLE******/
+
+while(1){
+
 lcd0()->reboot(); //Reboot LCD
 F.update(&F.par, PINF); //PORTF INPUT READING
-/************INPUT***********/
-// Jump Menu signal
-if(signal == ONE){ //INPUT FROM INTERRUPT SINALS
+
+// Jump Menu SiGnal
+if(SiGnal == ONE){ //INPUT FROM INTERRUPT SINALS
 	Menu = '2';
-	signal = ZERO; // ONE SHOT
+	SiGnal = ZERO; // ONE SHOT
 	lcd0()->clear();
 }
-/***geting data interval***/
+
 while(hx.query(&hx))
 //Catches falling Edge instance, begins bit shifting.
+
 tmp = hx.raw_average(&hx, average_n); // average_n  25 or 50, smaller means faster or more readings
-/****************************/
+
 switch(Menu){
-	/***MENU 1***/
+	
 	case '1': // Main Program Menu
 		lcd0()->gotoxy(0,4); //TITLE
 		lcd0()->string_size("Weight Scale", 12); //TITLE
-		/*********************************************/
+		
 		//lcd0.gotoxy(1,0); // for troubleshooting
 		//lcd0.string_size(function.ftoa(hx.read_raw(&hx), result, ZERO), 13);
-		/*********************************************/
+		
 		if((F.par.HL & IMASK) & ONE){ // calibrate offset by pressing button 1
 			HX711_data.offset_32 = tmp;
 			HX711_data.offset_64 = tmp;
 			HX711_data.offset_128 = tmp;
 			HX711_data.status = ONE;
-			eprom.update_block(HX711_ptr, (void*) ZERO, sizeblock);
+			eeprom()->update_block(HX711_ptr, (void*) ZERO, sizeblock);
 			hx.get_cal(&hx)->offset_32 = HX711_ptr->offset_32;
 			hx.get_cal(&hx)->offset_64 = HX711_ptr->offset_64;
 			hx.get_cal(&hx)->offset_128 = HX711_ptr->offset_128;
@@ -178,12 +174,12 @@ switch(Menu){
 			value = (tmp - hx.get_cal(&hx)->offset_32) / hx.get_cal(&hx)->divfactor_32; //value to be published to LCD
 		if(choice == 3 || choice == 31)
 			value = (tmp - hx.get_cal(&hx)->offset_64) / hx.get_cal(&hx)->divfactor_64; //value to be published to LCD
-		/*********************************************/
+		
 		//lcd0.gotoxy(3,0); // for troubleshooting
 		//lcd0.string_size(function.ftoa(tmp, result, ZERO), 13);
 		//lcd0.string_size(function.ftoa(hx.get_cal(&hx)->divfactor_128, result, ZERO), 13);
 		//lcd0.string_size(function.ftoa(hx.get_cal(&hx)->offset_128, result, ZERO), 13);
-		/*********************************************/
+		
 		if (value > 1000 || value < -1000){
 			publish = value / 1000;
 			lcd0()->gotoxy(2,1);
@@ -194,9 +190,9 @@ switch(Menu){
 			lcd0()->string_size(function.ftoa(publish, ZERO), 13); lcd0()->string_size("gram", 4);
 		}
 		break;
-	/***MENU 2***/
+	
 	case '2': // MANUAL CALIBRATE DIVFACTOR MENU
-		/**/
+		
 		lcd0()->gotoxy(0,1);
 		lcd0()->string_size("SETUP GAIN FACTOR",17);
 		switch(choice){
@@ -264,7 +260,7 @@ switch(Menu){
 		// Exit and store value
 		if((F.par.LL & IMASK) == (ONE << 5)){ // Button 6
 			HX711_data.status = ONE;
-			eprom.update_block(HX711_ptr, (void*) ZERO, sizeblock);
+			eeprom()->update_block(HX711_ptr, (void*) ZERO, sizeblock);
 			hx.get_cal(&hx)->divfactor_32=divfactor;
 			hx.get_cal(&hx)->divfactor_64=divfactor;
 			hx.get_cal(&hx)->divfactor_128=divfactor;
@@ -275,12 +271,12 @@ switch(Menu){
 			Menu = '1';
 			lcd0()->clear();
 		}
-		/**/
+		
 		break;
-		/********************************************************************/
 	default:
 		Menu = '1';
 		break;
+		
 };
 }}
 /*
@@ -300,12 +296,11 @@ void PORTINIT(void)
 ISR(TIMER0_COMP_vect) // 15.4 us intervals
 {
 	/***Block other interrupts during this procedure***/
-	uint8_t Sreg;
-	Sreg = STATUS_REGISTER;
-	STATUS_REGISTER &= ~(ONE << GLOBAL_INTERRUPT_ENABLE);
+	uint8_t Sreg = cpu_reg()->sreg.var;
+	cpu_reg()->sreg.par.i = 0;
 	hx.read_raw(&hx);
 	/***enable interrupts again***/
-	STATUS_REGISTER = Sreg;
+	cpu_reg()->sreg.var = Sreg;
 }
 ISR(TIMER1_COMPA_vect) // 1 second intervals
 {
@@ -320,7 +315,7 @@ ISR(TIMER1_COMPA_vect) // 1 second intervals
 		count--;
 		if(!count){ //led blinks x times
 			// Delete eeprom memory ZERO
-			eprom.update_block(HX711_Default, (void*) ZERO, sizeblock);
+			eeprom()->update_block(HX711_Default, (void*) ZERO, sizeblock);
 			hx.get_cal(&hx)->offset_32 = HX711_Default->offset_32;
 			hx.get_cal(&hx)->offset_64 = HX711_Default->offset_64;
 			hx.get_cal(&hx)->offset_128 = HX711_Default->offset_128;
@@ -342,7 +337,7 @@ ISR(TIMER1_COMPA_vect) // 1 second intervals
 		counter_2=ZERO; //RESET TIMER
 	if(counter_2 > _5sec){
 		counter_2 = ZERO; //RESET TIMER
-		signal = ONE;
+		SiGnal = ONE;
 		PORTC &= ~(ONE << 7); // troubleshooting
 	}
 	/***CAL DIVFACTOR DEFINE END***/

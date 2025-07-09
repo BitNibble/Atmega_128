@@ -22,7 +22,6 @@ Date:	  05072025
 #include <avr/io.h>
 #include <avr/boot.h>
 #include <avr/fuse.h>
-#include <avr/wdt.h>
 #include <avr/eeprom.h>
 #include <avr/pgmspace.h>
 #include <avr/interrupt.h>
@@ -151,7 +150,7 @@ typedef volatile struct {
 	U_byte port; // 0x3B
 } Atmega128PORTA_TypeDef;
 
-Atmega128PORTA_TypeDef* porta_reg(void);
+Atmega128PORTA_TypeDef* gpioa_reg(void);
 
 // I/O Port (PORTB)
 typedef volatile struct {
@@ -160,7 +159,7 @@ typedef volatile struct {
 	U_byte port; // 0x38
 } Atmega128PORTB_TypeDef;
 
-Atmega128PORTB_TypeDef* portb_reg(void);
+Atmega128PORTB_TypeDef* gpiob_reg(void);
 
 // I/O Port (PORTC)
 typedef volatile struct {
@@ -169,7 +168,7 @@ typedef volatile struct {
 	U_byte port; // 0x35
 } Atmega128PORTC_TypeDef;
 
-Atmega128PORTC_TypeDef* portc_reg(void);
+Atmega128PORTC_TypeDef* gpioc_reg(void);
 
 // I/O Port (PORTD)
 typedef volatile struct {
@@ -178,7 +177,7 @@ typedef volatile struct {
 	U_byte port; // 0x32
 } Atmega128PORTD_TypeDef;
 
-Atmega128PORTD_TypeDef* portd_reg(void);
+Atmega128PORTD_TypeDef* gpiod_reg(void);
 
 // I/O Port (PORTE)
 typedef volatile struct {
@@ -187,7 +186,7 @@ typedef volatile struct {
 	U_byte port; // 0x23
 } Atmega128PORTE_TypeDef;
 
-Atmega128PORTE_TypeDef* porte_reg(void);
+Atmega128PORTE_TypeDef* gpioe_reg(void);
 
 // I/O Port (PORTF)
 typedef volatile struct {
@@ -197,7 +196,7 @@ typedef volatile struct {
 	U_byte port; // 0x62
 } Atmega128PORTF_TypeDef;
 
-Atmega128PORTF_TypeDef* portf_reg(void);
+Atmega128PORTF_TypeDef* gpiof_reg(void);
 
 // I/O Port (PORTG)
 typedef volatile struct {
@@ -206,7 +205,7 @@ typedef volatile struct {
 	U_byte port; // 0x65
 } Atmega128PORTG_TypeDef;
 
-Atmega128PORTG_TypeDef* portg_reg(void);
+Atmega128PORTG_TypeDef* gpiog_reg(void);
 
 // JTAG Interface (JTAG)
 typedef volatile struct {
@@ -386,7 +385,6 @@ uint16_t BAUDRATEdouble(uint32_t BAUD);
 uint16_t BAUDRATEsynchronous(uint32_t BAUD);
 void ClockPrescalerSelect(volatile uint8_t prescaler);
 void MoveInterruptsToBoot(void);
-uint8_t read_low_fuse(void);
 /*** Procedure and Function ToolSet ***/
 void set_reg(volatile uint8_t* reg, uint8_t hbits);
 void clear_reg(volatile uint8_t* reg, uint8_t hbits);

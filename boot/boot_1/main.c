@@ -9,23 +9,23 @@
 //__attribute__((naked, section(".text")))
 int main(void)
 {
-	DDRC |= ((1 << PC0) | (1 << PC7));
+	gpioc_reg()->ddr.var |= ((1 << PC0) | (1 << PC7));
 
 	if (pgm_read_word(0x0000) == 0xFFFF) {
 		for (uint8_t i = 0; i < 6; i++)
 		{
-			PORTC &= ~(1 << PC0);
-			_delay_ms(100);
-			PORTC |= 1 << PC0;
-			_delay_ms(100);
+			gpioc_reg()->port.var &= ~(1 << PC0);
+			_delay_ms(500);
+			gpioc_reg()->port.var |= 1 << PC0;
+			_delay_ms(500);
 		}
 		}else{
 		for (uint8_t i = 0; i < 6; i++)
 		{
-			PORTC &= ~(1 << PC7);
-			_delay_ms(500);
-			PORTC |= (1 << PC7);
-			_delay_ms(500);
+			gpioc_reg()->port.var &= ~(1 << PC7);
+			_delay_ms(50);
+			gpioc_reg()->port.var |= (1 << PC7);
+			_delay_ms(50);
 		}
 	}
 	
