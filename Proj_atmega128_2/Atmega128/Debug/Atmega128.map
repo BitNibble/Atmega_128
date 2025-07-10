@@ -1,0 +1,2623 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3.o)
+                              Livraria/Src/function.o (__subsf3)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3.o) (__addsf3x)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(cmpsf2.o)
+                              Livraria/Src/function.o (__ltsf2)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3.o)
+                              Livraria/Src/znpid.o (__divsf3)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3.o) (__divsf3x)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fixunssfsi.o)
+                              Livraria/Src/function.o (__fixunssfsi)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+                              Livraria/Src/function.o (__floatunsisf)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_cmp.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(cmpsf2.o) (__fp_cmp)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_inf.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o) (__fp_inf)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_nan.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o) (__fp_nan)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o) (__fp_pscA)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o) (__fp_pscB)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_round.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3.o) (__fp_round)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o) (__fp_split3)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o) (__fp_zero)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(gesf2.o)
+                              Livraria/Src/znpid.o (__gtsf2)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3.o)
+                              Livraria/Src/function.o (__mulsf3)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3x.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3.o) (__mulsf3x)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_mulsi3.o)
+                              Livraria/Src/function.o (__mulsi3)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
+                              Livraria/Src/clock.o (__udivmodhi4)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
+                              Livraria/Src/clock.o (__divmodhi4)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+                              Livraria/Src/atmega128.o (__udivmodsi4)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodsi4.o)
+                              Livraria/Src/function.o (__divmodsi4)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_negsi2.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodsi4.o) (__negsi2)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+                              C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o (exit)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
+                              Livraria/Src/atmega128interrupt.o (__tablejump2__)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
+                              Livraria/Src/atmega128analog.o (__do_copy_data)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
+                              Livraria/Src/atmega128.o (__do_clear_bss)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
+                              Livraria/Src/clock.o (__umulhisi3)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_muluhisi3.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_mulsi3.o) (__muluhisi3)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strcmp.o)
+                              Livraria/Src/atmega128usart0.o (strcmp)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strcpy.o)
+                              Livraria/Src/atmega128usart0.o (strcpy)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strncpy.o)
+                              main.o (strncpy)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vsnprintf.o)
+                              Livraria/Src/function.o (vsnprintf)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vfprintf_std.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vsnprintf.o) (vfprintf)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen_P.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vfprintf_std.o) (strnlen_P)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vfprintf_std.o) (strnlen)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(fputc.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vfprintf_std.o) (fputc)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(ultoa_invert.o)
+                              c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vfprintf_std.o) (__ultoa_invert)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_block.o)
+                              Livraria/Src/atmegaeeprom.o (eeprom_read_block)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_byte.o)
+                              Livraria/Src/atmegaeeprom.o (eeprom_read_byte)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_word.o)
+                              Livraria/Src/atmegaeeprom.o (eeprom_read_word)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_block.o)
+                              Livraria/Src/atmegaeeprom.o (eeprom_update_block)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_byte.o)
+                              Livraria/Src/atmegaeeprom.o (eeprom_update_byte)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_dword.o)
+                              Livraria/Src/atmegaeeprom.o (eeprom_update_dword)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_word.o)
+                              Livraria/Src/atmegaeeprom.o (eeprom_update_word)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_block.o)
+                              Livraria/Src/atmegaeeprom.o (eeprom_write_block)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_byte.o)
+                              Livraria/Src/atmegaeeprom.o (eeprom_write_byte)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_dword.o)
+                              Livraria/Src/atmegaeeprom.o (eeprom_write_dword)
+C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_word.o)
+                              Livraria/Src/atmegaeeprom.o (eeprom_write_word)
+
+Allocating common symbols
+Common symbol       size              file
+
+lcd02pdata_PORT     0x2               Livraria/Src/lcd2p.o
+keypad_PORT         0x2               Livraria/Src/keypad.o
+hx711_datapin       0x1               Livraria/Src/hx711.o
+lcd02p_detect       0x1               Livraria/Src/lcd2p.o
+lcd02pcmd_DDR       0x2               Livraria/Src/lcd2p.o
+lcd0_PIN            0x2               Livraria/Src/lcd.o
+CLOCK_timp          0x9               Livraria/Src/clock.o
+shift               0xf               main.o
+CLOCK_alarm_flag    0x1               Livraria/Src/clock.o
+pcflcd              0x16              main.o
+timer1_state        0x1               Livraria/Src/atmega128timer1.o
+hx711_PIN           0x2               Livraria/Src/hx711.o
+lcd02pcmd_PORT      0x2               Livraria/Src/lcd2p.o
+alarmtime           0x3               Livraria/Src/clock.o
+mm74c923_mem        0x1               Livraria/Src/mm74c923.o
+MM74C923_KEY_CODE_INDEX
+                    0x1               Livraria/Src/mm74c923.o
+keypad_dataf        0x4               Livraria/Src/keypad.o
+lcd02pdata_DDR      0x2               Livraria/Src/lcd2p.o
+lcd1_DDR            0x2               Livraria/Src/lcd.o
+ESP01ATstr          0x20              Livraria/Src/esp01atcommands.o
+hx711_PORT          0x2               Livraria/Src/hx711.o
+keypad_datai        0x4               Livraria/Src/keypad.o
+mm74c923_PIN        0x2               Livraria/Src/mm74c923.o
+ADC_N_CHANNEL       0x2               Livraria/Src/atmega128analog.o
+lcd1_detect         0x1               Livraria/Src/lcd.o
+lcd1_PIN            0x2               Livraria/Src/lcd.o
+MM74C923_KEY_BUFFER_INDEX
+                    0x1               Livraria/Src/mm74c923.o
+tmp2                0xb               Livraria/Src/lfsm.o
+BT05ATstr           0x48              Livraria/Src/bt05atcommands.o
+lcd0_DDR            0x2               Livraria/Src/lcd.o
+counter1            0x2               main.o
+hx711_clkpin        0x1               Livraria/Src/hx711.o
+HC05ATstr           0x20              Livraria/Src/hc05atcommands.o
+KEYPADSTRINGINDEX   0x1               Livraria/Src/keypad.o
+hx711_DDR           0x2               Livraria/Src/hx711.o
+lcd0_detect         0x1               Livraria/Src/lcd.o
+HX711_Default       0x2               Livraria/Src/hx711.o
+signal              0x2               main.o
+timer3_state        0x1               Livraria/Src/atmega128timer3.o
+keypad_PIN          0x2               Livraria/Src/keypad.o
+lcd02pdata_PIN      0x2               Livraria/Src/lcd2p.o
+i2c                 0xc               Livraria/Src/pcf8563rtc.o
+endstr              0x2               Livraria/Src/keypad.o
+tm                  0x3               main.o
+rtc                 0x1c              main.o
+mm74c923_PORT       0x2               Livraria/Src/mm74c923.o
+data                0xb               Livraria/Src/lfsm.o
+timer2_state        0x1               Livraria/Src/atmega128timer2.o
+time                0x3               Livraria/Src/clock.o
+mm74c923_tmp        0x1               Livraria/Src/mm74c923.o
+MM74C923_pointer    0x2               Livraria/Src/mm74c923.o
+ZNPID_tmp           0x4               Livraria/Src/znpid.o
+adc_tmp             0x2               Livraria/Src/atmega128analog.o
+lcd0_PORT           0x2               Livraria/Src/lcd.o
+HC42ATstr           0x20              Livraria/Src/hc42atcommands.o
+lcd1_PORT           0x2               Livraria/Src/lcd.o
+vari                0x8               Livraria/Src/mm74c923.o
+lcd02pcmd_PIN       0x2               Livraria/Src/lcd2p.o
+keypad_DDR          0x2               Livraria/Src/keypad.o
+dt                  0x4               main.o
+mm74c923_DDR        0x2               Livraria/Src/mm74c923.o
+KEYPAD_string       0x7               Livraria/Src/keypad.o
+laptime             0x3               Livraria/Src/clock.o
+MM74C923_KEY_BUFFER
+                    0x11              Livraria/Src/mm74c923.o
+tmp1                0xb               Livraria/Src/lfsm.o
+timer0_state        0x1               Livraria/Src/atmega128timer0.o
+CLOCK_compare_active
+                    0x1               Livraria/Src/clock.o
+
+Discarded input sections
+
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+ .text          0x00000000        0x0 Livraria/Src/74hc595.o
+ .data          0x00000000        0x0 Livraria/Src/74hc595.o
+ .bss           0x00000000        0x0 Livraria/Src/74hc595.o
+ .text          0x00000000        0x0 Livraria/Src/atmega128.o
+ .data          0x00000000        0x0 Livraria/Src/atmega128.o
+ .bss           0x00000000        0x0 Livraria/Src/atmega128.o
+ .text.gpwr_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.ac_reg   0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.bootload_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.eeprom_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.exint_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.gpioa_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.gpioe_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.gpiog_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.jtag_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.jtag_cs_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.misc_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.spi_reg  0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.tc3_reg  0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.tc_exif_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.tc_exim_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.tc_if_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.tc_im_reg
+                0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.wdt_reg  0x00000000        0x6 Livraria/Src/atmega128.o
+ .text.readLHbyte
+                0x00000000       0x10 Livraria/Src/atmega128.o
+ .text.writeLHbyte
+                0x00000000        0x8 Livraria/Src/atmega128.o
+ .text.SwapByte
+                0x00000000        0x8 Livraria/Src/atmega128.o
+ .text.BAUDRATEsynchronous
+                0x00000000       0x1c Livraria/Src/atmega128.o
+ .text.ClockPrescalerSelect
+                0x00000000       0x34 Livraria/Src/atmega128.o
+ .text.MoveInterruptsToBoot
+                0x00000000       0x28 Livraria/Src/atmega128.o
+ .text.set_reg  0x00000000        0xa Livraria/Src/atmega128.o
+ .text.clear_reg
+                0x00000000        0xc Livraria/Src/atmega128.o
+ .text.get_reg_Msk
+                0x00000000       0x30 Livraria/Src/atmega128.o
+ .text.write_reg_Msk
+                0x00000000       0x38 Livraria/Src/atmega128.o
+ .text.set_reg_Msk
+                0x00000000       0x3c Livraria/Src/atmega128.o
+ .text.get_bit_block
+                0x00000000       0x54 Livraria/Src/atmega128.o
+ .text.set_bit_block
+                0x00000000       0x5a Livraria/Src/atmega128.o
+ .text.STM32446SetRegBits
+                0x00000000       0x48 Livraria/Src/atmega128.o
+ .text.STM32446ResetRegBits
+                0x00000000       0x4c Livraria/Src/atmega128.o
+ .text.STM32446VecSetup
+                0x00000000       0x8e Livraria/Src/atmega128.o
+ .text.isPtrNull
+                0x00000000       0x10 Livraria/Src/atmega128.o
+ .text.isCharPtrFlush
+                0x00000000       0x12 Livraria/Src/atmega128.o
+ .text.ftdelayCycles
+                0x00000000       0x6c Livraria/Src/atmega128.o
+ .text.ftdelayReset
+                0x00000000       0x1c Livraria/Src/atmega128.o
+ .bss.ftCounter
+                0x00000000      0x200 Livraria/Src/atmega128.o
+ .bss.ft_Delay_Lock
+                0x00000000      0x200 Livraria/Src/atmega128.o
+ .text          0x00000000        0x0 Livraria/Src/atmega128analog.o
+ .data          0x00000000        0x0 Livraria/Src/atmega128analog.o
+ .bss           0x00000000        0x0 Livraria/Src/atmega128analog.o
+ .text          0x00000000        0x0 Livraria/Src/atmega128interrupt.o
+ .data          0x00000000        0x0 Livraria/Src/atmega128interrupt.o
+ .bss           0x00000000        0x0 Livraria/Src/atmega128interrupt.o
+ .text.INTERRUPT_reset_status
+                0x00000000       0x84 Livraria/Src/atmega128interrupt.o
+ .text.INTERRUPT_set
+                0x00000000      0x314 Livraria/Src/atmega128interrupt.o
+ .progmem.gcc_sw_table.INTERRUPT_set
+                0x00000000       0x10 Livraria/Src/atmega128interrupt.o
+ .text.INTERRUPT_off
+                0x00000000       0x8c Livraria/Src/atmega128interrupt.o
+ .progmem.gcc_sw_table.INTERRUPT_off
+                0x00000000       0x10 Livraria/Src/atmega128interrupt.o
+ .text.INTERRUPT_on
+                0x00000000       0xe4 Livraria/Src/atmega128interrupt.o
+ .progmem.gcc_sw_table.INTERRUPT_on
+                0x00000000       0x10 Livraria/Src/atmega128interrupt.o
+ .text.exint    0x00000000        0x6 Livraria/Src/atmega128interrupt.o
+ .data.atmega128_exint
+                0x00000000        0x8 Livraria/Src/atmega128interrupt.o
+ .debug_info    0x00000000      0x508 Livraria/Src/atmega128interrupt.o
+ .debug_abbrev  0x00000000      0x172 Livraria/Src/atmega128interrupt.o
+ .debug_loc     0x00000000      0x478 Livraria/Src/atmega128interrupt.o
+ .debug_aranges
+                0x00000000       0x40 Livraria/Src/atmega128interrupt.o
+ .debug_ranges  0x00000000       0x30 Livraria/Src/atmega128interrupt.o
+ .debug_line    0x00000000      0x499 Livraria/Src/atmega128interrupt.o
+ .debug_str     0x00000000      0x219 Livraria/Src/atmega128interrupt.o
+ .comment       0x00000000       0x31 Livraria/Src/atmega128interrupt.o
+ .debug_frame   0x00000000       0x6c Livraria/Src/atmega128interrupt.o
+ .text          0x00000000        0x0 Livraria/Src/atmega128mapping.o
+ .data          0x00000000        0x0 Livraria/Src/atmega128mapping.o
+ .bss           0x00000000        0x0 Livraria/Src/atmega128mapping.o
+ .text.atmega128_enable
+                0x00000000      0x214 Livraria/Src/atmega128mapping.o
+ .text.atmega128
+                0x00000000        0x6 Livraria/Src/atmega128mapping.o
+ .bss.setup_atmega128
+                0x00000000       0x6a Livraria/Src/atmega128mapping.o
+ .debug_info    0x00000000     0x36b5 Livraria/Src/atmega128mapping.o
+ .debug_abbrev  0x00000000      0x20d Livraria/Src/atmega128mapping.o
+ .debug_loc     0x00000000       0x49 Livraria/Src/atmega128mapping.o
+ .debug_aranges
+                0x00000000       0x28 Livraria/Src/atmega128mapping.o
+ .debug_ranges  0x00000000       0x18 Livraria/Src/atmega128mapping.o
+ .debug_line    0x00000000      0x3a6 Livraria/Src/atmega128mapping.o
+ .debug_str     0x00000000     0x1131 Livraria/Src/atmega128mapping.o
+ .comment       0x00000000       0x31 Livraria/Src/atmega128mapping.o
+ .debug_frame   0x00000000       0x48 Livraria/Src/atmega128mapping.o
+ .text          0x00000000        0x0 Livraria/Src/atmega128spi.o
+ .data          0x00000000        0x0 Livraria/Src/atmega128spi.o
+ .bss           0x00000000        0x0 Livraria/Src/atmega128spi.o
+ .text.spi_transfer_sync
+                0x00000000       0x5e Livraria/Src/atmega128spi.o
+ .text.spi_transmit_sync
+                0x00000000       0x44 Livraria/Src/atmega128spi.o
+ .text.spi_fast_shift
+                0x00000000       0x24 Livraria/Src/atmega128spi.o
+ .text.spi_enable
+                0x00000000      0x252 Livraria/Src/atmega128spi.o
+ .text.spi      0x00000000        0x6 Livraria/Src/atmega128spi.o
+ .text.spi_default
+                0x00000000       0x2e Livraria/Src/atmega128spi.o
+ .data.atmega128_spi
+                0x00000000        0x6 Livraria/Src/atmega128spi.o
+ .debug_info    0x00000000      0x420 Livraria/Src/atmega128spi.o
+ .debug_abbrev  0x00000000      0x13c Livraria/Src/atmega128spi.o
+ .debug_loc     0x00000000      0x384 Livraria/Src/atmega128spi.o
+ .debug_aranges
+                0x00000000       0x48 Livraria/Src/atmega128spi.o
+ .debug_ranges  0x00000000       0x38 Livraria/Src/atmega128spi.o
+ .debug_line    0x00000000      0x308 Livraria/Src/atmega128spi.o
+ .debug_str     0x00000000      0x261 Livraria/Src/atmega128spi.o
+ .comment       0x00000000       0x31 Livraria/Src/atmega128spi.o
+ .debug_frame   0x00000000       0xd4 Livraria/Src/atmega128spi.o
+ .text          0x00000000        0x0 Livraria/Src/atmega128timer0.o
+ .data          0x00000000        0x0 Livraria/Src/atmega128timer0.o
+ .bss           0x00000000        0x0 Livraria/Src/atmega128timer0.o
+ .text          0x00000000        0x0 Livraria/Src/atmega128timer1.o
+ .data          0x00000000        0x0 Livraria/Src/atmega128timer1.o
+ .bss           0x00000000        0x0 Livraria/Src/atmega128timer1.o
+ .text          0x00000000        0x0 Livraria/Src/atmega128timer2.o
+ .data          0x00000000        0x0 Livraria/Src/atmega128timer2.o
+ .bss           0x00000000        0x0 Livraria/Src/atmega128timer2.o
+ .text          0x00000000        0x0 Livraria/Src/atmega128timer3.o
+ .data          0x00000000        0x0 Livraria/Src/atmega128timer3.o
+ .bss           0x00000000        0x0 Livraria/Src/atmega128timer3.o
+ .text.TIMER_COUNTER3_start
+                0x00000000       0xf0 Livraria/Src/atmega128timer3.o
+ .text.TIMER_COUNTER3_stop
+                0x00000000       0x18 Livraria/Src/atmega128timer3.o
+ .text.TIMER_COUNTER3_compareA
+                0x00000000       0x28 Livraria/Src/atmega128timer3.o
+ .text.TIMER_COUNTER3_compareB
+                0x00000000       0x28 Livraria/Src/atmega128timer3.o
+ .text.TIMER_COUNTER3_compareC
+                0x00000000       0x28 Livraria/Src/atmega128timer3.o
+ .text.TIMER_COUNTER3_compoutmodeA
+                0x00000000       0x7c Livraria/Src/atmega128timer3.o
+ .text.TIMER_COUNTER3_compoutmodeB
+                0x00000000       0x7c Livraria/Src/atmega128timer3.o
+ .text.TIMER_COUNTER3_compoutmodeC
+                0x00000000       0x7c Livraria/Src/atmega128timer3.o
+ .text.tc3_enable
+                0x00000000      0x3ae Livraria/Src/atmega128timer3.o
+ .progmem.gcc_sw_table.tc3_enable
+                0x00000000       0x36 Livraria/Src/atmega128timer3.o
+ .text.tc3      0x00000000        0x6 Livraria/Src/atmega128timer3.o
+ .data.atmega128_tc3
+                0x00000000       0x10 Livraria/Src/atmega128timer3.o
+ .debug_info    0x00000000      0x6f8 Livraria/Src/atmega128timer3.o
+ .debug_abbrev  0x00000000      0x1a6 Livraria/Src/atmega128timer3.o
+ .debug_loc     0x00000000      0x5a9 Livraria/Src/atmega128timer3.o
+ .debug_aranges
+                0x00000000       0x68 Livraria/Src/atmega128timer3.o
+ .debug_ranges  0x00000000       0x58 Livraria/Src/atmega128timer3.o
+ .debug_line    0x00000000      0x4f6 Livraria/Src/atmega128timer3.o
+ .debug_str     0x00000000      0x321 Livraria/Src/atmega128timer3.o
+ .comment       0x00000000       0x31 Livraria/Src/atmega128timer3.o
+ .debug_frame   0x00000000      0x128 Livraria/Src/atmega128timer3.o
+ COMMON         0x00000000        0x1 Livraria/Src/atmega128timer3.o
+ .text          0x00000000        0x0 Livraria/Src/atmega128twi.o
+ .data          0x00000000        0x0 Livraria/Src/atmega128twi.o
+ .bss           0x00000000        0x0 Livraria/Src/atmega128twi.o
+ .text.twi      0x00000000        0x6 Livraria/Src/atmega128twi.o
+ .text          0x00000000        0x0 Livraria/Src/atmega128usart0.o
+ .data          0x00000000        0x0 Livraria/Src/atmega128usart0.o
+ .bss           0x00000000        0x0 Livraria/Src/atmega128usart0.o
+ .text.uart0_read
+                0x00000000        0xa Livraria/Src/atmega128usart0.o
+ .text.uart0_gets
+                0x00000000       0x10 Livraria/Src/atmega128usart0.o
+ .text.uart0_rxflush
+                0x00000000       0x10 Livraria/Src/atmega128usart0.o
+ .text.uart0_write
+                0x00000000       0x2c Livraria/Src/atmega128usart0.o
+ .text.uart0_putch
+                0x00000000        0x6 Livraria/Src/atmega128usart0.o
+ .text.uart0_puts
+                0x00000000       0x1e Livraria/Src/atmega128usart0.o
+ .text.uart0_getch
+                0x00000000        0xa Livraria/Src/atmega128usart0.o
+ .text.usart0   0x00000000        0x6 Livraria/Src/atmega128usart0.o
+ .text.usart0_messageprint
+                0x00000000       0xb0 Livraria/Src/atmega128usart0.o
+ .text.USART0ReceiveComplete
+                0x00000000        0x6 Livraria/Src/atmega128usart0.o
+ .text.USART0TransmitComplete
+                0x00000000        0x6 Livraria/Src/atmega128usart0.o
+ .text.USART0DataRegisterEmpty
+                0x00000000        0x6 Livraria/Src/atmega128usart0.o
+ .text.USART0FrameError
+                0x00000000        0x6 Livraria/Src/atmega128usart0.o
+ .text.USART0DataOverRun
+                0x00000000        0x6 Livraria/Src/atmega128usart0.o
+ .text.USART0ParityError
+                0x00000000        0x6 Livraria/Src/atmega128usart0.o
+ .text.USART0ClearErrors
+                0x00000000       0x10 Livraria/Src/atmega128usart0.o
+ .text.USART0DoubleTransmissionSpeed
+                0x00000000       0x10 Livraria/Src/atmega128usart0.o
+ .text.usart0_enable
+                0x00000000      0x2ae Livraria/Src/atmega128usart0.o
+ .data.atmega128_usart0
+                0x00000000        0xe Livraria/Src/atmega128usart0.o
+ .bss.uart0flag
+                0x00000000        0x1 Livraria/Src/atmega128usart0.o
+ .bss.UART0_RxBuf
+                0x00000000       0x20 Livraria/Src/atmega128usart0.o
+ .text          0x00000000        0x0 Livraria/Src/atmega128usart1.o
+ .data          0x00000000        0x0 Livraria/Src/atmega128usart1.o
+ .bss           0x00000000        0x0 Livraria/Src/atmega128usart1.o
+ .text.USART1ReceiveComplete
+                0x00000000        0x8 Livraria/Src/atmega128usart1.o
+ .text.USART1TransmitComplete
+                0x00000000        0x8 Livraria/Src/atmega128usart1.o
+ .text.USART1DataRegisterEmpty
+                0x00000000        0x8 Livraria/Src/atmega128usart1.o
+ .text.USART1FrameError
+                0x00000000        0x8 Livraria/Src/atmega128usart1.o
+ .text.USART1DataOverRun
+                0x00000000        0x8 Livraria/Src/atmega128usart1.o
+ .text.USART1ParityError
+                0x00000000        0x8 Livraria/Src/atmega128usart1.o
+ .text.USART1ClearErrors
+                0x00000000       0x10 Livraria/Src/atmega128usart1.o
+ .text          0x00000000        0x0 Livraria/Src/atmegaeeprom.o
+ .data          0x00000000        0x0 Livraria/Src/atmegaeeprom.o
+ .bss           0x00000000        0x0 Livraria/Src/atmegaeeprom.o
+ .text.eeprom   0x00000000        0x6 Livraria/Src/atmegaeeprom.o
+ .data.atmega128_eeprom
+                0x00000000       0x1e Livraria/Src/atmegaeeprom.o
+ .debug_info    0x00000000      0x2ec Livraria/Src/atmegaeeprom.o
+ .debug_abbrev  0x00000000       0xb5 Livraria/Src/atmegaeeprom.o
+ .debug_aranges
+                0x00000000       0x20 Livraria/Src/atmegaeeprom.o
+ .debug_ranges  0x00000000       0x10 Livraria/Src/atmegaeeprom.o
+ .debug_line    0x00000000      0x146 Livraria/Src/atmegaeeprom.o
+ .debug_str     0x00000000      0x270 Livraria/Src/atmegaeeprom.o
+ .comment       0x00000000       0x31 Livraria/Src/atmegaeeprom.o
+ .debug_frame   0x00000000       0x24 Livraria/Src/atmegaeeprom.o
+ .text          0x00000000        0x0 Livraria/Src/bt05atcommands.o
+ .data          0x00000000        0x0 Livraria/Src/bt05atcommands.o
+ .bss           0x00000000        0x0 Livraria/Src/bt05atcommands.o
+ .rodata.str1.1
+                0x00000000      0x216 Livraria/Src/bt05atcommands.o
+ .text.bt05at_cmd
+                0x00000000      0x57e Livraria/Src/bt05atcommands.o
+ .debug_info    0x00000000       0xd1 Livraria/Src/bt05atcommands.o
+ .debug_abbrev  0x00000000       0x90 Livraria/Src/bt05atcommands.o
+ .debug_loc     0x00000000      0x5a8 Livraria/Src/bt05atcommands.o
+ .debug_aranges
+                0x00000000       0x20 Livraria/Src/bt05atcommands.o
+ .debug_ranges  0x00000000       0x10 Livraria/Src/bt05atcommands.o
+ .debug_line    0x00000000      0x2f6 Livraria/Src/bt05atcommands.o
+ .debug_str     0x00000000      0x1a0 Livraria/Src/bt05atcommands.o
+ .comment       0x00000000       0x31 Livraria/Src/bt05atcommands.o
+ .debug_frame   0x00000000       0x24 Livraria/Src/bt05atcommands.o
+ COMMON         0x00000000       0x48 Livraria/Src/bt05atcommands.o
+ .text          0x00000000        0x0 Livraria/Src/buffer.o
+ .data          0x00000000        0x0 Livraria/Src/buffer.o
+ .bss           0x00000000        0x0 Livraria/Src/buffer.o
+ .text          0x00000000        0x0 Livraria/Src/clock.o
+ .data          0x00000000        0x0 Livraria/Src/clock.o
+ .bss           0x00000000        0x0 Livraria/Src/clock.o
+ .text.CLOCK_set
+                0x00000000        0xc Livraria/Src/clock.o
+ .text.CLOCK_increment
+                0x00000000      0x114 Livraria/Src/clock.o
+ .text.CLOCK_decrement
+                0x00000000       0xac Livraria/Src/clock.o
+ .text.CLOCK_alarm
+                0x00000000       0x1e Livraria/Src/clock.o
+ .text.CLOCK_second_count
+                0x00000000       0xfa Livraria/Src/clock.o
+ .text.CLOCK_alarm_reset
+                0x00000000        0x6 Livraria/Src/clock.o
+ .text.CLOCK_alarm_stop
+                0x00000000        0x8 Livraria/Src/clock.o
+ .text.CLOCK_second_count_reset
+                0x00000000        0x6 Livraria/Src/clock.o
+ .text.CLOCK_second_count_stop
+                0x00000000        0x8 Livraria/Src/clock.o
+ .text.CLOCK_show
+                0x00000000       0xda Livraria/Src/clock.o
+ .text.clock_enable
+                0x00000000       0x70 Livraria/Src/clock.o
+ .debug_info    0x00000000      0x447 Livraria/Src/clock.o
+ .debug_abbrev  0x00000000      0x17d Livraria/Src/clock.o
+ .debug_loc     0x00000000      0x1e1 Livraria/Src/clock.o
+ .debug_aranges
+                0x00000000       0x70 Livraria/Src/clock.o
+ .debug_ranges  0x00000000       0x60 Livraria/Src/clock.o
+ .debug_line    0x00000000      0x3ec Livraria/Src/clock.o
+ .debug_str     0x00000000      0x337 Livraria/Src/clock.o
+ .comment       0x00000000       0x31 Livraria/Src/clock.o
+ .debug_frame   0x00000000       0xec Livraria/Src/clock.o
+ COMMON         0x00000000       0x14 Livraria/Src/clock.o
+ .text          0x00000000        0x0 Livraria/Src/esp01atcommands.o
+ .data          0x00000000        0x0 Livraria/Src/esp01atcommands.o
+ .bss           0x00000000        0x0 Livraria/Src/esp01atcommands.o
+ .rodata.str1.1
+                0x00000000       0xea Livraria/Src/esp01atcommands.o
+ .text.esp01at_cmd
+                0x00000000      0x20e Livraria/Src/esp01atcommands.o
+ .debug_info    0x00000000       0xd1 Livraria/Src/esp01atcommands.o
+ .debug_abbrev  0x00000000       0x90 Livraria/Src/esp01atcommands.o
+ .debug_loc     0x00000000      0x224 Livraria/Src/esp01atcommands.o
+ .debug_aranges
+                0x00000000       0x20 Livraria/Src/esp01atcommands.o
+ .debug_ranges  0x00000000       0x10 Livraria/Src/esp01atcommands.o
+ .debug_line    0x00000000      0x18f Livraria/Src/esp01atcommands.o
+ .debug_str     0x00000000      0x1a3 Livraria/Src/esp01atcommands.o
+ .comment       0x00000000       0x31 Livraria/Src/esp01atcommands.o
+ .debug_frame   0x00000000       0x24 Livraria/Src/esp01atcommands.o
+ COMMON         0x00000000       0x20 Livraria/Src/esp01atcommands.o
+ .text          0x00000000        0x0 Livraria/Src/explode.o
+ .data          0x00000000        0x0 Livraria/Src/explode.o
+ .bss           0x00000000        0x0 Livraria/Src/explode.o
+ .text.EXPLODEupdate
+                0x00000000       0x24 Livraria/Src/explode.o
+ .text.explode_enable
+                0x00000000       0x3c Livraria/Src/explode.o
+ .text.EXPLODEhh
+                0x00000000        0xa Livraria/Src/explode.o
+ .text.EXPLODEll
+                0x00000000        0xc Livraria/Src/explode.o
+ .text.EXPLODElh
+                0x00000000        0xc Livraria/Src/explode.o
+ .text.EXPLODEhl
+                0x00000000        0xc Livraria/Src/explode.o
+ .debug_info    0x00000000      0x2c1 Livraria/Src/explode.o
+ .debug_abbrev  0x00000000      0x153 Livraria/Src/explode.o
+ .debug_loc     0x00000000      0x1b8 Livraria/Src/explode.o
+ .debug_aranges
+                0x00000000       0x48 Livraria/Src/explode.o
+ .debug_ranges  0x00000000       0x38 Livraria/Src/explode.o
+ .debug_line    0x00000000      0x17d Livraria/Src/explode.o
+ .debug_str     0x00000000      0x1e9 Livraria/Src/explode.o
+ .comment       0x00000000       0x31 Livraria/Src/explode.o
+ .debug_frame   0x00000000       0x84 Livraria/Src/explode.o
+ .text          0x00000000        0x0 Livraria/Src/function.o
+ .data          0x00000000        0x0 Livraria/Src/function.o
+ .bss           0x00000000        0x0 Livraria/Src/function.o
+ .text.function_gcd_v2
+                0x00000000       0xa2 Livraria/Src/function.o
+ .text.leap_year_check
+                0x00000000       0x70 Livraria/Src/function.o
+ .text.bintobcd
+                0x00000000       0x26 Livraria/Src/function.o
+ .text.function_print_v1
+                0x00000000       0x3e Livraria/Src/function.o
+ .text          0x00000000        0x0 Livraria/Src/hc05atcommands.o
+ .data          0x00000000        0x0 Livraria/Src/hc05atcommands.o
+ .bss           0x00000000        0x0 Livraria/Src/hc05atcommands.o
+ .text          0x00000000        0x0 Livraria/Src/hc42atcommands.o
+ .data          0x00000000        0x0 Livraria/Src/hc42atcommands.o
+ .bss           0x00000000        0x0 Livraria/Src/hc42atcommands.o
+ .rodata.str1.1
+                0x00000000      0x181 Livraria/Src/hc42atcommands.o
+ .text.hc42at_cmd
+                0x00000000      0x270 Livraria/Src/hc42atcommands.o
+ .progmem.gcc_sw_table.hc42at_cmd
+                0x00000000       0x3a Livraria/Src/hc42atcommands.o
+ .debug_info    0x00000000       0xd1 Livraria/Src/hc42atcommands.o
+ .debug_abbrev  0x00000000       0x90 Livraria/Src/hc42atcommands.o
+ .debug_loc     0x00000000       0x33 Livraria/Src/hc42atcommands.o
+ .debug_aranges
+                0x00000000       0x20 Livraria/Src/hc42atcommands.o
+ .debug_ranges  0x00000000       0x10 Livraria/Src/hc42atcommands.o
+ .debug_line    0x00000000      0x21e Livraria/Src/hc42atcommands.o
+ .debug_str     0x00000000      0x1a0 Livraria/Src/hc42atcommands.o
+ .comment       0x00000000       0x31 Livraria/Src/hc42atcommands.o
+ .debug_frame   0x00000000       0x24 Livraria/Src/hc42atcommands.o
+ COMMON         0x00000000       0x20 Livraria/Src/hc42atcommands.o
+ .text          0x00000000        0x0 Livraria/Src/hx711.o
+ .data          0x00000000        0x0 Livraria/Src/hx711.o
+ .bss           0x00000000        0x0 Livraria/Src/hx711.o
+ .text.HX711_get_amplify
+                0x00000000        0x6 Livraria/Src/hx711.o
+ .text.HX711_read_bit
+                0x00000000       0x68 Livraria/Src/hx711.o
+ .text.HX711_set_amplify
+                0x00000000       0x36 Livraria/Src/hx711.o
+ .text.HX711_query
+                0x00000000       0x38 Livraria/Src/hx711.o
+ .text.HX711_raw_average
+                0x00000000       0x88 Livraria/Src/hx711.o
+ .text.HX711_get_readflag
+                0x00000000        0x6 Livraria/Src/hx711.o
+ .text.HX711_get_cal
+                0x00000000        0x4 Livraria/Src/hx711.o
+ .text.HX711_read_raw
+                0x00000000       0xbe Livraria/Src/hx711.o
+ .text.hx711_enable
+                0x00000000      0x148 Livraria/Src/hx711.o
+ .text.HX711_reset_readflag
+                0x00000000        0x6 Livraria/Src/hx711.o
+ .data.HX711_Default_50Kg
+                0x00000000       0x10 Livraria/Src/hx711.o
+ .debug_info    0x00000000      0x634 Livraria/Src/hx711.o
+ .debug_abbrev  0x00000000      0x203 Livraria/Src/hx711.o
+ .debug_loc     0x00000000      0x40b Livraria/Src/hx711.o
+ .debug_aranges
+                0x00000000       0x68 Livraria/Src/hx711.o
+ .debug_ranges  0x00000000       0x58 Livraria/Src/hx711.o
+ .debug_line    0x00000000      0x3dd Livraria/Src/hx711.o
+ .debug_str     0x00000000      0x400 Livraria/Src/hx711.o
+ .comment       0x00000000       0x31 Livraria/Src/hx711.o
+ .debug_frame   0x00000000       0xec Livraria/Src/hx711.o
+ COMMON         0x00000000        0xa Livraria/Src/hx711.o
+ .text          0x00000000        0x0 Livraria/Src/keypad.o
+ .data          0x00000000        0x0 Livraria/Src/keypad.o
+ .bss           0x00000000        0x0 Livraria/Src/keypad.o
+ .text.KEYPAD_data
+                0x00000000        0x6 Livraria/Src/keypad.o
+ .text.KEYPADlh
+                0x00000000        0x6 Livraria/Src/keypad.o
+ .text.KEYPADhl
+                0x00000000        0x6 Livraria/Src/keypad.o
+ .text          0x00000000        0x0 Livraria/Src/lcd.o
+ .data          0x00000000        0x0 Livraria/Src/lcd.o
+ .bss           0x00000000        0x0 Livraria/Src/lcd.o
+ .text.LCD0_BF  0x00000000       0x22 Livraria/Src/lcd.o
+ .text.LCD0_getch
+                0x00000000       0x16 Livraria/Src/lcd.o
+ .text.LCD0_write
+                0x00000000      0x1d6 Livraria/Src/lcd.o
+ .text.LCD0_clear
+                0x00000000       0x18 Livraria/Src/lcd.o
+ .text.LCD0_putch
+                0x00000000        0xe Livraria/Src/lcd.o
+ .text.LCD0_string
+                0x00000000       0x1e Livraria/Src/lcd.o
+ .text.LCD0_string_size
+                0x00000000       0x56 Livraria/Src/lcd.o
+ .text.LCD0_hspace
+                0x00000000       0x16 Livraria/Src/lcd.o
+ .text.LCD0_gotoxy
+                0x00000000       0x5e Livraria/Src/lcd.o
+ .text.lcd0     0x00000000        0x6 Livraria/Src/lcd.o
+ .text.LCD0_inic
+                0x00000000       0xa8 Livraria/Src/lcd.o
+ .text.lcd0_enable
+                0x00000000       0x3e Livraria/Src/lcd.o
+ .text.LCD0_reboot
+                0x00000000       0x24 Livraria/Src/lcd.o
+ .text.lcd_set_reg
+                0x00000000        0xa Livraria/Src/lcd.o
+ .text.lcd_clear_reg
+                0x00000000        0xc Livraria/Src/lcd.o
+ .data.lcd0_setup
+                0x00000000       0x16 Livraria/Src/lcd.o
+ .text          0x00000000        0x0 Livraria/Src/lcd2p.o
+ .data          0x00000000        0x0 Livraria/Src/lcd2p.o
+ .bss           0x00000000        0x0 Livraria/Src/lcd2p.o
+ .text.LCD02P_read
+                0x00000000      0x124 Livraria/Src/lcd2p.o
+ .text.LCD02P_BF
+                0x00000000       0x22 Livraria/Src/lcd2p.o
+ .text.LCD02P_getch
+                0x00000000       0x16 Livraria/Src/lcd2p.o
+ .text.LCD02P_write
+                0x00000000      0x1b0 Livraria/Src/lcd2p.o
+ .text.LCD02P_clear
+                0x00000000       0x18 Livraria/Src/lcd2p.o
+ .text.LCD02P_putch
+                0x00000000        0xe Livraria/Src/lcd2p.o
+ .text.LCD02P_string
+                0x00000000       0x1e Livraria/Src/lcd2p.o
+ .text.LCD02P_string_size
+                0x00000000       0x56 Livraria/Src/lcd2p.o
+ .text.LCD02P_hspace
+                0x00000000       0x16 Livraria/Src/lcd2p.o
+ .text.LCD02P_gotoxy
+                0x00000000       0x5e Livraria/Src/lcd2p.o
+ .text.lcd02p   0x00000000        0x6 Livraria/Src/lcd2p.o
+ .text.LCD02P_inic
+                0x00000000       0xe0 Livraria/Src/lcd2p.o
+ .text.lcd02p_enable
+                0x00000000       0x70 Livraria/Src/lcd2p.o
+ .text.LCD02P_reboot
+                0x00000000       0x24 Livraria/Src/lcd2p.o
+ .text.lcd02p_set_reg
+                0x00000000        0xa Livraria/Src/lcd2p.o
+ .text.lcd02p_clear_reg
+                0x00000000        0xc Livraria/Src/lcd2p.o
+ .data.setup_lcd02p
+                0x00000000       0x16 Livraria/Src/lcd2p.o
+ .bss.DDR_DATA_MASK
+                0x00000000        0x1 Livraria/Src/lcd2p.o
+ .debug_info    0x00000000      0xd8f Livraria/Src/lcd2p.o
+ .debug_abbrev  0x00000000      0x296 Livraria/Src/lcd2p.o
+ .debug_loc     0x00000000      0xc33 Livraria/Src/lcd2p.o
+ .debug_aranges
+                0x00000000       0x98 Livraria/Src/lcd2p.o
+ .debug_ranges  0x00000000       0x88 Livraria/Src/lcd2p.o
+ .debug_line    0x00000000      0x788 Livraria/Src/lcd2p.o
+ .debug_str     0x00000000      0x3c8 Livraria/Src/lcd2p.o
+ .comment       0x00000000       0x31 Livraria/Src/lcd2p.o
+ .debug_frame   0x00000000      0x174 Livraria/Src/lcd2p.o
+ COMMON         0x00000000        0xd Livraria/Src/lcd2p.o
+ .text          0x00000000        0x0 Livraria/Src/lfsm.o
+ .data          0x00000000        0x0 Livraria/Src/lfsm.o
+ .bss           0x00000000        0x0 Livraria/Src/lfsm.o
+ .text.LFSMquant
+                0x00000000       0x8c Livraria/Src/lfsm.o
+ .text.LFSMdeleteall
+                0x00000000       0xb2 Livraria/Src/lfsm.o
+ .text.LFSMgetoutput
+                0x00000000        0x8 Livraria/Src/lfsm.o
+ .text.LFSMgetstatus
+                0x00000000        0x6 Livraria/Src/lfsm.o
+ .text.LFSMsetoutput
+                0x00000000        0xa Livraria/Src/lfsm.o
+ .text.LFSMgetpage
+                0x00000000        0x6 Livraria/Src/lfsm.o
+ .text.LFSMsetpage
+                0x00000000        0x6 Livraria/Src/lfsm.o
+ .text.LFSMread
+                0x00000000      0x312 Livraria/Src/lfsm.o
+ .text.LFSMpremove
+                0x00000000      0x1a0 Livraria/Src/lfsm.o
+ .text.LFSMremove
+                0x00000000      0x292 Livraria/Src/lfsm.o
+ .text.LFSMlearn
+                0x00000000      0x214 Livraria/Src/lfsm.o
+ .text.lfsm_enable
+                0x00000000       0x70 Livraria/Src/lfsm.o
+ .text.LFSMlh   0x00000000        0xa Livraria/Src/lfsm.o
+ .text.LFSMhl   0x00000000        0xa Livraria/Src/lfsm.o
+ .text.LFSMoutputcalc
+                0x00000000       0x18 Livraria/Src/lfsm.o
+ .rodata.tmask  0x00000000        0x2 Livraria/Src/lfsm.o
+ .debug_info    0x00000000     0x11bc Livraria/Src/lfsm.o
+ .debug_abbrev  0x00000000      0x2f7 Livraria/Src/lfsm.o
+ .debug_loc     0x00000000     0x1716 Livraria/Src/lfsm.o
+ .debug_aranges
+                0x00000000       0x90 Livraria/Src/lfsm.o
+ .debug_ranges  0x00000000       0x80 Livraria/Src/lfsm.o
+ .debug_line    0x00000000      0x81a Livraria/Src/lfsm.o
+ .debug_str     0x00000000      0x406 Livraria/Src/lfsm.o
+ .comment       0x00000000       0x31 Livraria/Src/lfsm.o
+ .debug_frame   0x00000000      0x2e4 Livraria/Src/lfsm.o
+ COMMON         0x00000000       0x21 Livraria/Src/lfsm.o
+ .text          0x00000000        0x0 Livraria/Src/mm74c923.o
+ .data          0x00000000        0x0 Livraria/Src/mm74c923.o
+ .bss           0x00000000        0x0 Livraria/Src/mm74c923.o
+ .text.MM74C923_activate
+                0x00000000       0x1a Livraria/Src/mm74c923.o
+ .text.MM74C923_getch
+                0x00000000       0xe0 Livraria/Src/mm74c923.o
+ .text.MM74C923_gets
+                0x00000000       0x38 Livraria/Src/mm74c923.o
+ .text.MM74C923_data
+                0x00000000       0x2c Livraria/Src/mm74c923.o
+ .text.MM74C923_data_clear
+                0x00000000        0xa Livraria/Src/mm74c923.o
+ .text.mm74c923_enable
+                0x00000000       0xe4 Livraria/Src/mm74c923.o
+ .bss.MM74C923_KEY_BUFFER_EMPTY
+                0x00000000        0x1 Livraria/Src/mm74c923.o
+ .data.MM74C923_KEY_CODE
+                0x00000000       0x35 Livraria/Src/mm74c923.o
+ .debug_info    0x00000000      0x426 Livraria/Src/mm74c923.o
+ .debug_abbrev  0x00000000      0x1b4 Livraria/Src/mm74c923.o
+ .debug_loc     0x00000000      0x1b4 Livraria/Src/mm74c923.o
+ .debug_aranges
+                0x00000000       0x48 Livraria/Src/mm74c923.o
+ .debug_ranges  0x00000000       0x38 Livraria/Src/mm74c923.o
+ .debug_line    0x00000000      0x2b2 Livraria/Src/mm74c923.o
+ .debug_str     0x00000000      0x32d Livraria/Src/mm74c923.o
+ .comment       0x00000000       0x31 Livraria/Src/mm74c923.o
+ .debug_frame   0x00000000       0xac Livraria/Src/mm74c923.o
+ COMMON         0x00000000       0x25 Livraria/Src/mm74c923.o
+ .text          0x00000000        0x0 Livraria/Src/pcf8563rtc.o
+ .data          0x00000000        0x0 Livraria/Src/pcf8563rtc.o
+ .bss           0x00000000        0x0 Livraria/Src/pcf8563rtc.o
+ .text          0x00000000        0x0 Livraria/Src/pcf8575.o
+ .data          0x00000000        0x0 Livraria/Src/pcf8575.o
+ .bss           0x00000000        0x0 Livraria/Src/pcf8575.o
+ .text          0x00000000        0x0 Livraria/Src/pcf8575lcd.o
+ .data          0x00000000        0x0 Livraria/Src/pcf8575lcd.o
+ .bss           0x00000000        0x0 Livraria/Src/pcf8575lcd.o
+ .text.pcf8575_lcd0
+                0x00000000        0x6 Livraria/Src/pcf8575lcd.o
+ .text.PCF8575_LCD_ticks
+                0x00000000       0x14 Livraria/Src/pcf8575lcd.o
+ .text          0x00000000        0x0 Livraria/Src/rotenc.o
+ .data          0x00000000        0x0 Livraria/Src/rotenc.o
+ .bss           0x00000000        0x0 Livraria/Src/rotenc.o
+ .text.RotEnc_rte
+                0x00000000       0xc2 Livraria/Src/rotenc.o
+ .text.rotenc_enable
+                0x00000000       0x60 Livraria/Src/rotenc.o
+ .text.ROTENClh
+                0x00000000        0x6 Livraria/Src/rotenc.o
+ .text.ROTENChl
+                0x00000000        0x6 Livraria/Src/rotenc.o
+ .debug_info    0x00000000      0x25a Livraria/Src/rotenc.o
+ .debug_abbrev  0x00000000      0x153 Livraria/Src/rotenc.o
+ .debug_loc     0x00000000      0x207 Livraria/Src/rotenc.o
+ .debug_aranges
+                0x00000000       0x38 Livraria/Src/rotenc.o
+ .debug_ranges  0x00000000       0x28 Livraria/Src/rotenc.o
+ .debug_line    0x00000000      0x166 Livraria/Src/rotenc.o
+ .debug_str     0x00000000      0x1fc Livraria/Src/rotenc.o
+ .comment       0x00000000       0x31 Livraria/Src/rotenc.o
+ .debug_frame   0x00000000       0x74 Livraria/Src/rotenc.o
+ .text          0x00000000        0x0 Livraria/Src/watch.o
+ .data          0x00000000        0x0 Livraria/Src/watch.o
+ .bss           0x00000000        0x0 Livraria/Src/watch.o
+ .text.WATCH_start_delay
+                0x00000000       0xc2 Livraria/Src/watch.o
+ .text.WATCH_preset
+                0x00000000       0xb2 Livraria/Src/watch.o
+ .text.WATCH_increment
+                0x00000000       0x48 Livraria/Src/watch.o
+ .text.watch_enable
+                0x00000000       0x60 Livraria/Src/watch.o
+ .text.WATCH_set_second
+                0x00000000       0x90 Livraria/Src/watch.o
+ .text.WATCH_set_minute
+                0x00000000       0x90 Livraria/Src/watch.o
+ .text.WATCH_set_hour
+                0x00000000       0x90 Livraria/Src/watch.o
+ .text.WATCH_decrement
+                0x00000000       0x4e Livraria/Src/watch.o
+ .text.WATCH_result
+                0x00000000       0x92 Livraria/Src/watch.o
+ .text.WATCH_show
+                0x00000000       0xd6 Livraria/Src/watch.o
+ .bss.WATCH_delay_flag
+                0x00000000       0x10 Livraria/Src/watch.o
+ .bss.WATCH_trigger
+                0x00000000       0x40 Livraria/Src/watch.o
+ .bss.WATCH_vector
+                0x00000000        0x9 Livraria/Src/watch.o
+ .bss.wtime     0x00000000        0x7 Livraria/Src/watch.o
+ .rodata.w24_hour_seconds
+                0x00000000        0x4 Livraria/Src/watch.o
+ .rodata.w12_hour_seconds
+                0x00000000        0x4 Livraria/Src/watch.o
+ .debug_info    0x00000000      0x3f4 Livraria/Src/watch.o
+ .debug_abbrev  0x00000000      0x1a1 Livraria/Src/watch.o
+ .debug_loc     0x00000000      0x5f1 Livraria/Src/watch.o
+ .debug_aranges
+                0x00000000       0x68 Livraria/Src/watch.o
+ .debug_ranges  0x00000000       0x58 Livraria/Src/watch.o
+ .debug_line    0x00000000      0x2bc Livraria/Src/watch.o
+ .debug_str     0x00000000      0x2eb Livraria/Src/watch.o
+ .comment       0x00000000       0x31 Livraria/Src/watch.o
+ .debug_frame   0x00000000      0x190 Livraria/Src/watch.o
+ .text          0x00000000        0x0 Livraria/Src/znpid.o
+ .data          0x00000000        0x0 Livraria/Src/znpid.o
+ .bss           0x00000000        0x0 Livraria/Src/znpid.o
+ .text.ZNPID_set_kc
+                0x00000000        0xc Livraria/Src/znpid.o
+ .text.ZNPID_set_ki
+                0x00000000        0xc Livraria/Src/znpid.o
+ .text.ZNPID_set_kd
+                0x00000000        0xc Livraria/Src/znpid.o
+ .text.ZNPID_set_SP
+                0x00000000        0xc Livraria/Src/znpid.o
+ .text.znpid_enable
+                0x00000000       0x8e Livraria/Src/znpid.o
+ .text.ZNPID_integral
+                0x00000000       0x7c Livraria/Src/znpid.o
+ .text.ZNPID_output
+                0x00000000      0x264 Livraria/Src/znpid.o
+ .text.ZNPID_derivative
+                0x00000000       0x64 Livraria/Src/znpid.o
+ .text.ZNPID_delta
+                0x00000000        0x6 Livraria/Src/znpid.o
+ .text.ZNPID_sum
+                0x00000000        0x6 Livraria/Src/znpid.o
+ .text.ZNPID_product
+                0x00000000        0x6 Livraria/Src/znpid.o
+ .debug_info    0x00000000      0x637 Livraria/Src/znpid.o
+ .debug_abbrev  0x00000000      0x1dd Livraria/Src/znpid.o
+ .debug_loc     0x00000000      0x691 Livraria/Src/znpid.o
+ .debug_aranges
+                0x00000000       0x70 Livraria/Src/znpid.o
+ .debug_ranges  0x00000000       0x60 Livraria/Src/znpid.o
+ .debug_line    0x00000000      0x1e5 Livraria/Src/znpid.o
+ .debug_str     0x00000000      0x2c2 Livraria/Src/znpid.o
+ .comment       0x00000000       0x31 Livraria/Src/znpid.o
+ .debug_frame   0x00000000      0x16c Livraria/Src/znpid.o
+ COMMON         0x00000000        0x4 Livraria/Src/znpid.o
+ .text          0x00000000        0x0 main.o
+ .data          0x00000000        0x0 main.o
+ .bss           0x00000000        0x0 main.o
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(cmpsf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(cmpsf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(cmpsf2.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3.o)
+ .text.avr-libc.fplib
+                0x00000000        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+ .text.avr-libc.fplib
+                0x00000000       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fixunssfsi.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fixunssfsi.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fixunssfsi.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_cmp.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_cmp.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_cmp.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_inf.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_inf.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_inf.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_nan.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_nan.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_nan.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_round.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_round.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_round.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(gesf2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(gesf2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(gesf2.o)
+ .text.avr-libc.fplib
+                0x00000000        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(gesf2.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3x.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3x.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3x.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_mulsi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_mulsi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_mulsi3.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_mulsi3.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_mulsi3.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_mulsi3.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_mulsi3.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_mulsi3.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_mulsi3.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodsi4.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodsi4.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodsi4.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodsi4.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodsi4.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodsi4.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodsi4.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodsi4.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodsi4.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_negsi2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_negsi2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_negsi2.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_negsi2.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_negsi2.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_negsi2.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_negsi2.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_negsi2.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_negsi2.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_muluhisi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_muluhisi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_muluhisi3.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_muluhisi3.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_muluhisi3.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_muluhisi3.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_muluhisi3.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_muluhisi3.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_muluhisi3.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strcmp.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strcmp.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strcmp.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strcpy.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strcpy.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strcpy.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strncpy.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strncpy.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strncpy.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vsnprintf.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vsnprintf.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vsnprintf.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vfprintf_std.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vfprintf_std.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vfprintf_std.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen_P.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen_P.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen_P.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(fputc.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(fputc.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(fputc.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(ultoa_invert.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(ultoa_invert.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(ultoa_invert.o)
+ .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_block.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_block.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_block.o)
+ .text.avr-libc
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_block.o)
+ .debug_line    0x00000000       0xab C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_block.o)
+ .debug_info    0x00000000       0x9b C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_block.o)
+ .debug_abbrev  0x00000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_block.o)
+ .debug_aranges
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_block.o)
+ .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_byte.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_byte.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_byte.o)
+ .text.avr-libc
+                0x00000000       0x10 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_byte.o)
+ .debug_line    0x00000000       0x7a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_byte.o)
+ .debug_info    0x00000000       0x9a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_byte.o)
+ .debug_abbrev  0x00000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_byte.o)
+ .debug_aranges
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_byte.o)
+ .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_word.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_word.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_word.o)
+ .text.avr-libc
+                0x00000000        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_word.o)
+ .debug_line    0x00000000       0x67 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_word.o)
+ .debug_info    0x00000000       0x9a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_word.o)
+ .debug_abbrev  0x00000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_word.o)
+ .debug_aranges
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eerd_word.o)
+ .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_block.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_block.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_block.o)
+ .text.avr-libc
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_block.o)
+ .debug_line    0x00000000       0xa5 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_block.o)
+ .debug_info    0x00000000       0x9c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_block.o)
+ .debug_abbrev  0x00000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_block.o)
+ .debug_aranges
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_block.o)
+ .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_byte.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_byte.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_byte.o)
+ .text.avr-libc
+                0x00000000       0x22 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_byte.o)
+ .debug_line    0x00000000       0xb0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_byte.o)
+ .debug_info    0x00000000       0x9b C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_byte.o)
+ .debug_abbrev  0x00000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_byte.o)
+ .debug_aranges
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_byte.o)
+ .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_dword.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_dword.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_dword.o)
+ .text.avr-libc
+                0x00000000       0x18 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_dword.o)
+ .debug_line    0x00000000       0x7b C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_dword.o)
+ .debug_info    0x00000000       0x9c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_dword.o)
+ .debug_abbrev  0x00000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_dword.o)
+ .debug_aranges
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_dword.o)
+ .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_word.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_word.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_word.o)
+ .text.avr-libc
+                0x00000000        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_word.o)
+ .debug_line    0x00000000       0x62 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_word.o)
+ .debug_info    0x00000000       0x9b C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_word.o)
+ .debug_abbrev  0x00000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_word.o)
+ .debug_aranges
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eeupd_word.o)
+ .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_block.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_block.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_block.o)
+ .text.avr-libc
+                0x00000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_block.o)
+ .debug_line    0x00000000       0x80 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_block.o)
+ .debug_info    0x00000000       0x9b C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_block.o)
+ .debug_abbrev  0x00000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_block.o)
+ .debug_aranges
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_block.o)
+ .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_byte.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_byte.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_byte.o)
+ .text.avr-libc
+                0x00000000       0x1a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_byte.o)
+ .debug_line    0x00000000       0x98 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_byte.o)
+ .debug_info    0x00000000       0x9a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_byte.o)
+ .debug_abbrev  0x00000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_byte.o)
+ .debug_aranges
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_byte.o)
+ .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_dword.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_dword.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_dword.o)
+ .text.avr-libc
+                0x00000000       0x10 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_dword.o)
+ .debug_line    0x00000000       0x68 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_dword.o)
+ .debug_info    0x00000000       0x9b C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_dword.o)
+ .debug_abbrev  0x00000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_dword.o)
+ .debug_aranges
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_dword.o)
+ .text          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_word.o)
+ .data          0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_word.o)
+ .bss           0x00000000        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_word.o)
+ .text.avr-libc
+                0x00000000        0xa C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_word.o)
+ .debug_line    0x00000000       0x5b C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_word.o)
+ .debug_info    0x00000000       0x9a C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_word.o)
+ .debug_abbrev  0x00000000       0x14 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_word.o)
+ .debug_aranges
+                0x00000000       0x20 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a(eewr_word.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800100         0x0000ff00         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000003         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+user_signatures  0x00850000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+LOAD Livraria/Src/74hc595.o
+LOAD Livraria/Src/atmega128.o
+LOAD Livraria/Src/atmega128analog.o
+LOAD Livraria/Src/atmega128interrupt.o
+LOAD Livraria/Src/atmega128mapping.o
+LOAD Livraria/Src/atmega128spi.o
+LOAD Livraria/Src/atmega128timer0.o
+LOAD Livraria/Src/atmega128timer1.o
+LOAD Livraria/Src/atmega128timer2.o
+LOAD Livraria/Src/atmega128timer3.o
+LOAD Livraria/Src/atmega128twi.o
+LOAD Livraria/Src/atmega128usart0.o
+LOAD Livraria/Src/atmega128usart1.o
+LOAD Livraria/Src/atmegaeeprom.o
+LOAD Livraria/Src/bt05atcommands.o
+LOAD Livraria/Src/buffer.o
+LOAD Livraria/Src/clock.o
+LOAD Livraria/Src/esp01atcommands.o
+LOAD Livraria/Src/explode.o
+LOAD Livraria/Src/function.o
+LOAD Livraria/Src/hc05atcommands.o
+LOAD Livraria/Src/hc42atcommands.o
+LOAD Livraria/Src/hx711.o
+LOAD Livraria/Src/keypad.o
+LOAD Livraria/Src/lcd.o
+LOAD Livraria/Src/lcd2p.o
+LOAD Livraria/Src/lfsm.o
+LOAD Livraria/Src/mm74c923.o
+LOAD Livraria/Src/pcf8563rtc.o
+LOAD Livraria/Src/pcf8575.o
+LOAD Livraria/Src/pcf8575lcd.o
+LOAD Livraria/Src/rotenc.o
+LOAD Livraria/Src/watch.o
+LOAD Livraria/Src/znpid.o
+LOAD main.o
+START GROUP
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a
+LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a
+LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51\libatmega128.a
+END GROUP
+                0x00000000                __TEXT_REGION_ORIGIN__ = DEFINED (__TEXT_REGION_ORIGIN__)?__TEXT_REGION_ORIGIN__:0x0
+                0x00800100                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x800100
+                0x00020000                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
+                0x0000ff00                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xff00
+                0x00010000                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
+                [0x00000003]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
+                0x00000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
+                0x00000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
+                0x00000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x6aa4
+ *(.vectors)
+ .vectors       0x00000000       0x8c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+ .progmem.gcc_sw_table.tc1_enable
+                0x0000008c       0x36 Livraria/Src/atmega128timer1.o
+ .progmem.gcc_sw_table.hc05at_cmd
+                0x000000c2      0x108 Livraria/Src/hc05atcommands.o
+ .progmem.gcc_sw_table.main
+                0x000001ca       0x10 main.o
+                0x000001da                . = ALIGN (0x2)
+                0x000001da                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x000001da        0x0 linker stubs
+ *(.trampolines*)
+                0x000001da                __trampolines_end = .
+ *libprintf_flt.a:*(.progmem.data)
+ *libc.a:*(.progmem.data)
+ *(.progmem*)
+                0x000001da                . = ALIGN (0x2)
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x000001da                __ctors_start = .
+ *(.ctors)
+                0x000001da                __ctors_end = .
+                0x000001da                __dtors_start = .
+ *(.dtors)
+                0x000001da                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x000001da        0x0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+                0x000001da                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x000001da        0xc C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x000001e6       0x1a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_copy_data.o)
+                0x000001e6                __do_copy_data
+ .init4         0x00000200       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_clear_bss.o)
+                0x00000200                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000210        0x8 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+ *(.init9)
+ *(.text)
+ .text          0x00000218        0x2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+                0x00000218                __vector_22
+                0x00000218                __vector_28
+                0x00000218                __vector_1
+                0x00000218                __vector_32
+                0x00000218                __vector_34
+                0x00000218                __vector_24
+                0x00000218                __vector_12
+                0x00000218                __bad_interrupt
+                0x00000218                __vector_6
+                0x00000218                __vector_3
+                0x00000218                __vector_23
+                0x00000218                __vector_25
+                0x00000218                __vector_11
+                0x00000218                __vector_13
+                0x00000218                __vector_17
+                0x00000218                __vector_7
+                0x00000218                __vector_27
+                0x00000218                __vector_5
+                0x00000218                __vector_33
+                0x00000218                __vector_4
+                0x00000218                __vector_2
+                0x00000218                __vector_29
+                0x00000218                __vector_8
+                0x00000218                __vector_26
+                0x00000218                __vector_14
+                0x00000218                __vector_10
+                0x00000218                __vector_16
+                0x00000218                __vector_20
+                0x0000021a                . = ALIGN (0x2)
+ *(.text.*)
+ .text.HC595_shift_bit
+                0x0000021a       0x74 Livraria/Src/74hc595.o
+                0x0000021a                HC595_shift_bit
+ .text.HC595_shift_out
+                0x0000028e       0x38 Livraria/Src/74hc595.o
+                0x0000028e                HC595_shift_out
+ .text.HC595_shift_ibyte
+                0x000002c6       0x4c Livraria/Src/74hc595.o
+                0x000002c6                HC595_shift_ibyte
+ .text.HC595_shift_byte
+                0x00000312       0x48 Livraria/Src/74hc595.o
+                0x00000312                HC595_shift_byte
+ .text.hc595_enable
+                0x0000035a       0x8e Livraria/Src/74hc595.o
+                0x0000035a                hc595_enable
+ .text.adc_reg  0x000003e8        0x6 Livraria/Src/atmega128.o
+                0x000003e8                adc_reg
+ .text.cpu_reg  0x000003ee        0x6 Livraria/Src/atmega128.o
+                0x000003ee                cpu_reg
+ .text.gpiob_reg
+                0x000003f4        0x6 Livraria/Src/atmega128.o
+                0x000003f4                gpiob_reg
+ .text.gpioc_reg
+                0x000003fa        0x6 Livraria/Src/atmega128.o
+                0x000003fa                gpioc_reg
+ .text.gpiod_reg
+                0x00000400        0x6 Livraria/Src/atmega128.o
+                0x00000400                gpiod_reg
+ .text.gpiof_reg
+                0x00000406        0x6 Livraria/Src/atmega128.o
+                0x00000406                gpiof_reg
+ .text.tc1_reg  0x0000040c        0x6 Livraria/Src/atmega128.o
+                0x0000040c                tc1_reg
+ .text.tc2_reg  0x00000412        0x6 Livraria/Src/atmega128.o
+                0x00000412                tc2_reg
+ .text.tc0_reg  0x00000418        0x6 Livraria/Src/atmega128.o
+                0x00000418                tc0_reg
+ .text.twi_reg  0x0000041e        0x6 Livraria/Src/atmega128.o
+                0x0000041e                twi_reg
+ .text.usart0_reg
+                0x00000424        0x6 Livraria/Src/atmega128.o
+                0x00000424                usart0_reg
+ .text.usart1_reg
+                0x0000042a        0x6 Livraria/Src/atmega128.o
+                0x0000042a                usart1_reg
+ .text.readHLbyte
+                0x00000430       0x10 Livraria/Src/atmega128.o
+                0x00000430                readHLbyte
+ .text.writeHLbyte
+                0x00000440        0x2 Livraria/Src/atmega128.o
+                0x00000440                writeHLbyte
+ .text.BAUDRATEnormal
+                0x00000442       0x1c Livraria/Src/atmega128.o
+                0x00000442                BAUDRATEnormal
+ .text.BAUDRATEdouble
+                0x0000045e       0x1c Livraria/Src/atmega128.o
+                0x0000045e                BAUDRATEdouble
+ .text.get_reg_block
+                0x0000047a       0x46 Livraria/Src/atmega128.o
+                0x0000047a                get_reg_block
+ .text.write_reg_block
+                0x000004c0       0x5e Livraria/Src/atmega128.o
+                0x000004c0                write_reg_block
+ .text.set_reg_block
+                0x0000051e       0x58 Livraria/Src/atmega128.o
+                0x0000051e                set_reg_block
+ .text.ANALOG_read
+                0x00000576       0x2c Livraria/Src/atmega128analog.o
+                0x00000576                ANALOG_read
+ .text.adc_enable
+                0x000005a2      0x1f8 Livraria/Src/atmega128analog.o
+                0x000005a2                adc_enable
+ .text.adc      0x0000079a        0x6 Livraria/Src/atmega128analog.o
+                0x0000079a                adc
+ .text.__vector_21
+                0x000007a0      0x11a Livraria/Src/atmega128analog.o
+                0x000007a0                __vector_21
+ .text.TIMER_COUNTER0_start
+                0x000008ba       0xb8 Livraria/Src/atmega128timer0.o
+                0x000008ba                TIMER_COUNTER0_start
+ .text.TIMER_COUNTER0_compare
+                0x00000972        0xe Livraria/Src/atmega128timer0.o
+                0x00000972                TIMER_COUNTER0_compare
+ .text.TIMER_COUNTER0_stop
+                0x00000980       0x12 Livraria/Src/atmega128timer0.o
+                0x00000980                TIMER_COUNTER0_stop
+ .text.TIMER_COUNTER0_compoutmode
+                0x00000992       0x58 Livraria/Src/atmega128timer0.o
+                0x00000992                TIMER_COUNTER0_compoutmode
+ .text.tc0_enable
+                0x000009ea       0xf8 Livraria/Src/atmega128timer0.o
+                0x000009ea                tc0_enable
+ .text.tc0      0x00000ae2        0x6 Livraria/Src/atmega128timer0.o
+                0x00000ae2                tc0
+ .text.TIMER_COUNTER1_start
+                0x00000ae8       0xb4 Livraria/Src/atmega128timer1.o
+                0x00000ae8                TIMER_COUNTER1_start
+ .text.TIMER_COUNTER1_stop
+                0x00000b9c       0x12 Livraria/Src/atmega128timer1.o
+                0x00000b9c                TIMER_COUNTER1_stop
+ .text.TIMER_COUNTER1_compareA
+                0x00000bae       0x20 Livraria/Src/atmega128timer1.o
+                0x00000bae                TIMER_COUNTER1_compareA
+ .text.TIMER_COUNTER1_compareB
+                0x00000bce       0x20 Livraria/Src/atmega128timer1.o
+                0x00000bce                TIMER_COUNTER1_compareB
+ .text.TIMER_COUNTER1_compareC
+                0x00000bee       0x20 Livraria/Src/atmega128timer1.o
+                0x00000bee                TIMER_COUNTER1_compareC
+ .text.TIMER_COUNTER1_compoutmodeA
+                0x00000c0e       0x5e Livraria/Src/atmega128timer1.o
+                0x00000c0e                TIMER_COUNTER1_compoutmodeA
+ .text.TIMER_COUNTER1_compoutmodeB
+                0x00000c6c       0x5e Livraria/Src/atmega128timer1.o
+                0x00000c6c                TIMER_COUNTER1_compoutmodeB
+ .text.TIMER_COUNTER1_compoutmodeC
+                0x00000cca       0x5e Livraria/Src/atmega128timer1.o
+                0x00000cca                TIMER_COUNTER1_compoutmodeC
+ .text.tc1_enable
+                0x00000d28      0x2ea Livraria/Src/atmega128timer1.o
+                0x00000d28                tc1_enable
+ .text.tc1      0x00001012        0x6 Livraria/Src/atmega128timer1.o
+                0x00001012                tc1
+ .text.TIMER_COUNTER2_start
+                0x00001018       0xb4 Livraria/Src/atmega128timer2.o
+                0x00001018                TIMER_COUNTER2_start
+ .text.TIMER_COUNTER2_compare
+                0x000010cc        0xe Livraria/Src/atmega128timer2.o
+                0x000010cc                TIMER_COUNTER2_compare
+ .text.TIMER_COUNTER2_stop
+                0x000010da       0x12 Livraria/Src/atmega128timer2.o
+                0x000010da                TIMER_COUNTER2_stop
+ .text.TIMER_COUNTER2_compoutmode
+                0x000010ec       0x5e Livraria/Src/atmega128timer2.o
+                0x000010ec                TIMER_COUNTER2_compoutmode
+ .text.tc2_enable
+                0x0000114a       0xf8 Livraria/Src/atmega128timer2.o
+                0x0000114a                tc2_enable
+ .text.tc2      0x00001242        0x6 Livraria/Src/atmega128timer2.o
+                0x00001242                tc2
+ .text.TWI_status
+                0x00001248        0xa Livraria/Src/atmega128twi.o
+                0x00001248                TWI_status
+ .text.TWI_stop
+                0x00001252       0x16 Livraria/Src/atmega128twi.o
+                0x00001252                TWI_stop
+ .text.twi_enable
+                0x00001268       0xe4 Livraria/Src/atmega128twi.o
+                0x00001268                twi_enable
+ .text.TWI_wait_twint
+                0x0000134c       0x2c Livraria/Src/atmega128twi.o
+                0x0000134c                TWI_wait_twint
+ .text.TWI_start
+                0x00001378       0x18 Livraria/Src/atmega128twi.o
+                0x00001378                TWI_start
+ .text.TWI_connect
+                0x00001390       0x36 Livraria/Src/atmega128twi.o
+                0x00001390                TWI_connect
+ .text.TWI_master_write
+                0x000013c6       0x24 Livraria/Src/atmega128twi.o
+                0x000013c6                TWI_master_write
+ .text.TWI_master_read
+                0x000013ea       0x2c Livraria/Src/atmega128twi.o
+                0x000013ea                TWI_master_read
+ .text.__vector_19
+                0x00001416       0x58 Livraria/Src/atmega128usart0.o
+                0x00001416                __vector_19
+ .text.USART0ReadErrors
+                0x0000146e        0xa Livraria/Src/atmega128usart0.o
+                0x0000146e                USART0ReadErrors
+ .text.__vector_18
+                0x00001478       0x70 Livraria/Src/atmega128usart0.o
+                0x00001478                __vector_18
+ .text.uart1_read
+                0x000014e8        0xa Livraria/Src/atmega128usart1.o
+                0x000014e8                uart1_read
+ .text.uart1_gets
+                0x000014f2       0x10 Livraria/Src/atmega128usart1.o
+                0x000014f2                uart1_gets
+ .text.uart1_rxflush
+                0x00001502       0x10 Livraria/Src/atmega128usart1.o
+                0x00001502                uart1_rxflush
+ .text.uart1_write
+                0x00001512       0x36 Livraria/Src/atmega128usart1.o
+                0x00001512                uart1_write
+ .text.uart1_putch
+                0x00001548        0x4 Livraria/Src/atmega128usart1.o
+                0x00001548                uart1_putch
+ .text.uart1_puts
+                0x0000154c       0x1c Livraria/Src/atmega128usart1.o
+                0x0000154c                uart1_puts
+ .text.uart1_getch
+                0x00001568        0xa Livraria/Src/atmega128usart1.o
+                0x00001568                uart1_getch
+ .text.usart1   0x00001572        0x6 Livraria/Src/atmega128usart1.o
+                0x00001572                usart1
+ .text.__vector_31
+                0x00001578       0x58 Livraria/Src/atmega128usart1.o
+                0x00001578                __vector_31
+ .text.usart1_messageprint
+                0x000015d0       0xb0 Livraria/Src/atmega128usart1.o
+                0x000015d0                usart1_messageprint
+ .text.USART1ReadErrors
+                0x00001680        0xe Livraria/Src/atmega128usart1.o
+                0x00001680                USART1ReadErrors
+ .text.__vector_30
+                0x0000168e       0x70 Livraria/Src/atmega128usart1.o
+                0x0000168e                __vector_30
+ .text.USART1DoubleTransmissionSpeed
+                0x000016fe       0x10 Livraria/Src/atmega128usart1.o
+                0x000016fe                USART1DoubleTransmissionSpeed
+ .text.usart1_enable
+                0x0000170e      0x25c Livraria/Src/atmega128usart1.o
+                0x0000170e                usart1_enable
+ .text.BUFF_push
+                0x0000196a       0x36 Livraria/Src/buffer.o
+                0x0000196a                BUFF_push
+ .text.BUFF_raw
+                0x000019a0        0x8 Livraria/Src/buffer.o
+                0x000019a0                BUFF_raw
+ .text.BUFF_flush
+                0x000019a8       0x14 Livraria/Src/buffer.o
+                0x000019a8                BUFF_flush
+ .text.buff_enable
+                0x000019bc       0x2e Livraria/Src/buffer.o
+                0x000019bc                buff_enable
+ .text.FUNCmayia
+                0x000019ea       0x38 Livraria/Src/function.o
+                0x000019ea                FUNCmayia
+ .text.FUNC_swap
+                0x00001a22       0x42 Livraria/Src/function.o
+                0x00001a22                FUNC_swap
+ .text.FUNCcopy
+                0x00001a64       0x1c Livraria/Src/function.o
+                0x00001a64                FUNCcopy
+ .text.FUNCsqueeze
+                0x00001a80       0x44 Livraria/Src/function.o
+                0x00001a80                FUNCsqueeze
+ .text.FUNCshellsort
+                0x00001ac4      0x14c Livraria/Src/function.o
+                0x00001ac4                FUNCshellsort
+ .text.FUNCpmax
+                0x00001c10        0xa Livraria/Src/function.o
+                0x00001c10                FUNCpmax
+ .text.FUNCgcd  0x00001c1a       0x1e Livraria/Src/function.o
+                0x00001c1a                FUNCgcd
+ .text.FUNCstrToInt
+                0x00001c38       0x48 Livraria/Src/function.o
+                0x00001c38                FUNCstrToInt
+ .text.FUNCtwocomptoint8bit
+                0x00001c80       0x1a Livraria/Src/function.o
+                0x00001c80                FUNCtwocomptoint8bit
+ .text.FUNCtwocomptoint10bit
+                0x00001c9a       0x18 Livraria/Src/function.o
+                0x00001c9a                FUNCtwocomptoint10bit
+ .text.FUNCtwocomptointnbit
+                0x00001cb2       0x30 Livraria/Src/function.o
+                0x00001cb2                FUNCtwocomptointnbit
+ .text.FUNCdec2bcd
+                0x00001ce2       0x26 Livraria/Src/function.o
+                0x00001ce2                FUNCdec2bcd
+ .text.FUNCbcd2dec
+                0x00001d08       0x16 Livraria/Src/function.o
+                0x00001d08                FUNCbcd2dec
+ .text.FUNCresizestr
+                0x00001d1e       0x5a Livraria/Src/function.o
+                0x00001d1e                FUNCresizestr
+ .text.FUNCtrimmer
+                0x00001d78       0x82 Livraria/Src/function.o
+                0x00001d78                FUNCtrimmer
+ .text.StringLength
+                0x00001dfa       0x1e Livraria/Src/function.o
+                0x00001dfa                StringLength
+ .text.FUNCtrim
+                0x00001e18       0x36 Livraria/Src/function.o
+                0x00001e18                FUNCtrim
+ .text.Reverse  0x00001e4e       0x3a Livraria/Src/function.o
+                0x00001e4e                Reverse
+ .text.FUNCui32toa
+                0x00001e88       0x94 Livraria/Src/function.o
+                0x00001e88                FUNCui32toa
+ .text.FUNCi32toa
+                0x00001f1c       0xb6 Livraria/Src/function.o
+                0x00001f1c                FUNCi32toa
+ .text.FUNCi16toa
+                0x00001fd2       0x72 Livraria/Src/function.o
+                0x00001fd2                FUNCi16toa
+ .text.FUNCui16toa
+                0x00002044       0xd4 Livraria/Src/function.o
+                0x00002044                FUNCui16toa
+ .text.FUNCbcd2bin
+                0x00002118       0x16 Livraria/Src/function.o
+                0x00002118                FUNCbcd2bin
+ .text.FUNCbin2bcd
+                0x0000212e       0x42 Livraria/Src/function.o
+                0x0000212e                FUNCbin2bcd
+ .text.FUNCgcd1
+                0x00002170       0xa0 Livraria/Src/function.o
+                0x00002170                FUNCgcd1
+ .text.FUNCprint_binary
+                0x00002210       0x56 Livraria/Src/function.o
+                0x00002210                FUNCprint_binary
+ .text.FUNCdectohex
+                0x00002266       0xa4 Livraria/Src/function.o
+                0x00002266                FUNCdectohex
+ .text.FUNCSwapByte
+                0x0000230a        0x8 Livraria/Src/function.o
+                0x0000230a                FUNCSwapByte
+ .text.FUNCstrtovec
+                0x00002312       0x18 Livraria/Src/function.o
+                0x00002312                FUNCstrtovec
+ .text.FUNCprint
+                0x0000232a       0x36 Livraria/Src/function.o
+                0x0000232a                FUNCprint
+ .text.func_enable
+                0x00002360      0x10e Livraria/Src/function.o
+                0x00002360                func_enable
+ .text.func     0x0000246e        0x6 Livraria/Src/function.o
+                0x0000246e                func
+ .text.FUNCintinvstr
+                0x00002474       0x9a Livraria/Src/function.o
+                0x00002474                FUNCintinvstr
+ .text.function_fPartStr
+                0x0000250e       0xa0 Livraria/Src/function.o
+                0x0000250e                function_fPartStr
+ .text.FUNCftoa
+                0x000025ae       0xda Livraria/Src/function.o
+                0x000025ae                FUNCftoa
+ .text.hc05at_cmd
+                0x00002688      0x3d8 Livraria/Src/hc05atcommands.o
+                0x00002688                hc05at_cmd
+ .text.KEYPAD_flush
+                0x00002a60       0x1a Livraria/Src/keypad.o
+                0x00002a60                KEYPAD_flush
+ .text.KEYPAD_getkey
+                0x00002a7a      0x25a Livraria/Src/keypad.o
+                0x00002a7a                KEYPAD_getkey
+ .text.KEYPAD_read
+                0x00002cd4       0x94 Livraria/Src/keypad.o
+                0x00002cd4                KEYPAD_read
+ .text.keypad_enable
+                0x00002d68       0xda Livraria/Src/keypad.o
+                0x00002d68                keypad_enable
+ .text.keypad   0x00002e42        0x6 Livraria/Src/keypad.o
+                0x00002e42                keypad
+ .text.LCD1_read
+                0x00002e48      0x11c Livraria/Src/lcd.o
+                0x00002e48                LCD1_read
+ .text.LCD1_write
+                0x00002f64      0x1d6 Livraria/Src/lcd.o
+                0x00002f64                LCD1_write
+ .text.LCD1_clear
+                0x0000313a       0x16 Livraria/Src/lcd.o
+                0x0000313a                LCD1_clear
+ .text.LCD0_read
+                0x00003150      0x11c Livraria/Src/lcd.o
+                0x00003150                LCD0_read
+ .text.LCD1_BF  0x0000326c       0x1e Livraria/Src/lcd.o
+                0x0000326c                LCD1_BF
+ .text.LCD1_putch
+                0x0000328a        0xa Livraria/Src/lcd.o
+                0x0000328a                LCD1_putch
+ .text.LCD1_string
+                0x00003294       0x1c Livraria/Src/lcd.o
+                0x00003294                LCD1_string
+ .text.LCD1_string_size
+                0x000032b0       0x52 Livraria/Src/lcd.o
+                0x000032b0                LCD1_string_size
+ .text.LCD1_hspace
+                0x00003302       0x14 Livraria/Src/lcd.o
+                0x00003302                LCD1_hspace
+ .text.LCD1_gotoxy
+                0x00003316       0x4e Livraria/Src/lcd.o
+                0x00003316                LCD1_gotoxy
+ .text.LCD1_getch
+                0x00003364       0x12 Livraria/Src/lcd.o
+                0x00003364                LCD1_getch
+ .text.lcd1     0x00003376        0x6 Livraria/Src/lcd.o
+                0x00003376                lcd1
+ .text.LCD1_inic
+                0x0000337c       0x96 Livraria/Src/lcd.o
+                0x0000337c                LCD1_inic
+ .text.lcd1_enable
+                0x00003412       0x3c Livraria/Src/lcd.o
+                0x00003412                lcd1_enable
+ .text.LCD1_reboot
+                0x0000344e       0x22 Livraria/Src/lcd.o
+                0x0000344e                LCD1_reboot
+ .text.PCF8563RTC_SetTime
+                0x00003470       0x56 Livraria/Src/pcf8563rtc.o
+                0x00003470                PCF8563RTC_SetTime
+ .text.PCF8563RTC_SetHour
+                0x000034c6       0x3a Livraria/Src/pcf8563rtc.o
+                0x000034c6                PCF8563RTC_SetHour
+ .text.PCF8563RTC_SetMinute
+                0x00003500       0x3a Livraria/Src/pcf8563rtc.o
+                0x00003500                PCF8563RTC_SetMinute
+ .text.PCF8563RTC_SetSecond
+                0x0000353a       0x3a Livraria/Src/pcf8563rtc.o
+                0x0000353a                PCF8563RTC_SetSecond
+ .text.PCF8563RTC_SetClkOut
+                0x00003574       0x46 Livraria/Src/pcf8563rtc.o
+                0x00003574                PCF8563RTC_SetClkOut
+ .text.PCF8563RTC_SetDate
+                0x000035ba       0x64 Livraria/Src/pcf8563rtc.o
+                0x000035ba                PCF8563RTC_SetDate
+ .text.PCF8563RTC_SetYear
+                0x0000361e       0x3a Livraria/Src/pcf8563rtc.o
+                0x0000361e                PCF8563RTC_SetYear
+ .text.PCF8563RTC_SetMonth
+                0x00003658       0x3a Livraria/Src/pcf8563rtc.o
+                0x00003658                PCF8563RTC_SetMonth
+ .text.PCF8563RTC_SetWeekday
+                0x00003692       0x3a Livraria/Src/pcf8563rtc.o
+                0x00003692                PCF8563RTC_SetWeekday
+ .text.PCF8563RTC_SetDay
+                0x000036cc       0x3a Livraria/Src/pcf8563rtc.o
+                0x000036cc                PCF8563RTC_SetDay
+ .text.PCF8563RTC_GetTime
+                0x00003706       0x78 Livraria/Src/pcf8563rtc.o
+                0x00003706                PCF8563RTC_GetTime
+ .text.PCF8563RTC_GetDate
+                0x0000377e       0x88 Livraria/Src/pcf8563rtc.o
+                0x0000377e                PCF8563RTC_GetDate
+ .text.PCF8563RTC_bcd2dec
+                0x00003806       0x16 Livraria/Src/pcf8563rtc.o
+                0x00003806                PCF8563RTC_bcd2dec
+ .text.PCF8563RTC_bintobcd
+                0x0000381c       0x26 Livraria/Src/pcf8563rtc.o
+                0x0000381c                PCF8563RTC_bintobcd
+ .text.PCF8563RTC_Init
+                0x00003842       0x34 Livraria/Src/pcf8563rtc.o
+                0x00003842                PCF8563RTC_Init
+ .text.pcf8563rtc_enable
+                0x00003876       0xc4 Livraria/Src/pcf8563rtc.o
+                0x00003876                pcf8563rtc_enable
+ .text.PCF8575_writehbits
+                0x0000393a       0x6e Livraria/Src/pcf8575.o
+                0x0000393a                PCF8575_writehbits
+ .text.PCF8575_readhbits
+                0x000039a8       0x54 Livraria/Src/pcf8575.o
+                0x000039a8                PCF8575_readhbits
+ .text.pcf8575_enable
+                0x000039fc       0x88 Livraria/Src/pcf8575.o
+                0x000039fc                pcf8575_enable
+ .text.PCF8575_LCD0_write
+                0x00003a84       0xfe Livraria/Src/pcf8575lcd.o
+                0x00003a84                PCF8575_LCD0_write
+ .text.PCF8575_LCD0_read
+                0x00003b82       0xf0 Livraria/Src/pcf8575lcd.o
+                0x00003b82                PCF8575_LCD0_read
+ .text.PCF8575_LCD0_BF
+                0x00003c72       0x1e Livraria/Src/pcf8575lcd.o
+                0x00003c72                PCF8575_LCD0_BF
+ .text.PCF8575_LCD0_getch
+                0x00003c90       0x12 Livraria/Src/pcf8575lcd.o
+                0x00003c90                PCF8575_LCD0_getch
+ .text.PCF8575_LCD0_putch
+                0x00003ca2        0xa Livraria/Src/pcf8575lcd.o
+                0x00003ca2                PCF8575_LCD0_putch
+ .text.PCF8575_LCD0_string
+                0x00003cac       0x1c Livraria/Src/pcf8575lcd.o
+                0x00003cac                PCF8575_LCD0_string
+ .text.PCF8575_LCD0_string_size
+                0x00003cc8       0x52 Livraria/Src/pcf8575lcd.o
+                0x00003cc8                PCF8575_LCD0_string_size
+ .text.PCF8575_LCD0_hspace
+                0x00003d1a       0x14 Livraria/Src/pcf8575lcd.o
+                0x00003d1a                PCF8575_LCD0_hspace
+ .text.PCF8575_LCD0_gotoxy
+                0x00003d2e       0x4e Livraria/Src/pcf8575lcd.o
+                0x00003d2e                PCF8575_LCD0_gotoxy
+ .text.PCF8575_LCD0_clear
+                0x00003d7c       0x16 Livraria/Src/pcf8575lcd.o
+                0x00003d7c                PCF8575_LCD0_clear
+ .text.PCF8575_LCD0_inic
+                0x00003d92       0x92 Livraria/Src/pcf8575lcd.o
+                0x00003d92                PCF8575_LCD0_inic
+ .text.pcf8575_lcd0_enable
+                0x00003e24       0xd2 Livraria/Src/pcf8575lcd.o
+                0x00003e24                pcf8575_lcd0_enable
+ .text.PCF8575_LCD0_reboot
+                0x00003ef6       0x3c Livraria/Src/pcf8575lcd.o
+                0x00003ef6                PCF8575_LCD0_reboot
+ .text.PORTINIT
+                0x00003f32       0x3a main.o
+                0x00003f32                PORTINIT
+ .text.main     0x00003f6c     0x1f36 main.o
+                0x00003f6c                main
+ .text.__vector_15
+                0x00005ea2       0xe2 main.o
+                0x00005ea2                __vector_15
+ .text.__vector_9
+                0x00005f84       0x94 main.o
+                0x00005f84                __vector_9
+ .text.avr-libc.fplib
+                0x00006018        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3.o)
+                0x00006018                __subsf3
+                0x0000601a                __addsf3
+ .text.avr-libc.fplib
+                0x00006022       0xc0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+                0x0000603c                __addsf3x
+ .text.avr-libc.fplib
+                0x000060e2        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(cmpsf2.o)
+                0x000060e2                __nesf2
+                0x000060e2                __eqsf2
+                0x000060e2                __cmpsf2
+                0x000060e2                __ltsf2
+                0x000060e2                __lesf2
+ .text.avr-libc.fplib
+                0x000060ea       0x58 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fixunssfsi.o)
+                0x000060ea                __fixunssfsi
+ .text.avr-libc.fplib
+                0x00006142       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+                0x00006142                __floatunsisf
+                0x00006146                __floatsisf
+ .text.avr-libc.fplib
+                0x000061bc       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_cmp.o)
+                0x000061bc                __fp_cmp
+ .text.avr-libc.fplib
+                0x00006204        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_inf.o)
+                0x00006204                __fp_inf
+ .text.avr-libc.fplib
+                0x00006210        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_nan.o)
+                0x00006210                __fp_nan
+ .text.avr-libc.fplib
+                0x00006216        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
+                0x00006216                __fp_pscA
+ .text.avr-libc.fplib
+                0x00006224        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
+                0x00006224                __fp_pscB
+ .text.avr-libc.fplib
+                0x00006232       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_round.o)
+                0x00006232                __fp_round
+ .text.avr-libc.fplib
+                0x00006254       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+                0x00006254                __fp_split3
+                0x00006264                __fp_splitA
+ .text.avr-libc.fplib
+                0x00006298        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+                0x00006298                __fp_zero
+                0x0000629a                __fp_szero
+ .text.avr-libc.fplib
+                0x000062a6        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3.o)
+                0x000062a6                __mulsf3
+ .text.avr-libc.fplib
+                0x000062aa       0xc2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libm.a(mulsf3x.o)
+                0x000062be                __mulsf3x
+                0x000062c2                __mulsf3_pse
+ .text.libgcc.mul
+                0x0000636c       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_mulsi3.o)
+                0x0000636c                __mulsi3
+ .text.libgcc.div
+                0x0000638a       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodhi4.o)
+                0x0000638a                __udivmodhi4
+ .text.libgcc.div
+                0x000063b2       0x26 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodhi4.o)
+                0x000063b2                _div
+                0x000063b2                __divmodhi4
+ .text.libgcc.div
+                0x000063d8       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_udivmodsi4.o)
+                0x000063d8                __udivmodsi4
+ .text.libgcc.div
+                0x0000641c       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_divmodsi4.o)
+                0x0000641c                __divmodsi4
+ .text.libgcc.div
+                0x00006444       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_negsi2.o)
+                0x00006444                __negsi2
+ .text.libgcc   0x00006454       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_tablejump2.o)
+                0x00006454                __tablejump2__
+ .text.libgcc.mul
+                0x00006466       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_umulhisi3.o)
+                0x00006466                __umulhisi3
+ .text.libgcc.mul
+                0x00006484       0x14 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_muluhisi3.o)
+                0x00006484                __muluhisi3
+ .text.avr-libc
+                0x00006498       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strcmp.o)
+                0x00006498                strcmp
+ .text.avr-libc
+                0x000064aa        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strcpy.o)
+                0x000064aa                strcpy
+ .text.avr-libc
+                0x000064b8       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strncpy.o)
+                0x000064b8                strncpy
+ .text.avr-libc
+                0x000064d6       0x70 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vsnprintf.o)
+                0x000064d6                vsnprintf
+ .text.avr-libc
+                0x00006546      0x3fa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vfprintf_std.o)
+                0x00006546                vfprintf
+ .text.avr-libc
+                0x00006940       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen_P.o)
+                0x00006940                strnlen_P
+ .text.avr-libc
+                0x00006956       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(strnlen.o)
+                0x00006956                strnlen
+ .text.avr-libc
+                0x0000696c       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(fputc.o)
+                0x0000696c                fputc
+ .text.avr-libc
+                0x000069e4       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(ultoa_invert.o)
+                0x000069e4                __ultoa_invert
+                0x00006aa0                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00006aa0        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+                0x00006aa0                _exit
+                0x00006aa0                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00006aa0        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr51\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00006aa4                _etext = .
+
+.data           0x00800100      0x39e load address 0x00006aa4
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ *(.data*)
+ .data.atmega128_adc
+                0x00800100        0x4 Livraria/Src/atmega128analog.o
+ .data.atmega128_tc0
+                0x00800104        0x8 Livraria/Src/atmega128timer0.o
+ .data.atmega128_tc1
+                0x0080010c       0x10 Livraria/Src/atmega128timer1.o
+ .data.atmega128_tc2
+                0x0080011c        0x8 Livraria/Src/atmega128timer2.o
+ .data.atmega128_twi
+                0x00800124        0xc Livraria/Src/atmega128twi.o
+ .data.atmega128_usart1
+                0x00800130        0xe Livraria/Src/atmega128usart1.o
+ .data.keypadvalue
+                0x0080013e       0x10 Livraria/Src/keypad.o
+                0x0080013e                keypadvalue
+ .data.lcd1_setup
+                0x0080014e       0x16 Livraria/Src/lcd.o
+ *(.gnu.linkonce.d*)
+ *(.rodata)
+ *(.rodata*)
+ .rodata.str1.1
+                0x00800164      0x212 Livraria/Src/hc05atcommands.o
+                                0x217 (size before relaxing)
+ .rodata.str1.1
+                0x00800376      0x127 main.o
+                                0x12d (size before relaxing)
+ *(.gnu.linkonce.r*)
+                0x0080049e                . = ALIGN (0x2)
+ *fill*         0x0080049d        0x1 
+                0x0080049e                _edata = .
+                0x0080049e                PROVIDE (__data_end, .)
+
+.bss            0x0080049e      0x201
+                0x0080049e                PROVIDE (__bss_start, .)
+ *(.bss)
+ *(.bss*)
+ .bss.adc_n_sample
+                0x0080049e        0x1 Livraria/Src/atmega128analog.o
+ .bss.adc_sample
+                0x0080049f        0x2 Livraria/Src/atmega128analog.o
+ .bss.ADC_SELECTOR
+                0x008004a1        0x2 Livraria/Src/atmega128analog.o
+ .bss.ADC_CHANNEL_GAIN
+                0x008004a3       0x40 Livraria/Src/atmega128analog.o
+ .bss.ADC_VALUE
+                0x008004e3       0x40 Livraria/Src/atmega128analog.o
+ .bss.UART0_Rx  0x00800523        0x1 Livraria/Src/atmega128usart0.o
+ .bss.rx0buff   0x00800524        0xc Livraria/Src/atmega128usart0.o
+ .bss.uart1flag
+                0x00800530        0x1 Livraria/Src/atmega128usart1.o
+ .bss.UART1_RxBuf
+                0x00800531       0x20 Livraria/Src/atmega128usart1.o
+ .bss.UART1_Rx  0x00800551        0x1 Livraria/Src/atmega128usart1.o
+ .bss.rx1buff   0x00800552        0xc Livraria/Src/atmega128usart1.o
+ .bss.FUNCstr   0x0080055e       0x20 Livraria/Src/function.o
+ .bss.setup_func
+                0x0080057e       0x3e Livraria/Src/function.o
+ .bss.data      0x008005bc        0x5 Livraria/Src/keypad.o
+ .bss.setup_keypad
+                0x008005c1        0x8 Livraria/Src/keypad.o
+ .bss.pcf8575_lcd0_detect
+                0x008005c9        0x2 Livraria/Src/pcf8575lcd.o
+ .bss.pcf8575_lcd0_com
+                0x008005cb       0x13 Livraria/Src/pcf8575lcd.o
+ .bss.pcf8575_setup_lcd0
+                0x008005de       0x16 Livraria/Src/pcf8575lcd.o
+ .bss.uartreceive
+                0x008005f4        0x2 main.o
+                0x008005f4                uartreceive
+ .bss.ptr       0x008005f6        0x2 main.o
+                0x008005f6                ptr
+ .bss.increment
+                0x008005f8        0x1 main.o
+                0x008005f8                increment
+ .bss.count     0x008005f9        0x1 main.o
+                0x008005f9                count
+ *(COMMON)
+ COMMON         0x008005fa        0x4 Livraria/Src/atmega128analog.o
+                0x008005fa                ADC_N_CHANNEL
+                0x008005fc                adc_tmp
+ COMMON         0x008005fe        0x1 Livraria/Src/atmega128timer0.o
+                0x008005fe                timer0_state
+ COMMON         0x008005ff        0x1 Livraria/Src/atmega128timer1.o
+                0x008005ff                timer1_state
+ COMMON         0x00800600        0x1 Livraria/Src/atmega128timer2.o
+                0x00800600                timer2_state
+ COMMON         0x00800601       0x20 Livraria/Src/hc05atcommands.o
+                0x00800601                HC05ATstr
+ COMMON         0x00800621       0x18 Livraria/Src/keypad.o
+                0x00800621                keypad_PORT
+                0x00800623                keypad_dataf
+                0x00800627                keypad_datai
+                0x0080062b                KEYPADSTRINGINDEX
+                0x0080062c                keypad_PIN
+                0x0080062e                endstr
+                0x00800630                keypad_DDR
+                0x00800632                KEYPAD_string
+ COMMON         0x00800639        0xe Livraria/Src/lcd.o
+                0x00800639                lcd0_PIN
+                0x0080063b                lcd1_DDR
+                0x0080063d                lcd1_detect
+                0x0080063e                lcd1_PIN
+                0x00800640                lcd0_DDR
+                0x00800642                lcd0_detect
+                0x00800643                lcd0_PORT
+                0x00800645                lcd1_PORT
+ COMMON         0x00800647        0xc Livraria/Src/pcf8563rtc.o
+                0x00800647                i2c
+ COMMON         0x00800653       0x4c main.o
+                0x00800653                shift
+                0x00800662                pcflcd
+                0x00800678                counter1
+                0x0080067a                signal
+                0x0080067c                tm
+                0x0080067f                rtc
+                0x0080069b                dt
+                0x0080069f                PROVIDE (__bss_end, .)
+                0x00006aa4                __data_load_start = LOADADDR (.data)
+                0x00006e42                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0080069f        0x0
+                [!provide]                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                [!provide]                PROVIDE (__noinit_end, .)
+                0x0080069f                _end = .
+                [!provide]                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x5c
+ *(.comment)
+ .comment       0x00000000       0x30 Livraria/Src/74hc595.o
+                                 0x31 (size before relaxing)
+ .comment       0x00000030       0x31 Livraria/Src/atmega128.o
+ .comment       0x00000030       0x31 Livraria/Src/atmega128analog.o
+ .comment       0x00000030       0x31 Livraria/Src/atmega128timer0.o
+ .comment       0x00000030       0x31 Livraria/Src/atmega128timer1.o
+ .comment       0x00000030       0x31 Livraria/Src/atmega128timer2.o
+ .comment       0x00000030       0x31 Livraria/Src/atmega128twi.o
+ .comment       0x00000030       0x31 Livraria/Src/atmega128usart0.o
+ .comment       0x00000030       0x31 Livraria/Src/atmega128usart1.o
+ .comment       0x00000030       0x31 Livraria/Src/buffer.o
+ .comment       0x00000030       0x31 Livraria/Src/function.o
+ .comment       0x00000030       0x31 Livraria/Src/hc05atcommands.o
+ .comment       0x00000030       0x31 Livraria/Src/keypad.o
+ .comment       0x00000030       0x31 Livraria/Src/lcd.o
+ .comment       0x00000030       0x31 Livraria/Src/pcf8563rtc.o
+ .comment       0x00000030       0x31 Livraria/Src/pcf8575.o
+ .comment       0x00000030       0x31 Livraria/Src/pcf8575lcd.o
+ .comment       0x00000030       0x31 main.o
+ .comment       0x00000030       0x31 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vsnprintf.o)
+ .comment       0x00000030       0x2c c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(vfprintf_std.o)
+                                 0x2d (size before relaxing)
+ .comment       0x0000005c       0x31 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr51\libc.a(fputc.o)
+
+.note.gnu.avr.deviceinfo
+                0x00000000       0x3c
+ .note.gnu.avr.deviceinfo
+                0x00000000       0x3c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x9c8
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x40 Livraria/Src/74hc595.o
+ .debug_aranges
+                0x00000040      0x1e0 Livraria/Src/atmega128.o
+ .debug_aranges
+                0x00000220       0x38 Livraria/Src/atmega128analog.o
+ .debug_aranges
+                0x00000258       0x48 Livraria/Src/atmega128timer0.o
+ .debug_aranges
+                0x000002a0       0x68 Livraria/Src/atmega128timer1.o
+ .debug_aranges
+                0x00000308       0x48 Livraria/Src/atmega128timer2.o
+ .debug_aranges
+                0x00000350       0x60 Livraria/Src/atmega128twi.o
+ .debug_aranges
+                0x000003b0       0xc0 Livraria/Src/atmega128usart0.o
+ .debug_aranges
+                0x00000470       0xc0 Livraria/Src/atmega128usart1.o
+ .debug_aranges
+                0x00000530       0x38 Livraria/Src/buffer.o
+ .debug_aranges
+                0x00000568      0x150 Livraria/Src/function.o
+ .debug_aranges
+                0x000006b8       0x20 Livraria/Src/hc05atcommands.o
+ .debug_aranges
+                0x000006d8       0x58 Livraria/Src/keypad.o
+ .debug_aranges
+                0x00000730      0x108 Livraria/Src/lcd.o
+ .debug_aranges
+                0x00000838       0x98 Livraria/Src/pcf8563rtc.o
+ .debug_aranges
+                0x000008d0       0x30 Livraria/Src/pcf8575.o
+ .debug_aranges
+                0x00000900       0x90 Livraria/Src/pcf8575lcd.o
+ .debug_aranges
+                0x00000990       0x38 main.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0xe28c
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x780 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+ .debug_info    0x00000780      0x31d Livraria/Src/74hc595.o
+ .debug_info    0x00000a9d     0x349a Livraria/Src/atmega128.o
+ .debug_info    0x00003f37      0x3a7 Livraria/Src/atmega128analog.o
+ .debug_info    0x000042de      0x354 Livraria/Src/atmega128timer0.o
+ .debug_info    0x00004632      0x71c Livraria/Src/atmega128timer1.o
+ .debug_info    0x00004d4e      0x354 Livraria/Src/atmega128timer2.o
+ .debug_info    0x000050a2      0x529 Livraria/Src/atmega128twi.o
+ .debug_info    0x000055cb      0x9db Livraria/Src/atmega128usart0.o
+ .debug_info    0x00005fa6      0x9ea Livraria/Src/atmega128usart1.o
+ .debug_info    0x00006990      0x259 Livraria/Src/buffer.o
+ .debug_info    0x00006be9     0x1287 Livraria/Src/function.o
+ .debug_info    0x00007e70       0xd1 Livraria/Src/hc05atcommands.o
+ .debug_info    0x00007f41      0x50f Livraria/Src/keypad.o
+ .debug_info    0x00008450     0x1746 Livraria/Src/lcd.o
+ .debug_info    0x00009b96      0x971 Livraria/Src/pcf8563rtc.o
+ .debug_info    0x0000a507      0x4af Livraria/Src/pcf8575.o
+ .debug_info    0x0000a9b6      0xd5c Livraria/Src/pcf8575lcd.o
+ .debug_info    0x0000b712     0x2b7a main.o
+
+.debug_abbrev   0x00000000     0x2ae9
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x718 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+ .debug_abbrev  0x00000718      0x150 Livraria/Src/74hc595.o
+ .debug_abbrev  0x00000868      0x2d1 Livraria/Src/atmega128.o
+ .debug_abbrev  0x00000b39      0x181 Livraria/Src/atmega128analog.o
+ .debug_abbrev  0x00000cba      0x159 Livraria/Src/atmega128timer0.o
+ .debug_abbrev  0x00000e13      0x1a6 Livraria/Src/atmega128timer1.o
+ .debug_abbrev  0x00000fb9      0x159 Livraria/Src/atmega128timer2.o
+ .debug_abbrev  0x00001112      0x20a Livraria/Src/atmega128twi.o
+ .debug_abbrev  0x0000131c      0x2c0 Livraria/Src/atmega128usart0.o
+ .debug_abbrev  0x000015dc      0x2cf Livraria/Src/atmega128usart1.o
+ .debug_abbrev  0x000018ab      0x132 Livraria/Src/buffer.o
+ .debug_abbrev  0x000019dd      0x2e3 Livraria/Src/function.o
+ .debug_abbrev  0x00001cc0       0x90 Livraria/Src/hc05atcommands.o
+ .debug_abbrev  0x00001d50      0x22f Livraria/Src/keypad.o
+ .debug_abbrev  0x00001f7f      0x3b6 Livraria/Src/lcd.o
+ .debug_abbrev  0x00002335      0x19b Livraria/Src/pcf8563rtc.o
+ .debug_abbrev  0x000024d0      0x1bd Livraria/Src/pcf8575.o
+ .debug_abbrev  0x0000268d      0x24d Livraria/Src/pcf8575lcd.o
+ .debug_abbrev  0x000028da      0x20f main.o
+
+.debug_line     0x00000000     0x5d01
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x00000000      0x169 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+ .debug_line    0x00000169      0x19c Livraria/Src/74hc595.o
+ .debug_line    0x00000305      0x839 Livraria/Src/atmega128.o
+ .debug_line    0x00000b3e      0x32e Livraria/Src/atmega128analog.o
+ .debug_line    0x00000e6c      0x29c Livraria/Src/atmega128timer0.o
+ .debug_line    0x00001108      0x50e Livraria/Src/atmega128timer1.o
+ .debug_line    0x00001616      0x29c Livraria/Src/atmega128timer2.o
+ .debug_line    0x000018b2      0x33c Livraria/Src/atmega128twi.o
+ .debug_line    0x00001bee      0x4bf Livraria/Src/atmega128usart0.o
+ .debug_line    0x000020ad      0x4db Livraria/Src/atmega128usart1.o
+ .debug_line    0x00002588      0x14e Livraria/Src/buffer.o
+ .debug_line    0x000026d6      0x9be Livraria/Src/function.o
+ .debug_line    0x00003094      0x2f6 Livraria/Src/hc05atcommands.o
+ .debug_line    0x0000338a      0x443 Livraria/Src/keypad.o
+ .debug_line    0x000037cd      0xdd9 Livraria/Src/lcd.o
+ .debug_line    0x000045a6      0x45f Livraria/Src/pcf8563rtc.o
+ .debug_line    0x00004a05      0x1ba Livraria/Src/pcf8575.o
+ .debug_line    0x00004bbf      0x682 Livraria/Src/pcf8575lcd.o
+ .debug_line    0x00005241      0xac0 main.o
+
+.debug_frame    0x00000000     0x1c38
+ *(.debug_frame)
+ .debug_frame   0x00000000       0xc8 Livraria/Src/74hc595.o
+ .debug_frame   0x000000c8      0x3fc Livraria/Src/atmega128.o
+ .debug_frame   0x000004c4       0xcc Livraria/Src/atmega128analog.o
+ .debug_frame   0x00000590       0xac Livraria/Src/atmega128timer0.o
+ .debug_frame   0x0000063c      0x128 Livraria/Src/atmega128timer1.o
+ .debug_frame   0x00000764       0xac Livraria/Src/atmega128timer2.o
+ .debug_frame   0x00000810       0xec Livraria/Src/atmega128twi.o
+ .debug_frame   0x000008fc      0x2a0 Livraria/Src/atmega128usart0.o
+ .debug_frame   0x00000b9c      0x298 Livraria/Src/atmega128usart1.o
+ .debug_frame   0x00000e34       0x54 Livraria/Src/buffer.o
+ .debug_frame   0x00000e88      0x4ec Livraria/Src/function.o
+ .debug_frame   0x00001374       0x24 Livraria/Src/hc05atcommands.o
+ .debug_frame   0x00001398       0xb0 Livraria/Src/keypad.o
+ .debug_frame   0x00001448      0x274 Livraria/Src/lcd.o
+ .debug_frame   0x000016bc      0x234 Livraria/Src/pcf8563rtc.o
+ .debug_frame   0x000018f0       0x98 Livraria/Src/pcf8575.o
+ .debug_frame   0x00001988      0x1a4 Livraria/Src/pcf8575lcd.o
+ .debug_frame   0x00001b2c      0x10c main.o
+
+.debug_str      0x00000000     0x2738
+ *(.debug_str)
+ .debug_str     0x00000000      0x27d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.3.300/gcc/dev/atmega128/avr51/crtatmega128.o
+ .debug_str     0x0000027d      0x1f5 Livraria/Src/74hc595.o
+                                0x250 (size before relaxing)
+ .debug_str     0x00000472      0xf65 Livraria/Src/atmega128.o
+                               0x1138 (size before relaxing)
+ .debug_str     0x000013d7       0xf8 Livraria/Src/atmega128analog.o
+                                0x2b8 (size before relaxing)
+ .debug_str     0x000014cf       0xb9 Livraria/Src/atmega128timer0.o
+                                0x260 (size before relaxing)
+ .debug_str     0x00001588      0x10d Livraria/Src/atmega128timer1.o
+                                0x321 (size before relaxing)
+ .debug_str     0x00001695       0xa3 Livraria/Src/atmega128timer2.o
+                                0x260 (size before relaxing)
+ .debug_str     0x00001738      0x103 Livraria/Src/atmega128twi.o
+                                0x2cf (size before relaxing)
+ .debug_str     0x0000183b      0x254 Livraria/Src/atmega128usart0.o
+                                0x46f (size before relaxing)
+ .debug_str     0x00001a8f      0x1d0 Livraria/Src/atmega128usart1.o
+                                0x46f (size before relaxing)
+ .debug_str     0x00001c5f       0x53 Livraria/Src/buffer.o
+                                0x1f5 (size before relaxing)
+ .debug_str     0x00001cb2      0x2e5 Livraria/Src/function.o
+                                0x5ca (size before relaxing)
+ .debug_str     0x00001f97       0x36 Livraria/Src/hc05atcommands.o
+                                0x1a0 (size before relaxing)
+ .debug_str     0x00001fcd      0x135 Livraria/Src/keypad.o
+                                0x2ce (size before relaxing)
+ .debug_str     0x00002102      0x150 Livraria/Src/lcd.o
+                                0x3fb (size before relaxing)
+ .debug_str     0x00002252      0x209 Livraria/Src/pcf8563rtc.o
+                                0x445 (size before relaxing)
+ .debug_str     0x0000245b       0x8f Livraria/Src/pcf8575.o
+                                0x2b2 (size before relaxing)
+ .debug_str     0x000024ea      0x17e Livraria/Src/pcf8575lcd.o
+                                0x451 (size before relaxing)
+ .debug_str     0x00002668       0xd0 main.o
+                                0x507 (size before relaxing)
+
+.debug_loc      0x00000000     0x811a
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x349 Livraria/Src/74hc595.o
+ .debug_loc     0x00000349      0xc52 Livraria/Src/atmega128.o
+ .debug_loc     0x00000f9b      0x1d8 Livraria/Src/atmega128analog.o
+ .debug_loc     0x00001173      0x1b8 Livraria/Src/atmega128timer0.o
+ .debug_loc     0x0000132b      0x5a9 Livraria/Src/atmega128timer1.o
+ .debug_loc     0x000018d4      0x1b8 Livraria/Src/atmega128timer2.o
+ .debug_loc     0x00001a8c      0x37f Livraria/Src/atmega128twi.o
+ .debug_loc     0x00001e0b      0x689 Livraria/Src/atmega128usart0.o
+ .debug_loc     0x00002494      0x671 Livraria/Src/atmega128usart1.o
+ .debug_loc     0x00002b05       0xe0 Livraria/Src/buffer.o
+ .debug_loc     0x00002be5     0x1c70 Livraria/Src/function.o
+ .debug_loc     0x00004855       0x33 Livraria/Src/hc05atcommands.o
+ .debug_loc     0x00004888      0x3cb Livraria/Src/keypad.o
+ .debug_loc     0x00004c53     0x16e8 Livraria/Src/lcd.o
+ .debug_loc     0x0000633b      0x83c Livraria/Src/pcf8563rtc.o
+ .debug_loc     0x00006b77      0x29c Livraria/Src/pcf8575.o
+ .debug_loc     0x00006e13      0x974 Livraria/Src/pcf8575lcd.o
+ .debug_loc     0x00007787      0x993 main.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x00000000      0x8f0
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x30 Livraria/Src/74hc595.o
+ .debug_ranges  0x00000030      0x1d0 Livraria/Src/atmega128.o
+ .debug_ranges  0x00000200       0x28 Livraria/Src/atmega128analog.o
+ .debug_ranges  0x00000228       0x38 Livraria/Src/atmega128timer0.o
+ .debug_ranges  0x00000260       0x58 Livraria/Src/atmega128timer1.o
+ .debug_ranges  0x000002b8       0x38 Livraria/Src/atmega128timer2.o
+ .debug_ranges  0x000002f0       0x50 Livraria/Src/atmega128twi.o
+ .debug_ranges  0x00000340       0xb0 Livraria/Src/atmega128usart0.o
+ .debug_ranges  0x000003f0       0xc8 Livraria/Src/atmega128usart1.o
+ .debug_ranges  0x000004b8       0x28 Livraria/Src/buffer.o
+ .debug_ranges  0x000004e0      0x140 Livraria/Src/function.o
+ .debug_ranges  0x00000620       0x10 Livraria/Src/hc05atcommands.o
+ .debug_ranges  0x00000630       0x48 Livraria/Src/keypad.o
+ .debug_ranges  0x00000678      0x128 Livraria/Src/lcd.o
+ .debug_ranges  0x000007a0       0x88 Livraria/Src/pcf8563rtc.o
+ .debug_ranges  0x00000828       0x20 Livraria/Src/pcf8575.o
+ .debug_ranges  0x00000848       0x80 Livraria/Src/pcf8575lcd.o
+ .debug_ranges  0x000008c8       0x28 main.o
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(Atmega128.elf elf32-avr)
+LOAD linker stubs

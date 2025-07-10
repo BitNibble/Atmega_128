@@ -7,9 +7,9 @@ Update:	  05072025
 **********************************************************/
 #include "atmega128.h"
 #include <stdarg.h>
-/***************************/
-/***       MACROS        ***/
-/***************************/
+/*****************************/
+/****       MACROS        ****/
+/*****************************/
 #define FTDELAY_SIZE 256
 unsigned int ft_Delay_Lock[FTDELAY_SIZE] = {0};
 unsigned int ftCounter[FTDELAY_SIZE] = {0};
@@ -53,9 +53,9 @@ Atmega128OtherRegisters_TypeDef* misc_reg(void){return (Atmega128OtherRegisters_
 // Serial Peripheral Interface (SPI)
 Atmega128SerialPeripheralInterface_TypeDef* spi_reg(void){return (Atmega128SerialPeripheralInterface_TypeDef*) 0x002D;}
 // Timer/Counter, 16-bit (TC1)
-Atmega128TimerCounter1_TypeDef* tc1_reg(void){return (Atmega128TimerCounter1_TypeDef*) 0x0046;}
+Atmega128TimerCounter1_TypeDef* tc1_reg(void){return (Atmega128TimerCounter1_TypeDef*) 0x0040;}
 // Timer/Counter, 16-bit (TC3)
-Atmega128TimerCounter3_TypeDef* tc3_reg(void){return (Atmega128TimerCounter3_TypeDef*) 0x007C;}
+Atmega128TimerCounter3_TypeDef* tc3_reg(void){return (Atmega128TimerCounter3_TypeDef*) 0x0040;}
 // Timer/Counter 1 and 3
 Atmega128TimerExternalInterruptFlag_TypeDef* tc_exif_reg(void){return (Atmega128TimerExternalInterruptFlag_TypeDef*) 0x007C;}
 // Timer/Counter 1 and 3
@@ -63,7 +63,7 @@ Atmega128TimerExternalInterruptMask_TypeDef* tc_exim_reg(void){return (Atmega128
 // Timer/Counter, 8-bit (TC2)
 Atmega128TimerCounter2_TypeDef* tc2_reg(void){return (Atmega128TimerCounter2_TypeDef*) 0x0043;}
 // Timer/Counter, 8-bit A sync (TC0)
-Atmega128TimerCounter0_TypeDef* tc0_reg(void){return (Atmega128TimerCounter0_TypeDef*) 0x0050;}
+Atmega128TimerCounter0_TypeDef* tc0_reg(void){return (Atmega128TimerCounter0_TypeDef*) 0x0040;}
 // Timer/Counter 0, 1 and 2
 Atmega128TimerInterruptFlag_TypeDef* tc_if_reg(void){return (Atmega128TimerInterruptFlag_TypeDef*) 0x0056;}
 // Timer/Counter 0, 1 and 2
@@ -77,7 +77,9 @@ Atmega128Usart1_TypeDef* usart1_reg(void){return (Atmega128Usart1_TypeDef*) 0x00
 // Watchdog Timer (WDT)
 Atmega128WatchdogTimer_TypeDef* wdt_reg(void){return (Atmega128WatchdogTimer_TypeDef*) 0x0041;}
 
-/*** Atmega 128 Procedure and Function ***/
+/*********************************************************************/
+/*********** Atmega 128 Procedure and Function definition ************/
+/*********************************************************************/
 uint16_t readHLbyte(U_word reg){
 	return (reg.par.h.var << 8) | reg.par.l.var;
 }

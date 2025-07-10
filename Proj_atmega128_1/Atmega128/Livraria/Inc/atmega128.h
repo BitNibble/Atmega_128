@@ -22,11 +22,11 @@ Date:	  05072025
 #include <avr/io.h>
 #include <avr/boot.h>
 #include <avr/fuse.h>
+#include <avr/wdt.h>
 #include <avr/eeprom.h>
 #include <avr/pgmspace.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
-
 #include "atmega128_registers.h"
 
 /*** Global Constant & Macro ***/
@@ -382,7 +382,9 @@ typedef volatile struct {
 
 Atmega128WatchdogTimer_TypeDef* wdt_reg(void);
 
-/*** Atmega 128 Procedure and Function ***/
+/*********************************************************************/
+/********** Atmega 128 Procedure and Function declaration ************/
+/*********************************************************************/
 uint16_t readHLbyte(U_word reg);
 uint16_t readLHbyte(U_word reg);
 U_word writeHLbyte(uint16_t val);

@@ -15,17 +15,17 @@ int main(void)
 		for (uint8_t i = 0; i < 6; i++)
 		{
 			PORTC &= ~(1 << PC0);
-			_delay_ms(100);
+			_delay_ms(500);
 			PORTC |= 1 << PC0;
-			_delay_ms(100);
+			_delay_ms(500);
 		}
-		}else{
+	}else{
 		for (uint8_t i = 0; i < 6; i++)
 		{
 			PORTC &= ~(1 << PC7);
-			_delay_ms(500);
+			_delay_ms(50);
 			PORTC |= (1 << PC7);
-			_delay_ms(500);
+			_delay_ms(50);
 		}
 	}
 	

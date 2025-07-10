@@ -34,3 +34,5 @@ int main(void)
 	asm("jmp 0");
 }
 
+// LINK: -Wl,-section-start=.text=0x1FC00
+
