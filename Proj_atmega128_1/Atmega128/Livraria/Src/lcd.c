@@ -8,11 +8,16 @@ Date:     04072025
 /*** File Library***/
 #include "lcd.h"
 #include <util/delay.h>
+#include <stdio.h>
 
 /***************/
 // CMD RS
 #define INST 0
 #define DATA 1
+#define LCD_LINE0_START 0x00
+#define LCD_LINE1_START 0x14
+#define LCD_LINE2_START 0x54
+#define LCD_LINE3_START 0x40
 
 /***File Variable ***/
 volatile uint8_t *lcd0_DDR;
@@ -484,17 +489,17 @@ int lcd0_putchar(char c, FILE *stream) {
 	LCD0_putch(c);
 	uint8_t pos = LCD0_BF();
 	
-	if (pos == 0x14) { // 14
+	if (pos == LCD_LINE0_START) {
+		LCD0_gotoxy(0, 0);
+	}
+	else if (pos == LCD_LINE1_START) {
 		LCD0_gotoxy(1, 0);
 	}
-	else if (pos == 0x27) { // 27??
-		LCD0_gotoxy(3, 0);
-	}
-	else if (pos == 0x54) { // 54
+	else if (pos == LCD_LINE2_START) {
 		LCD0_gotoxy(2, 0);
 	}
-	else if (pos == 0x68) { // 68
-		LCD0_gotoxy(0, 0);
+	else if (pos == LCD_LINE3_START) {
+		LCD0_gotoxy(3, 0);
 	}
 	return 0;
 }
@@ -506,18 +511,18 @@ int lcd1_putchar(char c, FILE *stream) {
 	LCD1_putch(c);
 	uint8_t pos = LCD1_BF();
 	
-	if (pos == 0x14) { // 14
-		LCD1_gotoxy(1, 0);
-	} 
-	else if (pos == 0x27) { // 27?
-		LCD1_gotoxy(3, 0);
-	} 
-	else if (pos == 0x54) { // 54
-		LCD1_gotoxy(2, 0);
-	} 
-	else if (pos == 0x68) { // 68
+	if (pos == LCD_LINE0_START) {
 		LCD1_gotoxy(0, 0);
 	}
+	else if (pos == LCD_LINE1_START) {
+		LCD1_gotoxy(1, 0);
+	}
+	else if (pos == LCD_LINE2_START) {
+		LCD1_gotoxy(2, 0);
+	}
+	else if (pos == LCD_LINE3_START) {
+		LCD1_gotoxy(3, 0);
+	} 
 	return 0;
 }
 

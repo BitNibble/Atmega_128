@@ -16,7 +16,6 @@ Date:     04072025
 /*** Global Library ***/
 #include <stdint.h>
 #include <inttypes.h>
-#include <stdio.h>
 
 /*** Global Constant & Macro ***/
 // ASIGN PORT PINS TO LCD (can be setup in any way)
