@@ -51,6 +51,7 @@ typedef struct{
 	void (*clear)(void);
 	void (*gotoxy)(unsigned int y, unsigned int x);
 	void (*reboot)(void);
+	int (*printf)(const char *fmt, ...);
 }LCD0, LCD1;
 
 void lcd0_enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t *port);

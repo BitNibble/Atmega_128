@@ -148,14 +148,14 @@ strcpy(str,func()->i16toa(adcvalue));
 //if(!strcmp(uartreceive,"Connect\r\n")){Menu='6';usart1()->rxflush;lcd0()->clear();}
 if(!strcmp(uartreceive,"Connected\r\n")){Menu='6';lcd0()->clear();}
 	
-lcd0()->gotoxy(2,0);
+//lcd0()->gotoxy(2,0);
 //lcd0()->string_size(func()->ui16toa(cpu_reg()->mcucr.par.ivsel),2);
 //lcd0()->string_size(func()->ui16toa(read_low_fuse()),4);
 //printf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwABCDE");
-printf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN");
+//lcd0()->printf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN");
 
 
-// MENU SELECTOR	
+// MENU SELECTOR
 switch(Menu){
 	// MENU 1
 	case '1': // Main Program Menu
@@ -185,7 +185,7 @@ switch(Menu){
 		//lcd0()->string_size(func()->ui16toa(rtc.bcd2dec(dt.century_months)),2);
 		//lcd0()->putch(':');
 		//lcd0()->string_size(func()->ui16toa(rtc.bcd2dec(dt.years)),2);
-		printf("%d:%d:%d",rtc.bcd2dec(dt.days),rtc.bcd2dec(dt.century_months),rtc.bcd2dec(dt.years));
+		lcd0()->printf("%02d:%02d:%02d",rtc.bcd2dec(dt.days),rtc.bcd2dec(dt.century_months),rtc.bcd2dec(dt.years));
 		lcd0()->gotoxy(1,8);
 		// set hour for positioning
 		positionhour=rtc.bcd2dec(tm.hours);
@@ -194,7 +194,7 @@ switch(Menu){
 		//lcd0()->string_size(func()->ui16toa(rtc.bcd2dec(tm.minutes)),2);
 		//lcd0()->putch(':');
 		//lcd0()->string_size(func()->ui16toa(rtc.bcd2dec(tm.VL_seconds)),2);
-		printf("%d:%d:%d",positionhour,rtc.bcd2dec(tm.minutes),rtc.bcd2dec(tm.VL_seconds));
+		lcd0()->printf("%02d:%02d:%02d",positionhour,rtc.bcd2dec(tm.minutes),rtc.bcd2dec(tm.VL_seconds));
 	break;
 	// MENU 2
 	case '2': // Manual position override 

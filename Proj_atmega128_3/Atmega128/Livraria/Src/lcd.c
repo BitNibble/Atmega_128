@@ -80,7 +80,8 @@ static LCD0 lcd0_setup = {
 	.hspace = LCD0_hspace,
 	.clear = LCD0_clear,
 	.gotoxy = LCD0_gotoxy,
-	.reboot = LCD0_reboot
+	.reboot = LCD0_reboot,
+	.printf = printf
 };
 static LCD1 lcd1_setup = {
 	// V-table
@@ -94,7 +95,8 @@ static LCD1 lcd1_setup = {
 	.hspace = LCD1_hspace,
 	.clear = LCD1_clear,
 	.gotoxy = LCD1_gotoxy,
-	.reboot = LCD1_reboot
+	.reboot = LCD1_reboot,
+	.printf  = printf
 };
 
 /*** Handler ***/
@@ -285,6 +287,27 @@ void LCD0_reboot(void)
 		LCD0_inic();
 	lcd0_detect = tmp;
 }
+// Custom character output function
+int lcd0_putchar(char c, FILE *stream) {
+	(void) stream;
+	
+	LCD0_putch(c);
+	uint8_t pos = LCD0_BF();
+	
+	if (pos == LCD_LINE0_START) {
+		LCD0_gotoxy(0, 0);
+	}
+	else if (pos == LCD_LINE1_START) {
+		LCD0_gotoxy(1, 0);
+	}
+	else if (pos == LCD_LINE2_START) {
+		LCD0_gotoxy(2, 0);
+	}
+	else if (pos == LCD_LINE3_START) {
+		LCD0_gotoxy(3, 0);
+	}
+	return 0;
+}
 
 // LCD 1
 void lcd1_enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t *port)
@@ -473,37 +496,6 @@ void LCD1_reboot(void)
 		LCD1_inic();
 	lcd1_detect = tmp;
 }
-void lcd_set_reg(volatile uint8_t* reg, uint8_t hbits){
-	*reg |= hbits;
-}
-void lcd_clear_reg(volatile uint8_t* reg, uint8_t hbits){
-	*reg &= ~hbits;
-}
-
-/*** EOF ***/
-
-// Custom character output function
-int lcd0_putchar(char c, FILE *stream) {
-	(void) stream;
-	
-	LCD0_putch(c);
-	uint8_t pos = LCD0_BF();
-	
-	if (pos == LCD_LINE0_START) {
-		LCD0_gotoxy(0, 0);
-	}
-	else if (pos == LCD_LINE1_START) {
-		LCD0_gotoxy(1, 0);
-	}
-	else if (pos == LCD_LINE2_START) {
-		LCD0_gotoxy(2, 0);
-	}
-	else if (pos == LCD_LINE3_START) {
-		LCD0_gotoxy(3, 0);
-	}
-	return 0;
-}
-
 // Custom character output function
 int lcd1_putchar(char c, FILE *stream) {
 	(void) stream;
@@ -522,7 +514,15 @@ int lcd1_putchar(char c, FILE *stream) {
 	}
 	else if (pos == LCD_LINE3_START) {
 		LCD1_gotoxy(3, 0);
-	} 
+	}
 	return 0;
 }
+void lcd_set_reg(volatile uint8_t* reg, uint8_t hbits){
+	*reg |= hbits;
+}
+void lcd_clear_reg(volatile uint8_t* reg, uint8_t hbits){
+	*reg &= ~hbits;
+}
+
+/*** EOF ***/
 
