@@ -124,6 +124,7 @@ rtc.SetClkOut(1, 2); // oscillate pin at 1 sec
 
 //wdt_enable(WDTO_1S);
 // TODO:: Please write your application code
+
 while(TRUE){
 // Preamble [INPUT]
 //pcflcd.reboot();
@@ -147,9 +148,11 @@ strcpy(str,func()->i16toa(adcvalue));
 //if(!strcmp(uartreceive,"Connect\r\n")){Menu='6';usart1()->rxflush;lcd1()->clear();}
 if(!strcmp(uartreceive,"Connected\r\n")){Menu='6';lcd1()->clear();}
 	
-//lcd1()->gotoxy(2,0);
+lcd1()->gotoxy(2,0);
 //lcd1()->string_size(func()->ui16toa(cpu_reg()->mcucr.par.ivsel),2);
 //lcd1()->string_size(func()->ui16toa(read_low_fuse()),4);
+printf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLM");
+
 
 // MENU SELECTOR	
 switch(Menu){
@@ -176,19 +179,21 @@ switch(Menu){
 		lcd1()->string_size(str,5);
 			
 		lcd1()->gotoxy(0,8);
-		lcd1()->string_size(func()->ui16toa(rtc.bcd2dec(dt.days)),2);
-		lcd1()->putch(':');
-		lcd1()->string_size(func()->ui16toa(rtc.bcd2dec(dt.century_months)),2);
-		lcd1()->putch(':');
-		lcd1()->string_size(func()->ui16toa(rtc.bcd2dec(dt.years)),2);
+		//lcd1()->string_size(func()->ui16toa(rtc.bcd2dec(dt.days)),2);
+		//lcd1()->putch(':');
+		//lcd1()->string_size(func()->ui16toa(rtc.bcd2dec(dt.century_months)),2);
+		//lcd1()->putch(':');
+		//lcd1()->string_size(func()->ui16toa(rtc.bcd2dec(dt.years)),2);
+		printf("%d:%d:%d",rtc.bcd2dec(dt.days),rtc.bcd2dec(dt.century_months),rtc.bcd2dec(dt.years));
 		lcd1()->gotoxy(1,8);
 		// set hour for positioning
 		positionhour=rtc.bcd2dec(tm.hours);
-		lcd1()->string_size(func()->ui16toa(positionhour),2);
-		lcd1()->putch(':');
-		lcd1()->string_size(func()->ui16toa(rtc.bcd2dec(tm.minutes)),2);
-		lcd1()->putch(':');
-		lcd1()->string_size(func()->ui16toa(rtc.bcd2dec(tm.VL_seconds)),2);
+		//lcd1()->string_size(func()->ui16toa(positionhour),2);
+		//lcd1()->putch(':');
+		//lcd1()->string_size(func()->ui16toa(rtc.bcd2dec(tm.minutes)),2);
+		//lcd1()->putch(':');
+		//lcd1()->string_size(func()->ui16toa(rtc.bcd2dec(tm.VL_seconds)),2);
+		printf("%d:%d:%d",positionhour,rtc.bcd2dec(tm.minutes),rtc.bcd2dec(tm.VL_seconds));
 	break;
 	// MENU 2
 	case '2': // Manual position override 
@@ -547,7 +552,7 @@ switch(Menu){
 	lcd1()->gotoxy(0,0);
 	lcd1()->string_size("T:",2);
 		
-	/*** Test Area ***/
+	// Test Area
 	lcd1()->gotoxy(0,2);
 	number1 = F_CPU/16;
 	//atmega128()->writereg(&tnum,2,4,0);
@@ -567,8 +572,7 @@ switch(Menu){
 	lcd1()->gotoxy(1,4);
 	number1 -= 1;
 	lcd1()->string_size(func()->ui32toa(number1),4);
-		
-	/******/
+	
 	// Reading input
 	lcd1()->gotoxy(1,9);
 	lcd1()->putch(':');

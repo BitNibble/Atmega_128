@@ -14,7 +14,9 @@ Date:     04072025
 #endif
 
 /*** Global Library ***/
+#include <stdint.h>
 #include <inttypes.h>
+#include <stdio.h>
 
 /*** Global Constant & Macro ***/
 // ASIGN PORT PINS TO LCD (can be setup in any way)
@@ -41,7 +43,7 @@ Date:     04072025
 typedef struct{
 	void (*write)(char c, unsigned short D_I);
 	char (*read)(unsigned short D_I);
-	void (*BF)(void);
+	uint8_t (*BF)(void);
 	void (*putch)(char c);
 	char (*getch)(void);
 	void (*string)(const char *s); // RAW
