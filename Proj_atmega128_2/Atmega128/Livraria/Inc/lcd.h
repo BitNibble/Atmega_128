@@ -3,7 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: all
-Date:     04072025
+Date:     12072025
 ************************************************************************/
 #ifndef _LCD_H_
 	#define _LCD_H_
@@ -18,25 +18,26 @@ Date:     04072025
 #include <inttypes.h>
 
 /*** Global Constant & Macro ***/
-// ASIGN PORT PINS TO LCD (can be setup in any way)
-//#define RS 0
-//#define RW 1
-//#define EN 2
-//#define NC 3
-//#define DB4 4
-//#define DB5 5
-//#define DB6 6
-//#define DB7 7
-/***************/
-#define RS 7
-#define RW 6
-#define EN 5
-#define NC 4
-#define DB4 3
-#define DB5 2
-#define DB6 1
-#define DB7 0
-/***************/
+#define LCD_WIRING_1
+#if defined(LCD_WIRING_1)
+	#define RS 0
+	#define RW 1
+	#define EN 2
+	#define NC 3
+	#define DB4 4
+	#define DB5 5
+	#define DB6 6
+	#define DB7 7
+#elif defined(LCD_WIRING_2)
+	#define RS 7
+	#define RW 6
+	#define EN 5
+	#define NC 4
+	#define DB4 3
+	#define DB5 2
+	#define DB6 1
+	#define DB7 0
+#endif
 
 /*** Handler ***/
 typedef struct{
@@ -60,5 +61,5 @@ void lcd1_enable(volatile uint8_t *ddr, volatile uint8_t *pin, volatile uint8_t 
 LCD1* lcd1(void);
 
 #endif
-/***EOF***/
+/*** EOF ***/
 

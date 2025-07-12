@@ -14,10 +14,6 @@ Date:     12072025
 // CMD RS
 #define LCD02P_INST 0
 #define LCD02P_DATA 1
-#define LCD02P_LINE0_START 0x00
-#define LCD02P_LINE1_START 0x14
-#define LCD02P_LINE2_START 0x54
-#define LCD02P_LINE3_START 0x40
 
 /*** File Variable ***/
 volatile uint8_t *lcd02pcmd_DDR;
@@ -28,6 +24,8 @@ volatile uint8_t *lcd02pdata_PIN;
 volatile uint8_t *lcd02pdata_PORT;
 static uint8_t DDR_DATA_MASK;
 uint8_t lcd02p_detect;
+
+static const uint8_t row_offset[] = { 0x00, 0x40, 0x14, 0x54 };
 
 typedef struct {
 	uint8_t row;
@@ -231,22 +229,8 @@ void LCD02P_clear(void)
 }
 void LCD02P_gotoxy(unsigned int y, unsigned int x)
 {
-	switch(y){
-		case 0:
-			LCD02P_write((0x80 + x), LCD02P_INST);
-			break;
-		case 1:
-			LCD02P_write((0xC0 + x), LCD02P_INST);
-			break;
-		case 2:
-			LCD02P_write((0x94 + x), LCD02P_INST);
-			break;
-		case 3:
-			LCD02P_write((0xD4 + x), LCD02P_INST);
-			break;
-		default:
-			break;
-	}
+	uint8_t addr = row_offset[y] + x;
+	LCD02P_write(0x80 | addr, LCD02P_INST);
 }
 void lcd02p_set_reg(volatile uint8_t* reg, uint8_t hbits){
 	*reg |= hbits;
@@ -273,16 +257,16 @@ int lcd02p_putchar(char c, FILE *stream) {
 	LCD02P_putch(c);
 	uint8_t pos = LCD02P_BF();
 	
-	if (pos == LCD02P_LINE0_START) {
+	if (pos == row_offset[0]) {
 		LCD02P_gotoxy(0, 0);
 	}
-	else if (pos == LCD02P_LINE1_START) {
+	else if (pos == row_offset[2]) {
 		LCD02P_gotoxy(1, 0);
 	}
-	else if (pos == LCD02P_LINE2_START) {
+	else if (pos == row_offset[3]) {
 		LCD02P_gotoxy(2, 0);
 	}
-	else if (pos == LCD02P_LINE3_START) {
+	else if (pos == row_offset[1]) {
 		LCD02P_gotoxy(3, 0);
 	}
 	return 0;
