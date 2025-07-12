@@ -25,6 +25,7 @@ Date:	  05072025
 #include <avr/wdt.h>
 #include <avr/eeprom.h>
 #include <avr/pgmspace.h>
+#include <avr/sleep.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
 #include "atmega128_registers.h"

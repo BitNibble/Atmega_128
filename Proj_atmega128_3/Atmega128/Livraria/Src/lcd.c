@@ -5,12 +5,12 @@ License:  GNU General Public License
 Hardware: all
 Date:     04072025              
 ************************************************************************/
-/*** File Library***/
+/*** File Library ***/
 #include "lcd.h"
 #include <util/delay.h>
 #include <stdio.h>
 
-/***************/
+/*** File Constant & Macro ***/
 // CMD RS
 #define INST 0
 #define DATA 1
@@ -19,7 +19,7 @@ Date:     04072025
 #define LCD_LINE2_START 0x54
 #define LCD_LINE3_START 0x40
 
-/***File Variable ***/
+/*** File Variable ***/
 volatile uint8_t *lcd0_DDR;
 volatile uint8_t *lcd0_PIN;
 volatile uint8_t *lcd0_PORT;
@@ -165,7 +165,6 @@ void LCD0_write(char c, unsigned short D_I)
 	if(D_I) lcd_set_reg(lcd0_PORT, (1 << RS));  else lcd_clear_reg(lcd0_PORT, (1 << RS));
 	
 	lcd_set_reg(lcd0_PORT, (1 << EN));
-	if(D_I) *lcd0_PORT |= (1 << RS); else *lcd0_PORT &= ~(1 << RS);
 	if(c & 0x08) *lcd0_PORT |= 1 << DB7; else *lcd0_PORT &= ~(1 << DB7);
 	if(c & 0x04) *lcd0_PORT |= 1 << DB6; else *lcd0_PORT &= ~(1 << DB6);
 	if(c & 0x02) *lcd0_PORT |= 1 << DB5; else *lcd0_PORT &= ~(1 << DB5);
@@ -374,7 +373,6 @@ void LCD1_write(char c, unsigned short D_I)
 	if(D_I) lcd_set_reg(lcd1_PORT, (1 << RS));  else lcd_clear_reg(lcd1_PORT, (1 << RS));
 	
 	lcd_set_reg(lcd1_PORT, (1 << EN));
-	if(D_I) *lcd1_PORT |= (1 << RS); else *lcd1_PORT &= ~(1 << RS);
 	if(c & 0x08) *lcd1_PORT |= 1 << DB7; else *lcd1_PORT &= ~(1 << DB7);
 	if(c & 0x04) *lcd1_PORT |= 1 << DB6; else *lcd1_PORT &= ~(1 << DB6);
 	if(c & 0x02) *lcd1_PORT |= 1 << DB5; else *lcd1_PORT &= ~(1 << DB5);
