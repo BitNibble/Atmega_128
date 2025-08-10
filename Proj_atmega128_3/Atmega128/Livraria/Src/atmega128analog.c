@@ -23,6 +23,10 @@ int ANALOG_read(int selection);
 
 /*** Internal State ***/
 static ADC0_Handler atmega128_adc = {
+	.par = {
+		.VREFF = 0,
+		.DIVISION_FACTOR = ADC_NUMBER_SAMPLE
+		},
 	// V-table
 	.read = ANALOG_read	
 };
