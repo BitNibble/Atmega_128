@@ -1,5 +1,12 @@
+/**********************************************************************
+	L293D
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
+Hardware: ALL
+Date:     12082025
+**********************************************************************/
 #ifndef L293D_H
-#define L293D_H
+	#define L293D_H
 
 #include <inttypes.h>
 
@@ -35,3 +42,5 @@ typedef struct {
 L293D_Handler l293d_enable(volatile IO_var *ddr, volatile IO_var *port, uint8_t pin1, uint8_t pin2, uint8_t en_pin);
 
 #endif
+
+/*** EOF ***/

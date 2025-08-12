@@ -1,10 +1,10 @@
-/************************************************************************
+/**********************************************************************
 	ATMEGA 128 REGISTERS
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega 128
 Date:     12082025
-************************************************************************/
+**********************************************************************/
 #ifndef _ATMEGA128_REGISTERS_H_
 	#define _ATMEGA128_REGISTERS_H_
 	
@@ -175,7 +175,7 @@ typedef	volatile union {
 		uint8_t tov0 : 1, ocf0 : 1, tov1 : 1, ocf1b : 1, ocf1a : 1, icf1 : 1, tov2 : 1, ocf2 : 1;
 	}par;
 	uint8_t var;
-} TIFR_Typedef; // 0x56
+} TIFR_TypeDef; // 0x56
 typedef union {
 	struct{
 		uint8_t toie0 : 1, ocie0a : 1, toie1 : 1, ocie1b : 1, ocie1a : 1, ticie1 : 1, toie2 : 1, ocie2 : 1;

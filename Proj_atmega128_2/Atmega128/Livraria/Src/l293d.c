@@ -1,3 +1,10 @@
+/**********************************************************************
+	L293D
+Author:   <sergio.salazar.santos@gmail.com>
+License:  GNU General Public License
+Hardware: all
+Date    12/08/2025
+**********************************************************************/
 #include "l293d.h"
 
 /*** Internal ***/
@@ -53,3 +60,6 @@ void l293d_set_en(L293D_Parameter *par, uint8_t state) {
     else
         *par->PORT &= ~(1 << par->en_pin);
 }
+
+/*** EOF ***/
+

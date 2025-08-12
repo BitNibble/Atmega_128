@@ -1,10 +1,10 @@
-/***********************************************************************
+/**********************************************************************
 	ATMEGA 128
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega 128
 Date:	  12082025
-***********************************************************************/
+**********************************************************************/
 #ifndef _ATMEGA128_H_
 	#define _ATMEGA128_H_
 
@@ -242,7 +242,7 @@ typedef volatile struct {
 	TCCR1B_TypeDef tccr1b; // 0x4E
 	TCCR1A_TypeDef tccr1a; // 0x4F
 	uint8_t fill2[6]; // (56 - 4F) - 1
-	TIFR_Typedef tifr; // 0x56
+	TIFR_TypeDef tifr; // 0x56
 	TIMSK_TypeDef timsk; // 0x57
 	uint8_t fill3[32]; // (78 - 57) - 1
 	U_word ocr1c; // 0x78 0x79
@@ -293,7 +293,7 @@ typedef volatile struct {
 	U_byte tcnt2; // 0x44
 	TCCR2_TypeDef tccr2; // 0x45
 	uint8_t fill[16]; // (56 - 45) - 1
-	TIFR_Typedef tifr; // 0x56
+	TIFR_TypeDef tifr; // 0x56
 	TIMSK_TypeDef timsk; // 0x57
 } Atmega128TimerCounter2_TypeDef;
 
@@ -308,7 +308,7 @@ typedef volatile struct {
 	U_byte tcnt0; // 0x52
 	TCCR0_TypeDef tccr0; // 0x53
 	uint8_t fill2[2]; // (56 - 53) - 1
-	TIFR_Typedef tifr; // 0x56
+	TIFR_TypeDef tifr; // 0x56
 	TIMSK_TypeDef timsk; // 0x57
 } Atmega128TimerCounter0_TypeDef;
 
@@ -316,7 +316,7 @@ Atmega128TimerCounter0_TypeDef* tc0_reg(void);
 
 // Timer/Counter 0, 1 and 2
 typedef volatile struct {
-	TIFR_Typedef tifr; // 0x56
+	TIFR_TypeDef tifr; // 0x56
 } Atmega128TimerInterruptFlag_TypeDef;
 
 Atmega128TimerInterruptFlag_TypeDef* tc_if_reg(void);

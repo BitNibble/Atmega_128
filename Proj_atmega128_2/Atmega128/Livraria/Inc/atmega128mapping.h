@@ -1,10 +1,10 @@
-/*********************************************************
+/**********************************************************************
 	ATMEGA 128 MAPPING
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega128 by ETT ET-BASE
 Date:     15/07/2025
-**********************************************************/
+**********************************************************************/
 #ifndef _ATMEGA128MAPPING_H_
 	#define _ATMEGA128MAPPING_H_
 

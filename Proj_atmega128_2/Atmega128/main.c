@@ -1,8 +1,8 @@
-/************************************************************************
+/**********************************************************************
 Title: SUNTRACK.c
 Author:    <sergio.salazar.santos@gmail.com>
 License:   GNU General Public License
-Software:  Atmel Studio 7 (ver 7.0.129)
+Software:  Atmel Studio 7 (version 7.0.129)
 Hardware:  atmega128 by ETT ET-BASE
 	-PORTA LCD 16X2
 	-PORTE Keyboard 4X4
@@ -20,7 +20,7 @@ Comment:
 	-AT+PIN916919\r\n
 	
 	Nice
-************************************************************************/
+**********************************************************************/
 /*** Working Frequency ***/
 #define F_CPU 16000000UL
 
