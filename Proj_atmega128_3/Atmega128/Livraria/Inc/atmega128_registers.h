@@ -3,7 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega 128
-Date:     05072025
+Date:     12082025
 ************************************************************************/
 #ifndef _ATMEGA128_REGISTERS_H_
 	#define _ATMEGA128_REGISTERS_H_

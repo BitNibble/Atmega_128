@@ -10,6 +10,7 @@ Date:     26/06/2025
 #include "buffer.h"
 #include <avr/interrupt.h>
 #include <string.h>
+#include "toolset.h"
 
 /*** Variable ***/
 static BUFF_Handler USART0_rxbuff;

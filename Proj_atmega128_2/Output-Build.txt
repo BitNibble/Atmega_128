@@ -1,4 +1,19 @@
-﻿------ Build started: Project: Atmega128, Configuration: Debug AVR ------
+﻿------ Rebuild All started: Project: Atmega128, Configuration: Debug AVR ------
+Build started.
+Project "Atmega128.cproj" (Clean target(s)):
+Target "Clean" in file "C:\Program Files (x86)\Atmel\Studio\7.0\Vs\Compiler.targets" from project "D:\Embedded\Atmega_128\Proj_atmega128_2\Atmega128\Atmega128.cproj" (entry point):
+	Task "RunCompilerTask"
+		Shell Utils Path C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils
+		C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils\make.exe clean 
+		rm -rf  Livraria/Src/74hc595.o Livraria/Src/atmega128.o Livraria/Src/atmega128analog.o Livraria/Src/atmega128interrupt.o Livraria/Src/atmega128mapping.o Livraria/Src/atmega128spi.o Livraria/Src/atmega128timer0.o Livraria/Src/atmega128timer1.o Livraria/Src/atmega128timer2.o Livraria/Src/atmega128timer3.o Livraria/Src/atmega128twi.o Livraria/Src/atmega128usart0.o Livraria/Src/atmega128usart1.o Livraria/Src/atmegaeeprom.o Livraria/Src/bt05atcommands.o Livraria/Src/buffer.o Livraria/Src/clock.o Livraria/Src/esp01atcommands.o Livraria/Src/explode.o Livraria/Src/function.o Livraria/Src/hc05atcommands.o Livraria/Src/hc42atcommands.o Livraria/Src/hx711.o Livraria/Src/keypad.o Livraria/Src/lcd.o Livraria/Src/lcd2p.o Livraria/Src/lfsm.o Livraria/Src/mm74c923.o Livraria/Src/pcf8563rtc.o Livraria/Src/pcf8575.o Livraria/Src/pcf8575lcd.o Livraria/Src/ringbuffer.o Livraria/Src/rotenc.o Livraria/Src/toolset.o Livraria/Src/watch.o Livraria/Src/znpid.o main.o   
+		rm -rf  Livraria/Src/74hc595.d Livraria/Src/atmega128.d Livraria/Src/atmega128analog.d Livraria/Src/atmega128interrupt.d Livraria/Src/atmega128mapping.d Livraria/Src/atmega128spi.d Livraria/Src/atmega128timer0.d Livraria/Src/atmega128timer1.d Livraria/Src/atmega128timer2.d Livraria/Src/atmega128timer3.d Livraria/Src/atmega128twi.d Livraria/Src/atmega128usart0.d Livraria/Src/atmega128usart1.d Livraria/Src/atmegaeeprom.d Livraria/Src/bt05atcommands.d Livraria/Src/buffer.d Livraria/Src/clock.d Livraria/Src/esp01atcommands.d Livraria/Src/explode.d Livraria/Src/function.d Livraria/Src/hc05atcommands.d Livraria/Src/hc42atcommands.d Livraria/Src/hx711.d Livraria/Src/keypad.d Livraria/Src/lcd.d Livraria/Src/lcd2p.d Livraria/Src/lfsm.d Livraria/Src/mm74c923.d Livraria/Src/pcf8563rtc.d Livraria/Src/pcf8575.d Livraria/Src/pcf8575lcd.d Livraria/Src/ringbuffer.d Livraria/Src/rotenc.d Livraria/Src/toolset.d Livraria/Src/watch.d Livraria/Src/znpid.d main.d   
+		rm -rf "Atmega128.elf" "Atmega128.a" "Atmega128.hex" "Atmega128.lss" "Atmega128.eep" "Atmega128.map" "Atmega128.srec" "Atmega128.usersignatures"
+	Done executing task "RunCompilerTask".
+Done building target "Clean" in project "Atmega128.cproj".
+Done building project "Atmega128.cproj".
+
+Build succeeded.
+------ Rebuild All started: Project: Atmega128, Configuration: Debug AVR ------
 Build started.
 Project "Atmega128.cproj" (default targets):
 Target "PreBuildEvent" skipped, due to false condition; ('$(PreBuildEvent)'!='') was evaluated as (''!='').
@@ -6,10 +21,165 @@ Target "CoreBuild" in file "C:\Program Files (x86)\Atmel\Studio\7.0\Vs\Compiler.
 	Task "RunCompilerTask"
 		Shell Utils Path C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils
 		C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils\make.exe all --jobs 12 --output-sync 
-		make: Nothing to be done for 'all'.
+		Building file: ../Livraria/Src/74hc595.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/74hc595.d" -MT"Livraria/Src/74hc595.d" -MT"Livraria/Src/74hc595.o"   -o "Livraria/Src/74hc595.o" "../Livraria/Src/74hc595.c" 
+		Finished building: ../Livraria/Src/74hc595.c
+		Building file: ../Livraria/Src/atmega128.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmega128.d" -MT"Livraria/Src/atmega128.d" -MT"Livraria/Src/atmega128.o"   -o "Livraria/Src/atmega128.o" "../Livraria/Src/atmega128.c" 
+		Finished building: ../Livraria/Src/atmega128.c
+		Building file: ../Livraria/Src/atmega128analog.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmega128analog.d" -MT"Livraria/Src/atmega128analog.d" -MT"Livraria/Src/atmega128analog.o"   -o "Livraria/Src/atmega128analog.o" "../Livraria/Src/atmega128analog.c" 
+		Finished building: ../Livraria/Src/atmega128analog.c
+		Building file: ../Livraria/Src/atmega128mapping.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmega128mapping.d" -MT"Livraria/Src/atmega128mapping.d" -MT"Livraria/Src/atmega128mapping.o"   -o "Livraria/Src/atmega128mapping.o" "../Livraria/Src/atmega128mapping.c" 
+		Finished building: ../Livraria/Src/atmega128mapping.c
+		Building file: ../Livraria/Src/atmega128interrupt.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmega128interrupt.d" -MT"Livraria/Src/atmega128interrupt.d" -MT"Livraria/Src/atmega128interrupt.o"   -o "Livraria/Src/atmega128interrupt.o" "../Livraria/Src/atmega128interrupt.c" 
+		Finished building: ../Livraria/Src/atmega128interrupt.c
+		Building file: ../Livraria/Src/atmega128spi.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmega128spi.d" -MT"Livraria/Src/atmega128spi.d" -MT"Livraria/Src/atmega128spi.o"   -o "Livraria/Src/atmega128spi.o" "../Livraria/Src/atmega128spi.c" 
+		Finished building: ../Livraria/Src/atmega128spi.c
+		Building file: ../Livraria/Src/atmega128timer0.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmega128timer0.d" -MT"Livraria/Src/atmega128timer0.d" -MT"Livraria/Src/atmega128timer0.o"   -o "Livraria/Src/atmega128timer0.o" "../Livraria/Src/atmega128timer0.c" 
+		Finished building: ../Livraria/Src/atmega128timer0.c
+		Building file: ../Livraria/Src/atmega128timer1.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmega128timer1.d" -MT"Livraria/Src/atmega128timer1.d" -MT"Livraria/Src/atmega128timer1.o"   -o "Livraria/Src/atmega128timer1.o" "../Livraria/Src/atmega128timer1.c" 
+		Finished building: ../Livraria/Src/atmega128timer1.c
+		Building file: ../Livraria/Src/atmega128timer2.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmega128timer2.d" -MT"Livraria/Src/atmega128timer2.d" -MT"Livraria/Src/atmega128timer2.o"   -o "Livraria/Src/atmega128timer2.o" "../Livraria/Src/atmega128timer2.c" 
+		Finished building: ../Livraria/Src/atmega128timer2.c
+		Building file: ../Livraria/Src/atmega128timer3.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmega128timer3.d" -MT"Livraria/Src/atmega128timer3.d" -MT"Livraria/Src/atmega128timer3.o"   -o "Livraria/Src/atmega128timer3.o" "../Livraria/Src/atmega128timer3.c" 
+		Finished building: ../Livraria/Src/atmega128timer3.c
+		Building file: ../Livraria/Src/atmega128twi.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmega128twi.d" -MT"Livraria/Src/atmega128twi.d" -MT"Livraria/Src/atmega128twi.o"   -o "Livraria/Src/atmega128twi.o" "../Livraria/Src/atmega128twi.c" 
+		Finished building: ../Livraria/Src/atmega128twi.c
+		Building file: ../Livraria/Src/atmegaeeprom.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmegaeeprom.d" -MT"Livraria/Src/atmegaeeprom.d" -MT"Livraria/Src/atmegaeeprom.o"   -o "Livraria/Src/atmegaeeprom.o" "../Livraria/Src/atmegaeeprom.c" 
+		Finished building: ../Livraria/Src/atmegaeeprom.c
+		Building file: ../Livraria/Src/atmega128usart0.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmega128usart0.d" -MT"Livraria/Src/atmega128usart0.d" -MT"Livraria/Src/atmega128usart0.o"   -o "Livraria/Src/atmega128usart0.o" "../Livraria/Src/atmega128usart0.c" 
+		Finished building: ../Livraria/Src/atmega128usart0.c
+		Building file: ../Livraria/Src/atmega128usart1.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/atmega128usart1.d" -MT"Livraria/Src/atmega128usart1.d" -MT"Livraria/Src/atmega128usart1.o"   -o "Livraria/Src/atmega128usart1.o" "../Livraria/Src/atmega128usart1.c" 
+		Finished building: ../Livraria/Src/atmega128usart1.c
+		Building file: ../Livraria/Src/bt05atcommands.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/bt05atcommands.d" -MT"Livraria/Src/bt05atcommands.d" -MT"Livraria/Src/bt05atcommands.o"   -o "Livraria/Src/bt05atcommands.o" "../Livraria/Src/bt05atcommands.c" 
+		Finished building: ../Livraria/Src/bt05atcommands.c
+		Building file: ../Livraria/Src/buffer.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/buffer.d" -MT"Livraria/Src/buffer.d" -MT"Livraria/Src/buffer.o"   -o "Livraria/Src/buffer.o" "../Livraria/Src/buffer.c" 
+		Finished building: ../Livraria/Src/buffer.c
+		Building file: ../Livraria/Src/clock.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/clock.d" -MT"Livraria/Src/clock.d" -MT"Livraria/Src/clock.o"   -o "Livraria/Src/clock.o" "../Livraria/Src/clock.c" 
+		Finished building: ../Livraria/Src/clock.c
+		Building file: ../Livraria/Src/esp01atcommands.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/esp01atcommands.d" -MT"Livraria/Src/esp01atcommands.d" -MT"Livraria/Src/esp01atcommands.o"   -o "Livraria/Src/esp01atcommands.o" "../Livraria/Src/esp01atcommands.c" 
+		Finished building: ../Livraria/Src/esp01atcommands.c
+		Building file: ../Livraria/Src/explode.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/explode.d" -MT"Livraria/Src/explode.d" -MT"Livraria/Src/explode.o"   -o "Livraria/Src/explode.o" "../Livraria/Src/explode.c" 
+		Finished building: ../Livraria/Src/explode.c
+		Building file: ../Livraria/Src/hc05atcommands.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/hc05atcommands.d" -MT"Livraria/Src/hc05atcommands.d" -MT"Livraria/Src/hc05atcommands.o"   -o "Livraria/Src/hc05atcommands.o" "../Livraria/Src/hc05atcommands.c" 
+		Finished building: ../Livraria/Src/hc05atcommands.c
+		Building file: ../Livraria/Src/hc42atcommands.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/hc42atcommands.d" -MT"Livraria/Src/hc42atcommands.d" -MT"Livraria/Src/hc42atcommands.o"   -o "Livraria/Src/hc42atcommands.o" "../Livraria/Src/hc42atcommands.c" 
+		Finished building: ../Livraria/Src/hc42atcommands.c
+		Building file: ../Livraria/Src/function.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/function.d" -MT"Livraria/Src/function.d" -MT"Livraria/Src/function.o"   -o "Livraria/Src/function.o" "../Livraria/Src/function.c" 
+		Finished building: ../Livraria/Src/function.c
+		Building file: ../Livraria/Src/hx711.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/hx711.d" -MT"Livraria/Src/hx711.d" -MT"Livraria/Src/hx711.o"   -o "Livraria/Src/hx711.o" "../Livraria/Src/hx711.c" 
+		Finished building: ../Livraria/Src/hx711.c
+		Building file: ../Livraria/Src/keypad.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/keypad.d" -MT"Livraria/Src/keypad.d" -MT"Livraria/Src/keypad.o"   -o "Livraria/Src/keypad.o" "../Livraria/Src/keypad.c" 
+		Finished building: ../Livraria/Src/keypad.c
+		Building file: ../Livraria/Src/lcd2p.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/lcd2p.d" -MT"Livraria/Src/lcd2p.d" -MT"Livraria/Src/lcd2p.o"   -o "Livraria/Src/lcd2p.o" "../Livraria/Src/lcd2p.c" 
+		Finished building: ../Livraria/Src/lcd2p.c
+		Building file: ../Livraria/Src/lcd.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/lcd.d" -MT"Livraria/Src/lcd.d" -MT"Livraria/Src/lcd.o"   -o "Livraria/Src/lcd.o" "../Livraria/Src/lcd.c" 
+		Finished building: ../Livraria/Src/lcd.c
+		Building file: ../Livraria/Src/mm74c923.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/mm74c923.d" -MT"Livraria/Src/mm74c923.d" -MT"Livraria/Src/mm74c923.o"   -o "Livraria/Src/mm74c923.o" "../Livraria/Src/mm74c923.c" 
+		Finished building: ../Livraria/Src/mm74c923.c
+		Building file: ../Livraria/Src/lfsm.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/lfsm.d" -MT"Livraria/Src/lfsm.d" -MT"Livraria/Src/lfsm.o"   -o "Livraria/Src/lfsm.o" "../Livraria/Src/lfsm.c" 
+		Finished building: ../Livraria/Src/lfsm.c
+		Building file: ../Livraria/Src/pcf8563rtc.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/pcf8563rtc.d" -MT"Livraria/Src/pcf8563rtc.d" -MT"Livraria/Src/pcf8563rtc.o"   -o "Livraria/Src/pcf8563rtc.o" "../Livraria/Src/pcf8563rtc.c" 
+		Finished building: ../Livraria/Src/pcf8563rtc.c
+		Building file: ../Livraria/Src/pcf8575.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/pcf8575.d" -MT"Livraria/Src/pcf8575.d" -MT"Livraria/Src/pcf8575.o"   -o "Livraria/Src/pcf8575.o" "../Livraria/Src/pcf8575.c" 
+		Finished building: ../Livraria/Src/pcf8575.c
+		Building file: ../Livraria/Src/ringbuffer.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/ringbuffer.d" -MT"Livraria/Src/ringbuffer.d" -MT"Livraria/Src/ringbuffer.o"   -o "Livraria/Src/ringbuffer.o" "../Livraria/Src/ringbuffer.c" 
+		Finished building: ../Livraria/Src/ringbuffer.c
+		Building file: ../Livraria/Src/pcf8575lcd.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/pcf8575lcd.d" -MT"Livraria/Src/pcf8575lcd.d" -MT"Livraria/Src/pcf8575lcd.o"   -o "Livraria/Src/pcf8575lcd.o" "../Livraria/Src/pcf8575lcd.c" 
+		Finished building: ../Livraria/Src/pcf8575lcd.c
+		Building file: ../Livraria/Src/rotenc.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/rotenc.d" -MT"Livraria/Src/rotenc.d" -MT"Livraria/Src/rotenc.o"   -o "Livraria/Src/rotenc.o" "../Livraria/Src/rotenc.c" 
+		Finished building: ../Livraria/Src/rotenc.c
+		Building file: ../Livraria/Src/toolset.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/toolset.d" -MT"Livraria/Src/toolset.d" -MT"Livraria/Src/toolset.o"   -o "Livraria/Src/toolset.o" "../Livraria/Src/toolset.c" 
+		Finished building: ../Livraria/Src/toolset.c
+		Building file: ../Livraria/Src/watch.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/watch.d" -MT"Livraria/Src/watch.d" -MT"Livraria/Src/watch.o"   -o "Livraria/Src/watch.o" "../Livraria/Src/watch.c" 
+		Finished building: ../Livraria/Src/watch.c
+		Building file: ../Livraria/Src/znpid.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "Livraria/Src/znpid.d" -MT"Livraria/Src/znpid.d" -MT"Livraria/Src/znpid.o"   -o "Livraria/Src/znpid.o" "../Livraria/Src/znpid.c" 
+		Finished building: ../Livraria/Src/znpid.c
+		Building file: .././main.c
+		Invoking: AVR/GNU C Compiler : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "main.d" -MT"main.d" -MT"main.o"   -o "main.o" ".././main.c" 
+		Finished building: .././main.c
+		Building target: Atmega128.elf
+		Invoking: AVR/GNU Linker : 5.4.0
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe" -o Atmega128.elf  Livraria/Src/74hc595.o Livraria/Src/atmega128.o Livraria/Src/atmega128analog.o Livraria/Src/atmega128interrupt.o Livraria/Src/atmega128mapping.o Livraria/Src/atmega128spi.o Livraria/Src/atmega128timer0.o Livraria/Src/atmega128timer1.o Livraria/Src/atmega128timer2.o Livraria/Src/atmega128timer3.o Livraria/Src/atmega128twi.o Livraria/Src/atmega128usart0.o Livraria/Src/atmega128usart1.o Livraria/Src/atmegaeeprom.o Livraria/Src/bt05atcommands.o Livraria/Src/buffer.o Livraria/Src/clock.o Livraria/Src/esp01atcommands.o Livraria/Src/explode.o Livraria/Src/function.o Livraria/Src/hc05atcommands.o Livraria/Src/hc42atcommands.o Livraria/Src/hx711.o Livraria/Src/keypad.o Livraria/Src/lcd.o Livraria/Src/lcd2p.o Livraria/Src/lfsm.o Livraria/Src/mm74c923.o Livraria/Src/pcf8563rtc.o Livraria/Src/pcf8575.o Livraria/Src/pcf8575lcd.o Livraria/Src/ringbuffer.o Livraria/Src/rotenc.o Livraria/Src/toolset.o Livraria/Src/watch.o Livraria/Src/znpid.o main.o   -Wl,-Map="Atmega128.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mrelax -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128"  
+		Finished building target: Atmega128.elf
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Atmega128.elf" "Atmega128.hex"
+		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-size.exe" "Atmega128.elf"
+		   text	   data	    bss	    dec	    hex	filename
+		  32196	   1122	    452	  33770	   83ea	Atmega128.elf
 	Done executing task "RunCompilerTask".
 	Task "RunOutputFileVerifyTask"
-				Program Memory Usage 	:	33350 bytes   25,4 % Full
+				Program Memory Usage 	:	33318 bytes   25,4 % Full
 				Data Memory Usage 		:	1574 bytes   38,4 % Full
 				Warning: Memory Usage estimation may not be accurate if there are sections other than .text sections in ELF file
 	Done executing task "RunOutputFileVerifyTask".
@@ -20,4 +190,4 @@ Done building target "Build" in project "Atmega128.cproj".
 Done building project "Atmega128.cproj".
 
 Build succeeded.
-========== Build: 1 succeeded or up-to-date, 0 failed, 0 skipped ==========
+========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========
