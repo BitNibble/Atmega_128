@@ -650,7 +650,6 @@ void timer2_comp_vect(void)
 3º Pointers and Variables
 4º Casting
 A/(b*c*d*e*f) = A/b/c/d/e/f
-functions should never return to one of its own parameters, it leads to zero.
 ********************************************************************/
 
 /*** EOF ***/

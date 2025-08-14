@@ -37,8 +37,16 @@ Date:     07/01/2024
 #define UART_BUFFER_OVERFLOW	0x0200              /* receive ring buffer overflow */
 #define UART_NO_DATA			0x0100              /* no receive data available    */
 
+/*** Callback ***/
+typedef struct {
+	void (*receive)(void);
+	void (*transmit)(void);
+}USART0_Callback;
+
 /*** Handler ***/
-typedef struct{
+typedef struct {
+	USART0_Callback callback;
+	
 	// V-table
 	UARTvar (*read)(void);
 	UARTvar (*getch)(void);

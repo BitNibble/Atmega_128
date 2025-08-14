@@ -39,8 +39,17 @@ uint8_t USART1_ReadErrors(void);
 void USART1_ClearErrors(void);
 void USART1_DoubleTransmissionSpeed(void);
 
+/*** Default Callback declaration ***/
+static void usart1_callback_receive(void);
+static void usart1_callback_transmit(void);
+
 /*** Internal State ***/
 static USART1_Handler atmega128_usart1 = {
+	// Callback
+	.callback = {
+		.receive = usart1_callback_receive,
+		.transmit = usart1_callback_transmit
+	},
 	// V-table
 	.read = uart1_read,
 	.getch = uart1_getch,
@@ -227,8 +236,9 @@ void USART1_DoubleTransmissionSpeed(void)
 {
 	set_reg_block(&UCSR1A,4,1,1);
 }
-/*** Interrupt ***/
-SIGNAL(UART1_RECEIVE_INTERRUPT)
+
+/*** Default Callback definition ***/
+static void usart1_callback_receive(void)
 {
 	unsigned char bit9;
 	unsigned char usr;
@@ -242,9 +252,23 @@ SIGNAL(UART1_RECEIVE_INTERRUPT)
 	UART1_Rx = usart1_reg()->udr1.var;
 	rx1buff.push(&rx1buff.par, UART1_Rx);
 }
-SIGNAL(UART1_TRANSMIT_INTERRUPT)
+static void usart1_callback_transmit(void)
 {
 	usart1_reg()->ucsr1b.var &= ~(1 << UDRIE1);
+}
+
+/*** Interrupt ***/
+SIGNAL(UART1_RECEIVE_INTERRUPT)
+{
+	if (atmega128_usart1.callback.receive) {
+		atmega128_usart1.callback.receive();
+	}
+}
+SIGNAL(UART1_TRANSMIT_INTERRUPT)
+{
+	if (atmega128_usart1.callback.transmit) {
+		atmega128_usart1.callback.transmit();
+	}
 }
 
 /*** EOF ***/
