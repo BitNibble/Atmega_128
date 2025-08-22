@@ -225,5 +225,3 @@ void timer0_comp_vect(void) // 1Hz and usart Tx
 
 /*** EOF ***/
 
-
-

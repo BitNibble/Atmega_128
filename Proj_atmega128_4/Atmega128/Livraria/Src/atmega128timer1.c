@@ -134,7 +134,6 @@ void TIMER_COUNTER1_wavegenmode(unsigned char wavegenmode)
 
 void TIMER_COUNTER1_interrupt(unsigned char interrupt)
 {
-	tc1_reg()->tccr1a.var &= ~((3 << COM1A0) | (3 << COM1B0) | (3 << COM1C0));
 	tc1_reg()->timsk.var &= ~((1 << TICIE1) | (1 << OCIE1A) | (1 << OCIE1B) | (1 << TOIE1));
 	tc1_reg()->etimsk.var &= ~(1 << OCIE1C);
 	switch(interrupt){ // ICP1  -->  PD4

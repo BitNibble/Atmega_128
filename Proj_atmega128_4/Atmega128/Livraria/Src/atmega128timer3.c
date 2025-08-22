@@ -134,7 +134,6 @@ void TIMER_COUNTER3_wavegenmode(unsigned char wavegenmode)
 
 void TIMER_COUNTER3_interrupt(unsigned char interrupt)
 {
-	tc3_reg()->tccr3a.var &= ~((3 << COM3A0) | (3 << COM3B0)| (3 << COM3C0));
 	tc3_reg()->etimsk.var &= ~((1 << TICIE3) | (1 << OCIE3A) | (1 << OCIE3B) | (1 << TOIE3) | (1 << OCIE3C));
 	switch(interrupt){ // ICP3  -->  PE7
 		case 0:
