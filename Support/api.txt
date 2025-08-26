@@ -1,0 +1,134 @@
+Singleton for hardware peripheral abstarctions.
+Multi instance abstraction for external devices.
+OO object approach.
+
+V-table for procedures, functions.
+Function Pointer for callbacks.
+
+registers -> instances -> handlers -> system
+
+instance -> peripheral related regsiters (cross platform)
+
+Handler -> parameters
+		-> callbacks
+		-> procedures and functions
+		
+/**********************************************************************/
+
+# **ATmega128 HAL Style Guide**
+
+### **1. Naming Conventions**
+
+| Element                                 | Format                              | Example                                        |
+| --------------------------------------- | ----------------------------------- | ---------------------------------------------- |
+| **Peripheral struct type**              | `Atmega128<PeripheralName>_TypeDef` | `Atmega128PORTA_TypeDef`                       |
+| **Peripheral accessor function**        | `<peripheral>_reg()`                | `gpioa_reg()`                                  |
+| **Register typedef**                    | `<REGISTERNAME>_TypeDef`            | `TCCR0_TypeDef`, `UCSR0A_TypeDef`              |
+| **Union alias for byte-level access**   | `U_byte`                            | `U_byte var;`                                  |
+| **Union alias for word-level access**   | `U_word`                            | `U_word var;`                                  |
+| **Bitfield naming inside union struct** | Lowercase, short mnemonic           | `cs0, wgm01, foc2`                             |
+| **Function names**                      | CamelCase with descriptive purpose  | `ClockPrescalerSelect`, `MoveInterruptsToBoot` |
+| **Constants / macros**                  | Uppercase with underscores          | `F_CPU`, `SRAMSTART`                           |
+
+---
+
+### **2. Struct Design Rules**
+
+1. **Peripheral structs**
+
+   * Must be `volatile`.
+   * Must map directly to hardware memory addresses.
+   * Reserved or unused addresses can use filler arrays (`uint8_t fill[n];`) for alignment.
+   * Registers must appear in memory order.
+
+2. **Union layout for registers**
+
+   * `U_byte` for 8-bit registers.
+   * `U_word` for 16-bit registers with `par.l` and `par.h` for low/high byte access.
+
+3. **Bitfields**
+
+   * Use one-bit or multi-bit fields where applicable.
+   * Name fields according to datasheet nomenclature (e.g., `txen0`, `ocs1a`).
+
+4. **Memory-mapped struct pointers**
+
+   * Access peripherals only through accessor functions, never raw addresses.
+   * Example:
+
+     ```c
+     Atmega128PORTA_TypeDef* gpioa_reg(void) { return (Atmega128PORTA_TypeDef*)0x0039; }
+     ```
+
+---
+
+### **3. Accessor Functions**
+
+* Must return `volatile` pointers to structs.
+* Name convention: `<peripheral>_reg()`.
+* Optionally declare as `static inline` for zero-overhead access.
+* Example:
+
+  ```c
+  static inline Atmega128PORTB_TypeDef* gpiob_reg(void) { return (Atmega128PORTB_TypeDef*)0x0036; }
+  ```
+
+---
+
+### **4. Byte/Word Helper Functions**
+
+* Naming should reflect exact operation:
+
+  * `readHLbyte(U_word reg)` – high byte first
+  * `readLHbyte(U_word reg)` – low byte first
+  * `writeHLbyte(uint16_t val)` – high byte first
+  * `writeLHbyte(uint16_t val)` – low byte first
+  * `SwapByte(uint16_t num)` – swap endianness
+
+* Use `U_word`/`U_byte` consistently in these functions.
+
+---
+
+### **5. Peripheral-Specific Helpers**
+
+* Include relevant operations in the HAL:
+
+  * Baud rate calculation: `BAUDRATEnormal`, `BAUDRATEdouble`, `BAUDRATEsynchronous`
+  * Clock prescaler: `ClockPrescalerSelect`
+  * Interrupt vector relocation: `MoveInterruptsToBoot`
+
+* Function names must clearly indicate the effect on the hardware.
+
+---
+
+### **6. Documentation / Comments**
+
+* Include author, license, MCU, and date at the top of files.
+* Use **memory-mapped addresses** in comments:
+
+  ```c
+  // PORTA struct: PIN=0x39, DDR=0x3A, PORT=0x3B
+  ```
+* Comment each bitfield with reference to the datasheet.
+* Optional: add a visual diagram for memory alignment in documentation.
+
+---
+
+### **7. File Organization**
+
+* HAL headers: `atmega128.h` → peripheral structs, typedefs, accessor declarations
+* HAL registers: `atmega128_registers.h` → bitfield typedefs, unions
+* HAL sources: `atmega128.c` → accessor function implementations, helper functions
+* Avoid putting peripheral logic in the register file.
+
+---
+
+### **8. General Coding Rules**
+
+1. Always use `volatile` when accessing hardware.
+2. Keep all peripheral offsets and memory addresses consistent with datasheet.
+3. Fill gaps in structs to match memory alignment for the MCU.
+4. Avoid direct writes to registers outside HAL functions.
+5. Maintain consistent naming for readability and maintainability.
+
+
