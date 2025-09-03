@@ -150,7 +150,7 @@ switch(Menu){
 	
 	case '1': // Main Program Menu
 		lcd0()->gotoxy(0,4); //TITLE
-		lcd0()->string_size("Weight Scale", 12); //TITLE
+		lcd0()->string_size("Weight Scale", 13); //TITLE
 		
 		//lcd0.gotoxy(1,0); // for troubleshooting
 		//lcd0.string_size(func()->ftoa(hx.read_raw(&hx), result, ZERO), 13);
@@ -283,6 +283,7 @@ switch(Menu){
 void PORTINIT(void)
 {
 	//Control buttons
+	DDRF &= ~IMASK;
 	PORTF |= IMASK;
 	//troubleshooting output
 	DDRC = 0xFF;

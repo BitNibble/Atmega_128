@@ -1,24 +1,24 @@
-/*************************************************************************
+/**********************************************************************
 	74HC595
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License     
 Hardware: 74HC595
 Date:     25/10/2020
-************************************************************************/
-/*** File Library ***/
+**********************************************************************/
+/*** Library ***/
 #include "74hc595.h"
 
-/*** Procedure & Function Declaration ***/
-void HC595_shift_bit(hc595_parameter* par, uint8_t state);
-void HC595_shift_ibyte(hc595_parameter* par, uint8_t byte);
-void HC595_shift_byte(hc595_parameter* par, uint8_t byte);
-void HC595_shift_out(hc595_parameter* par);
-hc595_parameter hc595_par_inic(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin, uint8_t clkpin, uint8_t outpin);
+/*** Procedure & Function declaration ***/
+void HC595_shift_bit(HC595_Parameter* par, uint8_t state);
+void HC595_shift_ibyte(HC595_Parameter* par, uint8_t byte);
+void HC595_shift_byte(HC595_Parameter* par, uint8_t byte);
+void HC595_shift_out(HC595_Parameter* par);
+HC595_Parameter hc595_par_inic(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin, uint8_t clkpin, uint8_t outpin);
 
 /*** Handler ***/
-HC595 hc595_enable(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin, uint8_t clkpin, uint8_t outpin)
+HC595_Handler hc595_enable(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin, uint8_t clkpin, uint8_t outpin)
 {
-	HC595 setup_hc595 = {
+	HC595_Handler setup_hc595 = {
 		.par = {
 			.hc595_DDR = ddr,
 			.hc595_PORT = port,
@@ -43,8 +43,8 @@ HC595 hc595_enable(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin,
 	return setup_hc595;
 }
 
-/*** Procedure & Function Definition ***/
-void HC595_shift_bit(hc595_parameter* par, uint8_t state)
+/*** Procedure & Function definition ***/
+void HC595_shift_bit(HC595_Parameter* par, uint8_t state)
 {
 	if (state)
 		*par->hc595_PORT |= (1 << par->HC595_datapin); // Data bit HIGH
@@ -54,7 +54,7 @@ void HC595_shift_bit(hc595_parameter* par, uint8_t state)
 	*par->hc595_PORT &= ~(1 << par->HC595_clkpin); //Shift disable
 }
 
-void HC595_shift_ibyte(hc595_parameter* par, uint8_t byte)
+void HC595_shift_ibyte(HC595_Parameter* par, uint8_t byte)
 {
 	uint8_t i;
 	for(i = 0; i < 8; i++)
@@ -62,7 +62,7 @@ void HC595_shift_ibyte(hc595_parameter* par, uint8_t byte)
 	HC595_shift_out(par);
 }
 
-void HC595_shift_byte(hc595_parameter* par, uint8_t byte)
+void HC595_shift_byte(HC595_Parameter* par, uint8_t byte)
 {
 	uint8_t i;
 	for(i = 0; i < 8; i++)
@@ -70,7 +70,7 @@ void HC595_shift_byte(hc595_parameter* par, uint8_t byte)
 	HC595_shift_out(par);
 }
 
-void HC595_shift_out(hc595_parameter* par)
+void HC595_shift_out(HC595_Parameter* par)
 {
 	*par->hc595_PORT |= (1 << par->HC595_outpin); // Output enable
 	*par->hc595_PORT &= ~(1 << par->HC595_outpin); // Output disable

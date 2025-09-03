@@ -1,6 +1,6 @@
 Singleton for hardware peripheral abstarctions.
 Multi instance abstraction for external devices.
-OO object approach.
+OO object approach. Plug & Play.
 
 V-table for procedures, functions.
 Function Pointer for callbacks.

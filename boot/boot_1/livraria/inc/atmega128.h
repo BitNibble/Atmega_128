@@ -1,10 +1,10 @@
-/***********************************************************************
+/**********************************************************************
 	ATMEGA 128
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
-Hardware: Atmega128 by ETT ET-BASE
-Date:	  05072025
-***********************************************************************/
+Hardware: Atmega 128
+Date:	  12082025
+**********************************************************************/
 #ifndef _ATMEGA128_H_
 	#define _ATMEGA128_H_
 
@@ -18,31 +18,21 @@ Date:	  05072025
 	#define F_CPU 16000000UL
 #endif
 
-/*** Global Library ***/
+/*** Library ***/
 #include <avr/io.h>
 #include <avr/boot.h>
 #include <avr/fuse.h>
 #include <avr/wdt.h>
 #include <avr/eeprom.h>
 #include <avr/pgmspace.h>
+#include <avr/sleep.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
 #include "atmega128_registers.h"
 
-/*** Global Constant & Macro ***/
-#define TWO 2
-#define NIBBLE_BITS 4
-#define BYTE_BITS 8
-#define WORD_BITS 16
-#define DWORD_BITS 32
-#define QWORD_BITS 64
+/*** Constant & Macro ***/
 #define SRAMSTART 0x0100
 #define SRAMEND 0x10FF
-// Macros for common operations
-#define SET_REG(REG, HBITS)		(REG |= HBITS)
-#define CLEAR_REG(REG, HBITS)	(REG &= ~HBITS)
-#define READ_BIT(REG, BIT)		((REG >> BIT) & 1)
-#define TOGGLE_REG(REG, HBITS)	(REG ^= HBITS)
 
 /*****************************/
 /**** MAIN HARDWARE LAYER ****/
@@ -80,7 +70,7 @@ typedef volatile struct {
 	uint16_t Z; // 0x1E 0x1F
 } Atmega128GPWR_TypeDef;
 
-Atmega128GPWR_TypeDef* gpwr_reg(void);
+//Atmega128GPWR_TypeDef* gpwr_reg(void);
 
 // Analog Comparator (AC)
 typedef volatile struct {
@@ -252,7 +242,7 @@ typedef volatile struct {
 	TCCR1B_TypeDef tccr1b; // 0x4E
 	TCCR1A_TypeDef tccr1a; // 0x4F
 	uint8_t fill2[6]; // (56 - 4F) - 1
-	TIFR_Typedef tifr; // 0x56
+	TIFR_TypeDef tifr; // 0x56
 	TIMSK_TypeDef timsk; // 0x57
 	uint8_t fill3[32]; // (78 - 57) - 1
 	U_word ocr1c; // 0x78 0x79
@@ -303,7 +293,7 @@ typedef volatile struct {
 	U_byte tcnt2; // 0x44
 	TCCR2_TypeDef tccr2; // 0x45
 	uint8_t fill[16]; // (56 - 45) - 1
-	TIFR_Typedef tifr; // 0x56
+	TIFR_TypeDef tifr; // 0x56
 	TIMSK_TypeDef timsk; // 0x57
 } Atmega128TimerCounter2_TypeDef;
 
@@ -318,7 +308,7 @@ typedef volatile struct {
 	U_byte tcnt0; // 0x52
 	TCCR0_TypeDef tccr0; // 0x53
 	uint8_t fill2[2]; // (56 - 53) - 1
-	TIFR_Typedef tifr; // 0x56
+	TIFR_TypeDef tifr; // 0x56
 	TIMSK_TypeDef timsk; // 0x57
 } Atmega128TimerCounter0_TypeDef;
 
@@ -326,7 +316,7 @@ Atmega128TimerCounter0_TypeDef* tc0_reg(void);
 
 // Timer/Counter 0, 1 and 2
 typedef volatile struct {
-	TIFR_Typedef tifr; // 0x56
+	TIFR_TypeDef tifr; // 0x56
 } Atmega128TimerInterruptFlag_TypeDef;
 
 Atmega128TimerInterruptFlag_TypeDef* tc_if_reg(void);
@@ -383,7 +373,7 @@ typedef volatile struct {
 Atmega128WatchdogTimer_TypeDef* wdt_reg(void);
 
 /*********************************************************************/
-/********** Atmega 128 Procedure and Function declaration ************/
+/**************** Procedure and Function declaration *****************/
 /*********************************************************************/
 uint16_t readHLbyte(U_word reg);
 uint16_t readLHbyte(U_word reg);
@@ -395,65 +385,7 @@ uint16_t BAUDRATEdouble(uint32_t BAUD);
 uint16_t BAUDRATEsynchronous(uint32_t BAUD);
 void ClockPrescalerSelect(volatile uint8_t prescaler);
 void MoveInterruptsToBoot(void);
-/*** Procedure and Function ToolSet ***/
-void set_reg(volatile uint8_t* reg, uint8_t hbits);
-void clear_reg(volatile uint8_t* reg, uint8_t hbits);
-uint8_t get_reg_block(uint8_t reg, uint8_t size_block, uint8_t bit_n);
-uint8_t get_reg_Msk(uint8_t reg, uint8_t Msk);
-void write_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
-void write_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t data);
-void set_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
-void set_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t data);
-uint8_t get_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n);
-void set_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
-/*** NULL Check ***/
-int isPtrNull(void* ptr);
-int isCharPtrFlush(void* ptr);
-/*** Fall Threw Delay ***/
-int ftdelayCycles(uint8_t lock_ID, unsigned int n_cycle);
-void ftdelayReset(uint8_t ID);
 
 #endif
-
-/*** Interrupt Vectors FLASH ***
-typedef struct { // IVSEL = 0
-	U_word RESET_vect; // 0x0000
-	U_word EXT_INT0_vect; // 0x0002
-	U_word EXT_INT1_vect; // 0x0004
-	U_word EXT_INT2_vect; // 0x0006
-	U_word EXT_INT3_vect; // 0x0008
-	U_word EXT_INT4_vect; // 0x000A
-	U_word EXT_INT5_vect; // 0x000C
-	U_word EXT_INT6_vect; // 0x000E
-	U_word EXT_INT7_vect; // 0x0010
-	U_word TIM2_COMP_vect; // 0x0012
-	U_word TIM2_OVF_vect; // 0x0014
-	U_word TIM1_CAPT_vect; // 0x0016
-	U_word TIM1_COMPA_vect; // 0x0018
-	U_word TIM1_COMPB_vect; // 0x001A
-	U_word TIM1_OVF_vect; // 0x001C
-	U_word TIM0_COMP_vect; // 0x001E
-	U_word TIM0_OVF_vect; // 0x0020
-	U_word SPI_STC_vect; // 0x0022
-	U_word USART0_RXC_vect; // 0x0024
-	U_word USART0_DRE_vect; // 0x0026
-	U_word USART0_TXC_vect; // 0x0028
-	U_word ADC_vect; // 0x002A
-	U_word EE_RDY_vect; // 0x002C
-	U_word ANA_COMP_vect; // 0x002E
-	U_word TIM1_COMPC_vect; // 0x0030
-	U_word TIM3_CAPT_vect; // 0x0032
-	U_word TIM3_COMPA_vect; // 0x0034
-	U_word TIM3_COMPB_vect; // 0x0036
-	U_word TIM3_COMPC_vect; // 0x0038
-	U_word TIM3_OVF_vect; // 0x003A
-	U_word USART1_RXC_vect; // 0x003C
-	U_word USART1_DRE_vect; // 0x003E
-	U_word USART1_TXC_vect; // 0x0040
-	U_word TWI_vect; // 0x0042
-	U_word SPM_RDY_vect; // 0x0044
-} Atmega128InterruptVectors_TypeDef;
-********************************/
-
 /*** EOF ***/
 

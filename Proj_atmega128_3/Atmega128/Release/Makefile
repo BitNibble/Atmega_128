@@ -44,7 +44,6 @@ C_SRCS +=  \
 ../Livraria/Src/atmega128.c \
 ../Livraria/Src/atmega128analog.c \
 ../Livraria/Src/atmega128interrupt.c \
-../Livraria/Src/atmega128mapping.c \
 ../Livraria/Src/atmega128spi.c \
 ../Livraria/Src/atmega128timer0.c \
 ../Livraria/Src/atmega128timer1.c \
@@ -87,7 +86,6 @@ Livraria/Src/74hc595.o \
 Livraria/Src/atmega128.o \
 Livraria/Src/atmega128analog.o \
 Livraria/Src/atmega128interrupt.o \
-Livraria/Src/atmega128mapping.o \
 Livraria/Src/atmega128spi.o \
 Livraria/Src/atmega128timer0.o \
 Livraria/Src/atmega128timer1.o \
@@ -123,7 +121,6 @@ Livraria/Src/74hc595.o \
 Livraria/Src/atmega128.o \
 Livraria/Src/atmega128analog.o \
 Livraria/Src/atmega128interrupt.o \
-Livraria/Src/atmega128mapping.o \
 Livraria/Src/atmega128spi.o \
 Livraria/Src/atmega128timer0.o \
 Livraria/Src/atmega128timer1.o \
@@ -159,7 +156,6 @@ Livraria/Src/74hc595.d \
 Livraria/Src/atmega128.d \
 Livraria/Src/atmega128analog.d \
 Livraria/Src/atmega128interrupt.d \
-Livraria/Src/atmega128mapping.d \
 Livraria/Src/atmega128spi.d \
 Livraria/Src/atmega128timer0.d \
 Livraria/Src/atmega128timer1.d \
@@ -195,7 +191,6 @@ Livraria/Src/74hc595.d \
 Livraria/Src/atmega128.d \
 Livraria/Src/atmega128analog.d \
 Livraria/Src/atmega128interrupt.d \
-Livraria/Src/atmega128mapping.d \
 Livraria/Src/atmega128spi.d \
 Livraria/Src/atmega128timer0.d \
 Livraria/Src/atmega128timer1.d \
@@ -262,13 +257,6 @@ Livraria/Src/atmega128analog.o: ../Livraria/Src/atmega128analog.c
 	
 
 Livraria/Src/atmega128interrupt.o: ../Livraria/Src/atmega128interrupt.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-Livraria/Src/atmega128mapping.o: ../Livraria/Src/atmega128mapping.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -507,9 +495,6 @@ $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Atmega128.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mrelax -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128"  
 	@echo Finished building target: $@
 	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Atmega128.elf" "Atmega128.hex"
-	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Atmega128.elf" "Atmega128.eep" || exit 0
-	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objdump.exe" -h -S "Atmega128.elf" > "Atmega128.lss"
-	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "Atmega128.elf" "Atmega128.srec"
 	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-size.exe" "Atmega128.elf"
 	
 	

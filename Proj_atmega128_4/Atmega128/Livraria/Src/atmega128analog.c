@@ -3,7 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega128 by ETT ET-BASE
-Date:     07/01/2024
+Date:     03/09/2025
 **********************************************************************/
 /*** Library ***/
 #include "atmega128analog.h"
@@ -21,12 +21,20 @@ static volatile unsigned char adc_n_sample;
 /*** Procedure and Function declaration ***/
 int ANALOG_read(int selection);
 
+/*** Default Callback declaration ***/
+static void adc_callback(void);
+
 /*** Internal State ***/
 static ADC0_Handler atmega128_adc = {
+	// Parameter
 	.par = {
 		.VREFF = 0,
 		.DIVISION_FACTOR = ADC_NUMBER_SAMPLE
-		},
+	},
+	// Callback
+	.callback = {
+		.adc_vect = adc_callback
+	},
 	// V-table
 	.read = ANALOG_read	
 };
@@ -156,10 +164,8 @@ int ANALOG_read(int selection)
 	return ADC_VALUE[selection];
 }
 
-/*** Interrupt ***/
-ISR(ADC_vect)
-// Function: ANALOG interrupt
-// Purpose:  Read Analog Input
+/*** Default Callback definition ***/
+static void adc_callback(void)
 {
 	// adc_tmp = atmega128.adc->adc.L; // ADCL
 	// adc_tmp |= (atmega128.adc->adc.H << 8); // (ADCH << 8);
@@ -171,7 +177,7 @@ ISR(ADC_vect)
 	}else{
 		ADC_VALUE[ADC_SELECTOR] = adc_sample >> ADC_NUMBER_SAMPLE;
 		adc_n_sample = adc_sample = 0;
-		
+	
 		if(ADC_SELECTOR < ADC_N_CHANNEL)
 			ADC_SELECTOR++;
 		else
@@ -181,6 +187,12 @@ ISR(ADC_vect)
 		//adc_reg()->admux.var |= (ADC_CHANNEL_GAIN[ADC_SELECTOR] & MUX_MASK);
 		adc_reg()->admux.par.mux = ADC_CHANNEL_GAIN[ADC_SELECTOR] & MUX_MASK;
 	}
+}
+
+/*** Interrupt ***/
+ISR(ADC_vect)
+{
+	if( atmega128_adc.callback.adc_vect ){ atmega128_adc.callback.adc_vect(); }
 }
 
 /*** EOF ***/

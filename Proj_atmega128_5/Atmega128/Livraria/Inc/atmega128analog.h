@@ -3,7 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega128 by ETT ET-BASE
-Date:     07/01/2024
+Date:     03/09/2025
 **********************************************************************/
 #ifndef _ATMEGA128ANALOG_H_
 	#define _ATMEGA128ANALOG_H_
@@ -29,10 +29,15 @@ typedef struct{
 	uint8_t DIVISION_FACTOR;
 }ADC0_Parameter;
 
+/*** Callback ***/
+typedef struct {
+	void (*adc_vect)(void);
+} ADC0_Callback;
+
 /*** Handler ***/
 typedef struct{
 	ADC0_Parameter par;
-	
+	ADC0_Callback callback;
 	// V-table
 	int (*read)(int selection);
 }ADC0_Handler;

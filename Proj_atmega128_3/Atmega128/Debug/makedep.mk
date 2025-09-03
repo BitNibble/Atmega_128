@@ -10,8 +10,6 @@ Livraria\Src\atmega128analog.c
 
 Livraria\Src\atmega128interrupt.c
 
-Livraria\Src\atmega128mapping.c
-
 Livraria\Src\atmega128spi.c
 
 Livraria\Src\atmega128timer0.c
@@ -61,6 +59,8 @@ Livraria\Src\mm74c923.c
 Livraria\Src\pcf8563rtc.c
 
 Livraria\Src\rotenc.c
+
+Livraria\Src\toolset.c
 
 Livraria\Src\watch.c
 

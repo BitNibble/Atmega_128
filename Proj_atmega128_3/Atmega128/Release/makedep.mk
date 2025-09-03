@@ -10,8 +10,6 @@ Livraria\Src\atmega128analog.c
 
 Livraria\Src\atmega128interrupt.c
 
-Livraria\Src\atmega128mapping.c
-
 Livraria\Src\atmega128spi.c
 
 Livraria\Src\atmega128timer0.c
