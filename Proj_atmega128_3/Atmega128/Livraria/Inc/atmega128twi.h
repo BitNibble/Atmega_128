@@ -67,7 +67,7 @@ Date:     13/07/2025
 #define Nticks 1023 // anti polling freeze.
  
  typedef struct {
-	 void (*vect)(void);
+	 void (*twi)(void);
 }TWI0_CAllback;
 
 /*** Handler ***/

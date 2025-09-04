@@ -79,7 +79,7 @@ void usart1_enable( uint32_t baud, unsigned int FDbits, unsigned int Stopbits, u
 	usart1_reg()->ucsr1b.var = (1 << RXCIE1) | (1 << RXEN1)|(1 << TXEN1);
 	
 	#ifdef URSEL1 // Set frame format: asynchronous, 8 data, no parity, 1 stop bit
-		UCSR1C = (1 << UMSEL1) | (3 << UCSZ10);
+		UCSR1C = (0 << UMSEL1) | (3 << UCSZ10);
 	#else
 		// Parameters
 		switch(FDbits){
@@ -223,7 +223,7 @@ uint8_t USART1_DataOverRun(void)
 }
 uint8_t USART1_ParityError(void)
 {
-	return (UCSR1A & (1 << FE1));
+	return (UCSR1A & (1 << UPE1));
 }
 uint8_t USART1_ReadErrors(void)
 {

@@ -19,7 +19,7 @@ Date:     04/09/2025
 #define UARTvar char
 
 #if ( ( UART1_RX_BUFFER_SIZE ) >= ( RAMEND - 0x60 ) )
-	#error "size of UART_RX_BUFFER_SIZE + UART_TX_BUFFER_SIZE larger than size of SRAM"
+	#error "size of UART_RX_BUFFER_SIZE larger than size of SRAM"
 #endif
 
 #if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)

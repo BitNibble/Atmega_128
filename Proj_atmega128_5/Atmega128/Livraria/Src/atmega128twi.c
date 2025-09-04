@@ -24,7 +24,7 @@ void TWI_wait_twint(uint16_t nticks);
 static TWI0_Handler atmega128_twi = {
 	// Callback
 	.callback = {
-		.vect = NULL
+		.twi = NULL
 	},
 	// V-table
 	.start = TWI_start,
@@ -182,8 +182,8 @@ void TWI_wait_twint(uint16_t nticks)
 /*** Interrupt ***/
 ISR(TWI_vect)
 {
-	if(atmega128_twi.callback.vect){
-		atmega128_twi.callback.vect();
+	if(atmega128_twi.callback.twi){
+		atmega128_twi.callback.twi();
 	}
 }
 
