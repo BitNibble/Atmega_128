@@ -3,7 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega128 by ETT ET-BASE
-Date:     07/01/2024
+Date:     04/09/2025
 **********************************************************************/
 /*** Library ***/
 #include "atmega128spi.h"
@@ -14,8 +14,15 @@ void spi_transfer_sync (uint8_t * dataout, uint8_t * datain, uint8_t len);
 void spi_transmit_sync (uint8_t * dataout, uint8_t len);
 uint8_t spi_fast_shift (uint8_t data);
 
+/*** Default Callback declaration ***/
+//static void spi0_callback_stc(void);
+
 /*** Internal State ***/
 static SPI0_Handler atmega128_spi = {
+	// Callback
+	.callback = {
+		.stc = NULL
+	},
 	// V-table
 	.transfer_sync = spi_transfer_sync,
 	.transmit_sync = spi_transmit_sync,
@@ -151,6 +158,12 @@ uint8_t spi_fast_shift (uint8_t data)
 	return spi_reg()->spdr.var;
 }
 
+/*** Interrupt ***/
+ISR( SPI_SERIAL_TRANSFER_COMPLETE )
+{
+	if( atmega128_spi.callback.stc ){ atmega128_spi.callback.stc(); }
+}
+	
 /*** EOF ***/
 
 

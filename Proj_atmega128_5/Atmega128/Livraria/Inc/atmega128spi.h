@@ -2,7 +2,7 @@
 	ATMEGA128SPI
 Author:   <sergio.salazar.santos@gmail.com>
 Hardware: Atmega128 by ETT ET-BASE
-Date:     07/01/2024
+Date:     04/09/2025
 **********************************************************************/
 #ifndef _ATMEGA128SPI_H_
 	#define _ATMEGA128SPI_H_
@@ -16,6 +16,8 @@ Date:     07/01/2024
 	#error "Not Atmega 128"
 #endif
 
+#define SPI_SERIAL_TRANSFER_COMPLETE SPI_STC_vect
+
 #define SPI_LSB_DATA_ORDER 1
 #define SPI_MSB_DATA_ORDER 0
 #define SPI_MASTER_MODE 1
@@ -26,8 +28,15 @@ Date:     07/01/2024
 #define DD_MOSI 2
 #define DD_MISO 3
 
+/*** Callback ***/
+typedef struct {
+	void (*stc)(void);
+}SPI0_Callback;
+
 /*** Handler ***/
 typedef struct{
+	SPI0_Callback callback;
+	
 	// V-table
 	void (*transfer_sync) (uint8_t * dataout, uint8_t * datain, uint8_t len);
 	void (*transmit_sync) (uint8_t * dataout, uint8_t len);
