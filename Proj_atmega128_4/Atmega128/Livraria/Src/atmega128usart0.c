@@ -43,7 +43,6 @@ void USART0_doubletransmissionspeed(void);
 static void usart0_callback_rx(void);
 static void usart0_callback_udre(void);
 
-
 /*** Internal State ***/
 static USART0_Handler atmega128_usart0 = {
 	// Callback
@@ -70,8 +69,7 @@ void usart0_enable(uint32_t baud, unsigned int fdbits, unsigned int stopbits, un
 	USART0_rxbuff = buff_enable(UART0_RX_BUFFER_SIZE, USART0_rxbuf);
 	ubrr = BAUDRATEnormal(baud);
 	// Set baud rate
-	if (ubrr & 0x8000) // The transfer rate can be doubled by setting the U2X bit in UCSRA.
-	{
+	if (ubrr & 0x8000) {
    		USART0_doubletransmissionspeed(); // Enable 2x speed 
    		ubrr = BAUDRATEdouble(baud);
    	}
@@ -83,6 +81,7 @@ void usart0_enable(uint32_t baud, unsigned int fdbits, unsigned int stopbits, un
 	#ifdef URSEL0 // Set frame format: asynchronous, 8 data, no parity, 1 stop bit
 		usart0_reg()->ucsr0c = (1 << UMSEL0) | (3 << UCSZ00);
 	#else
+		// Parameters
 		switch(fdbits){
 			case 9:
 				usart0_reg()->ucsr0b.var |= (1 << UCSZ02);
@@ -169,7 +168,8 @@ void USART0_write(UARTvar data)
 	uint16_t timeout;
 	usart0_reg()->ucsr0b.var |= 1 << UDRIE0;
 	usart0_reg()->udr0.var = data;
-	for(timeout = 600; !USART0_dataregisterempty() && timeout; timeout--);
+	for(timeout = 600; !USART0_dataregisterempty() && timeout; timeout--); // minimum -> +/- 450
+	//for( ; !USART1DataRegisterEmpty(); ); // without timeout
 }
 void USART0_putch(UARTvar c)
 {
@@ -184,7 +184,7 @@ void USART0_puts(UARTvar* s)
 	}
 }
 /*** Complimentary functions ***/
-char* USART0_messageprint(USART0_Handler* uart, char* oneshot, char* msg, const char* endl)
+char* usart0_messageprint(USART0_Handler* uart, char* oneshot, char* msg, const char* endl)
 {
 	char* ptr;
 	uint8_t length;
@@ -193,11 +193,10 @@ char* USART0_messageprint(USART0_Handler* uart, char* oneshot, char* msg, const 
 	ptr = uart->gets();
 	length = strlen(ptr);
 	if(length >= endlength){
-		if( !strcmp(ptr+(length-endlength), endl) ){
-			strcpy(oneshot, ptr);
-			strcpy(msg, ptr);
-			USART0_flag = 0xFF;
-		}
+		if( !strcmp(ptr+(length-endlength), endl) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); USART0_flag = 0xFF; }
+		// default
+		//else if( !strcmp( ptr+(length-endlength), "\r" ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart1flag = 0xFF; }
+		//else if( !strcmp( ptr+(length-endlength), "\n" ) ){ strcpy(oneshot, ptr); strcpy(msg, ptr); uart1flag = 0xFF; }
 	}
 	return ptr;
 }
