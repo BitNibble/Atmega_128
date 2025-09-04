@@ -3,7 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega128 by ETT ET-BASE
-Date:     26/06/2025
+Date:     04/09/2025
 **********************************************************************/
 /*** Library ***/
 #include "atmega128usart0.h"
@@ -40,16 +40,17 @@ void USART0_clearerrors(void);
 void USART0_doubletransmissionspeed(void);
 
 /*** Default Callback declaration ***/
-static void usart0_callback_receive(void);
-static void usart0_callback_transmit(void);
+static void usart0_callback_rx(void);
+static void usart0_callback_udre(void);
 
 
 /*** Internal State ***/
 static USART0_Handler atmega128_usart0 = {
 	// Callback
 	.callback = {
-		.receive = usart0_callback_receive,
-		.transmit = usart0_callback_transmit
+		.rx = usart0_callback_rx,
+		.udre = usart0_callback_udre,
+		.tx = NULL
 	},
 	// V-table
 	.read = USART0_read,
@@ -239,7 +240,7 @@ void USART0_doubletransmissionspeed(void)
 }
 
 /*** Default Callback definition ***/
-static void usart0_callback_receive(void)
+static void usart0_callback_rx(void)
 {
 	unsigned char bit9;
 	unsigned char usr;
@@ -253,22 +254,28 @@ static void usart0_callback_receive(void)
 	USART0_rx = usart0_reg()->udr0.var;
 	USART0_rxbuff.push(&USART0_rxbuff.par, USART0_rx);
 }
-static void usart0_callback_transmit(void)
+static void usart0_callback_udre(void)
 {
 	usart0_reg()->ucsr0b.var &= ~(1 << UDRIE0);
 }
 
 /*** Interrupt ***/
-ISR(UART0_RECEIVE_INTERRUPT)
+ISR(UART0_RECEIVE_COMPLETE)
 {
-	if (atmega128_usart0.callback.receive) {
-		atmega128_usart0.callback.receive();
+	if (atmega128_usart0.callback.rx) {
+		atmega128_usart0.callback.rx();
 	}
 }
-ISR(UART0_TRANSMIT_INTERRUPT)
+ISR(UART0_DATA_REGISTER_EMPTY)
 {
-	if (atmega128_usart0.callback.transmit) {
-		atmega128_usart0.callback.transmit();
+	if (atmega128_usart0.callback.udre) {
+		atmega128_usart0.callback.udre();
+	}
+}
+ISR(UART0_TRANSMIT_COMPLETE)
+{
+	if (atmega128_usart0.callback.tx) {
+		atmega128_usart0.callback.tx();
 	}
 }
 

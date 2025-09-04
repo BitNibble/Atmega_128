@@ -3,7 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega128 by ETT ET-BASE
-Date:     07/01/2024
+Date:     04/09/2025
 **********************************************************************/
 #ifndef _ATMEGA128USART1_H_
 	#define _ATMEGA128USART1_H_
@@ -23,8 +23,9 @@ Date:     07/01/2024
 #endif
 
 #if defined(__AVR_ATmega64__) || defined(__AVR_ATmega128__)
-	#define UART1_RECEIVE_INTERRUPT   USART1_RX_vect
-	#define UART1_TRANSMIT_INTERRUPT  USART1_UDRE_vect
+	#define UART1_RECEIVE_COMPLETE   USART1_RX_vect
+	#define UART1_DATA_REGISTER_EMPTY  USART1_UDRE_vect
+	#define	UART1_TRANSMIT_COMPLETE	USART1_TX_vect
 #else
 	#error "Not Atmega 128"
 #endif
@@ -39,8 +40,9 @@ Date:     07/01/2024
 
 /*** Callback ***/
 typedef struct {
-	void (*receive)(void);
-	void (*transmit)(void);
+	void (*rx)(void);
+	void (*udre)(void);
+	void (*tx)(void);
 }USART1_Callback;
 
 /*** Handler ***/
