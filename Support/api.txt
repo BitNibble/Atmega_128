@@ -1,13 +1,14 @@
-Singleton for hardware peripheral abstarctions.
-Multi instance abstraction for external devices.
-OO object approach. Plug & Play.
+-Singleton for hardware peripheral abstarctions.
+-Multi instance abstraction for external devices.
+-OO object approach. Plug & Play. Deterministic.
 
-V-table for procedures, functions.
-Function Pointer for callbacks.
+-V-table for procedures, functions.
+-Function Pointer for callbacks.
 
-registers -> instances -> handlers -> system
+registers -> instances -> handlers -> framework
 
-instance -> peripheral related regsiters (cross platform)
+instance -> peripheral related regsiters 
+			(cross platform. [<peripheral>_reg()] accessor.)
 
 Handler -> parameters
 		-> callbacks
@@ -130,5 +131,59 @@ Handler -> parameters
 3. Fill gaps in structs to match memory alignment for the MCU.
 4. Avoid direct writes to registers outside HAL functions.
 5. Maintain consistent naming for readability and maintainability.
+
+/*********************************************************************/
+Your ATmega128 Framework
+│
+├── Global Register Accessors (singleton layer)
+│    ├── usart0_reg() → Atmega128Usart0_TypeDef
+│    ├── spi0_reg()   → Atmega128Spi0_TypeDef
+│    └── twi_reg()    → Atmega128Twi_TypeDef
+│
+├── Peripheral Handlers (HAL logic layer)
+│    ├── USART0_Handler (callbacks + v-table + state)
+│    ├── SPI0_Handler
+│    └── TWI_Handler
+│
+└── External Devices (top-level objects)
+     ├── HC-05 → depends on USART0_Handler
+     ├── 74HC595 → depends on SPI0_Handler
+     └── LCD → depends on TWI_Handler
+
+
+STM32 HAL / LL Framework
+│
+├── LL Drivers (Low Layer: direct registers)
+│    ├── USART_TypeDef → mapped to peripheral memory
+│    ├── SPI_TypeDef
+│    └── I2C_TypeDef
+│
+├── HAL Handles (peripheral instance + logic)
+│    ├── UART_HandleTypeDef (includes instance, config, callback)
+│    ├── SPI_HandleTypeDef
+│    └── I2C_HandleTypeDef
+│
+└── Device Drivers / Middleware (top-level)
+     ├── BLE module → depends on UART_Handle
+     ├── LCD → depends on SPI_Handle
+     └── Sensors → depend on I2C_Handle
+
+
+Zephyr RTOS
+│
+├── Device Tree / Peripheral Instances
+│    ├── DEVICE_DT_GET(uart0) → struct with registers & config
+│    ├── DEVICE_DT_GET(spi1)
+│    └── DEVICE_DT_GET(i2c0)
+│
+├── Driver Logic (peripheral HAL)
+│    ├── UART driver → v-table, callbacks
+│    ├── SPI driver
+│    └── I2C driver
+│
+└── External Devices / Application Layer
+     ├── BLE Stack → uses UART driver instance
+     ├── Sensor → uses SPI or I2C driver instance
+     └── LCD → uses SPI/I2C driver instance
 
 
