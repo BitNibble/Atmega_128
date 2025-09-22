@@ -62,8 +62,6 @@ Livraria\Src\pcf8563rtc.c
 
 Livraria\Src\rotenc.c
 
-Livraria\Src\toolset.c
-
 Livraria\Src\watch.c
 
 Livraria\Src\znpid.c

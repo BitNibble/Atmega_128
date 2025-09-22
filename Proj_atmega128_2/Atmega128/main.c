@@ -38,7 +38,6 @@ Comment:
 #include "keypad.h"
 #include "74hc595.h"
 #include "hc05atcommands.h"
-#include "toolset.h"
 #include <string.h>
 
 /*** Constant & Macro ***/

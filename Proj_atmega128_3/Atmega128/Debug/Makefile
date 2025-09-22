@@ -69,7 +69,6 @@ C_SRCS +=  \
 ../Livraria/Src/mm74c923.c \
 ../Livraria/Src/pcf8563rtc.c \
 ../Livraria/Src/rotenc.c \
-../Livraria/Src/toolset.c \
 ../Livraria/Src/watch.c \
 ../Livraria/Src/znpid.c \
 ../main.c
@@ -111,7 +110,6 @@ Livraria/Src/lfsm.o \
 Livraria/Src/mm74c923.o \
 Livraria/Src/pcf8563rtc.o \
 Livraria/Src/rotenc.o \
-Livraria/Src/toolset.o \
 Livraria/Src/watch.o \
 Livraria/Src/znpid.o \
 main.o
@@ -146,7 +144,6 @@ Livraria/Src/lfsm.o \
 Livraria/Src/mm74c923.o \
 Livraria/Src/pcf8563rtc.o \
 Livraria/Src/rotenc.o \
-Livraria/Src/toolset.o \
 Livraria/Src/watch.o \
 Livraria/Src/znpid.o \
 main.o
@@ -181,7 +178,6 @@ Livraria/Src/lfsm.d \
 Livraria/Src/mm74c923.d \
 Livraria/Src/pcf8563rtc.d \
 Livraria/Src/rotenc.d \
-Livraria/Src/toolset.d \
 Livraria/Src/watch.d \
 Livraria/Src/znpid.d \
 main.d
@@ -216,7 +212,6 @@ Livraria/Src/lfsm.d \
 Livraria/Src/mm74c923.d \
 Livraria/Src/pcf8563rtc.d \
 Livraria/Src/rotenc.d \
-Livraria/Src/toolset.d \
 Livraria/Src/watch.d \
 Livraria/Src/znpid.d \
 main.d
@@ -432,13 +427,6 @@ Livraria/Src/pcf8563rtc.o: ../Livraria/Src/pcf8563rtc.c
 	
 
 Livraria/Src/rotenc.o: ../Livraria/Src/rotenc.c
-	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : 5.4.0
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-Livraria/Src/toolset.o: ../Livraria/Src/toolset.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include" -I"../Livraria/Inc"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -Wextra -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

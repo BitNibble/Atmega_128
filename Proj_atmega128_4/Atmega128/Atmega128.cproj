@@ -245,9 +245,6 @@
     <Compile Include="Livraria\Inc\rotenc.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Livraria\Inc\toolset.h">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="Livraria\Inc\watch.h">
       <SubType>compile</SubType>
     </Compile>
@@ -342,9 +339,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Livraria\Src\rotenc.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="Livraria\Src\toolset.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Livraria\Src\watch.c">
