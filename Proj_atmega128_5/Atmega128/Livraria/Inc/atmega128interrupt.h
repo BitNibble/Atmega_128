@@ -17,14 +17,14 @@ Date:     07/01/2024
 #endif
 
 typedef struct {
-	void (*int0)(void);
-	void (*int1)(void);
-	void (*int2)(void);
-	void (*int3)(void);
-	void (*int4)(void);
-	void (*int5)(void);
-	void (*int6)(void);
-	void (*int7)(void);
+	void (*int0_vect)(void);
+	void (*int1_vect)(void);
+	void (*int2_vect)(void);
+	void (*int3_vect)(void);
+	void (*int4_vect)(void);
+	void (*int5_vect)(void);
+	void (*int6_vect)(void);
+	void (*int7_vect)(void);
 }EXINT0_Callback;
 
 /*** Handler ***/

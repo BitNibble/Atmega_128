@@ -46,9 +46,9 @@ static void usart1_callback_udre(void);
 static USART1_Handler atmega128_usart1 = {
 	// Callback
 	.callback = {
-		.rx = usart1_callback_rx,
-		.udre = usart1_callback_udre,
-		.tx = NULL
+		.rx_vect = usart1_callback_rx,
+		.udre_vect = usart1_callback_udre,
+		.tx_vect = NULL
 	},
 	// V-table
 	.read = uart1_read,
@@ -260,20 +260,20 @@ static void usart1_callback_udre(void)
 /*** Interrupt ***/
 SIGNAL(UART1_RECEIVE_COMPLETE)
 {
-	if (atmega128_usart1.callback.rx) {
-		atmega128_usart1.callback.rx();
+	if (atmega128_usart1.callback.rx_vect) {
+		atmega128_usart1.callback.rx_vect();
 	}
 }
 SIGNAL(UART1_DATA_REGISTER_EMPTY)
 {
-	if (atmega128_usart1.callback.udre) {
-		atmega128_usart1.callback.udre();
+	if (atmega128_usart1.callback.udre_vect) {
+		atmega128_usart1.callback.udre_vect();
 	}
 }
 SIGNAL(UART1_TRANSMIT_COMPLETE)
 {
-	if (atmega128_usart1.callback.tx) {
-		atmega128_usart1.callback.tx();
+	if (atmega128_usart1.callback.tx_vect) {
+		atmega128_usart1.callback.tx_vect();
 	}
 }
 

@@ -40,9 +40,9 @@ Date:     04/09/2025
 
 /*** Callback ***/
 typedef struct {
-	void (*rx)(void);
-	void (*udre)(void);
-	void (*tx)(void);
+	void (*rx_vect)(void);
+	void (*udre_vect)(void);
+	void (*tx_vect)(void);
 }USART0_Callback;
 
 /*** Handler ***/

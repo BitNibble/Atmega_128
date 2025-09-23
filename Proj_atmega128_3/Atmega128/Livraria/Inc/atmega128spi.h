@@ -30,7 +30,7 @@ Date:     04/09/2025
 
 /*** Callback ***/
 typedef struct {
-	void (*stc)(void);
+	void (*stc_vect)(void);
 }SPI0_Callback;
 
 /*** Handler ***/

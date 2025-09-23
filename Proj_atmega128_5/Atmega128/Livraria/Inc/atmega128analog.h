@@ -31,7 +31,7 @@ typedef struct{
 
 /*** Callback ***/
 typedef struct {
-	void (*adc)(void);
+	void (*adc_vect)(void);
 } ADC0_Callback;
 
 /*** Handler ***/

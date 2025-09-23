@@ -18,14 +18,14 @@ uint8_t INTERRUPT_reset_status(void);
 static EXINT0_Handler atmega128_exint = {
 	// Callback
 	.callback = {
-		.int0 = NULL,
-		.int1 = NULL,
-		.int2 = NULL,
-		.int3 = NULL,
-		.int4 = NULL,
-		.int5 = NULL,
-		.int6 = NULL,
-		.int7 = NULL
+		.int0_vect = NULL,
+		.int1_vect = NULL,
+		.int2_vect = NULL,
+		.int3_vect = NULL,
+		.int4_vect = NULL,
+		.int5_vect = NULL,
+		.int6_vect = NULL,
+		.int7_vect = NULL
 	},
 	// V-table
 	.set = INTERRUPT_set,
@@ -312,50 +312,50 @@ void INTERRUPT_on(uint8_t channel)
 /*** Interrupt ***/
 ISR(INT0_vect)
 {
-	if(atmega128_exint.callback.int0) {
-		atmega128_exint.callback.int0();
+	if(atmega128_exint.callback.int0_vect) {
+		atmega128_exint.callback.int0_vect();
 	}
 }
 ISR(INT1_vect)
 {
-	if(atmega128_exint.callback.int1) {
-		atmega128_exint.callback.int1();
+	if(atmega128_exint.callback.int1_vect) {
+		atmega128_exint.callback.int1_vect();
 	}
 }
 ISR(INT2_vect)
 {
-	if(atmega128_exint.callback.int2) {
-		atmega128_exint.callback.int2();
+	if(atmega128_exint.callback.int2_vect) {
+		atmega128_exint.callback.int2_vect();
 	}	
 }
 ISR(INT3_vect)
 {
-	if(atmega128_exint.callback.int3) {
-		atmega128_exint.callback.int3();
+	if(atmega128_exint.callback.int3_vect) {
+		atmega128_exint.callback.int3_vect();
 	}
 }
 ISR(INT4_vect)
 {
-	if(atmega128_exint.callback.int4) {
-		atmega128_exint.callback.int4();
+	if(atmega128_exint.callback.int4_vect) {
+		atmega128_exint.callback.int4_vect();
 	}
 }
 ISR(INT5_vect)
 {
-	if(atmega128_exint.callback.int5) {
-		atmega128_exint.callback.int5();
+	if(atmega128_exint.callback.int5_vect) {
+		atmega128_exint.callback.int5_vect();
 	}
 }
 ISR(INT6_vect)
 {
-	if(atmega128_exint.callback.int6) {
-		atmega128_exint.callback.int6();
+	if(atmega128_exint.callback.int6_vect) {
+		atmega128_exint.callback.int6_vect();
 	}
 }
 ISR(INT7_vect)
 {
-	if(atmega128_exint.callback.int7) {
-		atmega128_exint.callback.int7();
+	if(atmega128_exint.callback.int7_vect) {
+		atmega128_exint.callback.int7_vect();
 	}
 }
 

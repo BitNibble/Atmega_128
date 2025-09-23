@@ -21,7 +21,7 @@ uint8_t spi_fast_shift (uint8_t data);
 static SPI0_Handler atmega128_spi = {
 	// Callback
 	.callback = {
-		.stc = NULL
+		.stc_vect = NULL
 	},
 	// V-table
 	.transfer_sync = spi_transfer_sync,
@@ -161,7 +161,7 @@ uint8_t spi_fast_shift (uint8_t data)
 /*** Interrupt ***/
 ISR( SPI_SERIAL_TRANSFER_COMPLETE )
 {
-	if( atmega128_spi.callback.stc ){ atmega128_spi.callback.stc(); }
+	if( atmega128_spi.callback.stc_vect ){ atmega128_spi.callback.stc_vect(); }
 }
 	
 /*** EOF ***/

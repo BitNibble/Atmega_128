@@ -33,7 +33,7 @@ static ADC0_Handler atmega128_adc = {
 	},
 	// Callback
 	.callback = {
-		.adc = adc_callback
+		.adc_vect = adc_callback
 	},
 	// V-table
 	.read = ANALOG_read	
@@ -192,7 +192,7 @@ static void adc_callback(void)
 /*** Interrupt ***/
 ISR(ADC_vect)
 {
-	if( atmega128_adc.callback.adc ){ atmega128_adc.callback.adc(); }
+	if( atmega128_adc.callback.adc_vect ){ atmega128_adc.callback.adc_vect(); }
 }
 
 /*** EOF ***/
