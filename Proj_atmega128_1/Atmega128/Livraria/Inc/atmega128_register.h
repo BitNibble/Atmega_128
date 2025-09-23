@@ -1,12 +1,12 @@
 /**********************************************************************
-	ATMEGA 128 REGISTERS
+	ATMEGA 128 REGISTER
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega 128
 Date:     12082025
 **********************************************************************/
-#ifndef _ATMEGA128_REGISTERS_H_
-	#define _ATMEGA128_REGISTERS_H_
+#ifndef _ATMEGA128_REGISTER_H_
+	#define _ATMEGA128_REGISTER_H_
 	
 /*** Compiler ***/
 #if (__GNUC__ * 100 + __GNUC_MINOR__) < 304

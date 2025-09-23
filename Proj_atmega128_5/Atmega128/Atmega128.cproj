@@ -220,7 +220,10 @@
     <Compile Include="Livraria\Inc\atmega128usart1.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="Livraria\Inc\atmega128_registers.h">
+    <Compile Include="Livraria\Inc\atmega128_instance.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Livraria\Inc\atmega128_register.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="Livraria\Inc\atmegaeeprom.h">

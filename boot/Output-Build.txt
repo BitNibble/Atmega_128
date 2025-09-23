@@ -5,8 +5,8 @@ Target "Clean" in file "C:\Program Files (x86)\Atmel\Studio\7.0\Vs\Compiler.targ
 	Task "RunCompilerTask"
 		Shell Utils Path C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils
 		C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils\make.exe clean 
-		rm -rf  livraria/src/atmega128.o main.o   
-		rm -rf  livraria/src/atmega128.d main.d   
+		rm -rf  livraria/src/74hc595.o livraria/src/atmega128.o main.o   
+		rm -rf  livraria/src/74hc595.d livraria/src/atmega128.d main.d   
 		rm -rf "boot_1.elf" "boot_1.a" "boot_1.hex" "boot_1.lss" "boot_1.eep" "boot_1.map" "boot_1.srec" "boot_1.usersignatures"
 	Done executing task "RunCompilerTask".
 Done building target "Clean" in project "boot_1.cproj".
