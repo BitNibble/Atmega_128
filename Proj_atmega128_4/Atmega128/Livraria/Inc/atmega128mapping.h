@@ -95,80 +95,80 @@ typedef struct {
 	/***GPWR***/
 	// removed, no user permission.
 	/***AC***/
-	Atmega128AnalogComparator_TypeDef* ac_reg;
+	Atmega128_AnalogComparator* ac_reg;
 	/***ADC***/
-	Atmega128AnalogToDigitalConverter_TypeDef* adc_reg;
+	Atmega128_AnalogToDigitalConverter* adc_reg;
 	#ifdef _ANALOG_MODULE_
 		void (*adc_enable)( uint8_t Vreff, uint8_t Divfactor, uint8_t n_channel, ... );
 	#endif
 	/***BOOTLOAD***/
-	Atmega128BootLoader_TypeDef* bootload_reg;
+	Atmega128_BootLoader* bootload_reg;
 	/***CPU***/
-	Atmega128CPURegister_TypeDef* cpu_reg;
+	Atmega128_CPURegister* cpu_reg;
 	/***EEPROM***/
-	Atmega128Eeprom_TypeDef* eeprom_reg;
+	Atmega128_Eeprom* eeprom_reg;
 	/***EXINT***/
-	Atmega128ExternalInterrupts_TypeDef* exint_reg;
+	Atmega128_ExternalInterrupt* exint_reg;
 	/***PORTA***/
-	Atmega128PORTA_TypeDef* gpioa_reg;
+	Atmega128_PORTA* gpioa_reg;
 	/***PORTB***/
-	Atmega128PORTB_TypeDef* gpiob_reg;
+	Atmega128_PORTB* gpiob_reg;
 	/***PORTC***/
-	Atmega128PORTC_TypeDef* gpioc_reg;
+	Atmega128_PORTC* gpioc_reg;
 	/***PORTD***/
-	Atmega128PORTD_TypeDef* gpiod_reg;
+	Atmega128_PORTD* gpiod_reg;
 	/***PORTE***/
-	Atmega128PORTE_TypeDef* gpioe_reg;
+	Atmega128_PORTE* gpioe_reg;
 	/***PORTF***/
-	Atmega128PORTF_TypeDef* gpiof_reg;
+	Atmega128_PORTF* gpiof_reg;
 	/***PORTG***/
-	Atmega128PORTG_TypeDef* gpiog_reg;
+	Atmega128_PORTG* gpiog_reg;
 	/***JTAG***/
-	Atmega128JtagInterface_TypeDef* jtag_reg;
+	Atmega128_JtagInterface* jtag_reg;
 	/***MISC***/
-	Atmega128OtherRegisters_TypeDef* misc_reg;
+	Atmega128_OtherRegister* misc_reg;
 	/***SPI***/
-	Atmega128SerialPeripheralInterface_TypeDef* spi_reg;
+	Atmega128_SerialPeripheralInterface* spi_reg;
 	#ifdef _SPI_MODULE_
 		void (*spi_enable)( uint8_t master_slave_select, uint8_t data_order,  uint8_t data_modes, uint8_t prescaler );
 	#endif
 	/***TC1***/
-	Atmega128TimerCounter1_TypeDef* tc1_reg;
+	Atmega128_TimerCounter1* tc1_reg;
 	#ifdef _TIMER1_MODULE_
 		void  (*tc1_enable)(uint8_t wavegenmode, uint8_t interrupt);
 	#endif
 	/***TC3***/
-	Atmega128TimerCounter3_TypeDef* tc3_reg;
+	Atmega128_TimerCounter3* tc3_reg;
 	#ifdef _TIMER3_MODULE_
 		void (*tc3_enable)(unsigned char wavegenmode, unsigned char interrupt);
 	#endif
 	/***TC2***/
-	Atmega128TimerCounter2_TypeDef* tc2_reg;
+	Atmega128_TimerCounter2* tc2_reg;
 	#ifdef _TIMER2_MODULE_
 		void (*tc2_enable)(unsigned char wavegenmode, unsigned char interrupt);
 	#endif
 	/***TC0***/
-	Atmega128TimerCounter0_TypeDef* tc0_reg;
+	Atmega128_TimerCounter0* tc0_reg;
 	#ifdef _TIMER0_MODULE_
 		void (*tc0_enable)(unsigned char wavegenmode, unsigned char interrupt);
 	#endif
 	/***TWI***/
-	Atmega128TwoWireSerialInterface_TypeDef* twi_reg;
+	Atmega128_TwoWireSerialInterface* twi_reg;
 	#ifdef _TWI_MODULE_
 		void (*twi_enable)(uint8_t atmega_id,  uint8_t prescaler);
 	#endif
 	/***USART0***/
-	Atmega128Usart0_TypeDef* usart0_reg;
+	Atmega128_Usart0* usart0_reg;
 	#ifdef _USART0_MODULE_
 		void (*usart0_enable)( uint32_t baudrate, unsigned int FDbits, unsigned int Stopbits, unsigned int Parity );
 	#endif
 	/***USART1***/
-	Atmega128Usart1_TypeDef* usart1_reg;
+	Atmega128_Usart1* usart1_reg;
 	#ifdef _USART1_MODULE_
 		void (*usart1_enable)( uint32_t baud, unsigned int FDbits, unsigned int Stopbits, unsigned int Parity );
 	#endif
 	/***WDT***/
-	Atmega128WatchdogTimer_TypeDef* wdt_reg;
+	Atmega128_WatchdogTimer* wdt_reg;
 	/***Pointer Function***/
 	void (*Clock_Prescaler_Select)( volatile uint8_t prescaler );
 	void (*Move_Interrupts_To_Boot)( void );

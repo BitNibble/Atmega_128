@@ -19,55 +19,55 @@ static unsigned int ftCounter[FTDELAY_SIZE] = {0};
 /**** MAIN HARDWARE LAYER ****/
 /*****************************/
 // GPWR
-//Atmega128GPWR_TypeDef* gpwr_reg(void){return (Atmega128GPWR_TypeDef*) 0x0000;}
+//Atmega128_GPWR* gpwr_reg(void){return (Atmega128_GPWR*) 0x0000;}
 // Analog Comparator (AC)
-Atmega128AnalogComparator_TypeDef* ac_reg(void){return (Atmega128AnalogComparator_TypeDef*) 0x0028;}
+Atmega128_AnalogComparator* ac_reg(void){return (Atmega128_AnalogComparator*) 0x0028;}
 // Analog to Digital Converter (ADC)
-Atmega128AnalogToDigitalConverter_TypeDef* adc_reg(void){return (Atmega128AnalogToDigitalConverter_TypeDef*) 0x0024;}
+Atmega128_AnalogToDigitalConverter* adc_reg(void){return (Atmega128_AnalogToDigitalConverter*) 0x0024;}
 // Boot loader (BOOT_LOAD)
-Atmega128BootLoader_TypeDef* bootload_reg(void){return (Atmega128BootLoader_TypeDef*) 0x0068;}
+Atmega128_BootLoader* bootload_reg(void){return (Atmega128_BootLoader*) 0x0068;}
 // CPU Register (CPU)
-Atmega128CPURegister_TypeDef* cpu_reg(void){return (Atmega128CPURegister_TypeDef*) 0x0054;}
+Atmega128_CPURegister* cpu_reg(void){return (Atmega128_CPURegister*) 0x0054;}
 // EEPROM (EEPROM)
-Atmega128Eeprom_TypeDef* eeprom_reg(void){return (Atmega128Eeprom_TypeDef*) 0x003C;}
+Atmega128_Eeprom* eeprom_reg(void){return (Atmega128_Eeprom*) 0x003C;}
 // External Interrupts (EXINT)
-Atmega128ExternalInterrupts_TypeDef* exint_reg(void){return (Atmega128ExternalInterrupts_TypeDef*) 0x0058;}
+Atmega128_ExternalInterrupt* exint_reg(void){return (Atmega128_ExternalInterrupt*) 0x0058;}
 // I/O Port (PORTA)
-Atmega128PORTA_TypeDef* gpioa_reg(void){return (Atmega128PORTA_TypeDef*) 0x0039;}
+Atmega128_PORTA* gpioa_reg(void){return (Atmega128_PORTA*) 0x0039;}
 // I/O Port (PORTB)
-Atmega128PORTB_TypeDef* gpiob_reg(void){return (Atmega128PORTB_TypeDef*) 0x0036;}
+Atmega128_PORTB* gpiob_reg(void){return (Atmega128_PORTB*) 0x0036;}
 // I/O Port (PORTC)
-Atmega128PORTC_TypeDef* gpioc_reg(void){return (Atmega128PORTC_TypeDef*) 0x0033;}
+Atmega128_PORTC* gpioc_reg(void){return (Atmega128_PORTC*) 0x0033;}
 // I/O Port (PORTD)
-Atmega128PORTD_TypeDef* gpiod_reg(void){return (Atmega128PORTD_TypeDef*) 0x0030;}
+Atmega128_PORTD* gpiod_reg(void){return (Atmega128_PORTD*) 0x0030;}
 // I/O Port (PORTE)
-Atmega128PORTE_TypeDef* gpioe_reg(void){return (Atmega128PORTE_TypeDef*) 0x0021;}
+Atmega128_PORTE* gpioe_reg(void){return (Atmega128_PORTE*) 0x0021;}
 // I/O Port (PORTF)
-Atmega128PORTF_TypeDef* gpiof_reg(void){return (Atmega128PORTF_TypeDef*) 0x0020;}
+Atmega128_PORTF* gpiof_reg(void){return (Atmega128_PORTF*) 0x0020;}
 // I/O Port (PORTG)
-Atmega128PORTG_TypeDef* gpiog_reg(void){return (Atmega128PORTG_TypeDef*) 0x0063;}
+Atmega128_PORTG* gpiog_reg(void){return (Atmega128_PORTG*) 0x0063;}
 // JTAG Interface (JTAG)
-Atmega128JtagInterface_TypeDef* jtag_reg(void){return (Atmega128JtagInterface_TypeDef*) 0x0042;}
+Atmega128_JtagInterface* jtag_reg(void){return (Atmega128_JtagInterface*) 0x0042;}
 // Other Registers (MISC)
-Atmega128OtherRegisters_TypeDef* misc_reg(void){return (Atmega128OtherRegisters_TypeDef*) 0x0040;}
+Atmega128_OtherRegister* misc_reg(void){return (Atmega128_OtherRegister*) 0x0040;}
 // Serial Peripheral Interface (SPI)
-Atmega128SerialPeripheralInterface_TypeDef* spi_reg(void){return (Atmega128SerialPeripheralInterface_TypeDef*) 0x002D;}
+Atmega128_SerialPeripheralInterface* spi_reg(void){return (Atmega128_SerialPeripheralInterface*) 0x002D;}
 // Timer/Counter, 16-bit (TC1)
-Atmega128TimerCounter1_TypeDef* tc1_reg(void){return (Atmega128TimerCounter1_TypeDef*) 0x0040;}
+Atmega128_TimerCounter1* tc1_reg(void){return (Atmega128_TimerCounter1*) 0x0040;}
 // Timer/Counter, 16-bit (TC3)
-Atmega128TimerCounter3_TypeDef* tc3_reg(void){return (Atmega128TimerCounter3_TypeDef*) 0x0040;}
+Atmega128_TimerCounter3* tc3_reg(void){return (Atmega128_TimerCounter3*) 0x0040;}
 // Timer/Counter, 8-bit (TC2)
-Atmega128TimerCounter2_TypeDef* tc2_reg(void){return (Atmega128TimerCounter2_TypeDef*) 0x0043;}
+Atmega128_TimerCounter2* tc2_reg(void){return (Atmega128_TimerCounter2*) 0x0043;}
 // Timer/Counter, 8-bit A sync (TC0)
-Atmega128TimerCounter0_TypeDef* tc0_reg(void){return (Atmega128TimerCounter0_TypeDef*) 0x0040;}
+Atmega128_TimerCounter0* tc0_reg(void){return (Atmega128_TimerCounter0*) 0x0040;}
 // Two Wire Serial Interface (TWI)
-Atmega128TwoWireSerialInterface_TypeDef* twi_reg(void){return (Atmega128TwoWireSerialInterface_TypeDef*) 0x0070;}
+Atmega128_TwoWireSerialInterface* twi_reg(void){return (Atmega128_TwoWireSerialInterface*) 0x0070;}
 // USART (USART0)
-Atmega128Usart0_TypeDef* usart0_reg(void){return (Atmega128Usart0_TypeDef*) 0x0029;}
+Atmega128_Usart0* usart0_reg(void){return (Atmega128_Usart0*) 0x0029;}
 // USART (USART1)
-Atmega128Usart1_TypeDef* usart1_reg(void){return (Atmega128Usart1_TypeDef*) 0x0098;}
+Atmega128_Usart1* usart1_reg(void){return (Atmega128_Usart1*) 0x0098;}
 // Watchdog Timer (WDT)
-Atmega128WatchdogTimer_TypeDef* wdt_reg(void){return (Atmega128WatchdogTimer_TypeDef*) 0x0041;}
+Atmega128_WatchdogTimer* wdt_reg(void){return (Atmega128_WatchdogTimer*) 0x0041;}
 
 /*********************************************************************/
 /***************** Procedure and Function definition *****************/

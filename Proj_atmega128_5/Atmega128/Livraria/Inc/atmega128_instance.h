@@ -46,26 +46,26 @@ typedef volatile struct {
 	uint16_t X; // 0x1A 0x1B
 	uint16_t Y; // 0x1C 0x1D
 	uint16_t Z; // 0x1E 0x1F
-} Atmega128GPWR_TypeDef;
+} Atmega128_GPWR;
 
 // Analog Comparator (AC)
 typedef volatile struct {
 	ACSR_TypeDef acsr; // 0x28
 	uint8_t fill[23]; // (40 - 28) - 1
 	SFIOR_TypeDef sfior; // 0x40
-} Atmega128AnalogComparator_TypeDef;
+} Atmega128_AnalogComparator;
 
 // Analog to Digital Converter (ADC)
 typedef volatile struct {
 	U_word adc; // 0x24 0x25
 	ADCSRA_TypeDef adcsra; // 0x26
 	ADMUX_TypeDef admux; // 0x27
-} Atmega128AnalogToDigitalConverter_TypeDef;
+} Atmega128_AnalogToDigitalConverter;
 
 // Boot loader (BOOT_LOAD)
 typedef volatile struct {
 	SPMCSR_TypeDef spmcsr; // 0x68
-} Atmega128BootLoader_TypeDef;
+} Atmega128_BootLoader;
 
 // CPU Register (CPU)
 typedef volatile struct {
@@ -81,14 +81,14 @@ typedef volatile struct {
 	XMCRA_TypeDef xmcra; // 0x6D
 	uint8_t fill3; // (6F - 6D) - 1
 	U_byte osccal; // 0x6F
-} Atmega128CPURegister_TypeDef;
+} Atmega128_CPURegister;
 
 // EEPROM (EEPROM)
 typedef volatile struct {
 	EECR_TypeDef eecr; // 0x3C
 	U_byte eedr; // 0x3D
 	U_word eear; // 0x3E 0x3F
-} Atmega128Eeprom_TypeDef;
+} Atmega128_Eeprom;
 
 // External Interrupts (EXINT)
 typedef volatile struct {
@@ -97,42 +97,42 @@ typedef volatile struct {
 	EICRB_TypeDef eicrb; // 0x5A
 	uint8_t fill[15]; // (6A - 5A) - 1
 	EICRA_TypeDef eicra; // 0x6A
-} Atmega128ExternalInterrupts_TypeDef;
+} Atmega128_ExternalInterrupt;
 
 // I/O Port (PORTA)
 typedef volatile struct {
 	U_byte pin; // 0x39
 	U_byte ddr; // 0x3A
 	U_byte port; // 0x3B
-} Atmega128PORTA_TypeDef;
+} Atmega128_PORTA;
 
 // I/O Port (PORTB)
 typedef volatile struct {
 	U_byte pin; // 0x36
 	U_byte ddr; // 0x37
 	U_byte port; // 0x38
-} Atmega128PORTB_TypeDef;
+} Atmega128_PORTB;
 
 // I/O Port (PORTC)
 typedef volatile struct {
 	U_byte pin; // 0x33
 	U_byte ddr; // 0x34
 	U_byte port; // 0x35
-} Atmega128PORTC_TypeDef;
+} Atmega128_PORTC;
 
 // I/O Port (PORTD)
 typedef volatile struct {
 	U_byte pin; // 0x30
 	U_byte ddr; // 0x31
 	U_byte port; // 0x32
-} Atmega128PORTD_TypeDef;
+} Atmega128_PORTD;
 
 // I/O Port (PORTE)
 typedef volatile struct {
 	U_byte pin; // 0x21
 	U_byte ddr; // 0x22
 	U_byte port; // 0x23
-} Atmega128PORTE_TypeDef;
+} Atmega128_PORTE;
 
 // I/O Port (PORTF)
 typedef volatile struct {
@@ -140,33 +140,33 @@ typedef volatile struct {
 	uint8_t fill[64]; // (0x61 - 0x20) - 1
 	U_byte ddr; // 0x61
 	U_byte port; // 0x62
-} Atmega128PORTF_TypeDef;
+} Atmega128_PORTF;
 
 // I/O Port (PORTG)
 typedef volatile struct {
 	U_byte pin; // 0x63
 	U_byte ddr; // 0x64
 	U_byte port; // 0x65
-} Atmega128PORTG_TypeDef;
+} Atmega128_PORTG;
 
 // JTAG Interface (JTAG)
 typedef volatile struct {
 	U_byte ocdr; // 0x42
 	uint8_t fill[17]; // (54 - 42) - 1
 	MCUCSR_TypeDef mcucsr; // 0x54
-} Atmega128JtagInterface_TypeDef;
+} Atmega128_JtagInterface;
 
 // Other Registers (MISC)
 typedef volatile struct {
 	SFIOR_TypeDef sfior; // 0x40
-} Atmega128OtherRegisters_TypeDef;
+} Atmega128_OtherRegister;
 
 // Serial Peripheral Interface (SPI)
 typedef volatile struct {
 	SPCR_TypeDef spcr; // 0x2D
 	SPSR_TypeDef spsr; // 0x2E
 	U_byte spdr; // 0x2F
-} Atmega128SerialPeripheralInterface_TypeDef;
+} Atmega128_SerialPeripheralInterface;
 
 // Timer/Counter, 16-bit (TC1)
 typedef volatile struct {
@@ -187,7 +187,7 @@ typedef volatile struct {
 	uint8_t fill4; // (7C - 7A) - 1
 	ETIFR_TypeDef etifr; // 0x7C
 	ETIMSK_TypeDef etimsk; // 0x7D
-} Atmega128TimerCounter1_TypeDef;
+} Atmega128_TimerCounter1;
 
 // Timer/Counter, 16-bit (TC3)
 typedef volatile struct {
@@ -204,7 +204,7 @@ typedef volatile struct {
 	TCCR3B_TypeDef tccr3b; // 0x8A
 	TCCR3A_TypeDef tccr3a; // 0x8B
 	TCCR3C_TypeDef tccr3c; // 0x8C
-} Atmega128TimerCounter3_TypeDef;
+} Atmega128_TimerCounter3;
 
 // Timer/Counter, 8-bit (TC2)
 typedef volatile struct {
@@ -214,7 +214,7 @@ typedef volatile struct {
 	uint8_t fill[16]; // (56 - 45) - 1
 	TIFR_TypeDef tifr; // 0x56
 	TIMSK_TypeDef timsk; // 0x57
-} Atmega128TimerCounter2_TypeDef;
+} Atmega128_TimerCounter2;
 
 // Timer/Counter, 8-bit A sync (TC0)
 typedef volatile struct {
@@ -227,7 +227,7 @@ typedef volatile struct {
 	uint8_t fill2[2]; // (56 - 53) - 1
 	TIFR_TypeDef tifr; // 0x56
 	TIMSK_TypeDef timsk; // 0x57
-} Atmega128TimerCounter0_TypeDef;
+} Atmega128_TimerCounter0;
 
 // Two Wire Serial Interface (TWI)
 typedef volatile struct {
@@ -236,7 +236,7 @@ typedef volatile struct {
 	TWAR_TypeDef twar; // 0x72
 	U_byte twdr; // 0x73
 	TWCR_TypeDef twcr; // 0x74
-} Atmega128TwoWireSerialInterface_TypeDef;
+} Atmega128_TwoWireSerialInterface;
 
 // USART (USART0)
 typedef volatile struct {
@@ -248,7 +248,7 @@ typedef volatile struct {
 	UBRR0H_TypeDef ubrr0h; // 0x90
 	uint8_t fill2[4]; // (95 - 90) - 1
 	UCSR0C_TypeDef ucsr0c; // 0x95
-} Atmega128Usart0_TypeDef;
+} Atmega128_Usart0;
 
 // USART (USART1)
 typedef volatile struct {
@@ -258,12 +258,12 @@ typedef volatile struct {
 	UCSR1A_TypeDef ucsr1a; // 0x9B
 	U_byte udr1; // 0x9C
 	UCSR1C_TypeDef ucsr1c; // 0x9D
-} Atmega128Usart1_TypeDef;
+} Atmega128_Usart1;
 
 // Watchdog Timer (WDT)
 typedef volatile struct {
 	WDTCR_TypeDef wdtcr; // 0x41
-} Atmega128WatchdogTimer_TypeDef;
+} Atmega128_WatchdogTimer;
 
 #endif
 /*** EOF ***/

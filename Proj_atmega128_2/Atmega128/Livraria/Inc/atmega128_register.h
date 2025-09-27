@@ -244,7 +244,7 @@ typedef union {
 } XMCRB_TypeDef; // 0x6C
 typedef union {
 	struct{
-		uint8_t fill0 : 1, srw11 : 1, srw00 : 1, srw01 : 1, srl : 3, fill1 : 1;
+		uint8_t fill0 : 1, srw11 : 1, srw0 : 2, srl : 3, fill1 : 1;
 	}par;
 	uint8_t var;
 } XMCRA_TypeDef; // 0x6D
@@ -333,7 +333,7 @@ typedef union{
 // Reserved 0x94
 typedef union {
 	struct{
-		uint8_t ucpol0 : 1, ucsz0 : 2, usbs0 : 1, upm0 : 2, umsel0 : 1, fill0 : 1;
+		uint8_t ucpol0 : 1, ucsz00 : 1, ucsz01 : 1, usbs0 : 1, upm0 : 2, umsel0 : 1, fill0 : 1;
 	}par;
 	uint8_t var;
 } UCSR0C_TypeDef; // 0x95
@@ -361,7 +361,7 @@ typedef union {
 // UDR1 0x9C (U_byte)
 typedef union {
 	struct{
-		uint8_t ucpol1 : 1, ucsz10 : 1, ucsz11 : 1, usbs1 : 1, upm1 : 2, umsel1 : 1, fill0 : 1;
+		uint8_t ucpol1 : 1, ucsz1 : 2, usbs1 : 1, upm1 : 2, umsel1 : 1, fill0 : 1;
 	}par;
 	uint8_t var;
 } UCSR1C_TypeDef; // 0x9D
