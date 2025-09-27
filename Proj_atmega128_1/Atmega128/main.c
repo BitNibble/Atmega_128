@@ -45,8 +45,8 @@ uint16_t output=0;
 uint16_t mask=0;
 uint8_t page=0;
 uint16_t n;
-KEYPAD_Handler keypad = keypad_enable(&DDRE,&PINE,&PORTE);
-lcd0_enable(&DDRA,&PINA,&PORTA);
+KEYPAD_Handler keypad = keypad_enable(&gpioe_reg()->ddr.var,&gpioe_reg()->pin.var,&gpioe_reg()->port.var);
+lcd0_enable(&gpioa_reg()->ddr.var,&gpioa_reg()->pin.var,&gpioa_reg()->port.var);
 LFSM_Handler lfsm = lfsm_enable(eeprom(),363);
 //HC595 shift = HC595enable(&DDRG,&PORTG,2,0,1);
 /*****************************************************/

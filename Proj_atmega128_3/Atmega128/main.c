@@ -75,9 +75,9 @@ HX711_ptr = &HX711_data; // CALIBRATION DATA BUS
 F = explode_enable();
 tc0_enable(2,2); //2,2
 tc1_enable(4,2); //4,2
-hx = hx711_enable(&DDRF, &PINF, &PORTF, 6, 7); //6,7
+hx = hx711_enable(&gpiof_reg()->ddr.var, &gpiof_reg()->pin.var, &gpiof_reg()->port.var, 6, 7); //6,7
 //intx = INTERRUPTenable();
-lcd0_enable(&DDRA,&PINA,&PORTA);
+lcd0_enable(&gpioa_reg()->ddr.var,&gpioa_reg()->pin.var,&gpioa_reg()->port.var);
 
 float value = 0;
 float publish = 0;

@@ -55,12 +55,12 @@ int main(void)
 {
 PORTINIT(); // Inic Ports
 /*** Handler ***/
-lcd0_enable(&DDRA,&PINA,&PORTA); // LCD Display 4X20
-KEYPAD_Handler keypad = keypad_enable(&DDRE,&PINE,&PORTE); // Keyboard
+lcd0_enable(&gpioa_reg()->ddr.var,&gpioa_reg()->pin.var,&gpioa_reg()->port.var); // LCD Display 4X20
+KEYPAD_Handler keypad = keypad_enable(&gpioe_reg()->ddr.var,&gpioe_reg()->pin.var,&gpioe_reg()->port.var); // Keyboard
 adc_enable(1, 128, 1, 0); // Channel 0 for Position
 tc0_enable(2,2); // 1Hz to HC595
 tc1_enable(9,0); // PWM Positioning
-shift = hc595_enable(&DDRG,&PORTG,2,0,1);
+shift = hc595_enable(&gpiog_reg()->ddr.var,&gpiog_reg()->port.var,2,0,1);
 pid_1 = znpid_enable();
 pid_2 = znpid_enable();
 /******/

@@ -82,7 +82,7 @@ usart1_enable(38400,8,1,NONE); // UART 103 para 9600 (ESP01), 68 para 14400, 25 
 lcd0_enable(&gpioa_reg()->ddr.var,&gpioa_reg()->pin.var,&gpioa_reg()->port.var); // LCD Display 4X20
 keypad_enable(&gpioe_reg()->ddr.var,&gpioe_reg()->pin.var,&gpioe_reg()->port.var); // Keyboard
 rtc = pcf8563rtc_enable( 16 ); // RTC with I2C
-shift = hc595_enable(&DDRG,&PORTG,2,0,1);
+shift = hc595_enable(&gpiog_reg()->ddr.var,&gpiog_reg()->port.var,2,0,1);
 pcflcd = pcf8575_lcd0_enable( PCF8575_BASE_ADDRESS, 16 );
 
 // local var
