@@ -48,8 +48,8 @@ Date:	  27092025
 /*****************************/
 /**** MAIN HARDWARE LAYER ****/
 /*****************************/
-// GPWR
-//Atmega128GPWR_TypeDef* gpwr_reg(void);
+// Indirect Address Register
+Atmega128_GPIAR* gpiar_reg(void);
 // Analog Comparator (AC)
 Atmega128_AnalogComparator* ac_reg(void);
 // Analog to Digital Converter (ADC)

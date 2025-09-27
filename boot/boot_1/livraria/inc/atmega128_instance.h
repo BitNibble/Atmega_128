@@ -48,6 +48,13 @@ typedef volatile struct {
 	uint16_t Z; // 0x1E 0x1F
 } Atmega128_GPWR;
 
+// Indirect Address Register
+typedef volatile struct {
+	uint16_t X; // 0x1A 0x1B
+	uint16_t Y; // 0x1C 0x1D
+	uint16_t Z; // 0x1E 0x1F
+} Atmega128_GPIAR;
+
 // Analog Comparator (AC)
 typedef volatile struct {
 	ACSR_TypeDef acsr; // 0x28
