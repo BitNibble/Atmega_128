@@ -13,6 +13,10 @@ Date:	  27092025
 	#error "This library requires AVR-GCC 3.4 or later, update to newer AVR-GCC compiler !"
 #endif
 
+/********************************/
+/*** ATmega128 Base Addresses ***/
+/********************************/
+
 /*** Working Frequency ***/
 #ifndef F_CPU
 	#define F_CPU 16000000UL
@@ -50,76 +54,52 @@ Date:	  27092025
 /*****************************/
 // GPWR
 //Atmega128GPWR_TypeDef* gpwr_reg(void);
-
 // Analog Comparator (AC)
 Atmega128AnalogComparator_TypeDef* ac_reg(void);
-
 // Analog to Digital Converter (ADC)
 Atmega128AnalogToDigitalConverter_TypeDef* adc_reg(void);
-
 // Boot loader (BOOT_LOAD)
 Atmega128BootLoader_TypeDef* bootload_reg(void);
-
 // CPU Register (CPU)
 Atmega128CPURegister_TypeDef* cpu_reg(void);
-
 // EEPROM (EEPROM)
 Atmega128Eeprom_TypeDef* eeprom_reg(void);
-
 // External Interrupts (EXINT)
 Atmega128ExternalInterrupts_TypeDef* exint_reg(void);
-
 // I/O Port (PORTA)
 Atmega128PORTA_TypeDef* gpioa_reg(void);
-
 // I/O Port (PORTB)
 Atmega128PORTB_TypeDef* gpiob_reg(void);
-
 // I/O Port (PORTC)
 Atmega128PORTC_TypeDef* gpioc_reg(void);
-
 // I/O Port (PORTD)
 Atmega128PORTD_TypeDef* gpiod_reg(void);
-
 // I/O Port (PORTE)
 Atmega128PORTE_TypeDef* gpioe_reg(void);
-
 // I/O Port (PORTF)
 Atmega128PORTF_TypeDef* gpiof_reg(void);
-
 // I/O Port (PORTG)
 Atmega128PORTG_TypeDef* gpiog_reg(void);
-
 // JTAG Interface (JTAG)
 Atmega128JtagInterface_TypeDef* jtag_reg(void);
-
 // Other Registers (MISC)
 Atmega128OtherRegisters_TypeDef* misc_reg(void);
-
 // Serial Peripheral Interface (SPI)
 Atmega128SerialPeripheralInterface_TypeDef* spi_reg(void);
-
 // Timer/Counter, 16-bit (TC1)
 Atmega128TimerCounter1_TypeDef* tc1_reg(void);
-
 // Timer/Counter, 16-bit (TC3)
 Atmega128TimerCounter3_TypeDef* tc3_reg(void);
-
 // Timer/Counter, 8-bit (TC2)
 Atmega128TimerCounter2_TypeDef* tc2_reg(void);
-
 // Timer/Counter, 8-bit A sync (TC0)
 Atmega128TimerCounter0_TypeDef* tc0_reg(void);
-
 // Two Wire Serial Interface (TWI)
 Atmega128TwoWireSerialInterface_TypeDef* twi_reg(void);
-
 // USART (USART0)
 Atmega128Usart0_TypeDef* usart0_reg(void);
-
 // USART (USART1)
 Atmega128Usart1_TypeDef* usart1_reg(void);
-
 // Watchdog Timer (WDT)
 Atmega128WatchdogTimer_TypeDef* wdt_reg(void);
 
