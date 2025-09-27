@@ -3,7 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega 128
-Date:	  22092025
+Date:	  27092025
 **********************************************************************/
 #ifndef _ATMEGA128_H_
 	#define _ATMEGA128_H_
@@ -19,7 +19,7 @@ Date:	  22092025
 #endif
 
 /*** Library ***/
-#include <avr/io.h>
+#include "atmega128_instance.h"
 #include <avr/boot.h>
 #include <avr/fuse.h>
 #include <avr/wdt.h>
@@ -28,7 +28,6 @@ Date:	  22092025
 #include <avr/sleep.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
-#include "atmega128_instance.h"
 
 /*** Constant & Macro ***/
 #define SRAMSTART 0x0100
@@ -94,9 +93,6 @@ Atmega128PORTG_TypeDef* gpiog_reg(void);
 // JTAG Interface (JTAG)
 Atmega128JtagInterface_TypeDef* jtag_reg(void);
 
-// JTAG Interface (JTAG)
-Atmega128JtagInterfaceControlStatus_TypeDef* jtag_cs_reg(void);
-
 // Other Registers (MISC)
 Atmega128OtherRegisters_TypeDef* misc_reg(void);
 
@@ -109,23 +105,11 @@ Atmega128TimerCounter1_TypeDef* tc1_reg(void);
 // Timer/Counter, 16-bit (TC3)
 Atmega128TimerCounter3_TypeDef* tc3_reg(void);
 
-// Timer/Counter 1 and 3
-Atmega128TimerExternalInterruptFlag_TypeDef* tc_exif_reg(void);
-
-// Timer/Counter 1 and 3
-Atmega128TimerExternalInterruptMask_TypeDef* tc_exim_reg(void);
-
 // Timer/Counter, 8-bit (TC2)
 Atmega128TimerCounter2_TypeDef* tc2_reg(void);
 
 // Timer/Counter, 8-bit A sync (TC0)
 Atmega128TimerCounter0_TypeDef* tc0_reg(void);
-
-// Timer/Counter 0, 1 and 2
-Atmega128TimerInterruptFlag_TypeDef* tc_if_reg(void);
-
-// Timer/Counter 0, 1 and 2
-Atmega128TimerInterruptMask_TypeDef* tc_im_reg(void);
 
 // Two Wire Serial Interface (TWI)
 Atmega128TwoWireSerialInterface_TypeDef* twi_reg(void);

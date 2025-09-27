@@ -3,7 +3,7 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega 128
-Update:	  22092025
+Update:	  27092025
 **********************************************************************/
 #include "atmega128.h"
 #include <stdarg.h>
@@ -48,8 +48,6 @@ Atmega128PORTF_TypeDef* gpiof_reg(void){return (Atmega128PORTF_TypeDef*) 0x0020;
 Atmega128PORTG_TypeDef* gpiog_reg(void){return (Atmega128PORTG_TypeDef*) 0x0063;}
 // JTAG Interface (JTAG)
 Atmega128JtagInterface_TypeDef* jtag_reg(void){return (Atmega128JtagInterface_TypeDef*) 0x0042;}
-// JTAG Interface (JTAG)
-Atmega128JtagInterfaceControlStatus_TypeDef* jtag_cs_reg(void){return (Atmega128JtagInterfaceControlStatus_TypeDef*) 0x0054;}
 // Other Registers (MISC)
 Atmega128OtherRegisters_TypeDef* misc_reg(void){return (Atmega128OtherRegisters_TypeDef*) 0x0040;}
 // Serial Peripheral Interface (SPI)
@@ -58,18 +56,10 @@ Atmega128SerialPeripheralInterface_TypeDef* spi_reg(void){return (Atmega128Seria
 Atmega128TimerCounter1_TypeDef* tc1_reg(void){return (Atmega128TimerCounter1_TypeDef*) 0x0040;}
 // Timer/Counter, 16-bit (TC3)
 Atmega128TimerCounter3_TypeDef* tc3_reg(void){return (Atmega128TimerCounter3_TypeDef*) 0x0040;}
-// Timer/Counter 1 and 3
-Atmega128TimerExternalInterruptFlag_TypeDef* tc_exif_reg(void){return (Atmega128TimerExternalInterruptFlag_TypeDef*) 0x007C;}
-// Timer/Counter 1 and 3
-Atmega128TimerExternalInterruptMask_TypeDef* tc_exim_reg(void){return (Atmega128TimerExternalInterruptMask_TypeDef*) 0x007D;}
 // Timer/Counter, 8-bit (TC2)
 Atmega128TimerCounter2_TypeDef* tc2_reg(void){return (Atmega128TimerCounter2_TypeDef*) 0x0043;}
 // Timer/Counter, 8-bit A sync (TC0)
 Atmega128TimerCounter0_TypeDef* tc0_reg(void){return (Atmega128TimerCounter0_TypeDef*) 0x0040;}
-// Timer/Counter 0, 1 and 2
-Atmega128TimerInterruptFlag_TypeDef* tc_if_reg(void){return (Atmega128TimerInterruptFlag_TypeDef*) 0x0056;}
-// Timer/Counter 0, 1 and 2
-Atmega128TimerInterruptMask_TypeDef* tc_im_reg(void){return (Atmega128TimerInterruptMask_TypeDef*) 0x0057;}
 // Two Wire Serial Interface (TWI)
 Atmega128TwoWireSerialInterface_TypeDef* twi_reg(void){return (Atmega128TwoWireSerialInterface_TypeDef*) 0x0070;}
 // USART (USART0)

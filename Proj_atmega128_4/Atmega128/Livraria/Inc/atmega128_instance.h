@@ -3,13 +3,14 @@
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega 128
-Date:	  22092025
+Date:	  27092025
 **********************************************************************/
 #ifndef _ATMEGA128_INSTANCE_H_
 	#define _ATMEGA128_INSTANCE_H_
 
 /*** Library ***/
 #include "atmega128_register.h"
+#include <avr/sfr_defs.h>
 
 /*****************************/
 /**** MAIN HARDWARE LAYER ****/
@@ -155,11 +156,6 @@ typedef volatile struct {
 	MCUCSR_TypeDef mcucsr; // 0x54
 } Atmega128JtagInterface_TypeDef;
 
-// JTAG Interface (JTAG)
-typedef volatile struct {
-	MCUCSR_TypeDef mcucsr; // 0x54
-} Atmega128JtagInterfaceControlStatus_TypeDef;
-
 // Other Registers (MISC)
 typedef volatile struct {
 	SFIOR_TypeDef sfior; // 0x40
@@ -210,16 +206,6 @@ typedef volatile struct {
 	TCCR3C_TypeDef tccr3c; // 0x8C
 } Atmega128TimerCounter3_TypeDef;
 
-// Timer/Counter 1 and 3
-typedef volatile struct {
-	ETIFR_TypeDef etifr; // 0x7C
-} Atmega128TimerExternalInterruptFlag_TypeDef;
-
-// Timer/Counter 1 and 3
-typedef volatile struct {
-	ETIMSK_TypeDef etimsk; // 0x7D
-} Atmega128TimerExternalInterruptMask_TypeDef;
-
 // Timer/Counter, 8-bit (TC2)
 typedef volatile struct {
 	U_byte ocr2; // 0x43
@@ -242,16 +228,6 @@ typedef volatile struct {
 	TIFR_TypeDef tifr; // 0x56
 	TIMSK_TypeDef timsk; // 0x57
 } Atmega128TimerCounter0_TypeDef;
-
-// Timer/Counter 0, 1 and 2
-typedef volatile struct {
-	TIFR_TypeDef tifr; // 0x56
-} Atmega128TimerInterruptFlag_TypeDef;
-
-// Timer/Counter 0, 1 and 2
-typedef volatile struct {
-	TIMSK_TypeDef timsk; // 0x57
-} Atmega128TimerInterruptMask_TypeDef;
 
 // Two Wire Serial Interface (TWI)
 typedef volatile struct {
