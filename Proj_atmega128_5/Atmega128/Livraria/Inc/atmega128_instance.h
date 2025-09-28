@@ -7,6 +7,9 @@ Date:	  27092025
 **********************************************************************/
 #ifndef _ATMEGA128_INSTANCE_H_
 	#define _ATMEGA128_INSTANCE_H_
+	
+/*** Define & Macro ***/
+#define REG_GAP(start, end) uint8_t _r[(end - start) - 1]
 
 /*** Library ***/
 #include "atmega128_register.h"
@@ -275,55 +278,55 @@ typedef volatile struct {
 // atmega 128 (DEV)
 typedef struct {
 	// Indirect Address Register
-	Atmega128_GPIAR* gpiar;
+	Atmega128_GPIAR* const gpiar;
 	// Analog Comparator (AC)
-	Atmega128_AnalogComparator* ac;
+	Atmega128_AnalogComparator* const ac;
 	// Analog to Digital Converter (ADC)
-	Atmega128_AnalogToDigitalConverter* adc;
+	Atmega128_AnalogToDigitalConverter* const adc;
 	// Boot loader (BOOT_LOAD)
-	Atmega128_BootLoader* bootload;
+	Atmega128_BootLoader* const bootload;
 	// CPU Register (CPU)
-	Atmega128_CPURegister* cpu;
+	Atmega128_CPURegister* const cpu;
 	// EEPROM (EEPROM)
-	Atmega128_Eeprom* eeprom;
+	Atmega128_Eeprom* const eeprom;
 	// External Interrupts (EXINT)
-	Atmega128_ExternalInterrupt* exint;
+	Atmega128_ExternalInterrupt* const exint;
 	// I/O Port (PORTA)
-	Atmega128_PORTA* gpioa;
+	Atmega128_PORTA* const gpioa;
 	// I/O Port (PORTB)
-	Atmega128_PORTB* gpiob;
+	Atmega128_PORTB* const gpiob;
 	// I/O Port (PORTC)
-	Atmega128_PORTC* gpioc;
+	Atmega128_PORTC* const gpioc;
 	// I/O Port (PORTD)
-	Atmega128_PORTD* gpiod;
+	Atmega128_PORTD* const gpiod;
 	// I/O Port (PORTE)
-	Atmega128_PORTE* gpioe;
+	Atmega128_PORTE* const gpioe;
 	// I/O Port (PORTF)
-	Atmega128_PORTF* gpiof;
+	Atmega128_PORTF* const gpiof;
 	// I/O Port (PORTG)
-	Atmega128_PORTG* gpiog;
+	Atmega128_PORTG* const gpiog;
 	// JTAG Interface (JTAG)
-	Atmega128_JtagInterface* jtag;
+	Atmega128_JtagInterface* const jtag;
 	// Other Registers (MISC)
-	Atmega128_OtherRegister* misc;
+	Atmega128_OtherRegister* const misc;
 	// Serial Peripheral Interface (SPI)
-	Atmega128_SerialPeripheralInterface* spi;
+	Atmega128_SerialPeripheralInterface* const spi;
 	// Timer/Counter, 16-bit (TC1)
-	Atmega128_TimerCounter1* tc1;
+	Atmega128_TimerCounter1* const tc1;
 	// Timer/Counter, 16-bit (TC3)
-	Atmega128_TimerCounter3* tc3;
+	Atmega128_TimerCounter3* const tc3;
 	// Timer/Counter, 8-bit (TC2)
-	Atmega128_TimerCounter2* tc2;
+	Atmega128_TimerCounter2* const tc2;
 	// Timer/Counter, 8-bit A sync (TC0)
-	Atmega128_TimerCounter0* tc0;
+	Atmega128_TimerCounter0* const tc0;
 	// Two Wire Serial Interface (TWI)
-	Atmega128_TwoWireSerialInterface* twi;
+	Atmega128_TwoWireSerialInterface* const twi;
 	// USART (USART0)
-	Atmega128_Usart0* usart0;
+	Atmega128_Usart0* const usart0;
 	// USART (USART1)
-	Atmega128_Usart1* usart1;
+	Atmega128_Usart1* const usart1;
 	// Watchdog Timer (WDT)
-	Atmega128_WatchdogTimer* wdt;
+	Atmega128_WatchdogTimer* const wdt;
 } dev_atmega128;
 
 #endif

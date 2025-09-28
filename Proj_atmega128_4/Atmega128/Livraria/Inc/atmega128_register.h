@@ -165,7 +165,7 @@ typedef union {
 	}par;
 	uint8_t var;
 } MCUCR_TypeDef; // 0x55
-typedef	volatile union {
+typedef union {
 	struct{
 		uint8_t tov0 : 1, ocf0 : 1, tov1 : 1, ocf1b : 1, ocf1a : 1, icf1 : 1, tov2 : 1, ocf2 : 1;
 	}par;
