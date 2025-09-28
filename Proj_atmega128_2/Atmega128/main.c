@@ -157,7 +157,6 @@ lcd0()->string_size(uartmsgprint,20);
 //printf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwABCDE");
 //lcd0()->printf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN");
 
-
 // MENU SELECTOR
 switch(Menu){
 	// MENU 1

@@ -7,13 +7,15 @@ Date:	  27092025
 **********************************************************************/
 #ifndef _ATMEGA128_INSTANCE_H_
 	#define _ATMEGA128_INSTANCE_H_
-	
-/*** Define & Macro ***/
-#define REG_GAP(start, end) uint8_t _r[(end - start) - 1]
 
 /*** Library ***/
 #include "atmega128_register.h"
 #include <avr/sfr_defs.h>
+
+/*** Define & Macro ***/
+#define REG_GAP_NAME2(x, y) x##y
+#define REG_GAP_NAME(x, y) REG_GAP_NAME2(x, y)
+#define REG_GAP(start, end) uint8_t REG_GAP_NAME(_r, __LINE__)[(end - start) - 1]
 
 /*****************************/
 /**** MAIN HARDWARE LAYER ****/
