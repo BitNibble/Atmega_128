@@ -72,71 +72,71 @@ void usart0_enable(uint32_t baud, unsigned int fdbits, unsigned int stopbits, un
    		USART0_doubletransmissionspeed(); // Enable 2x speed 
    		ubrr = BAUDRATEdouble(baud);
    	}
-	usart0_reg()->ubrr0h.var = writeHLbyte(ubrr).par.h.var;
-	usart0_reg()->ubrr0l.var = writeHLbyte(ubrr).par.l.var;
+	atmega128()->usart0->ubrr0h.var = writeHLbyte(ubrr).par.h.var;
+	atmega128()->usart0->ubrr0l.var = writeHLbyte(ubrr).par.l.var;
 	// Enable USART receiver and transmitter and receive complete interrupt
-	usart0_reg()->ucsr0b.var = (1 << RXCIE0) | (1 << RXEN0) | (1 << TXEN0);
+	atmega128()->usart0->ucsr0b.var = (1 << RXCIE0) | (1 << RXEN0) | (1 << TXEN0);
 	
 	#ifdef URSEL0 // Set frame format: asynchronous, 8 data, no parity, 1 stop bit
-		usart0_reg()->ucsr0c = (0 << UMSEL0) | (3 << UCSZ00);
+		atmega128()->usart0->ucsr0c = (0 << UMSEL0) | (3 << UCSZ00);
 	#else
 		// Parameters
 		switch(fdbits){
 			case 9:
-				usart0_reg()->ucsr0b.var |= (1 << UCSZ02);
-				usart0_reg()->ucsr0c.var |= (3 << UCSZ00);
+				atmega128()->usart0->ucsr0b.var |= (1 << UCSZ02);
+				atmega128()->usart0->ucsr0c.var |= (3 << UCSZ00);
 			break;
 			case 8:
-				usart0_reg()->ucsr0b.var &= ~(1 << UCSZ02);
-				usart0_reg()->ucsr0c.var |= (3 << UCSZ00);
+				atmega128()->usart0->ucsr0b.var &= ~(1 << UCSZ02);
+				atmega128()->usart0->ucsr0c.var |= (3 << UCSZ00);
 			break;
 			case 7:
-				usart0_reg()->ucsr0b.var &= ~(1 << UCSZ02);
-				usart0_reg()->ucsr0c.var |= (1 << UCSZ01);
-				usart0_reg()->ucsr0c.var &= ~(1 << UCSZ00);
+				atmega128()->usart0->ucsr0b.var &= ~(1 << UCSZ02);
+				atmega128()->usart0->ucsr0c.var |= (1 << UCSZ01);
+				atmega128()->usart0->ucsr0c.var &= ~(1 << UCSZ00);
 			break;
 			case 6:
-				usart0_reg()->ucsr0b.var &= ~(1 << UCSZ02);
-				usart0_reg()->ucsr0c.var &= ~(1 << UCSZ01);
-				usart0_reg()->ucsr0c.var |= (1 << UCSZ00);
+				atmega128()->usart0->ucsr0b.var &= ~(1 << UCSZ02);
+				atmega128()->usart0->ucsr0c.var &= ~(1 << UCSZ01);
+				atmega128()->usart0->ucsr0c.var |= (1 << UCSZ00);
 			break;
 			case 5:
-				usart0_reg()->ucsr0b.var &= ~(1 << UCSZ02);
-				usart0_reg()->ucsr0c.var &= ~(3 << UCSZ00);
+				atmega128()->usart0->ucsr0b.var &= ~(1 << UCSZ02);
+				atmega128()->usart0->ucsr0c.var &= ~(3 << UCSZ00);
 			break;
 			default:
-				usart0_reg()->ucsr0b.var &= ~(1 << UCSZ02);
-				usart0_reg()->ucsr0c.var |= (3 << UCSZ00);
+				atmega128()->usart0->ucsr0b.var &= ~(1 << UCSZ02);
+				atmega128()->usart0->ucsr0c.var |= (3 << UCSZ00);
 			break;
 		}
 		switch(stopbits){
 			case 1:
-				usart0_reg()->ucsr0c.var &= ~(1 << USBS0);
+				atmega128()->usart0->ucsr0c.var &= ~(1 << USBS0);
 			break;
 			case 2:
-				usart0_reg()->ucsr0c.var |= (1 << USBS0);
+				atmega128()->usart0->ucsr0c.var |= (1 << USBS0);
 			break;	
 			default:
-				usart0_reg()->ucsr0c.var &= ~(1 << USBS0);
+				atmega128()->usart0->ucsr0c.var &= ~(1 << USBS0);
 			break;
 		}
 		switch(parity){
 			case 0:
-				usart0_reg()->ucsr0c.var &= ~(3 << UPM00);
+				atmega128()->usart0->ucsr0c.var &= ~(3 << UPM00);
 			break;
 			case 2:
-				usart0_reg()->ucsr0c.var |= (1 << UPM01);
-				usart0_reg()->ucsr0c.var &= ~(1 << UPM00);
+				atmega128()->usart0->ucsr0c.var |= (1 << UPM01);
+				atmega128()->usart0->ucsr0c.var &= ~(1 << UPM00);
 			break;
 			case 3:
-				usart0_reg()->ucsr0c.var |= (3 << UPM00);
+				atmega128()->usart0->ucsr0c.var |= (3 << UPM00);
 			break;	
 			default:
-				usart0_reg()->ucsr0c.var &= ~(3 << UPM00);
+				atmega128()->usart0->ucsr0c.var &= ~(3 << UPM00);
 			break;
 		}
 	#endif
-	cpu_reg()->sreg.par.i = 1;
+	atmega128()->cpu->sreg.par.i = 1;
 }
 
 USART0_Handler* usart0(void){ return &atmega128_usart0; }
@@ -165,8 +165,8 @@ void USART0_rxflush(void)
 void USART0_write(UARTvar data)
 {
 	uint16_t timeout;
-	usart0_reg()->ucsr0b.var |= 1 << UDRIE0;
-	usart0_reg()->udr0.var = data;
+	atmega128()->usart0->ucsr0b.var |= 1 << UDRIE0;
+	atmega128()->usart0->udr0.var = data;
 	for(timeout = 600; !USART0_dataregisterempty() && timeout; timeout--); // minimum -> +/- 450
 	//for( ; !USART1DataRegisterEmpty(); ); // without timeout
 }
@@ -244,17 +244,17 @@ static void usart0_callback_rx(void)
 	unsigned char usr;
 	
 	usr  = USART0_readerrors();
-	bit9 = usart0_reg()->ucsr0b.var;
+	bit9 = atmega128()->usart0->ucsr0b.var;
 	bit9 = 0x01 & (bit9 >> 1);
 	
 	if(usr){ USART0_lastrxerror = usr; }
 	
-	USART0_rx = usart0_reg()->udr0.var;
+	USART0_rx = atmega128()->usart0->udr0.var;
 	USART0_rxbuff.push(&USART0_rxbuff.par, USART0_rx);
 }
 static void usart0_callback_udre(void)
 {
-	usart0_reg()->ucsr0b.var &= ~(1 << UDRIE0);
+	atmega128()->usart0->ucsr0b.var &= ~(1 << UDRIE0);
 }
 
 /*** Interrupt ***/

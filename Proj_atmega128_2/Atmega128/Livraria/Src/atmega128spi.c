@@ -32,85 +32,85 @@ static SPI0_Handler atmega128_spi = {
 /*** Handler ***/
 void spi_enable(uint8_t master_slave_select, uint8_t data_order,  uint8_t data_modes, uint8_t prescaler)
 {
-	gpiob_reg()->ddr.var &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
+	atmega128()->gpiob->ddr.var &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
 	switch(master_slave_select){
 		case SPI_MASTER_MODE:
-			spi_reg()->spcr.var |= (1 << MSTR);
-			gpiob_reg()->ddr.var |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
-			gpiob_reg()->port.var |= (1 << DD_SS);
+			atmega128()->spi->spcr.var |= (1 << MSTR);
+			atmega128()->gpiob->ddr.var |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
+			atmega128()->gpiob->port.var |= (1 << DD_SS);
 		break;
 		case SPI_SLAVE_MODE:
-			spi_reg()->spcr.var |= (1 << MSTR);
-			gpiob_reg()->ddr.var |= (1 << DD_MISO);
+			atmega128()->spi->spcr.var |= (1 << MSTR);
+			atmega128()->gpiob->ddr.var |= (1 << DD_MISO);
 		break;
 		default:
-			spi_reg()->spcr.var |= (1 << MSTR);
-			gpiob_reg()->ddr.var |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
+			atmega128()->spi->spcr.var |= (1 << MSTR);
+			atmega128()->gpiob->ddr.var |= (1 << DD_SS) | (1 << DD_MOSI) | (1 << DD_SCK);
 		break;
 	}
 	switch(data_order){
 		case SPI_LSB_DATA_ORDER:
-			spi_reg()->spcr.var |= (1 << DORD);
+			atmega128()->spi->spcr.var |= (1 << DORD);
 		break;
 		case SPI_MSB_DATA_ORDER:
-			spi_reg()->spcr.var &= ~(1 << DORD);
+			atmega128()->spi->spcr.var &= ~(1 << DORD);
 		break;
 		default:
-			spi_reg()->spcr.var &= ~(1 << DORD);
+			atmega128()->spi->spcr.var &= ~(1 << DORD);
 		break;
 	}
 	switch(data_modes){
 		case 0:
-			spi_reg()->spcr.var &= ~((1 << CPOL) | (1 << CPHA));
+			atmega128()->spi->spcr.var &= ~((1 << CPOL) | (1 << CPHA));
 		break;
 		case 1:
-			spi_reg()->spcr.var |= (1 << CPHA);
+			atmega128()->spi->spcr.var |= (1 << CPHA);
 		break;
 		case 2:
-			spi_reg()->spcr.var |= (1 << CPOL);
+			atmega128()->spi->spcr.var |= (1 << CPOL);
 		break;
 		case 3:
-			spi_reg()->spcr.var |= (1 << CPOL) | (1 << CPHA);
+			atmega128()->spi->spcr.var |= (1 << CPOL) | (1 << CPHA);
 		break;
 		default:
-			spi_reg()->spcr.var &= ~((1 << CPOL) | (1 << CPHA));
+			atmega128()->spi->spcr.var &= ~((1 << CPOL) | (1 << CPHA));
 		break;
 	}
 	switch(prescaler){
 		case 2:
-			spi_reg()->spsr.var |= (1 << SPI2X);
-			spi_reg()->spcr.var &= ~((1 << SPR1) | (1 << SPR0));
+			atmega128()->spi->spsr.var |= (1 << SPI2X);
+			atmega128()->spi->spcr.var &= ~((1 << SPR1) | (1 << SPR0));
 		break;
 		case 4:
-			spi_reg()->spsr.var &= ~(1 << SPI2X);
-			spi_reg()->spcr.var &= ~((1 << SPR1) | (1 << SPR0));
+			atmega128()->spi->spsr.var &= ~(1 << SPI2X);
+			atmega128()->spi->spcr.var &= ~((1 << SPR1) | (1 << SPR0));
 		break;
 		case 8:
-			spi_reg()->spsr.var |= (1 << SPI2X);
-			spi_reg()->spcr.var |= (1 << SPR0);
+			atmega128()->spi->spsr.var |= (1 << SPI2X);
+			atmega128()->spi->spcr.var |= (1 << SPR0);
 		break;
 		case 16:
-			spi_reg()->spsr.var &= ~(1 << SPI2X);
-			spi_reg()->spcr.var |= (1 << SPR0);
+			atmega128()->spi->spsr.var &= ~(1 << SPI2X);
+			atmega128()->spi->spcr.var |= (1 << SPR0);
 		break;
 		case 32:
-			spi_reg()->spsr.var |= (1 << SPI2X);
-			spi_reg()->spcr.var |= (1 << SPR1);
+			atmega128()->spi->spsr.var |= (1 << SPI2X);
+			atmega128()->spi->spcr.var |= (1 << SPR1);
 		break;
 		case 64:
-			spi_reg()->spsr.var &= ~(1 << SPI2X);
-			spi_reg()->spcr.var |= (1 << SPR1);
+			atmega128()->spi->spsr.var &= ~(1 << SPI2X);
+			atmega128()->spi->spcr.var |= (1 << SPR1);
 		break;
 		case 128:
-			spi_reg()->spsr.var &= (1 << SPI2X);
-			spi_reg()->spcr.var |= (1 << SPR1) | (1 << SPR0);
+			atmega128()->spi->spsr.var &= (1 << SPI2X);
+			atmega128()->spi->spcr.var |= (1 << SPR1) | (1 << SPR0);
 		break;
 		default:
-			spi_reg()->spsr.var |= (1 << SPI2X);
-			spi_reg()->spcr.var |= (1 << SPR0);
+			atmega128()->spi->spsr.var |= (1 << SPI2X);
+			atmega128()->spi->spcr.var |= (1 << SPR0);
 		break;
 	}
-	spi_reg()->spcr.var |= (1 << SPE);
+	atmega128()->spi->spcr.var |= (1 << SPE);
 }
 
 SPI0_Handler* spi(void){ return &atmega128_spi; }
@@ -119,26 +119,26 @@ SPI0_Handler* spi(void){ return &atmega128_spi; }
 void spi_default(void)
 // Initialize pins for spi communication
 {
-	gpiob_reg()->ddr.var &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
+	atmega128()->gpiob->ddr.var &= ~((1 << DD_MOSI) | (1 << DD_MISO) | (1 << DD_SS) | (1 << DD_SCK));
 	// Define the following pins as output
-	gpiob_reg()->ddr.var |= ((1 << DD_MOSI) | (1 << DD_SS) | (1 << DD_SCK)); 
-	spi_reg()->spcr.var	=	((1 << SPE) |				// SPI Enable
+	atmega128()->gpiob->ddr.var |= ((1 << DD_MOSI) | (1 << DD_SS) | (1 << DD_SCK)); 
+	atmega128()->spi->spcr.var	=	((1 << SPE) |				// SPI Enable
 						(0 << SPIE) |				// SPI Interrupt Enable
 						(0 << DORD) |				// Data Order (0:MSB first / 1:LSB first)
 						(1 << MSTR) |				// Master/Slave select   
 						(0 << SPR1) | (1 << SPR0) |	// SPI Clock Rate
 						(0 << CPOL) |				// Clock Polarity (0:SCK low / 1:SCK hi when idle)
 						(0 << CPHA));				// Clock Phase (0:leading / 1:trailing edge sampling)
-    spi_reg()->spsr.var	=	(1 << SPI2X);				// Double Clock Rate  
+    atmega128()->spi->spsr.var	=	(1 << SPI2X);				// Double Clock Rate  
 }
 void spi_transfer_sync (uint8_t * dataout, uint8_t * datain, uint8_t len)
 // Shift full array through target device
 {
 	uint8_t i;      
 	for (i = 0; i < len; i++) {
-		spi_reg()->spdr.var = dataout[i];
-		while((spi_reg()->spsr.var & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
-		datain[i] = spi_reg()->spdr.var;
+		atmega128()->spi->spdr.var = dataout[i];
+		while((atmega128()->spi->spsr.var & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
+		datain[i] = atmega128()->spi->spdr.var;
 	}
 }
 void spi_transmit_sync (uint8_t * dataout, uint8_t len)
@@ -146,16 +146,16 @@ void spi_transmit_sync (uint8_t * dataout, uint8_t len)
 {
 	uint8_t i;
 	for (i = 0; i < len; i++) {
-		spi_reg()->spdr.var = dataout[i];
-		while((spi_reg()->spsr.var & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
+		atmega128()->spi->spdr.var = dataout[i];
+		while((atmega128()->spi->spsr.var & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
 	}
 }
 uint8_t spi_fast_shift (uint8_t data)
 // Clocks only one byte to target device and returns the received one
 {
-	spi_reg()->spdr.var = data;
-	while((spi_reg()->spsr.var & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
-	return spi_reg()->spdr.var;
+	atmega128()->spi->spdr.var = data;
+	while((atmega128()->spi->spsr.var & (1 << SPIF)) == 0) ; // polling, serial transfer is complete interrupt.
+	return atmega128()->spi->spdr.var;
 }
 
 /*** Interrupt ***/

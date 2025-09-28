@@ -272,6 +272,60 @@ typedef volatile struct {
 	WDTCR_TypeDef wdtcr; // 0x41
 } Atmega128_WatchdogTimer;
 
+// atmega 128 (DEV)
+typedef struct {
+	// Indirect Address Register
+	Atmega128_GPIAR* gpiar;
+	// Analog Comparator (AC)
+	Atmega128_AnalogComparator* ac;
+	// Analog to Digital Converter (ADC)
+	Atmega128_AnalogToDigitalConverter* adc;
+	// Boot loader (BOOT_LOAD)
+	Atmega128_BootLoader* bootload;
+	// CPU Register (CPU)
+	Atmega128_CPURegister* cpu;
+	// EEPROM (EEPROM)
+	Atmega128_Eeprom* eeprom;
+	// External Interrupts (EXINT)
+	Atmega128_ExternalInterrupt* exint;
+	// I/O Port (PORTA)
+	Atmega128_PORTA* gpioa;
+	// I/O Port (PORTB)
+	Atmega128_PORTB* gpiob;
+	// I/O Port (PORTC)
+	Atmega128_PORTC* gpioc;
+	// I/O Port (PORTD)
+	Atmega128_PORTD* gpiod;
+	// I/O Port (PORTE)
+	Atmega128_PORTE* gpioe;
+	// I/O Port (PORTF)
+	Atmega128_PORTF* gpiof;
+	// I/O Port (PORTG)
+	Atmega128_PORTG* gpiog;
+	// JTAG Interface (JTAG)
+	Atmega128_JtagInterface* jtag;
+	// Other Registers (MISC)
+	Atmega128_OtherRegister* misc;
+	// Serial Peripheral Interface (SPI)
+	Atmega128_SerialPeripheralInterface* spi;
+	// Timer/Counter, 16-bit (TC1)
+	Atmega128_TimerCounter1* tc1;
+	// Timer/Counter, 16-bit (TC3)
+	Atmega128_TimerCounter3* tc3;
+	// Timer/Counter, 8-bit (TC2)
+	Atmega128_TimerCounter2* tc2;
+	// Timer/Counter, 8-bit A sync (TC0)
+	Atmega128_TimerCounter0* tc0;
+	// Two Wire Serial Interface (TWI)
+	Atmega128_TwoWireSerialInterface* twi;
+	// USART (USART0)
+	Atmega128_Usart0* usart0;
+	// USART (USART1)
+	Atmega128_Usart1* usart1;
+	// Watchdog Timer (WDT)
+	Atmega128_WatchdogTimer* wdt;
+} dev_atmega128;
+
 #endif
 /*** EOF ***/
 

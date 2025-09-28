@@ -18,57 +18,59 @@ static unsigned int ftCounter[FTDELAY_SIZE] = {0};
 /*****************************/
 /**** MAIN HARDWARE LAYER ****/
 /*****************************/
-// Indirect Address Register
-Atmega128_GPIAR* gpiar_reg(void){return (Atmega128_GPIAR*) 0x001A;}
-// Analog Comparator (AC)
-Atmega128_AnalogComparator* ac_reg(void){return (Atmega128_AnalogComparator*) 0x0028;}
-// Analog to Digital Converter (ADC)
-Atmega128_AnalogToDigitalConverter* adc_reg(void){return (Atmega128_AnalogToDigitalConverter*) 0x0024;}
-// Boot loader (BOOT_LOAD)
-Atmega128_BootLoader* bootload_reg(void){return (Atmega128_BootLoader*) 0x0068;}
-// CPU Register (CPU)
-Atmega128_CPURegister* cpu_reg(void){return (Atmega128_CPURegister*) 0x0054;}
-// EEPROM (EEPROM)
-Atmega128_Eeprom* eeprom_reg(void){return (Atmega128_Eeprom*) 0x003C;}
-// External Interrupts (EXINT)
-Atmega128_ExternalInterrupt* exint_reg(void){return (Atmega128_ExternalInterrupt*) 0x0058;}
-// I/O Port (PORTA)
-Atmega128_PORTA* gpioa_reg(void){return (Atmega128_PORTA*) 0x0039;}
-// I/O Port (PORTB)
-Atmega128_PORTB* gpiob_reg(void){return (Atmega128_PORTB*) 0x0036;}
-// I/O Port (PORTC)
-Atmega128_PORTC* gpioc_reg(void){return (Atmega128_PORTC*) 0x0033;}
-// I/O Port (PORTD)
-Atmega128_PORTD* gpiod_reg(void){return (Atmega128_PORTD*) 0x0030;}
-// I/O Port (PORTE)
-Atmega128_PORTE* gpioe_reg(void){return (Atmega128_PORTE*) 0x0021;}
-// I/O Port (PORTF)
-Atmega128_PORTF* gpiof_reg(void){return (Atmega128_PORTF*) 0x0020;}
-// I/O Port (PORTG)
-Atmega128_PORTG* gpiog_reg(void){return (Atmega128_PORTG*) 0x0063;}
-// JTAG Interface (JTAG)
-Atmega128_JtagInterface* jtag_reg(void){return (Atmega128_JtagInterface*) 0x0042;}
-// Other Registers (MISC)
-Atmega128_OtherRegister* misc_reg(void){return (Atmega128_OtherRegister*) 0x0040;}
-// Serial Peripheral Interface (SPI)
-Atmega128_SerialPeripheralInterface* spi_reg(void){return (Atmega128_SerialPeripheralInterface*) 0x002D;}
-// Timer/Counter, 16-bit (TC1)
-Atmega128_TimerCounter1* tc1_reg(void){return (Atmega128_TimerCounter1*) 0x0040;}
-// Timer/Counter, 16-bit (TC3)
-Atmega128_TimerCounter3* tc3_reg(void){return (Atmega128_TimerCounter3*) 0x0040;}
-// Timer/Counter, 8-bit (TC2)
-Atmega128_TimerCounter2* tc2_reg(void){return (Atmega128_TimerCounter2*) 0x0043;}
-// Timer/Counter, 8-bit A sync (TC0)
-Atmega128_TimerCounter0* tc0_reg(void){return (Atmega128_TimerCounter0*) 0x0040;}
-// Two Wire Serial Interface (TWI)
-Atmega128_TwoWireSerialInterface* twi_reg(void){return (Atmega128_TwoWireSerialInterface*) 0x0070;}
-// USART (USART0)
-Atmega128_Usart0* usart0_reg(void){return (Atmega128_Usart0*) 0x0029;}
-// USART (USART1)
-Atmega128_Usart1* usart1_reg(void){return (Atmega128_Usart1*) 0x0098;}
-// Watchdog Timer (WDT)
-Atmega128_WatchdogTimer* wdt_reg(void){return (Atmega128_WatchdogTimer*) 0x0041;}
-
+static dev_atmega128 atmega128_setup = {
+	// Indirect Address Register
+	.gpiar = (Atmega128_GPIAR*) 0x001A,
+	// Analog Comparator (AC)
+	.ac = (Atmega128_AnalogComparator*) 0x0028,
+	// Analog to Digital Converter (ADC)
+	.adc = (Atmega128_AnalogToDigitalConverter*) 0x0024,
+	// Boot loader (BOOT_LOAD)
+	.bootload = (Atmega128_BootLoader*) 0x0068,
+	// CPU Register (CPU)
+	.cpu = (Atmega128_CPURegister*) 0x0054,
+	// EEPROM (EEPROM)
+	.eeprom = (Atmega128_Eeprom*) 0x003C,
+	// External Interrupts (EXINT)
+	.exint = (Atmega128_ExternalInterrupt*) 0x0058,
+	// I/O Port (PORTA)
+	.gpioa = (Atmega128_PORTA*) 0x0039,
+	// I/O Port (PORTB)
+	.gpiob = (Atmega128_PORTB*) 0x0036,
+	// I/O Port (PORTC)
+	.gpioc = (Atmega128_PORTC*) 0x0033,
+	// I/O Port (PORTD)
+	.gpiod = (Atmega128_PORTD*) 0x0030,
+	// I/O Port (PORTE)
+	.gpioe = (Atmega128_PORTE*) 0x0021,
+	// I/O Port (PORTF)
+	.gpiof = (Atmega128_PORTF*) 0x0020,
+	// I/O Port (PORTG)
+	.gpiog = (Atmega128_PORTG*) 0x0063,
+	// JTAG Interface (JTAG)
+	.jtag = (Atmega128_JtagInterface*) 0x0042,
+	// Other Registers (MISC)
+	.misc = (Atmega128_OtherRegister*) 0x0040,
+	// Serial Peripheral Interface (SPI)
+	.spi = (Atmega128_SerialPeripheralInterface*) 0x002D,
+	// Timer/Counter, 16-bit (TC1)
+	.tc1 = (Atmega128_TimerCounter1*) 0x0040,
+	// Timer/Counter, 16-bit (TC3)
+	.tc3 = (Atmega128_TimerCounter3*) 0x0040,
+	// Timer/Counter, 8-bit (TC2)
+	.tc2 = (Atmega128_TimerCounter2*) 0x0043,
+	// Timer/Counter, 8-bit A sync (TC0)
+	.tc0 = (Atmega128_TimerCounter0*) 0x0040,
+	// Two Wire Serial Interface (TWI)
+	.twi = (Atmega128_TwoWireSerialInterface*) 0x0070,
+	// USART (USART0)
+	.usart0 = (Atmega128_Usart0*) 0x0029,
+	// USART (USART1)
+	.usart1 = (Atmega128_Usart1*) 0x0098,
+	// Watchdog Timer (WDT)
+	.wdt = (Atmega128_WatchdogTimer*) 0x0041
+};
+dev_atmega128* atmega128(void){ return (dev_atmega128*) &atmega128_setup; }
 /*********************************************************************/
 /***************** Procedure and Function definition *****************/
 /*********************************************************************/
@@ -89,11 +91,11 @@ uint16_t BAUDRATEnormal(uint32_t BAUD){uint32_t baudrate = F_CPU/16; baudrate /=
 uint16_t BAUDRATEdouble(uint32_t BAUD){uint32_t baudrate = F_CPU/8; baudrate /= BAUD; baudrate -= 1; return (uint16_t) baudrate;}
 uint16_t BAUDRATEsynchronous(uint32_t BAUD){uint32_t baudrate = F_CPU/2; baudrate /= BAUD; baudrate -= 1; return (uint16_t) baudrate;}
 void ClockPrescalerSelect(volatile uint8_t prescaler){ volatile uint8_t sreg; volatile uint8_t* clkpr = &XDIV; 
-	prescaler &= 0x7F; sreg = cpu_reg()->sreg.var; cpu_reg()->sreg.var &= ~(1 << 7); *clkpr = prescaler;
-	*clkpr = (1 << XDIVEN) | prescaler; cpu_reg()->sreg.var = sreg;
+	prescaler &= 0x7F; sreg = atmega128_setup.cpu->sreg.var; atmega128_setup.cpu->sreg.var &= ~(1 << 7); *clkpr = prescaler;
+	*clkpr = (1 << XDIVEN) | prescaler; atmega128_setup.cpu->sreg.var = sreg;
 }
-void MoveInterruptsToBoot(void){volatile uint8_t sreg; sreg = cpu_reg()->sreg.var; cpu_reg()->sreg.var &= ~(1 << 7);
-	MCUCR = (1<<IVCE); MCUCR = (1<<IVSEL); cpu_reg()->sreg.var = sreg;
+void MoveInterruptsToBoot(void){volatile uint8_t sreg; sreg = atmega128_setup.cpu->sreg.var; atmega128_setup.cpu->sreg.var &= ~(1 << 7);
+	MCUCR = (1<<IVCE); MCUCR = (1<<IVSEL); atmega128_setup.cpu->sreg.var = sreg;
 }
 
 /*********************************************************************/

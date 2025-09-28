@@ -92,7 +92,7 @@ static const ATMEGA128 setup_atmega128 = {
 	.Move_Interrupts_To_Boot = MoveInterruptsToBoot
 };
 
-ATMEGA128* atmega128(void){ return (ATMEGA128*) &setup_atmega128; }
+ATMEGA128* mega128(void){ return (ATMEGA128*) &setup_atmega128; }
 
 /*** EOF ***/
 

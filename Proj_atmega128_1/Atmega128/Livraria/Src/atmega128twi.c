@@ -41,12 +41,12 @@ void twi_enable(uint8_t atmega_id,  uint8_t prescaler)
 {
 	TWI_id(atmega_id);
 	
-	gpiod_reg()->ddr.var |= TWI_IO_MASK;
-	gpiod_reg()->port.var |= TWI_IO_MASK;
+	atmega128()->gpiod->ddr.var |= TWI_IO_MASK;
+	atmega128()->gpiod->port.var |= TWI_IO_MASK;
 
 	TWI_prescaler(prescaler);
 
-	twi_reg()->twbr.var = ((F_CPU / TWI_SCL_CLOCK) - 16) / (2 * prescaler);
+	atmega128()->twi->twbr.var = ((F_CPU / TWI_SCL_CLOCK) - 16) / (2 * prescaler);
 }
 
 TWI0_Handler* twi(void){ return &atmega128_twi; }
@@ -55,10 +55,10 @@ TWI0_Handler* twi(void){ return &atmega128_twi; }
 void TWI_id(uint8_t atmega_id)
 {
 	if(atmega_id > 0 && atmega_id < 128) {
-		twi_reg()->twar.par.twa = atmega_id;
-		twi_reg()->twar.par.twgce = 1;
+		atmega128()->twi->twar.par.twa = atmega_id;
+		atmega128()->twi->twar.par.twgce = 1;
 	}else {
-		twi_reg()->twar.par.twgce = 1;
+		atmega128()->twi->twar.par.twgce = 1;
 	}
 }
 
@@ -66,20 +66,20 @@ void TWI_prescaler(uint8_t prescaler)
 {
 	switch(prescaler) {
 		case 1:
-		twi_reg()->twsr.par.twps = 0;
+		atmega128()->twi->twsr.par.twps = 0;
 		break;
 		case 4:
-		twi_reg()->twsr.par.twps = 1;
+		atmega128()->twi->twsr.par.twps = 1;
 		break;
 		case 16:
-		twi_reg()->twsr.par.twps = 2;
+		atmega128()->twi->twsr.par.twps = 2;
 		break;
 		case 64:
-		twi_reg()->twsr.par.twps = 3;
+		atmega128()->twi->twsr.par.twps = 3;
 		break;
 		default:
 		prescaler = 1;
-		twi_reg()->twsr.par.twps = 0;
+		atmega128()->twi->twsr.par.twps = 0;
 		break;
 	}
 }
@@ -87,7 +87,7 @@ void TWI_prescaler(uint8_t prescaler)
 void TWI_start(void)
 {
 	uint8_t cmd = (1 << TWINT) | (1 << TWSTA) | (1 << TWEN);
-	twi_reg()->twcr.var = cmd;
+	atmega128()->twi->twcr.var = cmd;
 
 	TWI_wait_twint(Nticks);
 
@@ -104,10 +104,10 @@ void TWI_start(void)
 uint8_t TWI_connect(uint8_t address, uint8_t rw)
 {
 	uint8_t cmd = (address << 1) | (rw & 0x01);
-	twi_reg()->twdr.var = cmd;
+	atmega128()->twi->twdr.var = cmd;
 
 	cmd = (1 << TWINT) | (1 << TWEN);
-	twi_reg()->twcr.var = cmd;
+	atmega128()->twi->twcr.var = cmd;
 
 	TWI_wait_twint(Nticks);
 
@@ -123,10 +123,10 @@ uint8_t TWI_connect(uint8_t address, uint8_t rw)
 
 uint8_t TWI_master_write(uint8_t var_twiData_u8)
 {
-	twi_reg()->twdr.var = var_twiData_u8;
+	atmega128()->twi->twdr.var = var_twiData_u8;
 
 	uint8_t cmd = (1 << TWINT) | (1 << TWEN);
-	twi_reg()->twcr.var = cmd;
+	atmega128()->twi->twcr.var = cmd;
 
 	TWI_wait_twint(Nticks);
 
@@ -144,7 +144,7 @@ uint8_t TWI_master_read(uint8_t ack_nack)
 	uint8_t cmd = (1 << TWINT) | (1 << TWEN);
 	if(ack_nack)
 	cmd |= (1 << TWEA);
-	twi_reg()->twcr.var = cmd;
+	atmega128()->twi->twcr.var = cmd;
 
 	TWI_wait_twint(Nticks);
 
@@ -153,26 +153,26 @@ uint8_t TWI_master_read(uint8_t ack_nack)
 		// can return special error value? For now just 0
 	}
 
-	return twi_reg()->twdr.var;
+	return atmega128()->twi->twdr.var;
 }
 
 void TWI_stop(void)
 {
 	uint8_t cmd = (1 << TWINT) | (1 << TWEN) | (1 << TWSTO);
-	twi_reg()->twcr.var = cmd;
+	atmega128()->twi->twcr.var = cmd;
 
 	_delay_us(100); // small delay to ensure stop completes
 }
 
 uint8_t TWI_status(void)
 {
-	return twi_reg()->twsr.var & TWI_STATUS_MASK;
+	return atmega128()->twi->twsr.var & TWI_STATUS_MASK;
 }
 
 void TWI_wait_twint(uint16_t nticks)
 {
 	unsigned int i;
-	for(i = 0; !(twi_reg()->twcr.var & (1 << TWINT)); i++){
+	for(i = 0; !(atmega128()->twi->twcr.var & (1 << TWINT)); i++){
 		_delay_us(1);
 		if(i > nticks) // timeout
 		break;

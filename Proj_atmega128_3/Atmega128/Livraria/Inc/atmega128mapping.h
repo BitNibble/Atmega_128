@@ -174,7 +174,7 @@ typedef struct {
 	void (*Move_Interrupts_To_Boot)( void );
 }ATMEGA128;
 
-ATMEGA128* atmega128( void );
+ATMEGA128* mega128( void );
 
 #endif
 /*** EOF ***/

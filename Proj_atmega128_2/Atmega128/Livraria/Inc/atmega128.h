@@ -19,6 +19,7 @@ Date:	  27092025
 #endif
 
 /*** Library ***/
+#include <avr/io.h>
 #include "atmega128_instance.h"
 #include <avr/boot.h>
 #include <avr/fuse.h>
@@ -48,57 +49,7 @@ Date:	  27092025
 /*****************************/
 /**** MAIN HARDWARE LAYER ****/
 /*****************************/
-// Indirect Address Register
-Atmega128_GPIAR* gpiar_reg(void);
-// Analog Comparator (AC)
-Atmega128_AnalogComparator* ac_reg(void);
-// Analog to Digital Converter (ADC)
-Atmega128_AnalogToDigitalConverter* adc_reg(void);
-// Boot loader (BOOT_LOAD)
-Atmega128_BootLoader* bootload_reg(void);
-// CPU Register (CPU)
-Atmega128_CPURegister* cpu_reg(void);
-// EEPROM (EEPROM)
-Atmega128_Eeprom* eeprom_reg(void);
-// External Interrupts (EXINT)
-Atmega128_ExternalInterrupt* exint_reg(void);
-// I/O Port (PORTA)
-Atmega128_PORTA* gpioa_reg(void);
-// I/O Port (PORTB)
-Atmega128_PORTB* gpiob_reg(void);
-// I/O Port (PORTC)
-Atmega128_PORTC* gpioc_reg(void);
-// I/O Port (PORTD)
-Atmega128_PORTD* gpiod_reg(void);
-// I/O Port (PORTE)
-Atmega128_PORTE* gpioe_reg(void);
-// I/O Port (PORTF)
-Atmega128_PORTF* gpiof_reg(void);
-// I/O Port (PORTG)
-Atmega128_PORTG* gpiog_reg(void);
-// JTAG Interface (JTAG)
-Atmega128_JtagInterface* jtag_reg(void);
-// Other Registers (MISC)
-Atmega128_OtherRegister* misc_reg(void);
-// Serial Peripheral Interface (SPI)
-Atmega128_SerialPeripheralInterface* spi_reg(void);
-// Timer/Counter, 16-bit (TC1)
-Atmega128_TimerCounter1* tc1_reg(void);
-// Timer/Counter, 16-bit (TC3)
-Atmega128_TimerCounter3* tc3_reg(void);
-// Timer/Counter, 8-bit (TC2)
-Atmega128_TimerCounter2* tc2_reg(void);
-// Timer/Counter, 8-bit A sync (TC0)
-Atmega128_TimerCounter0* tc0_reg(void);
-// Two Wire Serial Interface (TWI)
-Atmega128_TwoWireSerialInterface* twi_reg(void);
-// USART (USART0)
-Atmega128_Usart0* usart0_reg(void);
-// USART (USART1)
-Atmega128_Usart1* usart1_reg(void);
-// Watchdog Timer (WDT)
-Atmega128_WatchdogTimer* wdt_reg(void);
-
+dev_atmega128* atmega128(void);
 /*********************************************************************/
 /**************** Procedure and Function declaration *****************/
 /*********************************************************************/
