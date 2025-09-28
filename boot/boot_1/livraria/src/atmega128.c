@@ -14,10 +14,12 @@ Update:	  27092025
 #define FTDELAY_SIZE 256
 static unsigned int ft_Delay_Lock[FTDELAY_SIZE] = {0};
 static unsigned int ftCounter[FTDELAY_SIZE] = {0};
-	
+
 /*****************************/
 /**** MAIN HARDWARE LAYER ****/
 /*****************************/
+#if defined(_ATMEGA128_INSTANCE_H_)
+
 static dev_atmega128 atmega128_setup = {
 	// Indirect Address Register
 	.gpiar = (Atmega128_GPIAR*) 0x001A,
@@ -72,6 +74,8 @@ static dev_atmega128 atmega128_setup = {
 };
 dev_atmega128* atmega128(void){ return (dev_atmega128*) &atmega128_setup; }
 
+#endif
+
 /*********************************************************************/
 /***************** Procedure and Function definition *****************/
 /*********************************************************************/
@@ -91,6 +95,9 @@ uint16_t swapbyte(uint16_t num){uint16_t tp; tp = (num << 8); return (num >> 8) 
 uint16_t BAUDRATEnormal(uint32_t BAUD){uint32_t baudrate = F_CPU/16; baudrate /= BAUD; baudrate -= 1; return (uint16_t) baudrate;}
 uint16_t BAUDRATEdouble(uint32_t BAUD){uint32_t baudrate = F_CPU/8; baudrate /= BAUD; baudrate -= 1; return (uint16_t) baudrate;}
 uint16_t BAUDRATEsynchronous(uint32_t BAUD){uint32_t baudrate = F_CPU/2; baudrate /= BAUD; baudrate -= 1; return (uint16_t) baudrate;}
+
+#if defined(_ATMEGA128_INSTANCE_H_)
+
 void ClockPrescalerSelect(volatile uint8_t prescaler){ volatile uint8_t sreg; volatile uint8_t* clkpr = &XDIV; 
 	prescaler &= 0x7F; sreg = atmega128_setup.cpu->sreg.var; atmega128_setup.cpu->sreg.var &= ~(1 << 7); *clkpr = prescaler;
 	*clkpr = (1 << XDIVEN) | prescaler; atmega128_setup.cpu->sreg.var = sreg;
@@ -98,6 +105,8 @@ void ClockPrescalerSelect(volatile uint8_t prescaler){ volatile uint8_t sreg; vo
 void MoveInterruptsToBoot(void){volatile uint8_t sreg; sreg = atmega128_setup.cpu->sreg.var; atmega128_setup.cpu->sreg.var &= ~(1 << 7);
 	MCUCR = (1<<IVCE); MCUCR = (1<<IVSEL); atmega128_setup.cpu->sreg.var = sreg;
 }
+
+#endif
 
 /*********************************************************************/
 /***************** Procedure and Function definition *****************/
