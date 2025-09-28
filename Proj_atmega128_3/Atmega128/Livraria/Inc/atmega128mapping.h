@@ -92,83 +92,42 @@ Date:     15/07/2025
 /*************************** Third Layer ***************************/
 /*******************************************************************/
 typedef struct {
-	/***GPWR***/
-	// removed, no user permission.
-	/***AC***/
-	Atmega128_AnalogComparator* ac_reg;
 	/***ADC***/
-	Atmega128_AnalogToDigitalConverter* adc_reg;
 	#ifdef _ANALOG_MODULE_
 		void (*adc_enable)( uint8_t Vreff, uint8_t Divfactor, uint8_t n_channel, ... );
 	#endif
-	/***BOOTLOAD***/
-	Atmega128_BootLoader* bootload_reg;
-	/***CPU***/
-	Atmega128_CPURegister* cpu_reg;
-	/***EEPROM***/
-	Atmega128_Eeprom* eeprom_reg;
-	/***EXINT***/
-	Atmega128_ExternalInterrupt* exint_reg;
-	/***PORTA***/
-	Atmega128_PORTA* gpioa_reg;
-	/***PORTB***/
-	Atmega128_PORTB* gpiob_reg;
-	/***PORTC***/
-	Atmega128_PORTC* gpioc_reg;
-	/***PORTD***/
-	Atmega128_PORTD* gpiod_reg;
-	/***PORTE***/
-	Atmega128_PORTE* gpioe_reg;
-	/***PORTF***/
-	Atmega128_PORTF* gpiof_reg;
-	/***PORTG***/
-	Atmega128_PORTG* gpiog_reg;
-	/***JTAG***/
-	Atmega128_JtagInterface* jtag_reg;
-	/***MISC***/
-	Atmega128_OtherRegister* misc_reg;
 	/***SPI***/
-	Atmega128_SerialPeripheralInterface* spi_reg;
 	#ifdef _SPI_MODULE_
 		void (*spi_enable)( uint8_t master_slave_select, uint8_t data_order,  uint8_t data_modes, uint8_t prescaler );
 	#endif
 	/***TC1***/
-	Atmega128_TimerCounter1* tc1_reg;
 	#ifdef _TIMER1_MODULE_
 		void  (*tc1_enable)(uint8_t wavegenmode, uint8_t interrupt);
 	#endif
 	/***TC3***/
-	Atmega128_TimerCounter3* tc3_reg;
 	#ifdef _TIMER3_MODULE_
 		void (*tc3_enable)(unsigned char wavegenmode, unsigned char interrupt);
 	#endif
 	/***TC2***/
-	Atmega128_TimerCounter2* tc2_reg;
 	#ifdef _TIMER2_MODULE_
 		void (*tc2_enable)(unsigned char wavegenmode, unsigned char interrupt);
 	#endif
 	/***TC0***/
-	Atmega128_TimerCounter0* tc0_reg;
 	#ifdef _TIMER0_MODULE_
 		void (*tc0_enable)(unsigned char wavegenmode, unsigned char interrupt);
 	#endif
 	/***TWI***/
-	Atmega128_TwoWireSerialInterface* twi_reg;
 	#ifdef _TWI_MODULE_
 		void (*twi_enable)(uint8_t atmega_id,  uint8_t prescaler);
 	#endif
 	/***USART0***/
-	Atmega128_Usart0* usart0_reg;
 	#ifdef _USART0_MODULE_
 		void (*usart0_enable)( uint32_t baudrate, unsigned int FDbits, unsigned int Stopbits, unsigned int Parity );
 	#endif
 	/***USART1***/
-	Atmega128_Usart1* usart1_reg;
 	#ifdef _USART1_MODULE_
 		void (*usart1_enable)( uint32_t baud, unsigned int FDbits, unsigned int Stopbits, unsigned int Parity );
 	#endif
-	/***WDT***/
-	Atmega128_WatchdogTimer* wdt_reg;
 	/***Pointer Function***/
 	void (*Clock_Prescaler_Select)( volatile uint8_t prescaler );
 	void (*Move_Interrupts_To_Boot)( void );

@@ -10,83 +10,42 @@ Date:     15/07/2025
 
 /*** Handler ***/
 static const ATMEGA128 setup_atmega128 = { 
-	/***GPWR***/
-	// removed due to be restricted to user.
-	/***AC***/
-	.ac_reg = (Atmega128_AnalogComparator*) 0x0028,
 	/***ADC***/
-	.adc_reg = (Atmega128_AnalogToDigitalConverter*) 0x0024,
 	#ifdef _ANALOG_MODULE_
 		.adc_enable = adc_enable,
 	#endif
-	/***BOOTLOAD***/
-	.bootload_reg = (Atmega128_BootLoader*) 0x0068,
-	/***CPU***/
-	.cpu_reg = (Atmega128_CPURegister*) 0x0054,
-	/***EEPROM***/
-	.eeprom_reg = (Atmega128_Eeprom*) 0x003C,
-	/***EXINT***/
-	.exint_reg = (Atmega128_ExternalInterrupt*) 0x0058,
-	/***PORTA***/
-	.gpioa_reg = (Atmega128_PORTA*) 0x0039,
-	/***PORTB***/
-	.gpiob_reg = (Atmega128_PORTB*) 0x0036,
-	/***PORTC***/
-	.gpioc_reg = (Atmega128_PORTC*) 0x0033,
-	/***PORTD***/
-	.gpiod_reg = (Atmega128_PORTD*) 0x0030,
-	/***PORTE***/
-	.gpioe_reg = (Atmega128_PORTE*) 0x0021,
-	/***PORTF***/
-	.gpiof_reg = (Atmega128_PORTF*) 0x0020,
-	/***PORTG***/
-	.gpiog_reg = (Atmega128_PORTG*) 0x0063,
-	/***JTAG***/
-	.jtag_reg = (Atmega128_JtagInterface*) 0x0042,
-	/***MISC***/
-	.misc_reg = (Atmega128_OtherRegister*) 0x0040,
 	/***SPI***/
-	.spi_reg = (Atmega128_SerialPeripheralInterface*) 0x002D,
 	#ifdef _SPI_MODULE_
 		.spi_enable = spi_enable,
 	#endif
 	/***TC1***/
-	.tc1_reg = (Atmega128_TimerCounter1*) 0x0040,
 	#ifdef _TIMER1_MODULE_
 		.tc1_enable = tc1_enable,
 	#endif
 	/***TC3***/
-	.tc3_reg = (Atmega128_TimerCounter3*) 0x0040,
 	#ifdef _TIMER3_MODULE_
 		.tc3_enable = tc3_enable,
 	#endif
 	/***TC2***/
-	.tc2_reg = (Atmega128_TimerCounter2*) 0x0043,
 	#ifdef _TIMER2_MODULE_
 		.tc2_enable = tc2_enable,
 	#endif
 	/***TC0***/
-	.tc0_reg = (Atmega128_TimerCounter0*) 0x0040,
 	#ifdef _TIMER0_MODULE_
 		.tc0_enable = tc0_enable,
 	#endif
 	/***TWI***/
-	.twi_reg = (Atmega128_TwoWireSerialInterface*) 0x0070,
 	#ifdef _TWI_MODULE_
 		.twi_enable = twi_enable,
 	#endif
 	/***USART0***/
-	.usart0_reg = (Atmega128_Usart0*) 0x0029,
 	#ifdef _USART0_MODULE_
 		.usart0_enable = usart0_enable,
 	#endif
 	/***USART1***/
-	.usart1_reg = (Atmega128_Usart1*) 0x0098,
 	#ifdef _USART1_MODULE_
 		.usart1_enable = usart1_enable,
 	#endif
-	/***WDT***/
-	.wdt_reg = (Atmega128_WatchdogTimer*) 0x0041,
 	/***Pointer Function***/
 	.Clock_Prescaler_Select = ClockPrescalerSelect,
 	.Move_Interrupts_To_Boot = MoveInterruptsToBoot
