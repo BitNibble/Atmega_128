@@ -1,10 +1,10 @@
-/**********************************************************************
+/************************************************************************
 	LCD2P
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: all
-Date:     12072025
-**********************************************************************/
+Date:     29092025
+************************************************************************/
 #ifndef _LCD2P_H_
 	#define _LCD2P_H_
 
@@ -18,7 +18,7 @@ Date:     12072025
 #include <inttypes.h>
 
 /*** Constant & Macro ***/
-#define LCD_WIRING_3
+#define LCD_WIRING_1
 #if defined(LCD_WIRING_1)
 	#define LCD02P_RS 0
 	#define LCD02P_RW 1
