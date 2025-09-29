@@ -118,6 +118,9 @@ inline uint8_t Msk_Pos(uint8_t Msk){
 	}
 	return Pos;
 }
+inline uint8_t _sp_to_msk(uint8_t size, uint8_t pos){
+	return ((uint8_t)((1U << size) - 1)) << pos;
+}
 inline void set_reg(volatile uint8_t* reg, uint8_t hbits){
 	*reg |= hbits;
 }
