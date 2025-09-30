@@ -79,7 +79,7 @@ tc1_enable(9,0); // PWM Positioning
 tc2_enable(2,2);
 usart1_enable(38400,8,1,NONE); // UART 103 para 9600 (ESP01), 68 para 14400, 25 para 38400 (HC05), 8 para 115200
 
-lcd1_enable(&atmega128()->gpioa->ddr.var,&atmega128()->gpioa->pin.var,&atmega128()->gpioa->port.var); // LCD Display 4X20
+lcd0_enable(&atmega128()->gpioa->ddr.var,&atmega128()->gpioa->pin.var,&atmega128()->gpioa->port.var); // LCD Display 4X20
 keypad_enable(&atmega128()->gpioe->ddr.var,&atmega128()->gpioe->pin.var,&atmega128()->gpioe->port.var); // Keyboard
 rtc = pcf8563rtc_enable( 16 ); // RTC with I2C
 shift = hc595_enable(&atmega128()->gpiog->ddr.var,&atmega128()->gpiog->port.var,2,0,1);
@@ -129,7 +129,7 @@ rtc.SetClkOut(1, 2); // oscillate pin at 1 sec
 while(TRUE){
 // Preamble [INPUT]
 //pcflcd.reboot();
-lcd1()->reboot();
+lcd0()->reboot();
 keypad()->read();
 		
 uartreceive = usart1_messageprint( usart1(), uartmsg, uartmsgprint, "\r\n");
@@ -146,27 +146,27 @@ strcpy(str,func()->i16toa(adcvalue));
 //pcflcd.string_size(func()->ui16toa(rtc.bcd2dec(tm.VL_seconds)),2);
 	
 // catch message
-//if(!strcmp(uartreceive,"Connect\r\n")){Menu='6';usart1()->rxflush;lcd1()->clear();}
-//if(!strcmp(uartreceive,"Connected\r\n")){Menu='6';lcd1()->clear();}
+//if(!strcmp(uartreceive,"Connect\r\n")){Menu='6';usart1()->rxflush;lcd0()->clear();}
+//if(!strcmp(uartreceive,"Connected\r\n")){Menu='6';lcd0()->clear();}
 	
-lcd1()->gotoxy(2,0);
+lcd0()->gotoxy(2,0);
 func()->rmcrnl(uartmsgprint);
-lcd1()->string_size(uartmsgprint,20);
-//lcd1()->string_size(func()->ui16toa(atmega128()->cpu->mcucr.par.ivsel),2);
-//lcd1()->string_size(func()->ui16toa(read_low_fuse()),4);
+lcd0()->string_size(uartmsgprint,20);
+//lcd0()->string_size(func()->ui16toa(atmega128()->cpu->mcucr.par.ivsel),2);
+//lcd0()->string_size(func()->ui16toa(read_low_fuse()),4);
 //printf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwABCDE");
-//lcd1()->printf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN");
+//lcd0()->printf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN");
 
 // MENU SELECTOR
 switch(Menu){
 	// MENU 1
 	case '1': // Main Program Menu
-		if(!strcmp(keypad()->data->string,"A")){Menu='8';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"B")){Menu='2';keypad()->flush();lcd1()->clear();break;}
+		if(!strcmp(keypad()->data->string,"A")){Menu='8';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"B")){Menu='2';keypad()->flush();lcd0()->clear();break;}
 		// Reading input
-		lcd1()->gotoxy(1,0);
-		lcd1()->putch(':');
-		lcd1()->string_size(keypad()->data->print, 6);
+		lcd0()->gotoxy(1,0);
+		lcd0()->putch(':');
+		lcd0()->string_size(keypad()->data->print, 6);
 		// ENTRY END
 		// Set Position
 		if(positionhour>5 && positionhour<21){
@@ -177,33 +177,33 @@ switch(Menu){
 			mapping = func()->trimmer(6,2,23,Min,Max);
 			tc1()->compareB((uint16_t) mapping);
 		}
-		lcd1()->gotoxy(0,0);
-		lcd1()->string_size("S:",3);
-		lcd1()->string_size(str,5);
+		lcd0()->gotoxy(0,0);
+		lcd0()->string_size("S:",3);
+		lcd0()->string_size(str,5);
 			
-		lcd1()->gotoxy(0,8);
-		lcd1()->printf("%02d:%02d:%02d",rtc.bcd2dec(dt.days),rtc.bcd2dec(dt.century_months),rtc.bcd2dec(dt.years));
-		lcd1()->gotoxy(1,8);
+		lcd0()->gotoxy(0,8);
+		lcd0()->printf("%02d:%02d:%02d",rtc.bcd2dec(dt.days),rtc.bcd2dec(dt.century_months),rtc.bcd2dec(dt.years));
+		lcd0()->gotoxy(1,8);
 		// set hour for positioning
 		positionhour=rtc.bcd2dec(tm.hours);
-		lcd1()->printf("%02d:%02d:%02d",positionhour,rtc.bcd2dec(tm.minutes),rtc.bcd2dec(tm.VL_seconds));
+		lcd0()->printf("%02d:%02d:%02d",positionhour,rtc.bcd2dec(tm.minutes),rtc.bcd2dec(tm.VL_seconds));
 	break;
 	// MENU 2
 	case '2': // Manual position override 
-		if(!strcmp(keypad()->data->string,"A")){Menu='1';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"B")){Menu='3';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"C")){Menu='1';keypad()->flush();lcd1()->clear();usart1()->puts("Manual exit\r\n");break;}
+		if(!strcmp(keypad()->data->string,"A")){Menu='1';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"B")){Menu='3';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"C")){Menu='1';keypad()->flush();lcd0()->clear();usart1()->puts("Manual exit\r\n");break;}
 		//pcflcd.gotoxy(0,0);
 		//pcflcd.string_size("Manual position",20);
 		// Reading input
-		lcd1()->gotoxy(1,0);
-		lcd1()->putch(':');
-		lcd1()->string_size(keypad()->data->print, 6);
+		lcd0()->gotoxy(1,0);
+		lcd0()->putch(':');
+		lcd0()->string_size(keypad()->data->print, 6);
 		// ENTRY END
 		// Title
-		lcd1()->gotoxy(0,0);
-		lcd1()->string_size("Ang:",5);
-		lcd1()->string_size(mstr,3);
+		lcd0()->gotoxy(0,0);
+		lcd0()->string_size("Ang:",5);
+		lcd0()->string_size(mstr,3);
 			
 		if(keypad()->data->character == KEYPADENTERKEY){
 			strncpy(mstr,keypad()->data->string,6);
@@ -211,50 +211,50 @@ switch(Menu){
 			if(mvalue >=0 && mvalue <181){
 				m_value=mvalue;
 				tc1()->compareB(func()->trimmer(m_value,0,180,Min,Max));
-				lcd1()->gotoxy(0,12);
-				lcd1()->hspace(4);
+				lcd0()->gotoxy(0,12);
+				lcd0()->hspace(4);
 			}else{
-				lcd1()->gotoxy(0,12);
-				lcd1()->string_size("err",4);
+				lcd0()->gotoxy(0,12);
+				lcd0()->string_size("err",4);
 			}
 			keypad()->flush();
 		}
 		// else
 		// tc1.compareB(function.trimmer(m_value,0,180,Min,Max));
-		lcd1()->gotoxy(1,12);
-		lcd1()->string_size("C-Ex",4);
+		lcd0()->gotoxy(1,12);
+		lcd0()->string_size("C-Ex",4);
 	break;
 	// MENU 3
 	case '3': //Set Date
-		if(!strcmp(keypad()->data->string,"A")){Menu='2';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"B")){Menu='4';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Date exit\r\n");break;}
+		if(!strcmp(keypad()->data->string,"A")){Menu='2';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"B")){Menu='4';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd0()->clear();usart1()->puts("Date exit\r\n");break;}
 		//pcflcd.gotoxy(0,0);
 		//pcflcd.string_size("Set the Date",20);
 		// Reading input
-		lcd1()->gotoxy(1,0);
-		lcd1()->putch(':');
-		lcd1()->string_size(keypad()->data->print, 6);
+		lcd0()->gotoxy(1,0);
+		lcd0()->putch(':');
+		lcd0()->string_size(keypad()->data->print, 6);
 		// ENTRY END
 		// Menu to set RTC Time and Date
 		// Calibrate Menu
 		switch(cal){
 			case '0': // choice
-				lcd1()->gotoxy(0,0);
-				lcd1()->string_size("1-Yr",5);
-				lcd1()->string_size("2-Mh",5);
-				lcd1()->string_size("3-Dy",5);
-				lcd1()->gotoxy(1,12);
-				lcd1()->string_size("C-Ex",4);
-				if(!strcmp(keypad()->data->string,"1")){cal='1';keypad()->flush();lcd1()->clear();}
-				if(!strcmp(keypad()->data->string,"2")){cal='2';keypad()->flush();lcd1()->clear();}
-				if(!strcmp(keypad()->data->string,"3")){cal='3';keypad()->flush();lcd1()->clear();}
-				// if(keypad()->data->character=='1'){cal='1';keypad()->flush();lcd1()->clear();}
+				lcd0()->gotoxy(0,0);
+				lcd0()->string_size("1-Yr",5);
+				lcd0()->string_size("2-Mh",5);
+				lcd0()->string_size("3-Dy",5);
+				lcd0()->gotoxy(1,12);
+				lcd0()->string_size("C-Ex",4);
+				if(!strcmp(keypad()->data->string,"1")){cal='1';keypad()->flush();lcd0()->clear();}
+				if(!strcmp(keypad()->data->string,"2")){cal='2';keypad()->flush();lcd0()->clear();}
+				if(!strcmp(keypad()->data->string,"3")){cal='3';keypad()->flush();lcd0()->clear();}
+				// if(keypad()->data->character=='1'){cal='1';keypad()->flush();lcd0()->clear();}
 			break;
 				
 			case '1': // YEAR
-				lcd1()->gotoxy(1,12);
-				lcd1()->string_size("C-Ex",4);
+				lcd0()->gotoxy(1,12);
+				lcd0()->string_size("C-Ex",4);
 				// YEAR 
 				if(keypad()->data->character == KEYPADENTERKEY){
 					strcpy(tstr,keypad()->data->string);
@@ -270,8 +270,8 @@ switch(Menu){
 			break;
 				
 			case '2': // MONTH
-				lcd1()->gotoxy(1,12);
-				lcd1()->string_size("C-Ex",4);
+				lcd0()->gotoxy(1,12);
+				lcd0()->string_size("C-Ex",4);
 				// MONTH
 				if(keypad()->data->character == KEYPADENTERKEY){
 					strcpy(tstr,keypad()->data->string);
@@ -287,8 +287,8 @@ switch(Menu){
 			break;
 				
 			case '3': // DAY
-				lcd1()->gotoxy(1,12);
-				lcd1()->string_size("C-Ex",4);
+				lcd0()->gotoxy(1,12);
+				lcd0()->string_size("C-Ex",4);
 				// DAY
 				if(keypad()->data->character == KEYPADENTERKEY){
 					strcpy(tstr,keypad()->data->string);
@@ -310,35 +310,35 @@ switch(Menu){
 	break;
 	// MENU 4
 	case '4': //Set Time
-		if(!strcmp(keypad()->data->string,"A")){Menu='3';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"B")){Menu='5';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Time exit\r\n");break;}
+		if(!strcmp(keypad()->data->string,"A")){Menu='3';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"B")){Menu='5';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd0()->clear();usart1()->puts("Time exit\r\n");break;}
 		//pcflcd.gotoxy(0,0);
 		//pcflcd.string_size("Set the Time",20);
 		// Reading input
-		lcd1()->gotoxy(1,0);
-		lcd1()->putch(':');
-		lcd1()->string_size(keypad()->data->print, 6);
+		lcd0()->gotoxy(1,0);
+		lcd0()->putch(':');
+		lcd0()->string_size(keypad()->data->print, 6);
 		// ENTRY END
 		// Menu to set RTC Time and Date
 		// Calibrate Menu
 		switch(cal){
 			case '0': // choice
-				lcd1()->gotoxy(0,0);
-				lcd1()->string_size("1-Hr",5);
-				lcd1()->string_size("2-Mn",5);
-				lcd1()->string_size("3-Sc",5);
-				lcd1()->gotoxy(1,12);
-				lcd1()->string_size("C-Ex",4);
-				if(!strcmp(keypad()->data->string,"1")){cal='1';keypad()->flush();lcd1()->clear();}
-				if(!strcmp(keypad()->data->string,"2")){cal='2';keypad()->flush();lcd1()->clear();}
-				if(!strcmp(keypad()->data->string,"3")){cal='3';keypad()->flush();lcd1()->clear();}
-				// if(keypad()->data->character=='1'){cal='1';keypad()->flush();lcd1()->clear();}
+				lcd0()->gotoxy(0,0);
+				lcd0()->string_size("1-Hr",5);
+				lcd0()->string_size("2-Mn",5);
+				lcd0()->string_size("3-Sc",5);
+				lcd0()->gotoxy(1,12);
+				lcd0()->string_size("C-Ex",4);
+				if(!strcmp(keypad()->data->string,"1")){cal='1';keypad()->flush();lcd0()->clear();}
+				if(!strcmp(keypad()->data->string,"2")){cal='2';keypad()->flush();lcd0()->clear();}
+				if(!strcmp(keypad()->data->string,"3")){cal='3';keypad()->flush();lcd0()->clear();}
+				// if(keypad()->data->character=='1'){cal='1';keypad()->flush();lcd0()->clear();}
 			break;
 				
 			case '1': // HOUR
-				lcd1()->gotoxy(1,12);
-				lcd1()->string_size("C-Ex",4);
+				lcd0()->gotoxy(1,12);
+				lcd0()->string_size("C-Ex",4);
 				// HOUR
 				if(keypad()->data->character == KEYPADENTERKEY){
 					strcpy(tstr,keypad()->data->string);
@@ -354,8 +354,8 @@ switch(Menu){
 			break;
 				
 			case '2': // MINUTE
-				lcd1()->gotoxy(1,12);
-				lcd1()->string_size("C-Ex",4);
+				lcd0()->gotoxy(1,12);
+				lcd0()->string_size("C-Ex",4);
 				// MINUTE
 				if(keypad()->data->character == KEYPADENTERKEY){
 					strcpy(tstr,keypad()->data->string);
@@ -371,8 +371,8 @@ switch(Menu){
 			break;
 				
 			case '3': // SECOND
-				lcd1()->gotoxy(1,12);
-				lcd1()->string_size("C-Ex",4);
+				lcd0()->gotoxy(1,12);
+				lcd0()->string_size("C-Ex",4);
 				// SECOND
 				if(keypad()->data->character == KEYPADENTERKEY){
 					strcpy(tstr,keypad()->data->string);
@@ -393,54 +393,54 @@ switch(Menu){
 	break;
 	// MENU 5
 	case '5': // Output
-		if(!strcmp(keypad()->data->string,"A")){Menu='4';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"B")){Menu='6';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Output exit\r\n");break;}
+		if(!strcmp(keypad()->data->string,"A")){Menu='4';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"B")){Menu='6';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd0()->clear();usart1()->puts("Output exit\r\n");break;}
 		//pcflcd.gotoxy(0,0);
 		//pcflcd.string_size("Manual Output",20);
 		// Reading input
-		lcd1()->gotoxy(1,0);
-		lcd1()->putch(':');
-		lcd1()->string_size(keypad()->data->print, 6);
+		lcd0()->gotoxy(1,0);
+		lcd0()->putch(':');
+		lcd0()->string_size(keypad()->data->print, 6);
 		// ENTRY END
 		// Title
-		lcd1()->gotoxy(0,0);
-		lcd1()->string_size("Out:",5);
+		lcd0()->gotoxy(0,0);
+		lcd0()->string_size("Out:",5);
 			
-		lcd1()->string_size(mstr,3);
+		lcd0()->string_size(mstr,3);
 		if(keypad()->data->character == KEYPADENTERKEY){
 			strncpy(mstr,keypad()->data->string,6);
 			mvalue=func()->strToInt(mstr);
 			if(mvalue >=0 && mvalue <16){
 				// PORTC = mvalue;
 				atmega128()->gpioc->port.var = mvalue;
-				lcd1()->gotoxy(0,12);
-				lcd1()->hspace(4);
+				lcd0()->gotoxy(0,12);
+				lcd0()->hspace(4);
 			}else{
-				lcd1()->gotoxy(0,12);
-				lcd1()->string_size("err",4);
+				lcd0()->gotoxy(0,12);
+				lcd0()->string_size("err",4);
 			}
 			keypad()->flush();
 		}
-		lcd1()->gotoxy(1,12);
-		lcd1()->string_size("C-Ex",4);
+		lcd0()->gotoxy(1,12);
+		lcd0()->string_size("C-Ex",4);
 	break;
 	// MENU 6
 	case '6': // HC-05 Communication
-		if(!strcmp(keypad()->data->string,"A")){Menu='5';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"B")){Menu='7';keypad()->flush();lcd1()->clear();break;}
-		// if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Communication exit\r\n");break;}
+		if(!strcmp(keypad()->data->string,"A")){Menu='5';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"B")){Menu='7';keypad()->flush();lcd0()->clear();break;}
+		// if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd0()->clear();usart1()->puts("Communication exit\r\n");break;}
 		//pcflcd.gotoxy(0,0);
 		//pcflcd.string_size("Remote by Bluetooth",20);
 		// Reading input
-		lcd1()->gotoxy(1,0);
-		lcd1()->putch(':');
-		lcd1()->string_size(keypad()->data->print, 6);
+		lcd0()->gotoxy(1,0);
+		lcd0()->putch(':');
+		lcd0()->string_size(keypad()->data->print, 6);
 		// ENTRY END
 		// Title
-		lcd1()->gotoxy(0,0);
-		lcd1()->string_size("HC:",3);
+		lcd0()->gotoxy(0,0);
+		lcd0()->string_size("HC:",3);
 			
 		if(!strcmp(uartmsg,"position\r\n")){
 			usart1()->puts("> ");
@@ -496,28 +496,28 @@ switch(Menu){
 			Menu = '1';
 		}
 				
-		lcd1()->gotoxy(0,3);
-		lcd1()->string_size(uartmsgprint,13);
+		lcd0()->gotoxy(0,3);
+		lcd0()->string_size(uartmsgprint,13);
 
-		lcd1()->gotoxy(1,12);
-		lcd1()->string_size("C-Ex",4);
+		lcd0()->gotoxy(1,12);
+		lcd0()->string_size("C-Ex",4);
 	break;
 	// MENU 7
 	case '7': // HC-05 AT
-		if(!strcmp(keypad()->data->string,"A")){Menu='6';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"B")){Menu='8';keypad()->flush();lcd1()->clear();break;}
-		// if(!strcmp(keypad()->data().string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();break;}
-		if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("AT exit\r\n");break;}
+		if(!strcmp(keypad()->data->string,"A")){Menu='6';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"B")){Menu='8';keypad()->flush();lcd0()->clear();break;}
+		// if(!strcmp(keypad()->data().string,"C")){Menu='1';cal='0';keypad()->flush();lcd0()->clear();break;}
+		if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd0()->clear();usart1()->puts("AT exit\r\n");break;}
 		//pcflcd.gotoxy(0,0);
 		//pcflcd.string_size("Read Bluetooth",20);
 		// Reading input
-		lcd1()->gotoxy(1,0);
-		lcd1()->putch(':');
-		lcd1()->string_size(keypad()->data->print, 6);
+		lcd0()->gotoxy(1,0);
+		lcd0()->putch(':');
+		lcd0()->string_size(keypad()->data->print, 6);
 		// ENTRY END
 		// Title
-		lcd1()->gotoxy(0,0);
-		lcd1()->string_size("AT:",3);
+		lcd0()->gotoxy(0,0);
+		lcd0()->string_size("AT:",3);
 		// COMMANDS
 		if(keypad()->data->character == KEYPADENTERKEY){
 			AT = func()->strToInt(keypad()->data->string);
@@ -528,48 +528,48 @@ switch(Menu){
 		}
 		AT = 0;
 			
-		lcd1()->gotoxy(0,3);
-		lcd1()->string_size(uartmsgprint,13);
+		lcd0()->gotoxy(0,3);
+		lcd0()->string_size(uartmsgprint,13);
 				
-		lcd1()->gotoxy(1,12);
-		lcd1()->string_size("C-Ex",4);
+		lcd0()->gotoxy(1,12);
+		lcd0()->string_size("C-Ex",4);
 	break;
 	// MENU 8
 	case '8': // Testing Code
-	if(!strcmp(keypad()->data->string,"A")){Menu='7';keypad()->flush();lcd1()->clear();break;}
-	if(!strcmp(keypad()->data->string,"B")){Menu='1';keypad()->flush();lcd1()->clear();break;}
-	if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd1()->clear();usart1()->puts("Testing exit\r\n");break;}
+	if(!strcmp(keypad()->data->string,"A")){Menu='7';keypad()->flush();lcd0()->clear();break;}
+	if(!strcmp(keypad()->data->string,"B")){Menu='1';keypad()->flush();lcd0()->clear();break;}
+	if(!strcmp(keypad()->data->string,"C")){Menu='1';cal='0';keypad()->flush();lcd0()->clear();usart1()->puts("Testing exit\r\n");break;}
 	//pcflcd.gotoxy(0,0);
 	//pcflcd.string_size("Testing environment",20);
 	// Title
-	lcd1()->gotoxy(0,0);
-	lcd1()->string_size("T:",2);
+	lcd0()->gotoxy(0,0);
+	lcd0()->string_size("T:",2);
 		
 	// Test Area
-	lcd1()->gotoxy(0,2);
+	lcd0()->gotoxy(0,2);
 	number1 = F_CPU/16;
 	//atmega128()->writereg(&tnum,2,4,0);
 	//tnum1 = atmega128()->readreg(tnum,3,3); // read
 	write_reg_block(&tnum,3,3,6); // read
-	//lcd1()->string_size( func()->ftoa((float)88/35,5) ,14); // binary
-	lcd1()->string_size( func()->ftoa((float)8965/856, 5) ,14); // binary
-	//lcd1()->string_size(func()->print_binary(8,tnum),14); // binary
-	//lcd1()->string_size(func()->print_binary(8,tnum1),14); // binary
-	//lcd1()->string_size(func()->ui16toa(tnum),14); // binary
-	//lcd1()->string_size(func()->ui32toa(atmega128.cpu->var->xdiv),14); // 32 bit max number
-	//lcd1()->string_size(func()->ui32toa(4294967295),14); // 32 bit max number
-	//lcd1()->string_size(func()->ui32toa(number1),14); // baud
-	lcd1()->gotoxy(1,0);
+	//lcd0()->string_size( func()->ftoa((float)88/35,5) ,14); // binary
+	lcd0()->string_size( func()->ftoa((float)8965/856, 5) ,14); // binary
+	//lcd0()->string_size(func()->print_binary(8,tnum),14); // binary
+	//lcd0()->string_size(func()->print_binary(8,tnum1),14); // binary
+	//lcd0()->string_size(func()->ui16toa(tnum),14); // binary
+	//lcd0()->string_size(func()->ui32toa(atmega128.cpu->var->xdiv),14); // 32 bit max number
+	//lcd0()->string_size(func()->ui32toa(4294967295),14); // 32 bit max number
+	//lcd0()->string_size(func()->ui32toa(number1),14); // baud
+	lcd0()->gotoxy(1,0);
 	number1 /= 14400;
-	lcd1()->string_size(func()->ui32toa(number1),4);
-	lcd1()->gotoxy(1,4);
+	lcd0()->string_size(func()->ui32toa(number1),4);
+	lcd0()->gotoxy(1,4);
 	number1 -= 1;
-	lcd1()->string_size(func()->ui32toa(number1),4);
+	lcd0()->string_size(func()->ui32toa(number1),4);
 	
 	// Reading input
-	lcd1()->gotoxy(1,9);
-	lcd1()->putch(':');
-	lcd1()->string_size(keypad()->data->print, 6);
+	lcd0()->gotoxy(1,9);
+	lcd0()->putch(':');
+	lcd0()->string_size(keypad()->data->print, 6);
 	// ENTRY END
 	break;
 	//DEFAULT
@@ -581,8 +581,8 @@ switch(Menu){
 switch(signal)
 {
 	case 1:
-		lcd1()->gotoxy(3,0);
-		lcd1()->printf("count: %d", count);
+		lcd0()->gotoxy(3,0);
+		lcd0()->printf("count: %d", count);
 		signal = 0;
 	break;
 	default:
