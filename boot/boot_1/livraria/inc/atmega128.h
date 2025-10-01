@@ -1,14 +1,14 @@
-/**********************************************************************
+/********************************************************************
 	ATMEGA 128
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega 128
 Date:	  27092025
-**********************************************************************/
+********************************************************************/
 #ifndef _ATMEGA128_H_
 	#define _ATMEGA128_H_
 
-/*** Compiler ***/
+ /*** Compiler ***/
 #if (__GNUC__ * 100 + __GNUC_MINOR__) < 304
 	#error "This library requires AVR-GCC 3.4 or later, update to newer AVR-GCC compiler !"
 #endif
@@ -46,28 +46,32 @@ Date:	  27092025
 #define READ_BIT(REG, BIT)		((REG >> BIT) & 1)
 #define TOGGLE_REG(REG, HBITS)	(REG ^= HBITS)
 
-/*****************************/
-/**** MAIN HARDWARE LAYER ****/
-/*****************************/
+/*******************************************************************/
+/********************** MAIN HARDWARE LAYER ************************/
+/*******************************************************************/
 dev_atmega128* atmega128(void);
 
-/*********************************************************************/
-/**************** Procedure and Function declaration *****************/
-/*********************************************************************/
+/*******************************************************************/
+/**************** Procedure and Function declaration ***************/
+/*******************************************************************/
 uint16_t readHLbyte(U_word reg);
 uint16_t readLHbyte(U_word reg);
 U_word writeHLbyte(uint16_t val);
 U_word writeLHbyte(uint16_t val);
 uint16_t swapbyte(uint16_t num);
+
+/*******************************************************************/
+/**************** Procedure and Function declaration ***************/
+/*******************************************************************/
 uint16_t BAUDRATEnormal(uint32_t BAUD);
 uint16_t BAUDRATEdouble(uint32_t BAUD);
 uint16_t BAUDRATEsynchronous(uint32_t BAUD);
 void ClockPrescalerSelect(volatile uint8_t prescaler);
 void MoveInterruptsToBoot(void);
 
-/*********************************************************************/
-/**************** Procedure and Function declaration *****************/
-/*********************************************************************/
+/*******************************************************************/
+/**************** Procedure and Function declaration ***************/
+/*******************************************************************/
 void set_reg(volatile uint8_t* reg, uint8_t hbits);
 void clear_reg(volatile uint8_t* reg, uint8_t hbits);
 uint8_t get_reg_block(uint8_t reg, uint8_t size_block, uint8_t bit_n);

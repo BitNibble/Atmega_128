@@ -1,10 +1,10 @@
-/**********************************************************************
+/********************************************************************
 	ATMEGA 128 INSTANCE
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: Atmega 128
 Date:	  27092025
-**********************************************************************/
+********************************************************************/
 #ifndef _ATMEGA128_INSTANCE_H_
 	#define _ATMEGA128_INSTANCE_H_
 
@@ -277,7 +277,9 @@ typedef volatile struct {
 	WDTCR_TypeDef wdtcr; // 0x41
 } Atmega128_WatchdogTimer;
 
-// atmega 128 (DEV)
+/*******************************************************************/
+/********************** MAIN HARDWARE LAYER ************************/
+/*******************************************************************/
 typedef struct {
 	// Indirect Address Register
 	Atmega128_GPIAR* const gpiar;
