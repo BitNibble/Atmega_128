@@ -44,7 +44,7 @@ void tc2_enable(unsigned char wavegenmode, unsigned char interrupt)
 	TIMER_COUNTER2_wavegenmode(wavegenmode);
 	TIMER_COUNTER2_interrupt(interrupt);
 	
-	atmega128()->tc2->ocr2.var = ~0;
+	dev()->tc2->ocr2.var = ~0;
 }
 
 TC2_Handler* tc2(void){ return &atmega128_tc2; }
@@ -52,18 +52,18 @@ TC2_Handler* tc2(void){ return &atmega128_tc2; }
 /*** Procedure and Function definition ***/
 void TIMER_COUNTER2_wavegenmode(unsigned char wavegenmode)
 {
-	atmega128()->tc2->tccr2.var &= ~((1 << WGM20) | (1 << WGM21));
+	dev()->tc2->tccr2.var &= ~((1 << WGM20) | (1 << WGM21));
 	switch(wavegenmode){ // TOP -- Update of OCR2 at -- TOV0 Flag Set on
 		case 0: // Normal, 0xFF -- Immediate -- MAX
 		break;
 		case 1: // PWM Phase Correct, 0xFF -- TOP -- BOTTOM
-		atmega128()->tc2->tccr2.var |= (1 << WGM20);
+		dev()->tc2->tccr2.var |= (1 << WGM20);
 		break;
 		case 2: // CTC, OCR2 -- Immediate -- MAX
-		atmega128()->tc2->tccr2.var |= (1 << WGM21);
+		dev()->tc2->tccr2.var |= (1 << WGM21);
 		break;
 		case 3: // Fast PWM, 0xFF -- BOTTOM -- MAX
-		atmega128()->tc2->tccr2.var |= (1 << WGM20) | (1 << WGM21);
+		dev()->tc2->tccr2.var |= (1 << WGM20) | (1 << WGM21);
 		break;
 		default:
 		break;
@@ -72,22 +72,22 @@ void TIMER_COUNTER2_wavegenmode(unsigned char wavegenmode)
 
 void TIMER_COUNTER2_interrupt(unsigned char interrupt)
 {
-	atmega128()->tc2->timsk.var &= ~((1 << TOIE2) | (1 << OCIE2));
+	dev()->tc2->timsk.var &= ~((1 << TOIE2) | (1 << OCIE2));
 	switch(interrupt){
 		case 0:
 		break;
 		case 1:
-		atmega128()->tc2->timsk.var |= (1 << TOIE2);
-		atmega128()->cpu->sreg.var |= 1 << 7;
+		dev()->tc2->timsk.var |= (1 << TOIE2);
+		dev()->cpu->sreg.var |= 1 << 7;
 		break;
 		case 2:
-		atmega128()->tc2->timsk.var |= (1 << OCIE2);
-		atmega128()->cpu->sreg.var |= 1 << 7;
+		dev()->tc2->timsk.var |= (1 << OCIE2);
+		dev()->cpu->sreg.var |= 1 << 7;
 		break;
 		case 3:
-		atmega128()->tc2->timsk.var |= (1 << TOIE2);
-		atmega128()->tc2->timsk.var |= (1 << OCIE2);
-		atmega128()->cpu->sreg.var |= 1 << 7;
+		dev()->tc2->timsk.var |= (1 << TOIE2);
+		dev()->tc2->timsk.var |= (1 << OCIE2);
+		dev()->cpu->sreg.var |= 1 << 7;
 		break;
 		default:
 		break;
@@ -102,33 +102,33 @@ uint8_t TIMER_COUNTER2_start(unsigned int prescaler)
 // External clock source on Tn pin. Clock on rising edge; default - clk T 0 S /1024 (From prescaler).
 {
 	if(!timer2_state){ // one shot
-		atmega128()->tc2->tccr2.var &= ~(7 << CS20); // No clock source. (Timer/Counter stopped)
+		dev()->tc2->tccr2.var &= ~(7 << CS20); // No clock source. (Timer/Counter stopped)
 		switch(prescaler){
 			//case 0: // No clock source. (Timer/Counter stopped)
 			//break;
 			case 1: // clkI/O/(No prescaler)
-				atmega128()->tc2->tccr2.var |= (1 << CS20);
+				dev()->tc2->tccr2.var |= (1 << CS20);
 			break;
 			case 8: // clkI/O/8 (From prescaler)
-				atmega128()->tc2->tccr2.var |= (1 << CS21);
+				dev()->tc2->tccr2.var |= (1 << CS21);
 			break;
 			case 64: // clkI/O/64 (From prescaler)
-				atmega128()->tc2->tccr2.var |= (3 << CS20);
+				dev()->tc2->tccr2.var |= (3 << CS20);
 			break;
 			case 256: // clkI/O/256 (From prescaler)
-				atmega128()->tc2->tccr2.var |= (1 << CS22);
+				dev()->tc2->tccr2.var |= (1 << CS22);
 			break;
 			case 1024: // clkI/O/1024 (From prescaler)
-				atmega128()->tc2->tccr2.var |= (5 << CS20);
+				dev()->tc2->tccr2.var |= (5 << CS20);
 			break;
 			case 6: // External clock source on T2 pin. Clock on falling edge [PD7]
-				atmega128()->tc2->tccr2.var |= (6 << CS20);
+				dev()->tc2->tccr2.var |= (6 << CS20);
 			break;
 			case 7: // External clock source on T2 pin. Clock on rising edge [PD7]
-				atmega128()->tc2->tccr2.var |= (7 << CS20);
+				dev()->tc2->tccr2.var |= (7 << CS20);
 			break;
 			default:
-				atmega128()->tc2->tccr2.var |= (5 << CS20);
+				dev()->tc2->tccr2.var |= (5 << CS20);
 			break;
 		}
 		timer2_state = 85;
@@ -141,24 +141,24 @@ void TIMER_COUNTER2_compoutmode(unsigned char compoutmode)
 // Set OC0 on compare match when up-counting. Clear OC0 on compare match when downcounting. Set OC0 on compare match ;
 // default-Normal gpio operation, OC0 disconnected.
 {
-	atmega128()->tc2->tccr2.var &= ~((1 << COM20) | (1 << COM21));
+	dev()->tc2->tccr2.var &= ~((1 << COM20) | (1 << COM21));
 	switch(compoutmode){ // OC2  -->  PB7
 		case 0: // Normal gpio operation, OC2 disconnected.
 		break;
 		case 1: // Reserved
 			// Toggle OC2 on compare match
-			atmega128()->gpiob->ddr.var |= 0x80;
-			atmega128()->tc2->tccr2.var |= (1 << COM20);
+			dev()->gpiob->ddr.var |= 0x80;
+			dev()->tc2->tccr2.var |= (1 << COM20);
 		break;
 		case 2: // Clear OC2 on compare match when up-counting. Set OC0 on compare
 			// match when down counting.
-			atmega128()->gpiob->ddr.var |= 0x80;
-			atmega128()->tc2->tccr2.var |= (1 << COM21);
+			dev()->gpiob->ddr.var |= 0x80;
+			dev()->tc2->tccr2.var |= (1 << COM21);
 		break;
 		case 3: // Set OC2 on compare match when up-counting. Clear OC0 on compare
 			// match when down counting.
-			atmega128()->gpiob->ddr.var |= 0x80;
-			atmega128()->tc2->tccr2.var |= (1 << COM20) | (1 << COM21);
+			dev()->gpiob->ddr.var |= 0x80;
+			dev()->tc2->tccr2.var |= (1 << COM20) | (1 << COM21);
 		break;
 		default:
 		break;
@@ -166,12 +166,12 @@ void TIMER_COUNTER2_compoutmode(unsigned char compoutmode)
 }
 void TIMER_COUNTER2_compare(unsigned char compare)
 {
-	atmega128()->tc2->ocr2.var = compare;
+	dev()->tc2->ocr2.var = compare;
 }
 uint8_t TIMER_COUNTER2_stop(void)
 // stops timer by setting prescaler to zero
 {
-	atmega128()->tc2->tccr2.var &= ~(7 << CS20); // No clock source. (Timer/Counter stopped)
+	dev()->tc2->tccr2.var &= ~(7 << CS20); // No clock source. (Timer/Counter stopped)
 	timer2_state = 0;
 	return timer2_state;
 }

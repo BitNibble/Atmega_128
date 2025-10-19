@@ -72,7 +72,8 @@ static dev_atmega128 atmega128_setup = {
 	// Watchdog Timer (WDT)
 	.wdt = (Atmega128_WatchdogTimer*) 0x0041
 };
-dev_atmega128* atmega128(void){ return (dev_atmega128*) &atmega128_setup; }
+
+dev_atmega128* dev(void){ return (dev_atmega128*) &atmega128_setup; }
 
 #endif
 

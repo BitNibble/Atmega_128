@@ -49,7 +49,60 @@ Date:	  27092025
 /*******************************************************************/
 /********************** MAIN HARDWARE LAYER ************************/
 /*******************************************************************/
-dev_atmega128* atmega128(void);
+typedef struct {
+	// Indirect Address Register
+	Atmega128_GPIAR* const gpiar;
+	// Analog Comparator (AC)
+	Atmega128_AnalogComparator* const ac;
+	// Analog to Digital Converter (ADC)
+	Atmega128_AnalogToDigitalConverter* const adc;
+	// Boot loader (BOOT_LOAD)
+	Atmega128_BootLoader* const bootload;
+	// CPU Register (CPU)
+	Atmega128_CPURegister* const cpu;
+	// EEPROM (EEPROM)
+	Atmega128_Eeprom* const eeprom;
+	// External Interrupts (EXINT)
+	Atmega128_ExternalInterrupt* const exint;
+	// I/O Port (PORTA)
+	Atmega128_PORTA* const gpioa;
+	// I/O Port (PORTB)
+	Atmega128_PORTB* const gpiob;
+	// I/O Port (PORTC)
+	Atmega128_PORTC* const gpioc;
+	// I/O Port (PORTD)
+	Atmega128_PORTD* const gpiod;
+	// I/O Port (PORTE)
+	Atmega128_PORTE* const gpioe;
+	// I/O Port (PORTF)
+	Atmega128_PORTF* const gpiof;
+	// I/O Port (PORTG)
+	Atmega128_PORTG* const gpiog;
+	// JTAG Interface (JTAG)
+	Atmega128_JtagInterface* const jtag;
+	// Other Registers (MISC)
+	Atmega128_OtherRegister* const misc;
+	// Serial Peripheral Interface (SPI)
+	Atmega128_SerialPeripheralInterface* const spi;
+	// Timer/Counter, 16-bit (TC1)
+	Atmega128_TimerCounter1* const tc1;
+	// Timer/Counter, 16-bit (TC3)
+	Atmega128_TimerCounter3* const tc3;
+	// Timer/Counter, 8-bit (TC2)
+	Atmega128_TimerCounter2* const tc2;
+	// Timer/Counter, 8-bit A sync (TC0)
+	Atmega128_TimerCounter0* const tc0;
+	// Two Wire Serial Interface (TWI)
+	Atmega128_TwoWireSerialInterface* const twi;
+	// USART (USART0)
+	Atmega128_Usart0* const usart0;
+	// USART (USART1)
+	Atmega128_Usart1* const usart1;
+	// Watchdog Timer (WDT)
+	Atmega128_WatchdogTimer* const wdt;
+} dev_atmega128;
+
+dev_atmega128* dev(void);
 
 /*******************************************************************/
 /**************** Procedure and Function declaration ***************/

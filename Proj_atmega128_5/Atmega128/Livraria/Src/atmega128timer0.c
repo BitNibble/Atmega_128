@@ -44,7 +44,7 @@ void tc0_enable(unsigned char wavegenmode, unsigned char interrupt)
 	TIMER_COUNTER0_wavegenmode(wavegenmode);
 	TIMER_COUNTER0_interrupt(interrupt);
 	
-	atmega128()->tc0->ocr0.var = ~0;
+	dev()->tc0->ocr0.var = ~0;
 }
 
 TC0_Handler* tc0(void) {
@@ -55,19 +55,19 @@ TC0_Handler* tc0(void) {
 void TIMER_COUNTER0_wavegenmode(unsigned char wavegenmode)
 {
 	// Clear WGM01:WGM00
-	atmega128()->tc0->tccr0.var &= ~((1 << WGM00) | (1 << WGM01));
+	dev()->tc0->tccr0.var &= ~((1 << WGM00) | (1 << WGM01));
 
 	switch(wavegenmode) {
 		case 0: // Normal
 		break;
 		case 1: // PWM Phase Correct
-		atmega128()->tc0->tccr0.var |= (1 << WGM00);
+		dev()->tc0->tccr0.var |= (1 << WGM00);
 		break;
 		case 2: // CTC
-		atmega128()->tc0->tccr0.var |= (1 << WGM01);
+		dev()->tc0->tccr0.var |= (1 << WGM01);
 		break;
 		case 3: // Fast PWM
-		atmega128()->tc0->tccr0.var |= (1 << WGM00) | (1 << WGM01);
+		dev()->tc0->tccr0.var |= (1 << WGM00) | (1 << WGM01);
 		break;
 		default:
 		break;
@@ -77,22 +77,22 @@ void TIMER_COUNTER0_wavegenmode(unsigned char wavegenmode)
 void TIMER_COUNTER0_interrupt(unsigned char interrupt)
 {
 	// Disable interrupts first
-	atmega128()->tc0->timsk.var &= ~((1 << TOIE0) | (1 << OCIE0));
+	dev()->tc0->timsk.var &= ~((1 << TOIE0) | (1 << OCIE0));
 
 	switch(interrupt) {
 		case 0: // None
 		break;
 		case 1: // Overflow only
-		atmega128()->tc0->timsk.var |= (1 << TOIE0);
-		atmega128()->cpu->sreg.par.i = 1; // Enable global interrupts
+		dev()->tc0->timsk.var |= (1 << TOIE0);
+		dev()->cpu->sreg.par.i = 1; // Enable global interrupts
 		break;
 		case 2: // Compare Match only
-		atmega128()->tc0->timsk.var |= (1 << OCIE0);
-		atmega128()->cpu->sreg.par.i = 1;
+		dev()->tc0->timsk.var |= (1 << OCIE0);
+		dev()->cpu->sreg.par.i = 1;
 		break;
 		case 3: // Both
-		atmega128()->tc0->timsk.var |= (1 << TOIE0) | (1 << OCIE0);
-		atmega128()->cpu->sreg.par.i = 1;
+		dev()->tc0->timsk.var |= (1 << TOIE0) | (1 << OCIE0);
+		dev()->cpu->sreg.par.i = 1;
 		break;
 		default:
 		break;
@@ -104,26 +104,26 @@ uint8_t TIMER_COUNTER0_start(unsigned int prescaler)
 {
 	if (!timer0_state) {
 		// Stop timer first
-		atmega128()->tc0->tccr0.var &= ~(7 << CS00);
+		dev()->tc0->tccr0.var &= ~(7 << CS00);
 
 		switch(prescaler) {
 			case 1:   // No prescale
-			atmega128()->tc0->tccr0.var |= (1 << CS00);
+			dev()->tc0->tccr0.var |= (1 << CS00);
 			break;
 			case 8:
-			atmega128()->tc0->tccr0.var |= (1 << CS01);
+			dev()->tc0->tccr0.var |= (1 << CS01);
 			break;
 			case 64:
-			atmega128()->tc0->tccr0.var |= (1 << CS01) | (1 << CS00);
+			dev()->tc0->tccr0.var |= (1 << CS01) | (1 << CS00);
 			break;
 			case 256:
-			atmega128()->tc0->tccr0.var |= (1 << CS02);
+			dev()->tc0->tccr0.var |= (1 << CS02);
 			break;
 			case 1024:
-			atmega128()->tc0->tccr0.var |= (1 << CS02) | (1 << CS00);
+			dev()->tc0->tccr0.var |= (1 << CS02) | (1 << CS00);
 			break;
 			default:  // Default = 1024
-			atmega128()->tc0->tccr0.var |= (1 << CS02) | (1 << CS00);
+			dev()->tc0->tccr0.var |= (1 << CS02) | (1 << CS00);
 			break;
 		}
 		timer0_state = 85;
@@ -134,7 +134,7 @@ uint8_t TIMER_COUNTER0_start(unsigned int prescaler)
 uint8_t TIMER_COUNTER0_stop(void)
 // Stop Timer0 by clearing prescaler
 {
-	atmega128()->tc0->tccr0.var &= ~(7 << CS00);
+	dev()->tc0->tccr0.var &= ~(7 << CS00);
 	timer0_state = 0;
 	return timer0_state;
 }
@@ -143,22 +143,22 @@ void TIMER_COUNTER0_compoutmode(unsigned char compoutmode)
 // Set OC0 (PB4) output compare mode
 {
 	// Clear previous COM00/COM01 bits
-	atmega128()->tc0->tccr0.var &= ~((1 << COM00) | (1 << COM01));
+	dev()->tc0->tccr0.var &= ~((1 << COM00) | (1 << COM01));
 
 	switch(compoutmode) {
 		case 0: // Normal I/O
 		break;
 		case 1: // Toggle OC0 on Compare Match (non-PWM only)
-		atmega128()->gpiob->ddr.var |= (1 << 4); // Set PB4 as output
-		atmega128()->tc0->tccr0.var |= (1 << COM00);
+		dev()->gpiob->ddr.var |= (1 << 4); // Set PB4 as output
+		dev()->tc0->tccr0.var |= (1 << COM00);
 		break;
 		case 2: // Clear OC0 on Compare Match
-		atmega128()->gpiob->ddr.var |= (1 << 4);
-		atmega128()->tc0->tccr0.var |= (1 << COM01);
+		dev()->gpiob->ddr.var |= (1 << 4);
+		dev()->tc0->tccr0.var |= (1 << COM01);
 		break;
 		case 3: // Set OC0 on Compare Match
-		atmega128()->gpiob->ddr.var |= (1 << 4);
-		atmega128()->tc0->tccr0.var |= (1 << COM01) | (1 << COM00);
+		dev()->gpiob->ddr.var |= (1 << 4);
+		dev()->tc0->tccr0.var |= (1 << COM01) | (1 << COM00);
 		break;
 		default:
 		break;
@@ -168,7 +168,7 @@ void TIMER_COUNTER0_compoutmode(unsigned char compoutmode)
 void TIMER_COUNTER0_compare(unsigned char compare)
 // Set Output Compare Register OCR0
 {
-	atmega128()->tc0->ocr0.var = compare;
+	dev()->tc0->ocr0.var = compare;
 }
 
 /*** Interrupt ***/

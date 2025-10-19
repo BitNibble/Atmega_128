@@ -75,9 +75,9 @@ HX711_ptr = &HX711_data; // CALIBRATION DATA BUS
 F = explode_enable();
 tc0_enable(2,2); //2,2
 tc1_enable(4,2); //4,2
-hx = hx711_enable(&atmega128()->gpiof->ddr.var, &atmega128()->gpiof->pin.var, &atmega128()->gpiof->port.var, 6, 7); //6,7
+hx = hx711_enable(&dev()->gpiof->ddr.var, &dev()->gpiof->pin.var, &dev()->gpiof->port.var, 6, 7); //6,7
 //intx = INTERRUPTenable();
-lcd0_enable(&atmega128()->gpioa->ddr.var,&atmega128()->gpioa->pin.var,&atmega128()->gpioa->port.var);
+lcd0_enable(&dev()->gpioa->ddr.var,&dev()->gpioa->pin.var,&dev()->gpioa->port.var);
 
 float value = 0;
 float publish = 0;
@@ -293,11 +293,11 @@ void PORTINIT(void)
 void timer0_comp_vect(void) // 15.4 us intervals
 {
 	/***Block other interrupts during this procedure***/
-	uint8_t Sreg = atmega128()->cpu->sreg.var;
-	atmega128()->cpu->sreg.par.i = 0;
+	uint8_t Sreg = dev()->cpu->sreg.var;
+	dev()->cpu->sreg.par.i = 0;
 	hx.read_raw(&hx);
 	/***enable interrupts again***/
-	atmega128()->cpu->sreg.var = Sreg;
+	dev()->cpu->sreg.var = Sreg;
 }
 void timer1_compa_vect(void) // 1 second intervals
 {

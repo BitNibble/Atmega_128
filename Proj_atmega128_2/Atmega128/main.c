@@ -79,10 +79,10 @@ tc1_enable(9,0); // PWM Positioning
 tc2_enable(2,2);
 usart1_enable(38400,8,1,NONE); // UART 103 para 9600 (ESP01), 68 para 14400, 25 para 38400 (HC05), 8 para 115200
 
-lcd0_enable(&atmega128()->gpioa->ddr.var,&atmega128()->gpioa->pin.var,&atmega128()->gpioa->port.var); // LCD Display 4X20
-keypad_enable(&atmega128()->gpioe->ddr.var,&atmega128()->gpioe->pin.var,&atmega128()->gpioe->port.var); // Keyboard
+lcd0_enable(&dev()->gpioa->ddr.var,&dev()->gpioa->pin.var,&dev()->gpioa->port.var); // LCD Display 4X20
+keypad_enable(&dev()->gpioe->ddr.var,&dev()->gpioe->pin.var,&dev()->gpioe->port.var); // Keyboard
 rtc = pcf8563rtc_enable( 16 ); // RTC with I2C
-shift = hc595_enable(&atmega128()->gpiog->ddr.var,&atmega128()->gpiog->port.var,2,0,1);
+shift = hc595_enable(&dev()->gpiog->ddr.var,&dev()->gpiog->port.var,2,0,1);
 pcflcd = pcf8575_lcd0_enable( PCF8575_BASE_ADDRESS, 16 );
 
 // local var
@@ -152,7 +152,7 @@ strcpy(str,func()->i16toa(adcvalue));
 lcd0()->gotoxy(2,0);
 func()->rmcrnl(uartmsgprint);
 lcd0()->string_size(uartmsgprint,20);
-//lcd0()->string_size(func()->ui16toa(atmega128()->cpu->mcucr.par.ivsel),2);
+//lcd0()->string_size(func()->ui16toa(dev()->cpu->mcucr.par.ivsel),2);
 //lcd0()->string_size(func()->ui16toa(read_low_fuse()),4);
 //printf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwABCDE");
 //lcd0()->printf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMN");
@@ -413,7 +413,7 @@ switch(Menu){
 			mvalue=func()->strToInt(mstr);
 			if(mvalue >=0 && mvalue <16){
 				// PORTC = mvalue;
-				atmega128()->gpioc->port.var = mvalue;
+				dev()->gpioc->port.var = mvalue;
 				lcd0()->gotoxy(0,12);
 				lcd0()->hspace(4);
 			}else{
@@ -460,37 +460,37 @@ switch(Menu){
 			usart1()->rxflush();
 		}
 		if(!strcmp(uartmsg,"s00.\r\n")){
-			if(atmega128()->gpioc->port.var & 1)
-				atmega128()->gpioc->port.var &= ~1;
+			if(dev()->gpioc->port.var & 1)
+				dev()->gpioc->port.var &= ~1;
 			else
-				atmega128()->gpioc->port.var |= 1;
+				dev()->gpioc->port.var |= 1;
 		}
 		if(!strcmp(uartmsg,"s00 off.\r\n")){
-			atmega128()->gpioc->port.var &= ~1;
+			dev()->gpioc->port.var &= ~1;
 		}
 		if(!strcmp(uartmsg,"s01.\r\n")){
-			if(atmega128()->gpioc->port.var & 2)
-				atmega128()->gpioc->port.var &= ~2;
+			if(dev()->gpioc->port.var & 2)
+				dev()->gpioc->port.var &= ~2;
 			else
-				atmega128()->gpioc->port.var |= 2;
+				dev()->gpioc->port.var |= 2;
 		}
 		if(!strcmp(uartmsg,"s02.\r\n")){
-			if(atmega128()->gpioc->port.var & 4)
-				atmega128()->gpioc->port.var &= ~4;
+			if(dev()->gpioc->port.var & 4)
+				dev()->gpioc->port.var &= ~4;
 			else
-				atmega128()->gpioc->port.var |= 4;
+				dev()->gpioc->port.var |= 4;
 		}
 		if(!strcmp(uartmsg,"s03.\r\n")){
-			if(atmega128()->gpioc->port.var & 8)
-				atmega128()->gpioc->port.var &= ~8;
+			if(dev()->gpioc->port.var & 8)
+				dev()->gpioc->port.var &= ~8;
 			else
-				atmega128()->gpioc->port.var |= 8;
+				dev()->gpioc->port.var |= 8;
 		}
 		if(!strcmp(uartmsg,"all on.\r\n")){
-			atmega128()->gpioc->port.var |= 15;
+			dev()->gpioc->port.var |= 15;
 		}
 		if(!strcmp(uartmsg,"all off.\r\n")){
-			atmega128()->gpioc->port.var &= ~15;
+			dev()->gpioc->port.var &= ~15;
 		}
 		if(!strcmp(uartmsg,"Disconnect\r\n")){
 			Menu = '1';
@@ -548,8 +548,8 @@ switch(Menu){
 	// Test Area
 	lcd0()->gotoxy(0,2);
 	number1 = F_CPU/16;
-	//atmega128()->writereg(&tnum,2,4,0);
-	//tnum1 = atmega128()->readreg(tnum,3,3); // read
+	//dev()->writereg(&tnum,2,4,0);
+	//tnum1 = dev()->readreg(tnum,3,3); // read
 	write_reg_block(&tnum,3,3,6); // read
 	//lcd0()->string_size( func()->ftoa((float)88/35,5) ,14); // binary
 	lcd0()->string_size( func()->ftoa((float)8965/856, 5) ,14); // binary
@@ -595,20 +595,20 @@ switch(signal)
 void PORTINIT(void)
 {
 	// INPUT
-	atmega128()->gpiof->ddr.var = 0x00;
-	atmega128()->gpiof->port.var = 0x0F;
+	dev()->gpiof->ddr.var = 0x00;
+	dev()->gpiof->port.var = 0x0F;
 	// OUTPUT
-	atmega128()->gpiob->ddr.var |= (1<<5) | (1<<6) | (1<<7);
+	dev()->gpiob->ddr.var |= (1<<5) | (1<<6) | (1<<7);
 	// OUTPUT PULLUP
-	atmega128()->gpioc->ddr.var = 0xFF;
-	atmega128()->gpioc->port.var = 0x00;
+	dev()->gpioc->ddr.var = 0xFF;
+	dev()->gpioc->port.var = 0x00;
 }
 
 void timer0_comp_vect(void) // 1Hz and usart Tx
 {
 	uint8_t Sreg;
-	Sreg = atmega128()->cpu->sreg.var;
-	atmega128()->cpu->sreg.par.i = 1;
+	Sreg = dev()->cpu->sreg.var;
+	dev()->cpu->sreg.par.i = 1;
 	if(count>59){ //59 -> 1Hz
 		increment++;
 		if((increment & 0x0F) < 8){
@@ -621,21 +621,21 @@ void timer0_comp_vect(void) // 1Hz and usart Tx
 		count=0;
 	}else
 		count++;
-	atmega128()->cpu->sreg.var = Sreg;
+	dev()->cpu->sreg.var = Sreg;
 }
 
 void timer2_comp_vect(void)
 {
 	uint8_t Sreg;
-	Sreg = atmega128()->cpu->sreg.var;
-	atmega128()->cpu->sreg.par.i = 1;
+	Sreg = dev()->cpu->sreg.var;
+	dev()->cpu->sreg.par.i = 1;
 	
 	if(counter1 > 1000){
 		counter1=0;
 		signal = 1;
 	}
 	counter1++;
-	atmega128()->cpu->sreg.var = Sreg;
+	dev()->cpu->sreg.var = Sreg;
 }
 
 /**************************** Comment: ******************************

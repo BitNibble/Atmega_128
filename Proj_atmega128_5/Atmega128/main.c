@@ -48,8 +48,8 @@ char* uartreceive = NULL; // capture
 int main(void)
 {
 usart1_enable(38400,8,1,NONE); // UART 103 para 9600 (ESP01), 68 para 14400, 25 para 38400 (HC05), 8 para 115200
-lcd02p_enable(&atmega128()->gpioa->ddr.var,&atmega128()->gpioa->pin.var,&atmega128()->gpioa->port.var,&atmega128()->gpioa->ddr.var,&atmega128()->gpioa->pin.var,&atmega128()->gpioa->port.var); // LCD Display 4X20
-L293D_Handler l293 = l293d_enable(&atmega128()->gpioc->ddr.var, &atmega128()->gpioc->port.var, 0, 1, 2);
+lcd02p_enable(&dev()->gpioa->ddr.var,&dev()->gpioa->pin.var,&dev()->gpioa->port.var,&dev()->gpioa->ddr.var,&dev()->gpioa->pin.var,&dev()->gpioa->port.var); // LCD Display 4X20
+L293D_Handler l293 = l293d_enable(&dev()->gpioc->ddr.var, &dev()->gpioc->port.var, 0, 1, 2);
 PCF8575_Handler pcf8575 = pcf8575_enable(32,16);
 
 char uartmsg[UART1_RX_BUFFER_SIZE] = {0}; // One shot
