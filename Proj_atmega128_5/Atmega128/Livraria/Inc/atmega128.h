@@ -28,11 +28,13 @@ Date:	  27092025
 #include <avr/pgmspace.h>
 #include <avr/sleep.h>
 #include <avr/interrupt.h>
+#include <util/atomic.h>
 #include <util/delay.h>
 
 /*** Constant & Macro ***/
 #define SRAMSTART 0x0100
 #define SRAMEND 0x10FF
+#define ZERO 0
 #define ONE 1
 #define TWO 2
 #define NIBBLE_BITS 4
@@ -127,14 +129,20 @@ void MoveInterruptsToBoot(void);
 /*******************************************************************/
 void set_reg(volatile uint8_t* reg, uint8_t hbits);
 void clear_reg(volatile uint8_t* reg, uint8_t hbits);
-uint8_t get_reg_block(uint8_t reg, uint8_t size_block, uint8_t bit_n);
+uint8_t get_reg_Msk_Pos(uint8_t reg, uint8_t Msk, uint8_t Pos);
+void write_reg_Msk_Pos(volatile uint8_t* reg, uint8_t Msk, uint8_t Pos, uint8_t data);
+void set_reg_Msk_Pos(volatile uint8_t* reg, uint8_t Msk, uint8_t Pos, uint8_t data);
 uint8_t get_reg_Msk(uint8_t reg, uint8_t Msk);
-void write_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
 void write_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t data);
-void set_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
 void set_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t data);
-uint8_t get_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n);
-void set_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data);
+uint8_t get_reg_block(uint8_t reg, uint8_t size_block, uint8_t Pos);
+void write_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t Pos, uint8_t data);
+void set_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t Pos, uint8_t data);
+uint8_t get_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t Pos);
+void set_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t Pos, uint8_t data);
+// --- Generic helpers ---
+uint8_t reg_get(uint8_t reg, uint8_t mask);
+void reg_set(volatile uint8_t *reg, uint8_t mask, uint8_t data);
 /*** NULL Check ***/
 int isPtrNull(void* ptr);
 int isCharPtrFlush(void* ptr);

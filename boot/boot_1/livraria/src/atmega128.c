@@ -14,6 +14,16 @@ Update:	  27092025
 #define FTDELAY_SIZE 256
 static unsigned int ft_Delay_Lock[FTDELAY_SIZE] = {0};
 static unsigned int ftCounter[FTDELAY_SIZE] = {0};
+	
+/*** Local ***/
+uint8_t _var_mask(uint8_t var, uint8_t Msk);
+uint8_t _var_imask(uint8_t var, uint8_t Msk);
+uint8_t _size_to_block(uint8_t size_block);
+uint8_t _block_to_size(uint8_t block);
+uint8_t _get_mask(uint8_t size_block, uint8_t Pos);
+uint8_t _get_pos(uint8_t size_block, uint8_t block_n);
+uint8_t _mask_pos(uint8_t Msk);
+uint8_t _mask_data(uint8_t Msk, uint8_t data);
 
 /*******************************************************************/
 /********************** MAIN HARDWARE LAYER ************************/
@@ -124,119 +134,126 @@ inline uint8_t Msk_Pos(uint8_t Msk){
 	}
 	return Pos;
 }
-inline uint8_t _sp_to_msk(uint8_t size, uint8_t pos){
-	return ((uint8_t)((1U << size) - 1)) << pos;
+/*** SUB Tools ***/
+inline uint8_t _var_mask(uint8_t var, uint8_t Msk){
+	return (var & Msk);
 }
-inline void set_reg(volatile uint8_t* reg, uint8_t hbits){
+inline uint8_t _var_imask(uint8_t var, uint8_t Msk){
+	return (var & ~Msk);
+}
+inline uint8_t _size_to_block(uint8_t size_block){
+	return (size_block >= BYTE_BITS) ? 0xFFU : ((1U << size_block) - 1);
+}
+inline uint8_t _block_to_size(uint8_t block) {
+	return block ? ((unsigned int)BYTE_BITS - __builtin_clz(block)) : 0U;
+}
+inline uint8_t _get_mask(uint8_t size_block, uint8_t Pos){
+	return _size_to_block(size_block) << Pos;
+}
+inline uint8_t _get_pos(uint8_t size_block, uint8_t block_n){
+	return size_block * block_n;
+}
+inline uint8_t _mask_pos(uint8_t Msk){
+	return Msk ? (unsigned int)__builtin_ctz(Msk) : 0U;
+}
+inline uint8_t _mask_data(uint8_t Msk, uint8_t data){
+	return _var_mask(data << _mask_pos(Msk), Msk);
+}
+// --- Generic helpers ---
+inline uint8_t reg_get(uint8_t reg, uint8_t Msk){
+	return _var_mask(reg, Msk) >> _mask_pos(Msk);
+}
+
+inline void reg_set(volatile uint8_t *reg, uint8_t Msk, uint8_t data){
+	*reg = _var_imask(*reg, Msk) | _mask_data(Msk, data);
+}
+/*** Tools ***/
+void set_reg(volatile uint8_t* reg, uint8_t hbits){
 	*reg |= hbits;
 }
-inline void clear_reg(volatile uint8_t* reg, uint8_t hbits){
+void clear_reg(volatile uint8_t* reg, uint8_t hbits){
 	*reg &= ~hbits;
 }
-inline uint8_t get_reg_Msk(uint8_t reg, uint8_t Msk)
+inline uint8_t get_reg_Msk_Pos(uint8_t reg, uint8_t Msk, uint8_t Pos)
 {
-	reg = (reg & Msk) >> Msk_Pos(Msk);
-	return reg;
+	return _var_mask(reg, Msk) >> Pos;
 }
-inline void write_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t data)
+inline void write_reg_Msk_Pos(volatile uint8_t* reg, uint8_t Msk, uint8_t Pos, uint8_t data)
 {
-	uint8_t value = *reg;
-	uint8_t Pos = Msk_Pos(Msk);
-	data = (data << Pos) & Msk; value &= ~(Msk); value |= data; *reg = value;
+	uint8_t value = _var_imask(*reg, Msk);
+	data = _var_mask((data << Pos), Msk); value |= data; *reg = value;
 }
-inline void set_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t data)
+inline void set_reg_Msk_Pos(volatile uint8_t* reg, uint8_t Msk, uint8_t Pos, uint8_t data)
 {
-	uint8_t Pos = Msk_Pos(Msk);
-	data = (data << Pos) & Msk; *reg &= ~(Msk); *reg |= data;
+	data = _var_mask((data << Pos), Msk); clear_reg(reg, Msk); set_reg(reg, data);
 }
-uint8_t get_reg_block(uint8_t reg, uint8_t size_block, uint8_t bit_n)
+uint8_t get_reg_Msk(uint8_t reg, uint8_t Msk)
 {
-	if(bit_n < BYTE_BITS &&  size_block != 0 && bit_n + size_block <= BYTE_BITS) {
-		uint8_t mask = (uint8_t)((1U << size_block) - 1);
-		reg = (reg & (mask << bit_n)) >> bit_n;
-	}
-	return reg;
+	return get_reg_Msk_Pos(reg, Msk, _mask_pos(Msk));
 }
-void write_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data)
+void write_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t data)
 {
-	uint8_t value = *reg;
-	if(bit_n < BYTE_BITS &&  size_block != 0 && bit_n + size_block <= BYTE_BITS) {
-		uint8_t mask = (uint8_t)((1U << size_block) - 1);
-		data &= mask; value &= ~(mask << bit_n);
-		data = (data << bit_n);
-		value |= data;
-		*reg = value;
-	}
+	write_reg_Msk_Pos(reg, Msk, _mask_pos(Msk), data);
 }
-void set_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data)
+void set_reg_Msk(volatile uint8_t* reg, uint8_t Msk, uint8_t data)
 {
-	if(bit_n < BYTE_BITS &&  size_block != 0 && bit_n + size_block <= BYTE_BITS) {
-		uint8_t mask = (uint8_t)((1U << size_block) - 1);
-		data &= mask;
-		*reg &= ~(mask << bit_n);
-		*reg |= (data << bit_n);
-	}
+	set_reg_Msk_Pos(reg, Msk, _mask_pos(Msk), data);
 }
-uint8_t get_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n)
+uint8_t get_reg_block(uint8_t reg, uint8_t size_block, uint8_t Pos)
 {
-	uint8_t value;
-	uint8_t n = bit_n / BYTE_BITS; bit_n = bit_n % BYTE_BITS;
-	value = *(reg + n );
-	if(size_block != 0 && bit_n + size_block <= BYTE_BITS){
-		uint8_t mask = (uint8_t)((1U << size_block) - 1);
-		value = (value & (mask << bit_n)) >> bit_n;
-	}
-	return value;
+	return get_reg_Msk_Pos(reg, _get_mask(size_block, Pos), Pos);
 }
-void set_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t bit_n, uint8_t data)
+void write_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t Pos, uint8_t data)
 {
-	uint8_t n = bit_n / BYTE_BITS; bit_n = bit_n % BYTE_BITS;
-	if(size_block != 0 && bit_n + size_block <= BYTE_BITS) {
-		uint8_t mask = (uint8_t)((1U << size_block) - 1);
-		data &= mask;
-		*(reg + n ) &= ~(mask << bit_n);
-		*(reg + n ) |= (data << bit_n);
-	}
+	write_reg_Msk_Pos(reg, _get_mask(size_block, Pos), Pos, data);
 }
-void STM32446SetRegBits( uint8_t* reg, uint8_t n_bits, ... )
+void set_reg_block(volatile uint8_t* reg, uint8_t size_block, uint8_t Pos, uint8_t data)
+{
+	set_reg_Msk_Pos(reg, _get_mask(size_block, Pos), Pos, data);
+}
+uint8_t get_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t Pos)
+{
+	uint16_t n = Pos / BYTE_BITS; Pos = Pos % BYTE_BITS;
+	return get_reg_Msk_Pos((uint8_t)*(reg + n), _get_mask(size_block, Pos), Pos);
+}
+void set_bit_block(volatile uint8_t* reg, uint8_t size_block, uint8_t Pos, uint8_t data)
+{
+	uint16_t n = Pos / BYTE_BITS; Pos = Pos % BYTE_BITS;
+	set_reg_Msk_Pos((reg + n), _get_mask(size_block, Pos), Pos, data);
+}
+
+/****************************************/
+// UNUSED
+void Atmega128SetRegBits( uint8_t* reg, uint8_t n_bits, ... )
 {
 	uint8_t i;
 	if(n_bits > 0 && n_bits <= BYTE_BITS){ // Filter input
 		va_list list;
 		va_start(list, n_bits);
 		for(i = 0; i < n_bits; i++){
-			*reg |= (uint32_t)(1 << va_arg(list, int));
+			*reg |= (uint8_t)(1 << va_arg(list, int));
 		}
 		va_end(list);
 	}
 }
-void STM32446ResetRegBits( uint8_t* reg, uint8_t n_bits, ... )
+void Atmega128ResetRegBits( uint8_t* reg, uint8_t n_bits, ... )
 {
 	uint8_t i;
 	if(n_bits > 0 && n_bits <= BYTE_BITS){ // Filter input
 		va_list list;
 		va_start(list, n_bits);
 		for(i = 0; i < n_bits; i++){
-			*reg &= (uint32_t)~(1 << va_arg(list, int));
+			*reg &= (uint8_t)~(1 << va_arg(list, int));
 		}
 		va_end(list);
 	}
-}
-void STM32446VecSetup( volatile uint8_t vec[], unsigned int size_block, unsigned int block_n, unsigned int data )
-{
-	const unsigned int n_bits = sizeof(data) * BYTE_BITS;
-	if(size_block > n_bits){ size_block = n_bits; }
-	const unsigned int mask = (uint8_t) ((1 << size_block) - 1);
-	unsigned int index = (block_n * size_block) / n_bits;
-	data &= mask;
-	vec[index] &= ~( mask << ((block_n * size_block) - (index * n_bits)) );
-	vec[index] |= ( data << ((block_n * size_block) - (index * n_bits)) );
 }
 /*** NULL Check ***/
 int isPtrNull(void* ptr) {
 	return ptr ? 0 : 1; // Returns 1 if NULL, 0 otherwise
 }
 int isCharPtrFlush(void* ptr) {
+	if (ptr == NULL) return 1;
 	// Cast the void pointer to a char pointer to dereference it
 	return *((unsigned char*)ptr) ? 0 : 1; // Returns 1 if '\0', 0 otherwise
 }

@@ -1,4 +1,4 @@
-﻿------ Rebuild All started: Project: boot_1, Configuration: Debug AVR ------
+﻿------ Clean started: Project: boot_1, Configuration: Debug AVR ------
 Build started.
 Project "boot_1.cproj" (Clean target(s)):
 Target "Clean" in file "C:\Program Files (x86)\Atmel\Studio\7.0\Vs\Compiler.targets" from project "D:\Embedded\Atmega_128\boot\boot_1\boot_1.cproj" (entry point):
@@ -13,48 +13,4 @@ Done building target "Clean" in project "boot_1.cproj".
 Done building project "boot_1.cproj".
 
 Build succeeded.
------- Rebuild All started: Project: boot_1, Configuration: Debug AVR ------
-Build started.
-Project "boot_1.cproj" (default targets):
-Target "PreBuildEvent" skipped, due to false condition; ('$(PreBuildEvent)'!='') was evaluated as (''!='').
-Target "CoreBuild" in file "C:\Program Files (x86)\Atmel\Studio\7.0\Vs\Compiler.targets" from project "D:\Embedded\Atmega_128\boot\boot_1\boot_1.cproj" (target "Build" depends on it):
-	Task "RunCompilerTask"
-		Shell Utils Path C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils
-		C:\Program Files (x86)\Atmel\Studio\7.0\shellUtils\make.exe all --jobs 12 --output-sync 
-		Building file: ../livraria/src/74hc595.c
-		Invoking: AVR/GNU C Compiler : 5.4.0
-		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"../livraria/inc" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "livraria/src/74hc595.d" -MT"livraria/src/74hc595.d" -MT"livraria/src/74hc595.o"   -o "livraria/src/74hc595.o" "../livraria/src/74hc595.c" 
-		Finished building: ../livraria/src/74hc595.c
-		Building file: .././main.c
-		Invoking: AVR/GNU C Compiler : 5.4.0
-		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"../livraria/inc" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "main.d" -MT"main.d" -MT"main.o"   -o "main.o" ".././main.c" 
-		Finished building: .././main.c
-		Building file: ../livraria/src/atmega128.c
-		Invoking: AVR/GNU C Compiler : 5.4.0
-		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe"  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"../livraria/inc" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega128" -c -std=gnu99 -MD -MP -MF "livraria/src/atmega128.d" -MT"livraria/src/atmega128.d" -MT"livraria/src/atmega128.o"   -o "livraria/src/atmega128.o" "../livraria/src/atmega128.c" 
-		Finished building: ../livraria/src/atmega128.c
-		Building target: boot_1.elf
-		Invoking: AVR/GNU Linker : 5.4.0
-		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe" -o boot_1.elf  livraria/src/74hc595.o livraria/src/atmega128.o main.o   -Wl,-Map="boot_1.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mrelax -mmcu=atmega128 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega128" -Wl,-section-start=.text=0x1FC00  
-		Finished building target: boot_1.elf
-		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "boot_1.elf" "boot_1.hex"
-		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "boot_1.elf" "boot_1.eep" || exit 0
-		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objdump.exe" -h -S "boot_1.elf" > "boot_1.lss"
-		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "boot_1.elf" "boot_1.srec"
-		"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-size.exe" "boot_1.elf"
-		   text	   data	    bss	    dec	    hex	filename
-		    428	     50	      0	    478	    1de	boot_1.elf
-	Done executing task "RunCompilerTask".
-	Task "RunOutputFileVerifyTask"
-				Program Memory Usage 	:	478 bytes   0,4 % Full
-				Data Memory Usage 		:	50 bytes   1,2 % Full
-				Warning: Memory Usage estimation may not be accurate if there are sections other than .text sections in ELF file
-	Done executing task "RunOutputFileVerifyTask".
-Done building target "CoreBuild" in project "boot_1.cproj".
-Target "PostBuildEvent" skipped, due to false condition; ('$(PostBuildEvent)' != '') was evaluated as ('' != '').
-Target "Build" in file "C:\Program Files (x86)\Atmel\Studio\7.0\Vs\Avr.common.targets" from project "D:\Embedded\Atmega_128\boot\boot_1\boot_1.cproj" (entry point):
-Done building target "Build" in project "boot_1.cproj".
-Done building project "boot_1.cproj".
-
-Build succeeded.
-========== Rebuild All: 1 succeeded, 0 failed, 0 skipped ==========
+========== Clean: 1 succeeded, 0 failed, 0 skipped ==========
