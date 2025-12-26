@@ -5,6 +5,8 @@
 -V-table for procedures, functions.
 -Function Pointer for callbacks.
 
+All undefined behaviors must be "Do Nothing" or that is "FALL THREW".
+
 registers -> instances -> handlers -> framework
 
 instance -> peripheral related regsiters 
