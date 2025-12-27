@@ -1,23 +1,26 @@
-/**********************************************************************
+/************************************************************************
 	74HC595
 Author:   <sergio.salazar.santos@gmail.com>
 License:  GNU General Public License
 Hardware: 74HC595
 Date:     25/10/2020
-**********************************************************************/
+************************************************************************/
 #ifndef _74HC595_H_
 	#define _74HC595_H_
 
 /*** Library ***/
-#include <stdint.h>
 #include <inttypes.h>
 	
 /*** Constant & Macro ***/
 //#define STM32F4
 #if defined (STM32F4)
-	#define IO_var uint32_t
+	#ifndef IO_var
+		#define IO_var uint32_t
+	#endif
 #else
-	#define IO_var uint8_t
+	#ifndef IO_var
+		#define IO_var uint8_t
+	#endif
 #endif
 
 /*** Parameter ***/
@@ -27,22 +30,26 @@ typedef struct{
 	uint8_t HC595_outpin;
 	volatile IO_var *hc595_DDR;
 	volatile IO_var *hc595_PORT;
-}HC595_Parameter;
+}hc595_parameter;
 
 /*** Handler ***/
 typedef struct
 {
-	HC595_Parameter par;
+	hc595_parameter par;
+	
 	// V-table
-	void (*bit)(HC595_Parameter* par, uint8_t state);
-	void (*ibyte)(HC595_Parameter* par, uint8_t byte);
-	void (*byte)(HC595_Parameter* par, uint8_t byte);
-	void (*out)(HC595_Parameter* par);
-}HC595_Handler;
+	void (*shift_bit)(hc595_parameter* par, uint8_t state);
+	void (*shift_ibyte)(hc595_parameter* par, uint8_t byte);
+	void (*shift_byte)(hc595_parameter* par, uint8_t byte);
+	void (*ibyte)(hc595_parameter* par, uint8_t byte);
+	void (*byte)(hc595_parameter* par, uint8_t byte);
+	void (*out)(hc595_parameter* par);
+}HC595;
 
-HC595_Handler hc595_enable(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin, uint8_t clkpin, uint8_t outpin);
+HC595 hc595_enable(volatile IO_var *ddr, volatile IO_var *port, uint8_t datapin, uint8_t clkpin, uint8_t outpin);
 
 #endif
+
 /*** EOF ***/
 
 /******

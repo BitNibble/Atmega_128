@@ -52,7 +52,7 @@ Comment:
 PCF8563RTC_Time tm; // time struct RTC
 PCF8563RTC_Date dt; // date struct RTC
 
-HC595_Handler shift;
+HC595 shift;
 PCF8563RTC_Handler rtc;
 PCF8575_LCD0_Handler pcflcd;
 
@@ -612,10 +612,10 @@ void timer0_comp_vect(void) // 1Hz and usart Tx
 	if(count>59){ //59 -> 1Hz
 		increment++;
 		if((increment & 0x0F) < 8){
-			shift.bit(&shift.par, 0);
+			shift.shift_bit(&shift.par, 0);
 			shift.out(&shift.par);
 		}else{
-			shift.bit(&shift.par, 1);
+			shift.shift_bit(&shift.par, 1);
 			shift.out(&shift.par);
 		}
 		count=0;

@@ -35,7 +35,7 @@ Comment:
 #define repeat 59
 
 /*** Variable ***/
-HC595_Handler shift;
+HC595 shift;
 ZNPID_Handler pid_1;
 ZNPID_Handler pid_2;
 uint8_t count=0; // 1Hz
@@ -210,10 +210,10 @@ void timer0_comp_vect(void) // 1Hz and usart Tx
 		pid_out_2=pid_2.output(&pid_2.par,adcvalue,0.5);
 		increment++;
 		if((increment & 0x0F) < 8){
-			shift.bit(&shift.par, 0);
+			shift.shift_bit(&shift.par, 0);
 			shift.out(&shift.par);
 		}else{
-			shift.bit(&shift.par, 1);
+			shift.shift_bit(&shift.par, 1);
 			shift.out(&shift.par);
 		}
 		
