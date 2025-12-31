@@ -611,6 +611,7 @@ void timer0_comp_vect(void) // 1Hz and usart Tx
 	dev()->cpu->sreg.par.i = 1;
 	if(count>59){ //59 -> 1Hz
 		increment++;
+		//shift.ibyte(&shift.par,16);
 		if((increment & 0x0F) < 8){
 			shift.shift_bit(&shift.par, 0);
 			shift.out(&shift.par);
